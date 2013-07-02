@@ -3,12 +3,17 @@
 /**
  *
  **/
-class VimTips
+class Tips extends CI_Controller
 {
 
     function __construct()
     {
         // code...
+    }
+
+    public function commitTips()
+    {
+        echo 'here';
     }
 }
 
