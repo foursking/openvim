@@ -2,7 +2,7 @@
 
 class Tips extends CI_Model {
 
-    public function Tips()
+    function __construct()
     {
         parent::__construct();
     }
@@ -11,10 +11,9 @@ class Tips extends CI_Model {
     public function getOneItem()
     {
         $this->load->database();
-        $query = $this->db->query("select * from user");
+        $query = $this->db->query("SELECT * from `user`");
         return $query->result();
     }
-
 
 
 
