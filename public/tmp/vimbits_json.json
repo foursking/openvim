@@ -1,0 +1,3495 @@
+[
+    {
+        "vimbits_id": 8,
+        "vimbits_tag": [
+            "movement",
+            "learning"
+        ],
+        "vimbits_tips": "nnoremap &lt;up&gt; &lt;nop&gt;\r\nnnoremap &lt;down&gt; &lt;nop&gt;\r\nnnoremap &lt;left&gt; &lt;nop&gt;\r\nnnoremap &lt;right&gt; &lt;nop&gt;\r\ninoremap &lt;up&gt; &lt;nop&gt;\r\ninoremap &lt;down&gt; &lt;nop&gt;\r\ninoremap &lt;left&gt; &lt;nop&gt;\r\ninoremap &lt;right&gt; &lt;nop&gt;",
+        "vimbits_title": [
+            "Turn off arrow keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 9,
+        "vimbits_tag": [
+            "copying"
+        ],
+        "vimbits_tips": "set clipboard=unnamed",
+        "vimbits_title": [
+            "Use system clipboard for copy and paste\n"
+        ]
+    },
+    {
+        "vimbits_id": 10,
+        "vimbits_tag": [
+            "remapping",
+            "splits"
+        ],
+        "vimbits_tips": "nnoremap &lt;C-h&gt; &lt;C-w&gt;h\r\nnnoremap &lt;C-j&gt; &lt;C-w&gt;j\r\nnnoremap &lt;C-k&gt; &lt;C-w&gt;k\r\nnnoremap &lt;C-l&gt; &lt;C-w&gt;l",
+        "vimbits_title": [
+            "Easy split navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 11,
+        "vimbits_tag": [
+            "remapping",
+            "copying"
+        ],
+        "vimbits_tips": "map Y y$",
+        "vimbits_title": [
+            "Make Y behave like other capitals\n"
+        ]
+    },
+    {
+        "vimbits_id": 12,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;leader&gt;== yyPv$r=jyypv$r=\r\nnnoremap &lt;leader&gt;** yyPv$r*jyypv$r*\r\nnnoremap &lt;leader&gt;=  yypv$r=\r\nnnoremap &lt;leader&gt;-  yypv$r-\r\nnnoremap &lt;leader&gt;^  yypv$r^\r\nnnoremap &lt;leader&gt;&quot;  yypv$r&quot;</pre>\n</p>\n<p>\n<pre><code>This sample line\n</code></pre>\n\n<p>becomes</p>\n\n<pre><code>This sample line\n----------------\n</code>",
+        "vimbits_title": [
+            "Underline/overline current line\n"
+        ]
+    },
+    {
+        "vimbits_id": 15,
+        "vimbits_tag": [
+            "remapping",
+            "escape"
+        ],
+        "vimbits_tips": "inoremap jk &lt;Esc&gt;",
+        "vimbits_title": [
+            "Use jk as &lt;Esc&gt; alternative\n"
+        ]
+    },
+    {
+        "vimbits_id": 16,
+        "vimbits_tag": [
+            "remapping"
+        ],
+        "vimbits_tips": "noremap H ^\r\nnoremap L $",
+        "vimbits_title": [
+            "Jump to start and end of line using the home row keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 17,
+        "vimbits_tag": [
+            "remapping"
+        ],
+        "vimbits_tips": "nnoremap / /\\v\r\nvnoremap / /\\v",
+        "vimbits_title": [
+            "Use sane regexes\n"
+        ]
+    },
+    {
+        "vimbits_id": 19,
+        "vimbits_tag": [
+            "search",
+            "ack"
+        ],
+        "vimbits_tips": "&quot; Highlight word at cursor without changing position\r\nnnoremap &lt;leader&gt;h *&lt;C-O&gt;\r\n&quot; Highlight word at cursor and then Ack it.\r\nnnoremap &lt;leader&gt;H *&lt;C-O&gt;:AckFromSearch!&lt;CR&gt;",
+        "vimbits_title": [
+            "Search for the word under the cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 20,
+        "vimbits_tag": [
+            "indent",
+            "visual"
+        ],
+        "vimbits_tips": "vnoremap &lt; &lt;gv\r\nvnoremap &gt; &gt;gv",
+        "vimbits_title": [
+            "Reselect visual block after indent/outdent\n"
+        ]
+    },
+    {
+        "vimbits_id": 21,
+        "vimbits_tag": [
+            "clear",
+            "search",
+            "highlight"
+        ],
+        "vimbits_tips": "noremap &lt;silent&gt;&lt;Leader&gt;/ :nohls&lt;CR&gt;",
+        "vimbits_title": [
+            "Clear search highlights\n"
+        ]
+    },
+    {
+        "vimbits_id": 22,
+        "vimbits_tag": [
+            "remapping",
+            "buffer",
+            "alternate"
+        ],
+        "vimbits_tips": "noremap &lt;Leader&gt;&lt;Leader&gt; &lt;C-^&gt;",
+        "vimbits_title": [
+            "Open last/alternate buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 23,
+        "vimbits_tag": [
+            "source",
+            "vimscript"
+        ],
+        "vimbits_tips": "nnoremap &lt;Leader&gt;S ^vg_y:execute @@&lt;CR&gt;",
+        "vimbits_title": [
+            "Source a single line of Vimscript\n"
+        ]
+    },
+    {
+        "vimbits_id": 24,
+        "vimbits_tag": [
+            "FocusLost"
+        ],
+        "vimbits_tips": "au FocusLost * :silent! wall                 &quot; Save on FocusLost\r\nau FocusLost * call feedkeys(&quot;\\&lt;C-\\&gt;\\&lt;C-n&gt;&quot;) &quot; Return to normal mode on FocustLost",
+        "vimbits_title": [
+            "Save and return to normal mode on FocusLost\n"
+        ]
+    },
+    {
+        "vimbits_id": 25,
+        "vimbits_tag": [
+            "remapping",
+            "movement",
+            "wrap"
+        ],
+        "vimbits_tips": "nnoremap j gj\r\nnnoremap k gk",
+        "vimbits_title": [
+            "Improve up/down movement on wrapped lines\n"
+        ]
+    },
+    {
+        "vimbits_id": 28,
+        "vimbits_tag": [
+            "toggle",
+            "invisibles"
+        ],
+        "vimbits_tips": "noremap &lt;Leader&gt;i :set list!&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle invisibles\n"
+        ]
+    },
+    {
+        "vimbits_id": 30,
+        "vimbits_tag": [
+            "remapping"
+        ],
+        "vimbits_tips": "cnoremap &lt;C-j&gt; &lt;t_kd&gt;\r\ncnoremap &lt;C-k&gt; &lt;t_ku&gt;\r\ncnoremap &lt;C-a&gt; &lt;Home&gt;\r\ncnoremap &lt;C-e&gt; &lt;End&gt;",
+        "vimbits_title": [
+            "Better comand-line editing\n"
+        ]
+    },
+    {
+        "vimbits_id": 40,
+        "vimbits_tag": [],
+        "vimbits_tips": "function! NumberToggle()\r\n  if(&amp;relativenumber == 1)\r\n    set number\r\n  else\r\n    set relativenumber\r\n  endif\r\nendfunc\r\nnnoremap &lt;C-n&gt; :call NumberToggle()&lt;cr&gt;",
+        "vimbits_title": [
+            "Toggle relative line numbering\n"
+        ]
+    },
+    {
+        "vimbits_id": 41,
+        "vimbits_tag": [
+            "vimrc",
+            "edit"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;ev :tabedit $MYVIMRC&lt;cr&gt;",
+        "vimbits_title": [
+            "Easily Edit VIMRC\n"
+        ]
+    },
+    {
+        "vimbits_id": 42,
+        "vimbits_tag": [
+            "source",
+            "vimrc"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;sv :so $MYVIMRC&lt;cr&gt;",
+        "vimbits_title": [
+            "Easily Source VIMRC\n"
+        ]
+    },
+    {
+        "vimbits_id": 43,
+        "vimbits_tag": [
+            "format",
+            "xml"
+        ],
+        "vimbits_tips": "nnoremap &lt;F2&gt; :silent 1,$!xmllint --format --recover - 2&gt;/dev/null&lt;cr&gt;\r\n\r\n# for windows, download xmllint software:\r\n# http://code.google.com/p/xmllint/\r\n# and use below\r\n\r\n# nnoremap &lt;F2&gt; :silent 1,$!xmllint %&lt;cr&gt;",
+        "vimbits_title": [
+            "Reformat and Tidy XML Files\n"
+        ]
+    },
+    {
+        "vimbits_id": 44,
+        "vimbits_tag": [
+            "escape",
+            "normal",
+            "mode"
+        ],
+        "vimbits_tips": "inoremap jj &lt;esc&gt;",
+        "vimbits_title": [
+            "Use jj to Escape\n"
+        ]
+    },
+    {
+        "vimbits_id": 45,
+        "vimbits_tag": [
+            "edit",
+            "sudo",
+            "root",
+            "file",
+            "tee",
+            "save"
+        ],
+        "vimbits_tips": "cmap w!! %!sudo tee &gt; /dev/null %",
+        "vimbits_title": [
+            "Force Saving Files that Require Root Permission\n"
+        ]
+    },
+    {
+        "vimbits_id": 46,
+        "vimbits_tag": [
+            "format",
+            "autocomplete",
+            "tabbing"
+        ],
+        "vimbits_tips": "function! SuperTab()\r\n    if (strpart(getline('.'),col('.')-2,1)=~'^\\W\\?$')\r\n        return &quot;\\&lt;Tab&gt;&quot;\r\n    else\r\n        return &quot;\\&lt;C-n&gt;&quot;\r\n    endif\r\nendfunction\r\nimap &lt;Tab&gt; &lt;C-R&gt;=SuperTab()&lt;CR&gt;",
+        "vimbits_title": [
+            "Use tab for auto completion\n"
+        ]
+    },
+    {
+        "vimbits_id": 47,
+        "vimbits_tag": [
+            "remove",
+            "trailing",
+            "space",
+            "whitespace",
+            "delete"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;W :%s/\\s\\+$//&lt;cr&gt;:let @/=''&lt;cr&gt;",
+        "vimbits_title": [
+            "Remove All the Trailing Whitespaces\n"
+        ]
+    },
+    {
+        "vimbits_id": 51,
+        "vimbits_tag": [
+            "remove",
+            "format",
+            "tabbing",
+            "space",
+            "tab"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;T :set expandtab&lt;cr&gt;:retab!&lt;cr&gt;",
+        "vimbits_title": [
+            "Retab and Format the File with Spaces\n"
+        ]
+    },
+    {
+        "vimbits_id": 52,
+        "vimbits_tag": [
+            "search",
+            "highlight",
+            "toggle"
+        ],
+        "vimbits_tips": "noremap &lt;space&gt; :set hlsearch! hlsearch?&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle Search Highlights\n"
+        ]
+    },
+    {
+        "vimbits_id": 53,
+        "vimbits_tag": [],
+        "vimbits_tips": "set hidden\r\n    map &lt;SwipeLeft&gt; :bprev&lt;CR&gt;\r\n    map &lt;SwipeRight&gt; :bnext&lt;CR&gt;",
+        "vimbits_title": [
+            "Swipe Between Buffers\n"
+        ]
+    },
+    {
+        "vimbits_id": 54,
+        "vimbits_tag": [
+            "invisibles",
+            "list",
+            "listchars",
+            "custom"
+        ],
+        "vimbits_tips": "set list\r\nset listchars=tab:\u25b8\\ ,eol:\u00ac,trail:\u22c5,extends:\u276f,precedes:\u276e\r\nset showbreak=\u21aa",
+        "vimbits_title": [
+            "Custom Invisibles\n"
+        ]
+    },
+    {
+        "vimbits_id": 56,
+        "vimbits_tag": [
+            "php"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;p :! php -l %&lt;CR&gt;\r\nmap &lt;Leader&gt;P :! php -q %&lt;CR&gt;",
+        "vimbits_title": [
+            "PHP Lint and Execute\n"
+        ]
+    },
+    {
+        "vimbits_id": 57,
+        "vimbits_tag": [
+            "toggle",
+            "paste",
+            "format",
+            "keep"
+        ],
+        "vimbits_tips": "set pastetoggle=&lt;F8&gt; &quot;enable paste toggle and map it to F8",
+        "vimbits_title": [
+            "Toggle Paste\n"
+        ]
+    },
+    {
+        "vimbits_id": 58,
+        "vimbits_tag": [
+            "macvim"
+        ],
+        "vimbits_tips": "if has(&quot;gui_macvim&quot;)\r\n    set transparency=15\r\n    set guifont=Monaco:h10\r\n    set noantialias\r\nendif",
+        "vimbits_title": [
+            "Cool MacVIM settings\n"
+        ]
+    },
+    {
+        "vimbits_id": 64,
+        "vimbits_tag": [
+            "file",
+            "custom",
+            "template",
+            "create"
+        ],
+        "vimbits_tips": "au! BufNewFile * silent! 0r $HOME/.vim/skel/template.%:e",
+        "vimbits_title": [
+            "Custom File Templates\n"
+        ]
+    },
+    {
+        "vimbits_id": 65,
+        "vimbits_tag": [
+            "cd",
+            "directory"
+        ],
+        "vimbits_tips": "autocmd BufEnter * execute &quot;chdir &quot;.escape(expand(&quot;%:p:h&quot;), ' ')",
+        "vimbits_title": [
+            "cd into the dir that the file is in\n"
+        ]
+    },
+    {
+        "vimbits_id": 75,
+        "vimbits_tag": [
+            "indent"
+        ],
+        "vimbits_tips": "noremap &lt;F1&gt; mzgg=G`zzz",
+        "vimbits_title": [
+            "Fix indenting without moving cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 78,
+        "vimbits_tag": [
+            "cursor"
+        ],
+        "vimbits_tips": "augroup JumpCursorOnEdit\r\nau!\r\nautocmd BufReadPost *\r\n\\ if expand(&quot;&lt;afile&gt;:p:h&quot;) !=? $TEMP |\r\n\\   if line(&quot;'\\&quot;&quot;) &gt; 1 &amp;&amp; line(&quot;'\\&quot;&quot;) &lt;= line(&quot;$&quot;) |\r\n\\     let JumpCursorOnEdit_foo = line(&quot;'\\&quot;&quot;) |\r\n\\     let b:doopenfold = 1 |\r\n\\     if (foldlevel(JumpCursorOnEdit_foo) &gt; foldlevel(JumpCursorOnEdit_foo - 1)) |\r\n\\        let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |\r\n\\        let b:doopenfold = 2 |\r\n\\     endif |\r\n\\     exe JumpCursorOnEdit_foo |\r\n\\   endif |\r\n\\ endif\r\n&quot; Need to postpone using &quot;zv&quot; until after reading the modelines.\r\nautocmd BufWinEnter *\r\n\\ if exists(&quot;b:doopenfold&quot;) |\r\n\\   exe &quot;normal zv&quot; |\r\n\\   if(b:doopenfold &gt; 1) |\r\n\\       exe  &quot;+&quot;.1 |\r\n\\   endif |\r\n\\   unlet b:doopenfold |\r\n\\ endif\r\naugroup END",
+        "vimbits_title": [
+            "Restore cursor position when opening file\n"
+        ]
+    },
+    {
+        "vimbits_id": 79,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;h :set hlsearch! hlsearch?&lt;CR&gt;\r\nnmap &lt;silent&gt; &lt;leader&gt;l :set list! list?&lt;CR&gt;\r\nnmap &lt;silent&gt; &lt;leader&gt;n :set number! number?&lt;CR&gt;\r\nnmap &lt;silent&gt; &lt;leader&gt;p :set paste! paste?&lt;CR&gt;\r\nnmap &lt;silent&gt; &lt;leader&gt;w :set wrap! wrap?&lt;CR&gt;",
+        "vimbits_title": [
+            "toggle a boolean option\n"
+        ]
+    },
+    {
+        "vimbits_id": 82,
+        "vimbits_tag": [
+            "selection"
+        ],
+        "vimbits_tips": "&quot; select all\r\nmap &lt;Leader&gt;a ggVG",
+        "vimbits_title": [
+            "Select all text in current buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 84,
+        "vimbits_tag": [
+            "tab"
+        ],
+        "vimbits_tips": "nnoremap &lt;Leader&gt;tc :tabc&lt;return&gt;\r\nnnoremap &lt;Leader&gt;tn :tabn&lt;return&gt;\r\nnnoremap &lt;Leader&gt;tp :tabp&lt;return&gt;\r\nnnoremap &lt;Leader&gt;te :tabe&lt;space&gt;",
+        "vimbits_title": [
+            "Mappings for Tab Management\n"
+        ]
+    },
+    {
+        "vimbits_id": 85,
+        "vimbits_tag": [
+            "custom",
+            "execute",
+            "hotkeys"
+        ],
+        "vimbits_tips": "map &lt;f5&gt; :w &lt;CR&gt;!clear &lt;CR&gt;:!python % &lt;CR&gt;",
+        "vimbits_title": [
+            "Run Python Code from Vim \n"
+        ]
+    },
+    {
+        "vimbits_id": 86,
+        "vimbits_tag": [],
+        "vimbits_tips": "noremap &lt;Up&gt;     ddkP\r\nnoremap &lt;Down&gt;   ddp \r\nnoremap &lt;Left&gt;   &lt;&lt;  \r\nnoremap &lt;Right&gt;  &gt;&gt;",
+        "vimbits_title": [
+            "Use arrow keys to move text\n"
+        ]
+    },
+    {
+        "vimbits_id": 87,
+        "vimbits_tag": [],
+        "vimbits_tips": "function GuiTabLabel()\r\n      let bufnrlist = tabpagebuflist(v:lnum)\r\n      let bufId = bufnrlist[tabpagewinnr(v:lnum) - 1]\r\n      let fn = bufname(bufId)\r\n      let lastSlash = strridx(fn, '/')\r\n      return strpart(fn, lastSlash+1, strlen(fn))\r\nendfunction\r\n\r\nif v:version &gt;= 700\r\n      set guitablabel=%{GuiTabLabel()}\r\nendif",
+        "vimbits_title": [
+            "Use file basename for the Tab label\n"
+        ]
+    },
+    {
+        "vimbits_id": 89,
+        "vimbits_tag": [
+            "toggle",
+            "options"
+        ],
+        "vimbits_tips": "Vim lets you toggle any option with\r\n:set inv{option}\r\n\r\nUse this mapping to toggle line numbers, for example\r\nnmap &lt;leader&gt;l :set invnu&lt;CR&gt;\r\n\r\n:help options",
+        "vimbits_title": [
+            "Toggle Any Vim Option\n"
+        ]
+    },
+    {
+        "vimbits_id": 90,
+        "vimbits_tag": [
+            "remapping",
+            "leader"
+        ],
+        "vimbits_tips": "let mapleader = &quot;,&quot;",
+        "vimbits_title": [
+            "Remap leader to comma\n"
+        ]
+    },
+    {
+        "vimbits_id": 91,
+        "vimbits_tag": [
+            "escape"
+        ],
+        "vimbits_tips": "imap ii &lt;Esc&gt;",
+        "vimbits_title": [
+            "Map ii to Esc\n"
+        ]
+    },
+    {
+        "vimbits_id": 93,
+        "vimbits_tag": [],
+        "vimbits_tips": "au BufRead,BufNewFile *.sls set filetype=yaml",
+        "vimbits_title": [
+            "Force files ending in one extension to be treated as if they ended with another extension\n"
+        ]
+    },
+    {
+        "vimbits_id": 94,
+        "vimbits_tag": [],
+        "vimbits_tips": ":highlight TrailWhitespace ctermbg=red guibg=red\r\n:match TrailWhitespace /\\s\\+$\\| \\+\\ze\\t/",
+        "vimbits_title": [
+            "Hilight trailing whitespace\n"
+        ]
+    },
+    {
+        "vimbits_id": 95,
+        "vimbits_tag": [],
+        "vimbits_tips": "set statusline=%F%m%r%h%w\\ [FORMAT=%{&amp;ff}]\\ [TYPE=%Y]\\ [ASCII=\\%03.3b]\\ [HEX=\\%02.2B]\\ [POS=%04l,%04v][%p%%]\\ [LEN=%L]",
+        "vimbits_title": [
+            "Set useful status line\n"
+        ]
+    },
+    {
+        "vimbits_id": 96,
+        "vimbits_tag": [],
+        "vimbits_tips": "au BufReadPost * if line(&quot;'\\&quot;&quot;) &gt; 0|if line(&quot;'\\&quot;&quot;) &lt;= line(&quot;$&quot;)|exe(&quot;norm '\\&quot;&quot;)|else|exe &quot;norm $&quot;|endif|endif",
+        "vimbits_title": [
+            "Remember where you were the last time you edited the file\n"
+        ]
+    },
+    {
+        "vimbits_id": 97,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;F10&gt; :call &lt;SID&gt;SynStack()&lt;CR&gt;\r\nfunction! &lt;SID&gt;SynStack()\r\n  if !exists(&quot;*synstack&quot;)\r\n    return\r\n  endif\r\n  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, &quot;name&quot;)')\r\nendfunc",
+        "vimbits_title": [
+            "Show syntax highlighting groups for word under cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 98,
+        "vimbits_tag": [
+            "movement",
+            "wrap"
+        ],
+        "vimbits_tips": "vmap &lt;C-j&gt; gj\r\nvmap &lt;C-k&gt; gk\r\nvmap &lt;C-4&gt; g$\r\nvmap &lt;C-6&gt; g^\r\nvmap &lt;C-0&gt; g^\r\nnmap &lt;C-j&gt; gj\r\nnmap &lt;C-k&gt; gk\r\nnmap &lt;C-4&gt; g$\r\nnmap &lt;C-6&gt; g^\r\nnmap &lt;C-0&gt; g^",
+        "vimbits_title": [
+            "Moving around through wrapped lines\n"
+        ]
+    },
+    {
+        "vimbits_id": 99,
+        "vimbits_tag": [
+            "visual"
+        ],
+        "vimbits_tips": "imap &lt;C-S-Right&gt; &lt;C-O&gt;w\r\nvmap &lt;C-S-Right&gt; w\r\nnmap &lt;C-S-Right&gt; vw\r\n\r\nimap &lt;C-S-Left&gt; &lt;C-O&gt;b\r\nvmap &lt;C-S-Left&gt; b\r\nnmap &lt;C-S-Left&gt; vb",
+        "vimbits_title": [
+            "Visually Select by Words like windoze\n"
+        ]
+    },
+    {
+        "vimbits_id": 100,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;bwa :1,9000bwipeout&lt;cr&gt;",
+        "vimbits_title": [
+            "Wipe out all buffers\n"
+        ]
+    },
+    {
+        "vimbits_id": 101,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;ls :ls&lt;CR&gt;",
+        "vimbits_title": [
+            "quick ls\n"
+        ]
+    },
+    {
+        "vimbits_id": 102,
+        "vimbits_tag": [
+            "edit"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; gw :s/\\(\\%#\\w\\+\\)\\(\\_W\\+\\)\\(\\w\\+\\)/\\3\\2\\1/&lt;CR&gt;`'",
+        "vimbits_title": [
+            "Swap two words\n"
+        ]
+    },
+    {
+        "vimbits_id": 103,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;sw :execute &quot;:resize &quot; . line('$')&lt;cr&gt;",
+        "vimbits_title": [
+            "Shrink the current window to fit the number of lines in the buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 104,
+        "vimbits_tag": [
+            "wrap"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;ww :set invwrap&lt;CR&gt;:set wrap?&lt;CR&gt;",
+        "vimbits_title": [
+            "toggle wrapping\n"
+        ]
+    },
+    {
+        "vimbits_id": 105,
+        "vimbits_tag": [
+            "movement"
+        ],
+        "vimbits_tips": "set iskeyword-=\\.\r\nset iskeyword-=\\(\r\nset iskeyword-=\\)",
+        "vimbits_title": [
+            "force period and parens to delineate words\n"
+        ]
+    },
+    {
+        "vimbits_id": 106,
+        "vimbits_tag": [
+            "digraphs"
+        ],
+        "vimbits_tips": "imap &lt;c-l&gt;&lt;c-a&gt; &lt;c-k&gt;a* &quot; Alpha\r\nimap &lt;c-l&gt;&lt;c-b&gt; &lt;c-k&gt;b* &quot; Beta\r\nimap &lt;c-l&gt;&lt;c-g&gt; &lt;c-k&gt;g* &quot; Gamma\r\nimap &lt;c-l&gt;&lt;c-d&gt; &lt;c-k&gt;d* &quot; Delta\r\nimap &lt;c-l&gt;&lt;c-e&gt; &lt;c-k&gt;e* &quot; Epslion\r\nimap &lt;c-l&gt;&lt;c-l&gt; &lt;c-k&gt;l* &quot; Lambda\r\nimap &lt;c-l&gt;&lt;c-y&gt; &lt;c-k&gt;y* &quot; Eta\r\nimap &lt;c-l&gt;&lt;c-h&gt; &lt;c-k&gt;h* &quot; Theta\r\nimap &lt;c-l&gt;&lt;c-m&gt; &lt;c-k&gt;m* &quot; Mu\r\nimap &lt;c-l&gt;&lt;c-r&gt; &lt;c-k&gt;r* &quot; Rho\r\nimap &lt;c-l&gt;&lt;c-p&gt; &lt;c-k&gt;p* &quot; Pi\r\nimap &lt;c-l&gt;&lt;c-f&gt; &lt;c-k&gt;f* &quot; Phi",
+        "vimbits_title": [
+            "greek digraphs\n"
+        ]
+    },
+    {
+        "vimbits_id": 107,
+        "vimbits_tag": [],
+        "vimbits_tips": "iab teh       the\r\niab Teh       The",
+        "vimbits_title": [
+            "Fix common spelling mistakes\n"
+        ]
+    },
+    {
+        "vimbits_id": 109,
+        "vimbits_tag": [
+            "merge"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;cf &lt;ESC&gt;/\\v^[&lt;=&gt;]{7}( .*\\|$)&lt;CR&gt;",
+        "vimbits_title": [
+            "find merge conflict markers\n"
+        ]
+    },
+    {
+        "vimbits_id": 110,
+        "vimbits_tag": [
+            "buffer",
+            "fugative"
+        ],
+        "vimbits_tips": "au BufReadPost fugitive://* set bufhidden=delete",
+        "vimbits_title": [
+            "Auto-clean fugitive buffers\n"
+        ]
+    },
+    {
+        "vimbits_id": 111,
+        "vimbits_tag": [
+            "guid"
+        ],
+        "vimbits_tips": "imap &lt;C-J&gt;d &lt;C-r&gt;=substitute(system(&quot;uuidgen&quot;), '.$', '', 'g')&lt;CR&gt;",
+        "vimbits_title": [
+            "Add a GUID to the current line \n"
+        ]
+    },
+    {
+        "vimbits_id": 112,
+        "vimbits_tag": [
+            "search",
+            "vimgrep"
+        ],
+        "vimbits_tips": "&quot; Search the current file for what's currently in the search register and display matches\r\nnmap &lt;silent&gt; &lt;leader&gt;gs :vimgrep /&lt;C-r&gt;// %&lt;CR&gt;:ccl&lt;CR&gt;:cwin&lt;CR&gt;&lt;C-W&gt;J:nohls&lt;CR&gt;\r\n\r\n&quot; Search the current file for the word under the cursor and display matches\r\nnmap &lt;silent&gt; &lt;leader&gt;gw :vimgrep /&lt;C-r&gt;&lt;C-w&gt;/ %&lt;CR&gt;:ccl&lt;CR&gt;:cwin&lt;CR&gt;&lt;C-W&gt;J:nohls&lt;CR&gt;\r\n\r\n&quot; Search the current file for the WORD under the cursor and display matches\r\nnmap &lt;silent&gt; &lt;leader&gt;gW :vimgrep /&lt;C-r&gt;&lt;C-a&gt;/ %&lt;CR&gt;:ccl&lt;CR&gt;:cwin&lt;CR&gt;&lt;C-W&gt;J:nohls&lt;CR&gt;",
+        "vimbits_title": [
+            "vimgrep shortcuts for current file\n"
+        ]
+    },
+    {
+        "vimbits_id": 113,
+        "vimbits_tag": [
+            "copying",
+            "yank"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;F2&gt; :%y*&lt;CR&gt;",
+        "vimbits_title": [
+            "Yank entire file into system register\n"
+        ]
+    },
+    {
+        "vimbits_id": 114,
+        "vimbits_tag": [
+            "paste"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;S-F2&gt; :normal ggdG&quot;*PGgg&lt;CR&gt;",
+        "vimbits_title": [
+            "Replace entire buffer with system register contents\n"
+        ]
+    },
+    {
+        "vimbits_id": 115,
+        "vimbits_tag": [
+            "normal",
+            "space"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;CR&gt; :put=''&lt;CR&gt;",
+        "vimbits_title": [
+            "Quick insertion of newline in normal mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 116,
+        "vimbits_tag": [
+            "remapping",
+            "escape",
+            "shortcut"
+        ],
+        "vimbits_tips": "inoremap jj &lt;Esc&gt; &quot; Esc is so far away without this mapping...",
+        "vimbits_title": [
+            "A more handy Esc\n"
+        ]
+    },
+    {
+        "vimbits_id": 117,
+        "vimbits_tag": [
+            "movement"
+        ],
+        "vimbits_tips": "&quot; Scroll the viewpoint faster\r\nnnoremap &lt;C-e&gt; 3&lt;C-e&gt; \r\nnnoremap &lt;C-y&gt; 3&lt;C-y&gt;",
+        "vimbits_title": [
+            "Scroll the viewpoint faster\n"
+        ]
+    },
+    {
+        "vimbits_id": 119,
+        "vimbits_tag": [
+            "window"
+        ],
+        "vimbits_tips": "set statusline=%F%m%r%h%w\\ [type=%Y]\\ [%p%%]\\ [len=%L]\r\nset laststatus=2 &quot; Always show the statusline on the 2nd last row",
+        "vimbits_title": [
+            "An informative status line\n"
+        ]
+    },
+    {
+        "vimbits_id": 121,
+        "vimbits_tag": [
+            "indent",
+            "tabbing"
+        ],
+        "vimbits_tips": "&quot; soft tabbing at 2, 4 and 8 spaces of width &quot;\r\nnnoremap &lt;leader&gt;2 &lt;esc&gt;:set expandtab tabstop=2 softtabstop=2 shiftwidth=2&lt;cr&gt;\r\nnnoremap &lt;leader&gt;4 &lt;esc&gt;:set expandtab tabstop=4 softtabstop=4 shiftwidth=4&lt;cr&gt;\r\nnnoremap &lt;leader&gt;8 &lt;esc&gt;:set expandtab tabstop=8 softtabstop=8 shiftwidth=8&lt;cr&gt;\r\n&quot; hard tabbing at 2, for and 8 spaces of width &quot;\r\nnnoremap &lt;leader&gt;&lt;leader&gt;2 &lt;esc&gt;:set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2&lt;cr&gt;\r\nnnoremap &lt;leader&gt;&lt;leader&gt;4 &lt;esc&gt;:set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4&lt;cr&gt;\r\nnnoremap &lt;leader&gt;&lt;leader&gt;8 &lt;esc&gt;:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8&lt;cr&gt;",
+        "vimbits_title": [
+            "adjust indentation width on the fly\n"
+        ]
+    },
+    {
+        "vimbits_id": 122,
+        "vimbits_tag": [
+            "C",
+            "header",
+            "ifndef",
+            "include",
+            "guard",
+            "preprocessor"
+        ],
+        "vimbits_tips": "function! s:headertemplate(name)\r\n    let guard=toupper(substitute(substitute(a:name, '[^[:alnum:]]', '_', 'g'), '^[^[:alpha:]_]', '_&amp;', ''))\r\n    return &quot;#ifndef &quot; . guard . &quot;\\n#define &quot; . guard . &quot;\\n\\n\\n\\n#endif /* &quot; . guard . &quot; */&quot;\r\nendfunction\r\nautocmd BufNewFile *.h s@^$@\\=s:headertemplate(expand('&lt;afile&gt;:t'))@ | 4",
+        "vimbits_title": [
+            "Automatically add multiple-inclusion guards to new C headers\n"
+        ]
+    },
+    {
+        "vimbits_id": 123,
+        "vimbits_tag": [
+            "remapping",
+            "jump",
+            "marks",
+            "swap"
+        ],
+        "vimbits_tips": "&quot; swap ` with ' because the ' key is closer and jumping to the character is more useful\r\nnnoremap ' `\r\nnnoremap ` '",
+        "vimbits_title": [
+            "Swap &quot;jump to mark&quot; keys for convenience\n"
+        ]
+    },
+    {
+        "vimbits_id": 126,
+        "vimbits_tag": [
+            "folds"
+        ],
+        "vimbits_tips": "&quot; Folding\r\nnnoremap &lt;leader&gt;z &lt;esc&gt;:set foldlevel=10000&lt;cr&gt;\r\nnnoremap &lt;leader&gt;Z &lt;esc&gt;:set foldlevel=-10000&lt;cr&gt;",
+        "vimbits_title": [
+            "Easily expand/collapse all folds\n"
+        ]
+    },
+    {
+        "vimbits_id": 129,
+        "vimbits_tag": [
+            "autocommand"
+        ],
+        "vimbits_tips": "&quot; absolute line numbers in insert mode, relative otherwise for easy movement\r\nau InsertEnter * :set nu\r\nau InsertLeave * :set rnu",
+        "vimbits_title": [
+            "mode switches between absolute and relative line numbers\n"
+        ]
+    },
+    {
+        "vimbits_id": 131,
+        "vimbits_tag": [
+            "indent",
+            "filetype",
+            "setlocal"
+        ],
+        "vimbits_tips": "set tabstop=2\r\nset shiftwidth=2\r\nset softtabstop=2\r\n\r\nif has(&quot;autocmd&quot;)\r\n  autocmd FileType python,xml,html,htmldjango setlocal tabstop=4\r\n  autocmd FileType python,xml,html,htmldjango setlocal shiftwidth=4\r\n  autocmd FileType python,xml,html,htmldjango setlocal softtabstop=4\r\nendif",
+        "vimbits_title": [
+            "Set custom settings per filetype\n"
+        ]
+    },
+    {
+        "vimbits_id": 132,
+        "vimbits_tag": [
+            "FocusLost",
+            "save"
+        ],
+        "vimbits_tips": "au FocusLost * :wa",
+        "vimbits_title": [
+            "Save file on focus lost\n"
+        ]
+    },
+    {
+        "vimbits_id": 133,
+        "vimbits_tag": [
+            "clear",
+            "whitespace"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;C-k&gt; :let _s=@/&lt;Bar&gt;:%s/\\s\\+$//e&lt;Bar&gt;:let @/=_s&lt;Bar&gt;:nohl&lt;CR&gt;",
+        "vimbits_title": [
+            "Clear trailing white space\n"
+        ]
+    },
+    {
+        "vimbits_id": 134,
+        "vimbits_tag": [
+            "buffer",
+            "arrow"
+        ],
+        "vimbits_tips": ":noremap &lt;left&gt; :bp&lt;CR&gt;\r\n:noremap &lt;right&gt; :bn&lt;CR&gt;",
+        "vimbits_title": [
+            "Use arrow key to change buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 135,
+        "vimbits_tag": [
+            "splits",
+            "file",
+            "window"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;f :vertical wincmd f&lt;CR&gt;",
+        "vimbits_title": [
+            "Open file under cursor in vertical split window\n"
+        ]
+    },
+    {
+        "vimbits_id": 136,
+        "vimbits_tag": [
+            "autocommand",
+            "filetype",
+            "rspec"
+        ],
+        "vimbits_tips": "autocmd Filetype,BufNewFile *_spec.rb nmap &lt;Leader&gt;r :!bundle exec rspec %&lt;CR&gt;\r\nautocmd Filetype,BufNewFile *_spec.rb nmap &lt;Leader&gt;R :exe &quot;!bundle exec rspec %\\:&quot; . line(&quot;.&quot;)&lt;cr&gt;",
+        "vimbits_title": [
+            "Run Rspec example under cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 137,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; Go to home and end using capitalized directions\r\nnoremap H ^\r\nnoremap L $",
+        "vimbits_title": [
+            "Home &amp; End with capitalized directions\n"
+        ]
+    },
+    {
+        "vimbits_id": 138,
+        "vimbits_tag": [],
+        "vimbits_tips": "command! Ptoggle call PareditToggle()",
+        "vimbits_title": [
+            "Toggle paredit\n"
+        ]
+    },
+    {
+        "vimbits_id": 139,
+        "vimbits_tag": [
+            "movement",
+            "lines",
+            "vertically"
+        ],
+        "vimbits_tips": "noremap &lt;A-j&gt; :m+&lt;CR&gt;\r\nnoremap &lt;A-k&gt; :m-2&lt;CR&gt;\r\ninoremap &lt;A-j&gt; &lt;Esc&gt;:m+&lt;CR&gt;\r\ninoremap &lt;A-k&gt; &lt;Esc&gt;:m-2&lt;CR&gt;\r\nvnoremap &lt;A-j&gt; :m'&gt;+&lt;CR&gt;gv\r\nvnoremap &lt;A-k&gt; :m-2&lt;CR&gt;gv",
+        "vimbits_title": [
+            "Drag Current Line/s Vertically\n"
+        ]
+    },
+    {
+        "vimbits_id": 140,
+        "vimbits_tag": [
+            "replace",
+            "search",
+            "cursor"
+        ],
+        "vimbits_tips": "&quot; Search and replace word under cursor (,;)\r\n:nnoremap &lt;leader&gt;; :%s/\\&lt;&lt;C-r&gt;&lt;C-w&gt;\\&gt;//&lt;Left&gt;",
+        "vimbits_title": [
+            "Search and replace word under cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 144,
+        "vimbits_tag": [
+            "scrolling"
+        ],
+        "vimbits_tips": "&quot; ****************** SCROLLING *********************  \r\n\r\nset scrolloff=8         &quot; Number of lines from vertical edge to start scrolling\r\nset sidescrolloff=15 &quot; Number of cols from horizontal edge to start scrolling\r\nset sidescroll=1       &quot; Number of cols to scroll at a time",
+        "vimbits_title": [
+            "Scroll before reaching the edge\n"
+        ]
+    },
+    {
+        "vimbits_id": 145,
+        "vimbits_tag": [
+            "syntax",
+            "refresh"
+        ],
+        "vimbits_tips": "&quot; Ctrl-L recolors the screen when it gets confused.\r\nnoremap &lt;c-l&gt; &lt;c-l&gt;:syntax sync fromstart&lt;CR&gt;\r\ninoremap &lt;c-l&gt; &lt;esc&gt;&lt;c-l&gt;:syntax sync fromstart&lt;CR&gt;a",
+        "vimbits_title": [
+            "Refresh syntax highlighting\n"
+        ]
+    },
+    {
+        "vimbits_id": 147,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot;change leader key\r\nlet mapleader=','\r\n&quot;ever notice a slight lag after typing the leader key + command? This lowers the timeout.\r\nset timeoutlen=250",
+        "vimbits_title": [
+            "leader config\n"
+        ]
+    },
+    {
+        "vimbits_id": 148,
+        "vimbits_tag": [
+            "remapping",
+            "splits"
+        ],
+        "vimbits_tips": "nnoremap &lt;c-n&gt; :cnext&lt;CR&gt;\r\nnnoremap &lt;c-p&gt; :cprevious&lt;CR&gt;",
+        "vimbits_title": [
+            "Next/previous in quickfix list\n"
+        ]
+    },
+    {
+        "vimbits_id": 149,
+        "vimbits_tag": [
+            "terminal",
+            "colorscheme",
+            "gvim"
+        ],
+        "vimbits_tips": "set background=dark\r\n&quot; Set base color scheme, will be used by term\r\ncolorscheme elflord\r\n&quot; If Vim enters guimode, set 256 color mode and change the colorscheme\r\nau GUIEnter * set t_Co=256\r\nau GUIEnter * colorscheme zenburn",
+        "vimbits_title": [
+            "Set separate colorscheme for terminal and gui\n"
+        ]
+    },
+    {
+        "vimbits_id": 150,
+        "vimbits_tag": [
+            "whitespace",
+            "autocommand"
+        ],
+        "vimbits_tips": "autocmd BufWrite * if ! &amp;bin | silent! %s/\\s\\+$//ge | endif",
+        "vimbits_title": [
+            "Remove any trailing whitespace that is in the file\n"
+        ]
+    },
+    {
+        "vimbits_id": 152,
+        "vimbits_tag": [],
+        "vimbits_tips": "set backupdir=~/.vim-tmp,~/tmp,/var/tmp,$HOME/Local\\ Settings/Temp",
+        "vimbits_title": [
+            "Try different potential backup directories\n"
+        ]
+    },
+    {
+        "vimbits_id": 153,
+        "vimbits_tag": [
+            "search",
+            "ack",
+            "operator"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; \\a :set opfunc=&lt;SID&gt;AckMotion&lt;CR&gt;g@\r\nxnoremap &lt;silent&gt; \\a :&lt;C-U&gt;call &lt;SID&gt;AckMotion(visualmode())&lt;CR&gt;\r\n\r\nfunction! s:CopyMotionForType(type)\r\n    if a:type ==# 'v'\r\n        silent execute &quot;normal! `&lt;&quot; . a:type . &quot;`&gt;y&quot;\r\n    elseif a:type ==# 'char'\r\n        silent execute &quot;normal! `[v`]y&quot;\r\n    endif\r\nendfunction\r\n\r\nfunction! s:AckMotion(type) abort\r\n    let reg_save = @@\r\n\r\n    call s:CopyMotionForType(a:type)\r\n\r\n    execute &quot;normal! :Ack! --literal &quot; . shellescape(@@) . &quot;\\&lt;cr&gt;&quot;\r\n\r\n    let @@ = reg_save\r\nendfunction",
+        "vimbits_title": [
+            "Ack Motions\n"
+        ]
+    },
+    {
+        "vimbits_id": 155,
+        "vimbits_tag": [
+            "visual",
+            "mercurial",
+            "annotate"
+        ],
+        "vimbits_tips": "vmap ,ga :&lt;C-U&gt;!hg annotate -udqc % \\| sed -n &lt;C-R&gt;=line(&quot;'&lt;&quot;) &lt;CR&gt;,&lt;C-R&gt;=line(&quot;'&gt;&quot;) &lt;CR&gt;p &lt;CR&gt;",
+        "vimbits_title": [
+            "Annotate mercurial changes of visual lines \n"
+        ]
+    },
+    {
+        "vimbits_id": 157,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;leader&gt;vl :rightbelow vert sbn&lt;CR&gt;",
+        "vimbits_title": [
+            "Next buffer in new vertical split\n"
+        ]
+    },
+    {
+        "vimbits_id": 158,
+        "vimbits_tag": [
+            "shell",
+            "ls",
+            "backups"
+        ],
+        "vimbits_tips": "map &lt;leader&gt;b :!ls -l %*&lt;CR&gt;",
+        "vimbits_title": [
+            "List backups of current file in the current directory\n"
+        ]
+    },
+    {
+        "vimbits_id": 159,
+        "vimbits_tag": [
+            "navigation"
+        ],
+        "vimbits_tips": "noremap &lt;Up&gt; &lt;nop&gt;\r\nnoremap &lt;Down&gt; &lt;nop&gt;\r\nnoremap &lt;Left&gt; &lt;nop&gt;\r\nnoremap &lt;Right&gt; &lt;nop&gt;",
+        "vimbits_title": [
+            "turn off normal arrow keys for navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 162,
+        "vimbits_tag": [
+            "visual"
+        ],
+        "vimbits_tips": "&quot; override v in visual mode to cycle modes\r\nvmap v :call CycleVisualMode()&lt;CR&gt;\r\nlet s:CycleVisualMode_running=0\r\nfunction! CycleVisualMode() range\r\n    let m = visualmode()\r\n    if m ==# 'v'\r\n        normal gvV\r\n    elseif m ==# 'V'\r\n        execute &quot;normal gv\\&lt;C-v&gt;&quot;\r\n    elseif m != ''\r\n        vunmap v\r\n        normal gvv\r\n        vmap v :call CycleVisualMode()&lt;CR&gt;\r\n    endif\r\nendfunction",
+        "vimbits_title": [
+            "Make v cycle through visual modes\n"
+        ]
+    },
+    {
+        "vimbits_id": 163,
+        "vimbits_tag": [
+            "indent",
+            "textmate",
+            "outdent"
+        ],
+        "vimbits_tips": "&quot;bind command-] to indent\r\nnmap &lt;D-]&gt; &gt;&gt;\r\nvmap &lt;D-]&gt; &gt;gv\r\nimap &lt;D-]&gt; &lt;C-O&gt;&gt;&gt;\r\n\r\n&quot;bind command-[ to outdent\r\nnmap &lt;D-[&gt; &lt;&lt;\r\nvmap &lt;D-[&gt; &lt;gv\r\nimap &lt;D-[&gt; &lt;C-O&gt;&lt;&lt;",
+        "vimbits_title": [
+            "Indent/Outdent like Textmate\n"
+        ]
+    },
+    {
+        "vimbits_id": 164,
+        "vimbits_tag": [
+            "textmate",
+            "comment"
+        ],
+        "vimbits_tips": "nmap &lt;D-/&gt; &lt;leader&gt;ci &lt;CR&gt;\r\nvmap &lt;D-/&gt; &lt;leader&gt;ci &lt;CR&gt;\r\nimap &lt;D-/&gt; &lt;C-O&gt;&lt;leader&gt;ci",
+        "vimbits_title": [
+            "Comment like Textmate\n"
+        ]
+    },
+    {
+        "vimbits_id": 166,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; from https://github.com/eiro/rcfiles\r\n&quot; (consider set hidden)\r\nnoremap &lt;down&gt; :blast!&lt;cr&gt;\r\nnoremap &lt;right&gt; :bnext!&lt;cr&gt;\r\nnoremap &lt;left&gt; :bprevious!&lt;cr&gt;\r\nnoremap &lt;up&gt; :ls&lt;cr&gt;:buffer",
+        "vimbits_title": [
+            "buffer navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 168,
+        "vimbits_tag": [],
+        "vimbits_tips": "autocmd BufEnter * setlocal cursorline                                          \r\nautocmd BufWinLeave * setlocal nocursorline",
+        "vimbits_title": [
+            "Hilight active line \n"
+        ]
+    },
+    {
+        "vimbits_id": 170,
+        "vimbits_tag": [
+            "paste"
+        ],
+        "vimbits_tips": "au InsertLeave * set nopaste",
+        "vimbits_title": [
+            "Disable paste mode when leaving Insert Mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 171,
+        "vimbits_tag": [
+            "coffeescript"
+        ],
+        "vimbits_tips": "&quot; :C&lt;line number&gt;                                                               \r\n&quot; Compile CoffeeScript buffer and open it in scratch buffer on given line       \r\n&quot; number                                                                        \r\ncommand -nargs=1 C CoffeeCompile | :&lt;args&gt;",
+        "vimbits_title": [
+            "From CoffeeScript to compiled JavaScript line\n"
+        ]
+    },
+    {
+        "vimbits_id": 172,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;esc&gt; :noh&lt;cr&gt;&lt;esc&gt;",
+        "vimbits_title": [
+            "Clear search highlighting with ESC\n"
+        ]
+    },
+    {
+        "vimbits_id": 173,
+        "vimbits_tag": [
+            "git",
+            "diff"
+        ],
+        "vimbits_tips": "autocmd FileType gitcommit DiffGitCached | wincmd p",
+        "vimbits_title": [
+            "Show Git diff in window split when commiting\n"
+        ]
+    },
+    {
+        "vimbits_id": 174,
+        "vimbits_tag": [],
+        "vimbits_tips": "vnoremap &lt;C-X&gt; &lt;Esc&gt;`.``gvP``P",
+        "vimbits_title": [
+            "Swap areas of text\n"
+        ]
+    },
+    {
+        "vimbits_id": 175,
+        "vimbits_tag": [
+            "template",
+            "autocorrect",
+            "abbreviation",
+            "live",
+            "typo",
+            "correct"
+        ],
+        "vimbits_tips": "&quot; Usual Typos\r\nabbr teh the\r\nabbr hign hing\r\nabbr nign ning\r\nabbr lenght length\r\nabbr heigth height\r\nabbr widht width\r\n\r\n&quot; General text\r\nabbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate orci vitae justo sodales sollicitudin ornare augue ultricies. Proin volutpat, erat gravida congue scelerisque, dui leo malesuada ipsum, sit amet euismod turpis orci ut nunc. Mauris quam turpis, consectetur quis pulvinar vel, imperdiet posuere enim. Quisque nibh diam, eleifend quis mattis id, mollis tempus ipsum.\r\n\r\n&quot; Java\r\nabbr psvm public static void main(String[] args){&lt;CR&gt;}&lt;esc&gt;O\r\nabbr sout System.out.println(&quot;&quot;);&lt;esc&gt;2hi\r\nabbr psfs public static final String",
+        "vimbits_title": [
+            "Useful Abbreviations\n"
+        ]
+    },
+    {
+        "vimbits_id": 176,
+        "vimbits_tag": [
+            "shortcut"
+        ],
+        "vimbits_tips": "nmap t o&lt;ESC&gt;k\r\nnmap T O&lt;ESC&gt;j",
+        "vimbits_title": [
+            "Insert blank lines without going into insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 177,
+        "vimbits_tag": [
+            "LaTeX"
+        ],
+        "vimbits_tips": "nmap &lt;silent&gt; &lt;leader&gt;lwc :w&lt;CR&gt; :!detex % \\| wc -w&lt;CR&gt;",
+        "vimbits_title": [
+            "Count words for LaTeX documents\n"
+        ]
+    },
+    {
+        "vimbits_id": 178,
+        "vimbits_tag": [
+            "mac"
+        ],
+        "vimbits_tips": "# Can't remap all menus in vimrc (MacVim menu), and other issues.\r\n# http://superuser.com/questions/249448/macvim-re-map-command-key-combinations-like-d-f",
+        "vimbits_title": [
+            "Avoid Cmd-Tab/Q Perils\n"
+        ]
+    },
+    {
+        "vimbits_id": 179,
+        "vimbits_tag": [
+            "normal",
+            "file",
+            "save"
+        ],
+        "vimbits_tips": "noremap &lt;C-S&gt; :w&lt;CR&gt;\r\nnoremap &lt;C-S&gt; &lt;ESC&gt;:w&lt;CR&gt;&lt;Insert&gt;",
+        "vimbits_title": [
+            "Shortcut save file\n"
+        ]
+    },
+    {
+        "vimbits_id": 180,
+        "vimbits_tag": [],
+        "vimbits_tips": "inoremap jk &lt;Esc&gt;\r\ninoremap kj &lt;Esc&gt;",
+        "vimbits_title": [
+            "The Smash Escape\n"
+        ]
+    },
+    {
+        "vimbits_id": 181,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;leader&gt;&lt;leader&gt; :b#&lt;cr&gt;",
+        "vimbits_title": [
+            "Switch back to last file in buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 182,
+        "vimbits_tag": [
+            "movement",
+            "jump"
+        ],
+        "vimbits_tips": "nnoremap gm :call cursor(0, len(getline('.'))/2)&lt;cr&gt;",
+        "vimbits_title": [
+            "go to middle of line\n"
+        ]
+    },
+    {
+        "vimbits_id": 183,
+        "vimbits_tag": [
+            "remapping",
+            "buffer"
+        ],
+        "vimbits_tips": "noremap &lt;silent&gt; &lt;F3&gt; :bd!&lt;CR&gt;\r\nvnoremap &lt;silent&gt; &lt;F3&gt; &lt;C-C&gt;:bd!&lt;CR&gt;\r\ninoremap &lt;silent&gt; &lt;F3&gt; &lt;C-O&gt;:bd!&lt;CR&gt;",
+        "vimbits_title": [
+            "Close a buffer quickly\n"
+        ]
+    },
+    {
+        "vimbits_id": 185,
+        "vimbits_tag": [
+            "visual",
+            "completion"
+        ],
+        "vimbits_tips": "&quot;autoclose preview window\r\nif has(&quot;autocmd&quot;)\r\n    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif\r\n    autocmd InsertLeave * if pumvisible() == 0|pclose|endif\r\nendif",
+        "vimbits_title": [
+            "autoclose completion window\n"
+        ]
+    },
+    {
+        "vimbits_id": 186,
+        "vimbits_tag": [
+            "remove",
+            "trailing",
+            "whitespace",
+            "ruby"
+        ],
+        "vimbits_tips": "autocmd BufWritePre {*.rb,*.js,*.coffee,*.scss,*.haml} :%s/\\s\\+$//e",
+        "vimbits_title": [
+            "Avoiding trailing white-space in Ruby files\n"
+        ]
+    },
+    {
+        "vimbits_id": 189,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;silent&gt; gZZ :set t_te= t_ti= &lt;cr&gt;:quit&lt;cr&gt;:set t_te&amp; t_ti&amp;&lt;cr&gt;",
+        "vimbits_title": [
+            "Exit with keeping screen\n"
+        ]
+    },
+    {
+        "vimbits_id": 190,
+        "vimbits_tag": [
+            "copying",
+            "leader"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;y\tGY``kp\r\nmap &lt;Leader&gt;d\tGdd``kp",
+        "vimbits_title": [
+            "Move/copy lines to the cursor postition \n"
+        ]
+    },
+    {
+        "vimbits_id": 191,
+        "vimbits_tag": [
+            "indent",
+            "paste"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;p p                                                               \r\nnnoremap &lt;leader&gt;P P                                                               \r\nnnoremap p p'[v']=                                                                 \r\nnnoremap P P'[v']=",
+        "vimbits_title": [
+            "Auto indent after pasting\n"
+        ]
+    },
+    {
+        "vimbits_id": 192,
+        "vimbits_tag": [
+            "relativenumber",
+            "rnu",
+            "number",
+            "relative"
+        ],
+        "vimbits_tips": "if exists(&quot;&amp;relativenumber&quot;)                                                    \r\n    set relativenumber\r\n    silent! autocmd InsertEnter * :set number                                   \r\n    silent! autocmd InsertLeave * :set relativenumber                           \r\n    silent! au FocusLost * :set number                                          \r\n    silent! au FocusGained * :set relativenumber                                \r\nendif",
+        "vimbits_title": [
+            "Toggle Relative Number\n"
+        ]
+    },
+    {
+        "vimbits_id": 193,
+        "vimbits_tag": [
+            "cursor",
+            "restore",
+            "position",
+            "wikia"
+        ],
+        "vimbits_tips": "&quot; Tell vim to remember certain things when we exit\r\n&quot;  '10  :  marks will be remembered for up to 10 previously edited files\r\n&quot;  &quot;100 :  will save up to 100 lines for each register\r\n&quot;  :20  :  up to 20 lines of command-line history will be remembered\r\n&quot;  %    :  saves and restores the buffer list\r\n&quot;  n... :  where to save the viminfo files\r\nset viminfo='10,\\&quot;100,:20,%,n~/.viminfo\r\n\r\nfunction! ResCur()\r\n  if line(&quot;'\\&quot;&quot;) &lt;= line(&quot;$&quot;)\r\n    normal! g`&quot;\r\n    return 1\r\n  endif\r\nendfunction\r\n\r\naugroup resCur\r\n  autocmd!\r\n  autocmd BufWinEnter * call ResCur()\r\naugroup END",
+        "vimbits_title": [
+            "Restore cursor to last position on file open\n"
+        ]
+    },
+    {
+        "vimbits_id": 194,
+        "vimbits_tag": [
+            "trailing",
+            "whitespace"
+        ],
+        "vimbits_tips": "syntax on\r\nhighlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen                    \r\nautocmd Syntax * syn match ExtraWhitespace /\\s\\+$\\| \\+\\ze\\t/",
+        "vimbits_title": [
+            "Highlight Trailing Whitespace\n"
+        ]
+    },
+    {
+        "vimbits_id": 195,
+        "vimbits_tag": [
+            "whitespace",
+            "tab",
+            "carriage",
+            "returns",
+            "newline"
+        ],
+        "vimbits_tips": "set list\r\nset listchars=tab:\u25b8\\ ,eol:\u00ac",
+        "vimbits_title": [
+            "Show Tabs and Carriage Returns\n"
+        ]
+    },
+    {
+        "vimbits_id": 196,
+        "vimbits_tag": [],
+        "vimbits_tips": "vmap &lt;Tab&gt; &gt;gv\r\nvmap &lt;S-Tab&gt; &lt;gv",
+        "vimbits_title": [
+            "Tabbing selected section\n"
+        ]
+    },
+    {
+        "vimbits_id": 198,
+        "vimbits_tag": [],
+        "vimbits_tips": "cnoremap w!! w !sudo tee % &gt;/dev/null",
+        "vimbits_title": [
+            "Write with sudo\n"
+        ]
+    },
+    {
+        "vimbits_id": 199,
+        "vimbits_tag": [
+            "remapping"
+        ],
+        "vimbits_tips": "cnoremap %% &lt;C-R&gt;=expand('%:h').'/'&lt;cr&gt;",
+        "vimbits_title": [
+            "Expand path of current file in command mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 200,
+        "vimbits_tag": [
+            "remapping",
+            "search"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;s :%s//&lt;left&gt;\r\nnnoremap &lt;Leader&gt;S :%s/&lt;c-r&gt;=expand('&lt;cword&gt;')&lt;cr&gt;//c&lt;left&gt;&lt;left&gt;",
+        "vimbits_title": [
+            "Search/search word under cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 202,
+        "vimbits_tag": [
+            "curosr"
+        ],
+        "vimbits_tips": "set scrolloff=999",
+        "vimbits_title": [
+            "Let cursor line always centered\n"
+        ]
+    },
+    {
+        "vimbits_id": 203,
+        "vimbits_tag": [
+            "replace"
+        ],
+        "vimbits_tips": "set cpoptions+=$",
+        "vimbits_title": [
+            "Show where replace area ends\n"
+        ]
+    },
+    {
+        "vimbits_id": 204,
+        "vimbits_tag": [
+            "window",
+            "cursorline"
+        ],
+        "vimbits_tips": "autocmd WinLeave * set nocursorline\r\nautocmd WinEnter * set cursorline",
+        "vimbits_title": [
+            "Only have cursorline in current window\n"
+        ]
+    },
+    {
+        "vimbits_id": 206,
+        "vimbits_tag": [
+            "hotkeys",
+            "plugins"
+        ],
+        "vimbits_tips": "&quot; https://github.com/scrooloose/nerdtree to download\r\n&quot; \\] to toggle the file browser\r\nnoremap &lt;silent&gt;\\] :NERDTreeToggle&lt;cr&gt;",
+        "vimbits_title": [
+            "quick access to the NERDTree file browser\n"
+        ]
+    },
+    {
+        "vimbits_id": 207,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap + &lt;C-a&gt;\r\nnnoremap - &lt;C-x&gt;",
+        "vimbits_title": [
+            "Easier increment/decrement\n"
+        ]
+    },
+    {
+        "vimbits_id": 208,
+        "vimbits_tag": [
+            "format"
+        ],
+        "vimbits_tips": "set formatoptions=tcroql\r\nnnoremap Q gqap",
+        "vimbits_title": [
+            "Reformat/reflow a paragraph of text\n"
+        ]
+    },
+    {
+        "vimbits_id": 209,
+        "vimbits_tag": [
+            "insert",
+            "character",
+            "noesc"
+        ],
+        "vimbits_tips": "nnoremap &lt;C-i&gt; :exec &quot;normal i&quot;.nr2char(getchar()).&quot;\\e&quot;&lt;CR&gt;\r\nnnoremap &lt;C-i&gt;a :exec &quot;normal a&quot;.nr2char(getchar()).&quot;\\e&quot;&lt;CR&gt;",
+        "vimbits_title": [
+            "Insert one character\n"
+        ]
+    },
+    {
+        "vimbits_id": 211,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;C-PageUp&gt; :bp&lt;CR&gt;\r\nnnoremap &lt;silent&gt; &lt;C-PageDown&gt; :bn&lt;CR&gt;",
+        "vimbits_title": [
+            "Switch between buffers\n"
+        ]
+    },
+    {
+        "vimbits_id": 212,
+        "vimbits_tag": [],
+        "vimbits_tips": "map &lt;F5&gt; :redraw! \\| :noh \\| &lt;cr&gt;&lt;c-w&gt;=",
+        "vimbits_title": [
+            "Restore messed up Vim\n"
+        ]
+    },
+    {
+        "vimbits_id": 213,
+        "vimbits_tag": [
+            "splits",
+            "NERDTree"
+        ],
+        "vimbits_tips": "map &lt;silent&gt; &lt;C-s&gt; :NERDTree&lt;CR&gt;&lt;C-w&gt;p:NERDTreeFind&lt;CR&gt;",
+        "vimbits_title": [
+            "Show current file in NERDTree\n"
+        ]
+    },
+    {
+        "vimbits_id": 214,
+        "vimbits_tag": [
+            "perl"
+        ],
+        "vimbits_tips": "nmap &lt;F4&gt; :%!perltidy&lt;CR&gt;",
+        "vimbits_title": [
+            "Format Perl source with Perltidy\n"
+        ]
+    },
+    {
+        "vimbits_id": 215,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;F6&gt; :tabe \r\nnmap &lt;F7&gt; :tabp&lt;CR&gt;\r\nnmap &lt;F8&gt; :tabn&lt;CR&gt;",
+        "vimbits_title": [
+            "Map vim tabs to function keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 216,
+        "vimbits_tag": [
+            "perl"
+        ],
+        "vimbits_tips": "nmap &lt;F5&gt; :!perl %&lt;CR&gt;",
+        "vimbits_title": [
+            "Run Perl script\n"
+        ]
+    },
+    {
+        "vimbits_id": 217,
+        "vimbits_tag": [
+            "buffer",
+            "arrow",
+            "mac"
+        ],
+        "vimbits_tips": "noremap &lt;D-left&gt;  :bp&lt;CR&gt;\r\nnoremap &lt;D-right&gt; :bn&lt;CR&gt;",
+        "vimbits_title": [
+            "Use Command-left/right to change buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 218,
+        "vimbits_tag": [
+            "macvim"
+        ],
+        "vimbits_tips": "set guioptions-=T\r\nset guioptions-=r",
+        "vimbits_title": [
+            "Hide toolbar and scrollbars in MacVim\n"
+        ]
+    },
+    {
+        "vimbits_id": 219,
+        "vimbits_tag": [],
+        "vimbits_tips": "cnoreabbrev W w\r\ncnoreabbrev Q q",
+        "vimbits_title": [
+            "Capital W/Q same as w/q in command mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 220,
+        "vimbits_tag": [
+            "folds"
+        ],
+        "vimbits_tips": "nnoremap &lt;Space&gt; za\r\nvnoremap &lt;Space&gt; za",
+        "vimbits_title": [
+            "Space to toggle folds\n"
+        ]
+    },
+    {
+        "vimbits_id": 221,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;leader&gt;l :call ToggleRelativeAbsoluteNumber()&lt;CR&gt;\r\nfunction! ToggleRelativeAbsoluteNumber()\r\n  if &amp;number\r\n    set relativenumber\r\n  else\r\n    set number\r\n  endif\r\nendfunction",
+        "vimbits_title": [
+            "Toggle between normal and and relative line numbers on &lt;leader&gt;l\n"
+        ]
+    },
+    {
+        "vimbits_id": 222,
+        "vimbits_tag": [
+            "mapping"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;leader&gt;cf :let @* = expand(&quot;%:p&quot;)&lt;CR&gt;",
+        "vimbits_title": [
+            "Copy current file path into system clipboard\n"
+        ]
+    },
+    {
+        "vimbits_id": 223,
+        "vimbits_tag": [],
+        "vimbits_tips": "au VimResized * exe &quot;normal! \\&lt;c-w&gt;=&quot;",
+        "vimbits_title": [
+            "Resize splits when the window is resized\n"
+        ]
+    },
+    {
+        "vimbits_id": 224,
+        "vimbits_tag": [],
+        "vimbits_tips": "au FocusLost * :wa",
+        "vimbits_title": [
+            "Save when losing focus\n"
+        ]
+    },
+    {
+        "vimbits_id": 227,
+        "vimbits_tag": [
+            "file",
+            "tab"
+        ],
+        "vimbits_tips": "map &lt;F9&gt; &lt;Esc&gt;&lt;C-W&gt;gF&lt;CR&gt;:tabm&lt;CR&gt;",
+        "vimbits_title": [
+            "Open file under cursor in new tab\n"
+        ]
+    },
+    {
+        "vimbits_id": 228,
+        "vimbits_tag": [
+            "window"
+        ],
+        "vimbits_tips": "au VimResized * exe &quot;normal! \\&lt;c-w&gt;=&quot;",
+        "vimbits_title": [
+            "Resize splits when the window is resized\n"
+        ]
+    },
+    {
+        "vimbits_id": 229,
+        "vimbits_tag": [
+            "git"
+        ],
+        "vimbits_tips": "autocmd BufRead COMMIT_EDITMSG setlocal spell!",
+        "vimbits_title": [
+            "Spellcheck Git commit messages\n"
+        ]
+    },
+    {
+        "vimbits_id": 230,
+        "vimbits_tag": [
+            "file",
+            "commandt"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;&lt;D-t&gt; :CommandTFlush&lt;CR&gt;",
+        "vimbits_title": [
+            "Refresh Command-T index\n"
+        ]
+    },
+    {
+        "vimbits_id": 231,
+        "vimbits_tag": [
+            "whitespace",
+            "cursor"
+        ],
+        "vimbits_tips": "&quot;From http://vimcasts.org/episodes/tidying-whitespace/\r\n&quot;Preserves/Saves the state, executes a command, and returns to the saved state\r\nfunction! Preserve(command)\r\n  &quot; Preparation: save last search, and cursor position.\r\n  let _s=@/\r\n  let l = line(&quot;.&quot;)\r\n  let c = col(&quot;.&quot;)\r\n  &quot; Do the business:\r\n  execute a:command\r\n  &quot; Clean up: restore previous search history, and cursor position\r\n  let @/=_s\r\n  call cursor(l, c)\r\nendfunction\r\n&quot;strip all trailing white space\r\nnnoremap &lt;silent&gt; &lt;leader&gt;ws  :call Preserve(&quot;%s/\\\\s\\\\+$//e&quot;)&lt;CR&gt;",
+        "vimbits_title": [
+            "Remove Trailing Whitespace and return cursor position\n"
+        ]
+    },
+    {
+        "vimbits_id": 232,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;CR&gt; mpo&lt;ESC&gt;`p",
+        "vimbits_title": [
+            "Insert blank line below cursor in Normal Mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 233,
+        "vimbits_tag": [
+            "options",
+            "undo"
+        ],
+        "vimbits_tips": "if exists(&quot;+undofile&quot;)\r\n    set udf\r\n    set undodir=~/.vimundo\r\nendif",
+        "vimbits_title": [
+            "Enable persistent undo\n"
+        ]
+    },
+    {
+        "vimbits_id": 234,
+        "vimbits_tag": [],
+        "vimbits_tips": "Map Caps Lock to Ctrl in your OS. Trust me.",
+        "vimbits_title": [
+            "Map Caps-Lock to Ctrl\n"
+        ]
+    },
+    {
+        "vimbits_id": 236,
+        "vimbits_tag": [
+            "window",
+            "title"
+        ],
+        "vimbits_tips": "let &amp;titlestring=&amp;statusline\r\nset titlestring+=\\ {%{v:servername}}",
+        "vimbits_title": [
+            "Reuse status as window title\n"
+        ]
+    },
+    {
+        "vimbits_id": 237,
+        "vimbits_tag": [
+            "earlier",
+            "later",
+            "time",
+            "state"
+        ],
+        "vimbits_tips": "&quot;change file state to 15 minutes earlier&quot;\r\n:earlier 15m\r\n\r\n&quot;to jump to latest state&quot;\r\n:later",
+        "vimbits_title": [
+            "Revert file to previous state by time\n"
+        ]
+    },
+    {
+        "vimbits_id": 238,
+        "vimbits_tag": [
+            "whitespace",
+            "newline"
+        ],
+        "vimbits_tips": "noremap &lt;S-ENTER&gt; O&lt;ESC&gt;j\r\nnoremap &lt;ENTER&gt; o&lt;ESC&gt;k",
+        "vimbits_title": [
+            "Insert Newlines Without Moving the Cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 239,
+        "vimbits_tag": [
+            "buffer",
+            "autocommand",
+            "center"
+        ],
+        "vimbits_tips": "&quot; center buffer around cursor when opening files\r\nautocmd BufRead * normal zz",
+        "vimbits_title": [
+            "center buffer when opening files\n"
+        ]
+    },
+    {
+        "vimbits_id": 240,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; This is a test vimbit.\r\n\r\n&quot; It's here so I can test some things with vimbit.",
+        "vimbits_title": [
+            "Test\n"
+        ]
+    },
+    {
+        "vimbits_id": 241,
+        "vimbits_tag": [
+            "indent",
+            "html",
+            "tidy"
+        ],
+        "vimbits_tips": "map &lt;leader&gt;td :%!tidy -q -config ~/.vim/tidy.conf --tidy-mark 0 2&gt;/dev/null&lt;CR&gt;&lt;ESC&gt;gg=G",
+        "vimbits_title": [
+            "Expand Compressed HTML with Tidy\n"
+        ]
+    },
+    {
+        "vimbits_id": 242,
+        "vimbits_tag": [
+            "options",
+            "undo"
+        ],
+        "vimbits_tips": "if exists(&quot;+undofile&quot;)\r\n  &quot; undofile - This allows you to use undos after exiting and restarting\r\n  &quot; This, like swap and backups, uses .vim-undo first, then ~/.vim/undo\r\n  &quot; :help undo-persistence\r\n  &quot; This is only present in 7.3+\r\n  if isdirectory($HOME . '/.vim/undo') == 0\r\n    :silent !mkdir -p ~/.vim/undo &gt; /dev/null 2&gt;&amp;1\r\n  endif\r\n  set undodir=./.vim-undo//\r\n  set undodir+=~/.vim/undo//\r\n  set undofile\r\nendif",
+        "vimbits_title": [
+            "Undo works after restarting vim\n"
+        ]
+    },
+    {
+        "vimbits_id": 245,
+        "vimbits_tag": [
+            "paste",
+            "mac"
+        ],
+        "vimbits_tips": "if version &gt;= 730 &amp;&amp; has(&quot;macunix&quot;)\r\n  &quot; Default yank and paste go to Mac's clipboard\r\n  set clipboard=unnamed\r\nend",
+        "vimbits_title": [
+            "Unify Mac cut-and-paste with vim\n"
+        ]
+    },
+    {
+        "vimbits_id": 247,
+        "vimbits_tag": [
+            "buffer",
+            "jump"
+        ],
+        "vimbits_tips": "nmap &lt;F4&gt; :buffers&lt;CR&gt;buffer&lt;space&gt;",
+        "vimbits_title": [
+            "fast buffer switching\n"
+        ]
+    },
+    {
+        "vimbits_id": 249,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; Open a Quickfix window for the last search\r\nnnoremap &lt;silent&gt; &lt;leader&gt;/ :execute 'vimgrep /'.@/.'/g %'&lt;CR&gt;:copen&lt;CR&gt;",
+        "vimbits_title": [
+            "Open a Quickfix window for the last search\n"
+        ]
+    },
+    {
+        "vimbits_id": 252,
+        "vimbits_tag": [],
+        "vimbits_tips": "set hlsearch",
+        "vimbits_title": [
+            "Highlight all search matches\n"
+        ]
+    },
+    {
+        "vimbits_id": 254,
+        "vimbits_tag": [
+            "beep"
+        ],
+        "vimbits_tips": "set noerrorbells\r\nset novisualbell\r\nautocmd VimEnter * set vb t_vb=",
+        "vimbits_title": [
+            "No beep please\n"
+        ]
+    },
+    {
+        "vimbits_id": 256,
+        "vimbits_tag": [
+            "save",
+            "autocmd"
+        ],
+        "vimbits_tips": "autocmd BufLeave,FocusLost silent! wall",
+        "vimbits_title": [
+            "Save all open buffers when focus lost\n"
+        ]
+    },
+    {
+        "vimbits_id": 257,
+        "vimbits_tag": [
+            "listchars"
+        ],
+        "vimbits_tips": "if has(&quot;gui&quot;)\r\n    set listchars=tab:\u00bb\u00b7\r\n    set list\r\nendif",
+        "vimbits_title": [
+            "List characters\n"
+        ]
+    },
+    {
+        "vimbits_id": 260,
+        "vimbits_tag": [
+            "color",
+            "column"
+        ],
+        "vimbits_tips": "if (v:version &gt;=703)\r\n    set colorcolumn=100\r\n    hi ColorColumn ctermbg=red ctermfg=white guibg=#592929\r\nendif",
+        "vimbits_title": [
+            "Show text limit line\n"
+        ]
+    },
+    {
+        "vimbits_id": 261,
+        "vimbits_tag": [
+            "splits",
+            "window"
+        ],
+        "vimbits_tips": "set splitright splitbelow",
+        "vimbits_title": [
+            "Open new split windows to the right/bottom\n"
+        ]
+    },
+    {
+        "vimbits_id": 262,
+        "vimbits_tag": [],
+        "vimbits_tips": "function! s:JSONize()\r\n    silent %!python -m json.tool\r\n    :exec&quot;:cal SetSyn(\\&quot;javascript\\&quot;)&quot;\r\nendfunction\r\n\r\ncommand! JSONize call s:JSONize() \r\n\r\nmap &lt;C-J&gt; :JSONize&lt;CR&gt;",
+        "vimbits_title": [
+            "JSON Formater \n"
+        ]
+    },
+    {
+        "vimbits_id": 263,
+        "vimbits_tag": [],
+        "vimbits_tips": "map Q @@",
+        "vimbits_title": [
+            "Map Q to repeat the last recorded macro\n"
+        ]
+    },
+    {
+        "vimbits_id": 266,
+        "vimbits_tag": [
+            "normal",
+            "newline",
+            "insert"
+        ],
+        "vimbits_tips": "map &lt;leader&gt;o :set paste&lt;CR&gt;m`o&lt;Esc&gt;``:set nopaste&lt;CR&gt;\r\nmap &lt;leader&gt;O :set paste&lt;CR&gt;m`O&lt;Esc&gt;``:set nopaste&lt;CR&gt;",
+        "vimbits_title": [
+            "Add a line above or below current line without changing position or leaving mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 267,
+        "vimbits_tag": [
+            "search",
+            "remove",
+            "leader"
+        ],
+        "vimbits_tips": "&quot; Remove empty lines\r\nnnoremap &lt;Leader&gt;d :g/^$/d&lt;CR&gt;",
+        "vimbits_title": [
+            "Remove empty lines\n"
+        ]
+    },
+    {
+        "vimbits_id": 268,
+        "vimbits_tag": [
+            "splits",
+            "resize",
+            "vsplit"
+        ],
+        "vimbits_tips": "au VimResized * exe &quot;normal! \\&lt;c-w&gt;=&quot;",
+        "vimbits_title": [
+            "Resize Vsplits on window resize\n"
+        ]
+    },
+    {
+        "vimbits_id": 269,
+        "vimbits_tag": [
+            "paste"
+        ],
+        "vimbits_tips": "&quot; toggle paste outside INSERT mode &quot;\r\nmap &lt;Leader&gt;v :set invpaste&lt;CR&gt;:set paste?&lt;CR&gt; \r\n&quot; toggle paste in INSERT mode &quot;\r\nset pastetoggle=&lt;Leader&gt;v",
+        "vimbits_title": [
+            "pastetoggle always available\n"
+        ]
+    },
+    {
+        "vimbits_id": 272,
+        "vimbits_tag": [],
+        "vimbits_tips": "autocmd BufEnter * lcd %:p:h",
+        "vimbits_title": [
+            "update current working directory\n"
+        ]
+    },
+    {
+        "vimbits_id": 275,
+        "vimbits_tag": [
+            "threecents"
+        ],
+        "vimbits_tips": "cnoremap tc exe &quot;r !curl http://threecents.elevenbasetwo.com/api/emails/&quot; . input(&quot;Email address: &quot;) . &quot;/script 2&gt; /dev/null&quot;&lt;CR&gt;",
+        "vimbits_title": [
+            "Add a threecents feedback form to HTML code\n"
+        ]
+    },
+    {
+        "vimbits_id": 279,
+        "vimbits_tag": [
+            "navigation"
+        ],
+        "vimbits_tips": "map &lt;C-j&gt; :tabp&lt;CR&gt;\r\nmap &lt;C-k&gt; :tabn&lt;CR&gt;",
+        "vimbits_title": [
+            "tabp and tabn with your homerow left and right keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 281,
+        "vimbits_tag": [
+            "navigation"
+        ],
+        "vimbits_tips": "&quot; Jump to start and end of line using the home row keys\r\nmap H ^\r\nmap L $",
+        "vimbits_title": [
+            "Jump to start/end of lines with home row keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 282,
+        "vimbits_tag": [
+            "remapping",
+            "copying",
+            "yank",
+            "whitespace",
+            "mapping"
+        ],
+        "vimbits_tips": "noremap YY ^yg_",
+        "vimbits_title": [
+            "Copy first non-blank to last non-blank character on a line\n"
+        ]
+    },
+    {
+        "vimbits_id": 285,
+        "vimbits_tag": [
+            "space"
+        ],
+        "vimbits_tips": "set linespace=-1 &quot;decrease LineHeight",
+        "vimbits_title": [
+            "More Text per Window\n"
+        ]
+    },
+    {
+        "vimbits_id": 286,
+        "vimbits_tag": [
+            "Consolas",
+            "Font"
+        ],
+        "vimbits_tips": "set guifont=Consolas:h8:cANSI &quot;Windows only",
+        "vimbits_title": [
+            "Best Programming Font\n"
+        ]
+    },
+    {
+        "vimbits_id": 287,
+        "vimbits_tag": [],
+        "vimbits_tips": "fun! CheckPHPSyntax()\r\n    let error = substitute(system(&quot;php -l &quot; . expand(&quot;%&quot;) .  &quot; 2&gt;&amp;1 | sed 's/.*\\ //g' | head -n 1 | grep '^[0-9]\\\\+$'&quot;), &quot;\\n&quot;, &quot;&quot;, &quot;&quot;)\r\n    if error\r\n        hi StatusLine ctermbg=231 ctermfg=196\r\n        exe &quot;normal&quot; error . &quot;gg&quot;\r\n    else\r\n        hi StatusLine ctermbg=253 ctermfg=238\r\n    endif\r\nendfunction\r\nau! BufWritePost *.php call CheckPHPSyntax()",
+        "vimbits_title": [
+            "Check the current PHP file syntax\n"
+        ]
+    },
+    {
+        "vimbits_id": 288,
+        "vimbits_tag": [
+            "remapping",
+            "movement"
+        ],
+        "vimbits_tips": "nmap &lt;Space&gt; &lt;C-f&gt;\r\nnmap &lt;S-Space&gt; &lt;C-b&gt;\r\nnmap &lt;Backspace&gt; &lt;C-b&gt;",
+        "vimbits_title": [
+            "Spacebar for page up/page down\n"
+        ]
+    },
+    {
+        "vimbits_id": 289,
+        "vimbits_tag": [
+            "remapping"
+        ],
+        "vimbits_tips": "nmap , &quot;+\r\nnmap s &lt;C-w&gt;\r\n&quot; other rarely used keys:\r\n&quot; nmap Q ... \r\n&quot; nmap + ... \r\n&quot; nmap _ ... \r\n&quot; nmap - ... \r\n&quot; nmap &lt;CR&gt; ... \r\n&quot; nmap S ...\r\n&quot; nmap K ...\r\n&quot; nmap &amp; ...",
+        "vimbits_title": [
+            "Remap seldom-used keys\n"
+        ]
+    },
+    {
+        "vimbits_id": 290,
+        "vimbits_tag": [
+            "paste"
+        ],
+        "vimbits_tips": "nmap \\o :set paste!&lt;CR&gt;:set paste?&lt;CR&gt;",
+        "vimbits_title": [
+            "Fast paste mode toggle\n"
+        ]
+    },
+    {
+        "vimbits_id": 291,
+        "vimbits_tag": [
+            "indent",
+            "space",
+            "tabs"
+        ],
+        "vimbits_tips": "nmap \\M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4&lt;CR&gt;\r\nnmap \\m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2&lt;CR&gt;\r\nnmap \\t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4&lt;CR&gt;\r\nnmap \\T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle between common tab modes\n"
+        ]
+    },
+    {
+        "vimbits_id": 292,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nmap &lt;C-e&gt; :e#&lt;CR&gt;",
+        "vimbits_title": [
+            "Edit the previous buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 293,
+        "vimbits_tag": [
+            "emacs"
+        ],
+        "vimbits_tips": "cnoremap &lt;C-a&gt;  &lt;Home&gt;\r\ncnoremap &lt;C-b&gt;  &lt;Left&gt;\r\ncnoremap &lt;C-f&gt;  &lt;Right&gt;\r\ncnoremap &lt;C-d&gt;  &lt;Delete&gt;\r\ncnoremap &lt;M-b&gt;  &lt;S-Left&gt;\r\ncnoremap &lt;M-f&gt;  &lt;S-Right&gt;\r\ncnoremap &lt;M-d&gt;  &lt;S-right&gt;&lt;Delete&gt;\r\ncnoremap &lt;Esc&gt;b &lt;S-Left&gt;\r\ncnoremap &lt;Esc&gt;f &lt;S-Right&gt;\r\ncnoremap &lt;Esc&gt;d &lt;S-right&gt;&lt;Delete&gt;\r\ncnoremap &lt;C-g&gt;  &lt;C-c&gt;",
+        "vimbits_title": [
+            "Emacs-like bindings in command line\n"
+        ]
+    },
+    {
+        "vimbits_id": 294,
+        "vimbits_tag": [
+            "grep"
+        ],
+        "vimbits_tips": "nmap &lt;C-k&gt; :!clear; ack -C &quot;\\b&lt;cword&gt;\\b&quot; \\| less -FRX &lt;CR&gt;",
+        "vimbits_title": [
+            "Search for the word under the cursor in the current directory\n"
+        ]
+    },
+    {
+        "vimbits_id": 295,
+        "vimbits_tag": [
+            "movement",
+            "lines"
+        ],
+        "vimbits_tips": "map j gj\r\nmap k gk",
+        "vimbits_title": [
+            "Make j &amp; k linewise\n"
+        ]
+    },
+    {
+        "vimbits_id": 296,
+        "vimbits_tag": [
+            "list",
+            "unicode"
+        ],
+        "vimbits_tips": "set listchars=tab:\u25b6\\ ,trail:\u25c0,extends:\u00bb,precedes:\u00ab",
+        "vimbits_title": [
+            "Unicode list chars\n"
+        ]
+    },
+    {
+        "vimbits_id": 297,
+        "vimbits_tag": [
+            "space",
+            "whitespace"
+        ],
+        "vimbits_tips": "command! CLEAN retab | %s/ \\+$//",
+        "vimbits_title": [
+            "Kill tabs and trailing space\n"
+        ]
+    },
+    {
+        "vimbits_id": 298,
+        "vimbits_tag": [
+            "file",
+            "rename",
+            "filename"
+        ],
+        "vimbits_tips": "&quot; Rename.vim  -  Rename a buffer within Vim and on the disk\r\n&quot; Copyright June 2007 by Christian J. Robinson &lt;infynity@onewest.net&gt;\r\n&quot; Distributed under the terms of the Vim license.  See &quot;:help license&quot;.\r\n&quot; http://www.infynity.spodzone.com/vim/Rename.vim\r\n&quot; Usage: :Rename[!] {newname}\r\ncommand! -nargs=* -complete=file -bang Rename :call Rename(&quot;&lt;args&gt;&quot;, &quot;&lt;bang&gt;&quot;)\r\nfunction! Rename(name, bang)\r\n    let l:curfile = expand(&quot;%:p&quot;)\r\n    let v:errmsg = &quot;&quot;\r\n    silent! exe &quot;saveas&quot; . a:bang . &quot; &quot; . a:name\r\n    if v:errmsg =~# '^$\\|^E329'\r\n        if expand(&quot;%:p&quot;) !=# l:curfile &amp;&amp; filewritable(expand(&quot;%:p&quot;))\r\n            silent exe &quot;bwipe! &quot; . l:curfile\r\n            if delete(l:curfile)\r\n                echoerr &quot;Could not delete &quot; . l:curfile\r\n            endif\r\n        endif\r\n    else\r\n        echoerr v:errmsg\r\n    endif\r\nendfunction",
+        "vimbits_title": [
+            "Rename a buffer within Vim and on the disk\n"
+        ]
+    },
+    {
+        "vimbits_id": 299,
+        "vimbits_tag": [
+            "config"
+        ],
+        "vimbits_tips": "source ~/.vimlocal",
+        "vimbits_title": [
+            "Source a local vim configuration\n"
+        ]
+    },
+    {
+        "vimbits_id": 300,
+        "vimbits_tag": [],
+        "vimbits_tips": "imap &lt;c-tab&gt; &lt;esc&gt;:tabn&lt;cr&gt;\r\nnmap &lt;c-tab&gt; :tabn&lt;cr&gt;\r\n\r\nimap &lt;c-s-tab&gt; &lt;esc&gt;:tabp&lt;cr&gt;\r\nnmap &lt;c-s-tab&gt; :tabp&lt;cr&gt;\r\n\r\nimap &lt;a-1&gt; &lt;esc&gt;:tabn 1&lt;cr&gt;\r\nnmap &lt;a-1&gt; :tabn 1&lt;cr&gt;\r\nimap &lt;a-2&gt; &lt;esc&gt;:tabn 2&lt;cr&gt;\r\nnmap &lt;a-2&gt; :tabn 2&lt;cr&gt;\r\nimap &lt;a-3&gt; &lt;esc&gt;:tabn 3&lt;cr&gt;\r\nnmap &lt;a-3&gt; :tabn 3&lt;cr&gt;\r\nimap &lt;a-4&gt; &lt;esc&gt;:tabn 4&lt;cr&gt;\r\nnmap &lt;a-4&gt; :tabn 4&lt;cr&gt;\r\nimap &lt;a-5&gt; &lt;esc&gt;:tabn 5&lt;cr&gt;\r\nnmap &lt;a-5&gt; :tabn 5&lt;cr&gt;\r\nimap &lt;a-6&gt; &lt;esc&gt;:tabn 6&lt;cr&gt;\r\nnmap &lt;a-6&gt; :tabn 6&lt;cr&gt;",
+        "vimbits_title": [
+            "Default keys for tab switching\n"
+        ]
+    },
+    {
+        "vimbits_id": 301,
+        "vimbits_tag": [
+            "splits",
+            "buffer",
+            "tab",
+            "window",
+            "navigation",
+            "switching"
+        ],
+        "vimbits_tips": "noremap &lt;tab&gt; &lt;C-w&gt;w",
+        "vimbits_title": [
+            "Window/Split Switching\n"
+        ]
+    },
+    {
+        "vimbits_id": 302,
+        "vimbits_tag": [
+            "indent",
+            "tab",
+            "list",
+            "guides"
+        ],
+        "vimbits_tips": "&quot;show indent guides\r\nset lcs=tab:\\\u205e\\ \r\nset list\r\n&quot;set tabwidth to 4\r\nset tabstop=4\r\nset softtabstop=4\r\nset shiftwidth=4",
+        "vimbits_title": [
+            "Show Indent Guides\n"
+        ]
+    },
+    {
+        "vimbits_id": 303,
+        "vimbits_tag": [
+            "write",
+            "quit",
+            "shift"
+        ],
+        "vimbits_tips": "cnoreabbrev W w\r\ncnoreabbrev Q q\r\ncnoreabbrev Wq wq\r\ncnoreabbrev WQ wq",
+        "vimbits_title": [
+            "Shift W write to file\n"
+        ]
+    },
+    {
+        "vimbits_id": 304,
+        "vimbits_tag": [
+            "copying"
+        ],
+        "vimbits_tips": "&quot; Copy matches of the last search to a register (default is the clipboard).\r\n&quot; Accepts a range (default is whole file).\r\n&quot; 'CopyMatches'   copy matches to clipboard (each match has \\n added).\r\n&quot; 'CopyMatches x' copy matches to register x (clears register first).\r\n&quot; 'CopyMatches X' append matches to register x.\r\n&quot; We skip empty hits to ensure patterns using '\\ze' don't loop forever.\r\ncommand! -range=% -register CopyMatches call s:CopyMatches(&lt;line1&gt;, &lt;line2&gt;, '&lt;reg&gt;')\r\nfunction! s:CopyMatches(line1, line2, reg)\r\n  let hits = []\r\n  for line in range(a:line1, a:line2)\r\n    let txt = getline(line)\r\n    let idx = match(txt, @/)\r\n    while idx &gt;= 0\r\n      let end = matchend(txt, @/, idx)\r\n      if end &gt; idx\r\n\tcall add(hits, strpart(txt, idx, end-idx))\r\n      else\r\n\tlet end += 1\r\n      endif\r\n      if @/[0] == '^'\r\n        break  &quot; to avoid false hits\r\n      endif\r\n      let idx = match(txt, @/, end)\r\n    endwhile\r\n  endfor\r\n  if len(hits) &gt; 0\r\n    let reg = empty(a:reg) ? '+' : a:reg\r\n    execute 'let @'.reg.' = join(hits, &quot;\\n&quot;) . &quot;\\n&quot;'\r\n  else\r\n    echo 'No hits'\r\n  endif\r\nendfunction",
+        "vimbits_title": [
+            "CopyMatches\n"
+        ]
+    },
+    {
+        "vimbits_id": 305,
+        "vimbits_tag": [],
+        "vimbits_tips": ":nnoremap &lt;silent&gt; J :let p=getpos('.')&lt;bar&gt;join&lt;bar&gt;call setpos('.', p)&lt;cr&gt;",
+        "vimbits_title": [
+            "join lines with cursor staying in place\n"
+        ]
+    },
+    {
+        "vimbits_id": 306,
+        "vimbits_tag": [
+            "copying",
+            "paste",
+            "selection"
+        ],
+        "vimbits_tips": ":%y+",
+        "vimbits_title": [
+            "Select Every Line\n"
+        ]
+    },
+    {
+        "vimbits_id": 307,
+        "vimbits_tag": [],
+        "vimbits_tips": "if has('statusline')\r\n   &quot; Status line detail:\r\n   &quot; %f     file path\r\n   &quot; %y     file type between braces (if defined)\r\n   &quot; %([%R%M]%)   read-only, modified and modifiable flags between braces\r\n   &quot; %{'!'[&amp;ff=='default_file_format']}\r\n   &quot;        shows a '!' if the file format is not the platform\r\n   &quot;        default\r\n   &quot; %{'$'[!&amp;list]}  shows a '*' if in list mode\r\n   &quot; %{'~'[&amp;pm=='']} shows a '~' if in patchmode\r\n   &quot; (%{synIDattr(synID(line('.'),col('.'),0),'name')})\r\n   &quot;        only for debug : display the current syntax item name\r\n   &quot; %=     right-align following items\r\n   &quot; #%n    buffer number\r\n   &quot; %l/%L,%c%V   line number, total number of lines, and column number\r\n   function SetStatusLineStyle()\r\n      if &amp;stl == '' || &amp;stl =~ 'synID'\r\n         let &amp;stl=&quot;%f %y%([%R%M]%)%{'!'[&amp;ff=='&quot;.&amp;ff.&quot;']}%{'$'[!&amp;list]}%{'~'[&amp;pm=='']}%=#%n %l/%L,%c%V &quot;\r\n      else\r\n         let &amp;stl=&quot;%f %y%([%R%M]%)%{'!'[&amp;ff=='&quot;.&amp;ff.&quot;']}%{'$'[!&amp;list]} (%{synIDattr(synID(line('.'),col('.'),0),'name')})%=#%n %l/%L,%c%V &quot;\r\n      endif\r\n   endfunc\r\n   &quot; Switch between the normal and vim-debug modes in the status line\r\n   nmap _ds :call SetStatusLineStyle()&lt;CR&gt;\r\n   call SetStatusLineStyle()\r\n   &quot; Window title\r\n   if has('title')\r\n      set titlestring=%t%(\\ [%R%M]%)\r\n   endif\r\nendif",
+        "vimbits_title": [
+            "Useful Statusline\n"
+        ]
+    },
+    {
+        "vimbits_id": 308,
+        "vimbits_tag": [
+            "indent",
+            "tab",
+            "tabs",
+            "animation"
+        ],
+        "vimbits_tips": "function Tabanim(desired)\r\n  if a:desired &lt; &amp;tabstop\r\n    let direction = -1\r\n  else\r\n    let direction = 1\r\n  endif\r\n  while a:desired != &amp;tabstop\r\n    sleep 70m\r\n    let &amp;tabstop = &amp;tabstop + direction\r\n    redraw\r\n  endwhile\r\n  let &amp;shiftwidth = &amp;tabstop\r\nendfunction\r\n\r\nmap &lt;F9&gt; :call Tabanim(1)&lt;CR&gt;\r\nmap &lt;F8&gt; :call Tabanim(4)&lt;CR&gt;\r\nmap &lt;F10&gt; :call Tabanim(8)&lt;CR&gt;",
+        "vimbits_title": [
+            "Animate tab stop changes\n"
+        ]
+    },
+    {
+        "vimbits_id": 309,
+        "vimbits_tag": [],
+        "vimbits_tips": "inoremap &lt;expr&gt; &lt;Tab&gt; strpart(getline('.'), col('.') - 2, 1) =~ '\\w' ? &quot;\\&lt;C-P&gt;&quot; : &quot;\\&lt;Tab&gt;&quot;",
+        "vimbits_title": [
+            "Tab completion in one line\n"
+        ]
+    },
+    {
+        "vimbits_id": 310,
+        "vimbits_tag": [
+            "django",
+            "unittests"
+        ],
+        "vimbits_tips": "cnoremap djt !./manage.py test&lt;CR&gt;",
+        "vimbits_title": [
+            "Run Django unit tests\n"
+        ]
+    },
+    {
+        "vimbits_id": 311,
+        "vimbits_tag": [
+            "buffer",
+            "arrow",
+            "tabs"
+        ],
+        "vimbits_tips": "nmap &lt;up&gt;       :bp&lt;CR&gt;\r\nnmap &lt;down&gt;     :bn&lt;CR&gt;\r\nnmap &lt;left&gt;     :tabp&lt;CR&gt;\r\nnmap &lt;right&gt;    :tabn&lt;CR&gt;",
+        "vimbits_title": [
+            "Make Arrow Keys Useful\n"
+        ]
+    },
+    {
+        "vimbits_id": 313,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; indent block of code\r\nmap &lt;Leader&gt;ib vip=",
+        "vimbits_title": [
+            "Indent Current Block\n"
+        ]
+    },
+    {
+        "vimbits_id": 314,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;Tab&gt; /&lt;\\w*\\(\\s\\\\|&gt;\\)&lt;CR&gt;\r\nnnoremap &lt;S-Tab&gt; ?&lt;\\w*\\(\\s\\\\|&gt;\\)&lt;CR&gt;",
+        "vimbits_title": [
+            "HTML TAG to HTML TAG\n"
+        ]
+    },
+    {
+        "vimbits_id": 315,
+        "vimbits_tag": [],
+        "vimbits_tips": "vnoremap &lt;Leader&gt;x &lt;Esc&gt;`.``gvP``P",
+        "vimbits_title": [
+            "Exchange arbitrary strings\n"
+        ]
+    },
+    {
+        "vimbits_id": 316,
+        "vimbits_tag": [],
+        "vimbits_tips": "&lt;C-}&gt;",
+        "vimbits_title": [
+            "Preview function signature\n"
+        ]
+    },
+    {
+        "vimbits_id": 317,
+        "vimbits_tag": [
+            "toggle",
+            "mapping",
+            "colorcolumn"
+        ],
+        "vimbits_tips": "function! g:ToggleColorColumn()\r\n  if &amp;colorcolumn != ''\r\n    setlocal colorcolumn&amp;\r\n  else\r\n    setlocal colorcolumn=+1\r\n  endif\r\nendfunction\r\n\r\nnnoremap &lt;silent&gt; &lt;leader&gt;cc :call g:ToggleColorColumn()&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle colorcolumn\n"
+        ]
+    },
+    {
+        "vimbits_id": 318,
+        "vimbits_tag": [
+            "toggle",
+            "mapping",
+            "relativenumber"
+        ],
+        "vimbits_tips": "function! g:ToggleRelativeNumber()\r\n  if &amp;relativenumber\r\n    setlocal number\r\n  else\r\n    setlocal relativenumber\r\n  endif\r\nendfunction\r\n\r\nnnoremap &lt;silent&gt; &lt;leader&gt;nu :call g:ToggleRelativeNumber()&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle relativecolumn with mapping\n"
+        ]
+    },
+    {
+        "vimbits_id": 319,
+        "vimbits_tag": [
+            "buffer",
+            "window",
+            "relativenumber",
+            "autocmd"
+        ],
+        "vimbits_tips": "if exists('&amp;relativenumber')\r\n  set relativenumber\r\n  augroup WindowRNU\r\n    auto!\r\n    auto BufWinEnter,WinEnter,FocusGained * setlocal relativenumber\r\n    auto WinLeave,FocusLost               * setlocal number\r\n  augroup END\r\nendif",
+        "vimbits_title": [
+            "Use relativenumber only in the focused window\n"
+        ]
+    },
+    {
+        "vimbits_id": 320,
+        "vimbits_tag": [
+            "remapping",
+            "splits",
+            "navigation"
+        ],
+        "vimbits_tips": "&quot; use ,F to jump to tag in a vertical split\r\nnnoremap &lt;silent&gt; ,F :let word=expand(&quot;&lt;cword&gt;&quot;)&lt;CR&gt;:vsp&lt;CR&gt;:wincmd w&lt;cr&gt;:exec(&quot;tag &quot;. word)&lt;cr&gt;\r\n\r\n&quot; use ,gf to go to file in a vertical split\r\nnnoremap &lt;silent&gt; ,gf :vertical botright wincmd f&lt;CR&gt;",
+        "vimbits_title": [
+            "Jump to file or tag in vertical split\n"
+        ]
+    },
+    {
+        "vimbits_id": 323,
+        "vimbits_tag": [],
+        "vimbits_tips": "nmap &lt;leader&gt;b :ls&lt;CR&gt;:buffer&lt;Space&gt;",
+        "vimbits_title": [
+            "list buffers and switch to a buffer quickly\n"
+        ]
+    },
+    {
+        "vimbits_id": 324,
+        "vimbits_tag": [
+            "Test"
+        ],
+        "vimbits_tips": "Test",
+        "vimbits_title": [
+            "Test\n"
+        ]
+    },
+    {
+        "vimbits_id": 326,
+        "vimbits_tag": [
+            "movement"
+        ],
+        "vimbits_tips": "&quot;moving lines with enter and shift enter\r\nmap &lt;CR&gt; o&lt;Esc&gt;k\r\nmap &lt;S-Enter&gt; O&lt;Esc&gt;j",
+        "vimbits_title": [
+            "add empty lines without insert\n"
+        ]
+    },
+    {
+        "vimbits_id": 327,
+        "vimbits_tag": [
+            "highlight",
+            "diff"
+        ],
+        "vimbits_tips": "noremap ,do :set nodiff fdc=0 \\| norm zR&lt;CR&gt;",
+        "vimbits_title": [
+            "remove diff formatting from buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 328,
+        "vimbits_tag": [
+            "splits"
+        ],
+        "vimbits_tips": "nmap &lt;Space&gt; &lt;C-w&gt;w\r\nnmap &lt;S-Space&gt; &lt;C-w&gt;W",
+        "vimbits_title": [
+            "Use space to move through split windows\n"
+        ]
+    },
+    {
+        "vimbits_id": 329,
+        "vimbits_tag": [
+            "remapping",
+            "movement",
+            "lines"
+        ],
+        "vimbits_tips": "inoremap &lt;C-b&gt; &lt;C-o&gt;O",
+        "vimbits_title": [
+            "create new line above current\n"
+        ]
+    },
+    {
+        "vimbits_id": 330,
+        "vimbits_tag": [],
+        "vimbits_tips": "vnoremap &lt;leader&gt;h :TOhtml&lt;CR&gt;",
+        "vimbits_title": [
+            "Convert selection to html\n"
+        ]
+    },
+    {
+        "vimbits_id": 332,
+        "vimbits_tag": [
+            "regex",
+            "images"
+        ],
+        "vimbits_tips": "cd dir-with-images\r\n\r\nvim index.html  \r\n\r\n:r!ls \r\n\r\n:%s/^\\(.+\\)$/&lt;img src&quot;\\1&quot;&gt;/g",
+        "vimbits_title": [
+            "directory index for the images preview like a boss\n"
+        ]
+    },
+    {
+        "vimbits_id": 333,
+        "vimbits_tag": [
+            "paste"
+        ],
+        "vimbits_tips": "inoremap &lt;c-d&gt; &lt;c-r&gt;&quot;",
+        "vimbits_title": [
+            "paste cut text in insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 334,
+        "vimbits_tag": [],
+        "vimbits_tips": "onoremap N :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(0)&lt;cr&gt;\r\nxnoremap N :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(0)&lt;cr&gt;\r\nonoremap aN :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(1)&lt;cr&gt;\r\nxnoremap aN :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(1)&lt;cr&gt;\r\nonoremap iN :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(1)&lt;cr&gt;\r\nxnoremap iN :&lt;c-u&gt;call &lt;SID&gt;NumberTextObject(1)&lt;cr&gt;\r\n\r\nfunction! s:NumberTextObject(whole)\r\n    normal! v\r\n\r\n    while getline('.')[col('.')] =~# '\\v[0-9]'\r\n        normal! l\r\n    endwhile\r\n\r\n    if a:whole\r\n        normal! o\r\n\r\n        while col('.') &gt; 1 &amp;&amp; getline('.')[col('.') - 2] =~# '\\v[0-9]'\r\n            normal! h\r\n        endwhile\r\n    endif\r\nendfunction",
+        "vimbits_title": [
+            "Number text object\n"
+        ]
+    },
+    {
+        "vimbits_id": 338,
+        "vimbits_tag": [],
+        "vimbits_tips": "set foldtext=MyFoldFunction()\r\nset fillchars=fold:\\ \r\n\r\nfunction! MyFoldFunction()\r\n  let line = getline(v:foldstart)\r\n  let lastline = getline(v:foldend)\r\n  let numfolded = v:foldend - v:foldstart + 1\r\n  return line . '  folded ' . numfolded . ' lines'\r\nendfunction\r\n\r\nhighlight Folded term=bold ctermbg=0 ctermfg=7 guibg=bg guifg=fg\r\nhighlight FoldColumn term=bold ctermbg=10 ctermfg=7 guibg=bg guifg=fg",
+        "vimbits_title": [
+            "vim folding for ruby\n"
+        ]
+    },
+    {
+        "vimbits_id": 340,
+        "vimbits_tag": [
+            "search",
+            "git",
+            "grep"
+        ],
+        "vimbits_tips": "&quot;GitGrep - open up a git grep line, with a quote started for the search\r\nnnoremap ,gg :GitGrep &quot;&quot;&lt;left&gt;\r\n&quot;GitGrep Current Partial\r\nnnoremap ,gcp :GitGrepCurrentPartial&lt;CR&gt;\r\n&quot;GitGrep Current File\r\nnnoremap ,gcf :call GitGrep(expand(&quot;%:t:r&quot;))&lt;CR&gt;",
+        "vimbits_title": [
+            "Find references to file\n"
+        ]
+    },
+    {
+        "vimbits_id": 341,
+        "vimbits_tag": [
+            "escape",
+            "mode",
+            "save"
+        ],
+        "vimbits_tips": "inoremap ;; &lt;esc&gt;&lt;right&gt;\r\nnmap ; :\r\ncabbrev ; update",
+        "vimbits_title": [
+            "Quickly switch to normal and save\n"
+        ]
+    },
+    {
+        "vimbits_id": 342,
+        "vimbits_tag": [
+            "folds"
+        ],
+        "vimbits_tips": "&quot; increase foldlevel\r\nnnoremap &lt;silent&gt; &lt;localleader&gt;= zr:call FoldColumnSize()&lt;cr&gt;\r\n&quot; decrease foldlevel\r\nnnoremap &lt;silent&gt; &lt;localleader&gt;- zm:call FoldColumnSize()&lt;cr&gt;\r\n\r\nfunction! FoldColumnSize()\r\n    if &amp;foldenable\r\n        :exec &quot;setlocal foldcolumn=&quot; . eval(&amp;foldlevel+1)\r\n    else\r\n        setlocal foldcolumn=0\r\n    endif\r\n    :normal! zz\r\nendfunction",
+        "vimbits_title": [
+            "Increase decrease fold columns size\n"
+        ]
+    },
+    {
+        "vimbits_id": 343,
+        "vimbits_tag": [
+            "gvim",
+            "system"
+        ],
+        "vimbits_tips": "command! -nargs=? -complete=help Ghelp call s:Vim('-c help ' . &lt;q-args&gt;)\r\ncommand! -nargs=? -complete=file Gvim call s:Vim(&lt;q-args&gt;)\r\n\r\nfunction! s:Vim(cmd)\r\n    let com = 'gvim'\r\n    let com .= ' &quot;' . expand(a:cmd) . '&quot;'\r\n    silent call system(com)\r\nendfunction",
+        "vimbits_title": [
+            "Open another gvim process from current window\n"
+        ]
+    },
+    {
+        "vimbits_id": 344,
+        "vimbits_tag": [
+            "yank",
+            "clipboard"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;localleader&gt;a :call ClipAppend()&lt;cr&gt;\r\n\r\nfunc! ClipAppend()\r\n    let @a=@0\r\n    normal! &quot;Ayy\r\n    let @0=@a\r\nendfunc",
+        "vimbits_title": [
+            "Append line to current clipboard\n"
+        ]
+    },
+    {
+        "vimbits_id": 346,
+        "vimbits_tag": [
+            "window"
+        ],
+        "vimbits_tips": "&quot; swap window positions (wasd)\r\nnnoremap &lt;m-s-s&gt; :call WindowSwap('h')&lt;cr&gt;&lt;c-w&gt;J&lt;c-w&gt;=\r\nnnoremap &lt;m-s-w&gt; :call WindowSwap('h')&lt;cr&gt;&lt;c-w&gt;K&lt;c-w&gt;=\r\nnnoremap &lt;m-s-a&gt; :call WindowSwap('v')&lt;cr&gt;&lt;c-w&gt;H&lt;c-w&gt;=\r\nnnoremap &lt;m-s-d&gt; :call WindowSwap('v')&lt;cr&gt;&lt;c-w&gt;L&lt;c-w&gt;=\r\n\r\n\r\nfunction! WindowSwap(dir)\r\n    if winnr('$')==1\r\n        if a:dir=='h' | :new | else | :vnew | endif\r\n        wincmd p\r\n    endif\r\nendfunction",
+        "vimbits_title": [
+            "Move window up / down / left / right with wasd\n"
+        ]
+    },
+    {
+        "vimbits_id": 347,
+        "vimbits_tag": [
+            "mapping",
+            "insert"
+        ],
+        "vimbits_tips": "&quot; ex mode numbers\r\n\r\nfor i in range(1,9)\r\n    exec 'inoremap &lt;m-'.i.'&gt; &lt;C-o&gt;'.i\r\nendfor",
+        "vimbits_title": [
+            "Ex commands in insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 348,
+        "vimbits_tag": [
+            "mapping",
+            "undo"
+        ],
+        "vimbits_tips": "&quot; undo m-- or &lt;c-x&gt;u\r\ninoremap &lt;m--&gt; &lt;esc&gt;uzvzza\r\nnnoremap &lt;m--&gt; uzvzz\r\n\r\n\r\n&quot;redo m-=\r\ninoremap &lt;m-=&gt; &lt;esc&gt;&lt;C-R&gt;vzzza\r\nnnoremap &lt;m-=&gt; &lt;c-R&gt;zvzz",
+        "vimbits_title": [
+            "Remap undo/redo\n"
+        ]
+    },
+    {
+        "vimbits_id": 349,
+        "vimbits_tag": [
+            "buffer",
+            "mapping"
+        ],
+        "vimbits_tips": "&quot; make vig select entire file\r\nonoremap &lt;silent&gt; ig &lt;esc&gt;:execute &quot;:normal! ggVG&quot; . v:operator&lt;cr&gt; \r\nvnoremap &lt;silent&gt; ig :normal! ggVG&lt;cr&gt;",
+        "vimbits_title": [
+            "Entire buffer text object\n"
+        ]
+    },
+    {
+        "vimbits_id": 350,
+        "vimbits_tag": [],
+        "vimbits_tips": "command! -nargs=? SplitLines :call &lt;SID&gt;SplitLines('&lt;args&gt;')\r\n\r\nfunction! &lt;SID&gt;SplitLines(...) \r\n    if a:1 == ''\r\n        let delimiter = input(&quot;Delimiter: &quot;)\r\n        if delimiter == ''\r\n            return\r\n        endif\r\n    else\r\n        let delimiter=a:1\r\n    endif\r\n    silent! execute 's=\\(' . delimiter . '\\+\\)=\\1\\r=g'\r\nendfunction",
+        "vimbits_title": [
+            "Split line based on delimiter\n"
+        ]
+    },
+    {
+        "vimbits_id": 351,
+        "vimbits_tag": [
+            "edit",
+            "xml",
+            "html",
+            "tag"
+        ],
+        "vimbits_tips": "&quot; delete Text and go switch to insert mode between HTML-Tags\r\nmap &lt;Leader&gt;&lt; F&gt;lct&lt;",
+        "vimbits_title": [
+            "Quickly Edit Text between HTML Tags\n"
+        ]
+    },
+    {
+        "vimbits_id": 352,
+        "vimbits_tag": [],
+        "vimbits_tips": "&quot; Use fj as &lt;Esc&gt; alternative\r\ninoremap fj &lt;esc&gt;",
+        "vimbits_title": [
+            "Use fj as &lt;Esc&gt; alternative\n"
+        ]
+    },
+    {
+        "vimbits_id": 354,
+        "vimbits_tag": [],
+        "vimbits_tips": "noremap &lt;left&gt; g-\r\nnoremap &lt;right&gt; g+",
+        "vimbits_title": [
+            "make rapid time travel easier\n"
+        ]
+    },
+    {
+        "vimbits_id": 355,
+        "vimbits_tag": [
+            "tabbing",
+            "tab",
+            "tabs"
+        ],
+        "vimbits_tips": ":noremap &lt;left&gt; :tabprevious&lt;CR&gt;\r\n:noremap &lt;right&gt; :tabnext&lt;CR&gt;",
+        "vimbits_title": [
+            "Use arrow keys to change tabs\n"
+        ]
+    },
+    {
+        "vimbits_id": 356,
+        "vimbits_tag": [
+            "shortcut",
+            "redo"
+        ],
+        "vimbits_tips": "&quot; remap U to &lt;C-r&gt; for easier redo\r\nnnoremap U &lt;C-r&gt;",
+        "vimbits_title": [
+            "Remap U to &lt;C-r&gt; for easier redo\n"
+        ]
+    },
+    {
+        "vimbits_id": 357,
+        "vimbits_tag": [
+            "vimrc"
+        ],
+        "vimbits_tips": "if filereadable(&quot;.local.vim&quot;)\r\n  source .local.vim\r\nendif",
+        "vimbits_title": [
+            "Allow local vimrc configurations\n"
+        ]
+    },
+    {
+        "vimbits_id": 358,
+        "vimbits_tag": [
+            "whitespace",
+            "shortcut",
+            "hotkeys"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;&lt;Space&gt; :%s/\\s\\+$//g&lt;CR&gt;",
+        "vimbits_title": [
+            "Remove trailing whitespace\n"
+        ]
+    },
+    {
+        "vimbits_id": 359,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap u g-\r\nnnoremap &lt;C-R&gt; g+",
+        "vimbits_title": [
+            "use the undo tree by default\n"
+        ]
+    },
+    {
+        "vimbits_id": 360,
+        "vimbits_tag": [],
+        "vimbits_tips": "inoremap &lt;silent&gt; &lt;C-C&gt; &lt;Esc&gt;",
+        "vimbits_title": [
+            "Map C-c to Esc so that InsertLeave gets called\n"
+        ]
+    },
+    {
+        "vimbits_id": 361,
+        "vimbits_tag": [
+            "undo"
+        ],
+        "vimbits_tips": "au CursorHoldI * :call feedkeys(&quot;\\&lt;c-g&gt;u&quot;,'t')\r\n\r\nau InsertEnter * let updaterestore=&amp;updatetime \r\n                \\|set updatetime=500\r\n\r\nau InsertLeave * let &amp;updatetime=updaterestore",
+        "vimbits_title": [
+            "Better undo when in Insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 362,
+        "vimbits_tag": [
+            "tabs"
+        ],
+        "vimbits_tips": "autocmd BufNew * if &amp;showtabline &amp;&amp; winnr(&quot;$&quot;) == 1 | tabmove | endif",
+        "vimbits_title": [
+            "Open new tabs at the end\n"
+        ]
+    },
+    {
+        "vimbits_id": 363,
+        "vimbits_tag": [
+            "substitute"
+        ],
+        "vimbits_tips": "set gdefault",
+        "vimbits_title": [
+            "Substitute all matches in a line by default\n"
+        ]
+    },
+    {
+        "vimbits_id": 364,
+        "vimbits_tag": [
+            "file",
+            "read"
+        ],
+        "vimbits_tips": "set autoread",
+        "vimbits_title": [
+            "Update open files when changed externally\n"
+        ]
+    },
+    {
+        "vimbits_id": 365,
+        "vimbits_tag": [
+            "file",
+            "write"
+        ],
+        "vimbits_tips": "set autowriteall",
+        "vimbits_title": [
+            "Write files automatically\n"
+        ]
+    },
+    {
+        "vimbits_id": 366,
+        "vimbits_tag": [
+            "search",
+            "highlight",
+            "mapping"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;C-l&gt; :&lt;C-u&gt;nohlsearch&lt;CR&gt;&lt;C-l&gt;",
+        "vimbits_title": [
+            "Create a shortcut to mute highlighting\n"
+        ]
+    },
+    {
+        "vimbits_id": 367,
+        "vimbits_tag": [
+            "buffer",
+            "navigation",
+            "arrow"
+        ],
+        "vimbits_tips": "&quot; NOTE: use arrow keys for quick buffer/window navigation                                             \r\n&quot; switch to the previous buffer\r\nnoremap &lt;silent&gt; &lt;left&gt; :bprevious&lt;cr&gt;\r\n \r\n&quot; switch to the next buffer\r\nnoremap &lt;silent&gt; &lt;right&gt; :bnext&lt;cr&gt;\r\n \r\n&quot; make the currently active window the only one\r\nnoremap &lt;silent&gt; &lt;up&gt; :only&lt;cr&gt;\r\n \r\n&quot; show all buffers, type 'buffer' in the command line so all I have to do\r\n&quot; is type a number and hit enter to switch to that buffer (or hit &lt;esc&gt; to quit)\r\nnoremap &lt;silent&gt; &lt;down&gt; :ls&lt;cr&gt;:buffer",
+        "vimbits_title": [
+            "arrow keys for quick buffer/window navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 368,
+        "vimbits_tag": [
+            "rspec",
+            "ruby",
+            "macros"
+        ],
+        "vimbits_tips": "&quot; Extract spec local variable into Rspec &quot;let&quot;-block\r\n&quot;\r\n&quot; Example:\r\n&quot;\r\n&quot;   describe Post do\r\n&quot;     it 'should be published' do\r\n&quot;       post = create :post # &lt;== current line\r\n&quot;       post.should be_published\r\n&quot;     end\r\n&quot;   end\r\n&quot;\r\n&quot; Becomes:\r\n&quot;\r\n&quot;   describe Post do\r\n&quot;     let(:post) {  create :post }\r\n&quot;     it 'should be published' do\r\n&quot;       post.should be_published # &lt;== current line\r\n&quot;     end\r\n&quot;   end\r\n&quot;\r\n&quot; ^M is carriage return character (insert using ^V^M)\r\n&quot; ^[ is escape character (insert using ^V^[)\r\nlet @l='jmlkdd?\\vdescribe|context?^Mp==I:^[\u001b^ys2w)Ilet\u001bf=xys${`l'",
+        "vimbits_title": [
+            "Refactor local variable to &quot;let&quot;-block\n"
+        ]
+    },
+    {
+        "vimbits_id": 369,
+        "vimbits_tag": [
+            "splits",
+            "help",
+            "helpheight"
+        ],
+        "vimbits_tips": "set helpheight=999                    &quot; when viewing the help documentation use a full-sized window (instead of 1/2 the size)",
+        "vimbits_title": [
+            "open help in expanded window\n"
+        ]
+    },
+    {
+        "vimbits_id": 370,
+        "vimbits_tag": [
+            "movement",
+            "tab",
+            "shortcut",
+            "window",
+            "switching"
+        ],
+        "vimbits_tips": "nnoremap &lt;Tab&gt;h &lt;C-w&gt;h                                                                                                                                                                                                                                     \r\nnnoremap &lt;Tab&gt;j &lt;C-w&gt;j                                                                                                                                                                                                                                     \r\nnnoremap &lt;Tab&gt;k &lt;C-w&gt;k                                                                                                                                                                                                                                     \r\nnnoremap &lt;Tab&gt;l &lt;C-w&gt;l",
+        "vimbits_title": [
+            "Easy window Movement\n"
+        ]
+    },
+    {
+        "vimbits_id": 371,
+        "vimbits_tag": [
+            "git"
+        ],
+        "vimbits_tips": "function! GitBranch()\r\n  let branch = system(&quot;git branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* //'&quot;)\r\n  if branch != ''\r\n    return '   Git Branch: ' . substitute(branch, '\\n', '', 'g')\r\n  en  \r\n  return ''\r\nendfunction\r\n\r\n&quot; minimal status line, only shows git branch\r\nset statusline=%{GitBranch()}",
+        "vimbits_title": [
+            "Show Git Branch\n"
+        ]
+    },
+    {
+        "vimbits_id": 374,
+        "vimbits_tag": [
+            "movement",
+            "cursor",
+            "write"
+        ],
+        "vimbits_tips": "function! AppendChar()\r\n    :let pos = getpos(&quot;.&quot;)\r\n    :let text = &quot;;&quot;\r\n    :execute &quot;:normal A&quot;.text\r\n    :call setpos('.', pos)\r\n:endfunction",
+        "vimbits_title": [
+            "append a character in insert-mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 375,
+        "vimbits_tag": [
+            "buffer",
+            "window",
+            "tile",
+            "display"
+        ],
+        "vimbits_tips": "&quot; open all buffers in separate (vertical) panes (see ':help :ball' and ':help :vertical')\r\nnoremap &lt;silent&gt; &lt;leader&gt;a :vertical :ball&lt;cr&gt;",
+        "vimbits_title": [
+            "tile all open buffers in windows\n"
+        ]
+    },
+    {
+        "vimbits_id": 377,
+        "vimbits_tag": [
+            "clear",
+            "whitespace"
+        ],
+        "vimbits_tips": "&quot; From http://vimcasts.org/episodes/tidying-whitespace/\r\n&quot; Preserves/Saves the state, executes a command, and returns to the saved state\r\n&quot; Modified from http://vimbits.com/bits/231\r\n&quot; Remove trailing whitespace on save\r\nfunction! Preserve(command)\r\n    &quot; Save last search, and cursor position.\r\n    let _s=@/\r\n    let l = line(&quot;.&quot;)\r\n    let c = col(&quot;.&quot;)\r\n    &quot; Do the business:\r\n    execute a:command\r\n    &quot; Clean up: restore previous search history, and cursor position\r\n    let @/=_s\r\n    call cursor(l, c)\r\nendfunction\r\n&quot; Execute clear whitespace on save\r\nautocmd BufWritePre * :call Preserve(&quot;%s/\\\\s\\\\+$//e&quot;)",
+        "vimbits_title": [
+            "Clear Whitespace on Save\n"
+        ]
+    },
+    {
+        "vimbits_id": 378,
+        "vimbits_tag": [
+            "unix",
+            "ctrlp"
+        ],
+        "vimbits_tips": "let ctrlp_filter_greps = &quot;&quot;.\r\n    \\ &quot;egrep -iv '\\\\.(&quot; .\r\n    \\ &quot;jar|class|swp|swo|log|so|o|pyc|jpe?g|png|gif|mo|po&quot; .\r\n    \\ &quot;)$' | &quot; .\r\n    \\ &quot;egrep -v '^(\\\\./)?(&quot; .\r\n    \\ &quot;deploy/|lib/|classes/|libs/|deploy/vendor/|.git/|.hg/|.svn/|.*migrations/&quot; .\r\n    \\ &quot;)'&quot;\r\n\r\nlet my_ctrlp_git_command = &quot;&quot; .\r\n    \\ &quot;cd %s &amp;&amp; git ls-files | &quot; .\r\n    \\ ctrlp_filter_greps\r\n\r\nif has(&quot;unix&quot;)\r\n    let my_ctrlp_user_command = &quot;&quot; .\r\n    \\ &quot;find %s '(' -type f -or -type l ')' -maxdepth 15 -not -path '*/\\\\.*/*' | &quot; .\r\n    \\ ctrlp_filter_greps\r\nendif\r\n\r\nlet g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]",
+        "vimbits_title": [
+            "Improve CtrlP\n"
+        ]
+    },
+    {
+        "vimbits_id": 379,
+        "vimbits_tag": [
+            "search",
+            "list",
+            "global"
+        ],
+        "vimbits_tips": ":g/",
+        "vimbits_title": [
+            "List all matches for a search\n"
+        ]
+    },
+    {
+        "vimbits_id": 381,
+        "vimbits_tag": [
+            "substitute"
+        ],
+        "vimbits_tips": "&quot; Substitute word under cursor globally\r\nnnoremap &lt;C-s&gt; :%s/\\&lt;&lt;C-r&gt;&lt;C-w&gt;\\&gt;//g&lt;Left&gt;&lt;Left&gt;\r\n&quot; ask for confirmation\r\nnnoremap &lt;A-s&gt; :%s/\\&lt;&lt;C-r&gt;&lt;C-w&gt;\\&gt;//gc&lt;Left&gt;&lt;Left&gt;&lt;Left&gt;\r\n\r\n&quot; Substitute selection globally\r\nvnoremap &lt;C-s&gt; y&lt;Esc&gt;:%s/&lt;C-r&gt;&quot;//g&lt;Left&gt;&lt;Left&gt;\r\n&quot; ask for confirmation\r\nvnoremap &lt;A-s&gt; y&lt;Esc&gt;:%s/&lt;C-r&gt;&quot;//gc&lt;Left&gt;&lt;Left&gt;&lt;Left&gt;",
+        "vimbits_title": [
+            "Substitute word under cursor/selection\n"
+        ]
+    },
+    {
+        "vimbits_id": 382,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;F4&gt; mt:tabe&lt;SPACE&gt;%&lt;CR&gt;gT`tgt`t",
+        "vimbits_title": [
+            "Duplicate current tab\n"
+        ]
+    },
+    {
+        "vimbits_id": 383,
+        "vimbits_tag": [
+            "window",
+            "navigation"
+        ],
+        "vimbits_tips": "nmap &lt;tab&gt;&lt;tab&gt; &lt;C-w&gt;w",
+        "vimbits_title": [
+            "Easy switch between windows\n"
+        ]
+    },
+    {
+        "vimbits_id": 384,
+        "vimbits_tag": [
+            "help",
+            "tab",
+            "window"
+        ],
+        "vimbits_tips": "cnoremap &lt;expr&gt; hr getcmdtype() == ':' &amp;&amp; empty(getcmdline()) ? 'bo vert h ' : 'hr'\r\ncnoremap &lt;expr&gt; ht getcmdtype() == ':' &amp;&amp; empty(getcmdline()) ? 'tab h '     : 'ht'",
+        "vimbits_title": [
+            "Open help to the right or in new tab\n"
+        ]
+    },
+    {
+        "vimbits_id": 386,
+        "vimbits_tag": [],
+        "vimbits_tips": "map  &lt;leader&gt;gq :diffoff&lt;cr&gt;&lt;c-w&gt;h:q&lt;cr&gt;\r\nmap  &lt;leader&gt;gg :Gdiff&lt;cr&gt;",
+        "vimbits_title": [
+            "Easy Diffing\n"
+        ]
+    },
+    {
+        "vimbits_id": 387,
+        "vimbits_tag": [
+            "indent"
+        ],
+        "vimbits_tips": "noremap &lt;Leader&gt;= m`gg=G``",
+        "vimbits_title": [
+            "Indent the whole buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 389,
+        "vimbits_tag": [
+            "mouse"
+        ],
+        "vimbits_tips": "if has('mouse')\r\n  set mouse=a\r\nendif",
+        "vimbits_title": [
+            "Mouse support\n"
+        ]
+    },
+    {
+        "vimbits_id": 390,
+        "vimbits_tag": [
+            "spell"
+        ],
+        "vimbits_tips": "if has('spell')\r\n  silent! language messages &quot;en&quot;\r\n  set langmenu=none\r\n  set spl=en spell\r\n  set nospell\r\nendif",
+        "vimbits_title": [
+            "English spellchecking but no spellchecking by default\n"
+        ]
+    },
+    {
+        "vimbits_id": 391,
+        "vimbits_tag": [
+            "git",
+            "spell"
+        ],
+        "vimbits_tips": "if has('autocmd')\r\n  if has('spell')\r\n    au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell\r\n  endif\r\n  au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')\r\nendif",
+        "vimbits_title": [
+            "Git commit messages have spellcheck and start in insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 392,
+        "vimbits_tag": [],
+        "vimbits_tips": ":vnoremap &lt;Leader&gt;za &lt;Esc&gt;`&lt;kzfgg`&gt;jzfG`&lt;",
+        "vimbits_title": [
+            "Fold stuff around selection\n"
+        ]
+    },
+    {
+        "vimbits_id": 393,
+        "vimbits_tag": [
+            "escape",
+            "imap"
+        ],
+        "vimbits_tips": "inoremap jj &lt;Esc&gt;`^",
+        "vimbits_title": [
+            "Easy escape without cursor movement\n"
+        ]
+    },
+    {
+        "vimbits_id": 394,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;C-j&gt; vapd}p\r\nnnoremap &lt;C-k&gt; vapd{{p",
+        "vimbits_title": [
+            "Move paragraphs up and down easily with one keystroke\n"
+        ]
+    },
+    {
+        "vimbits_id": 395,
+        "vimbits_tag": [
+            "buffer",
+            "delete",
+            "ctrlp"
+        ],
+        "vimbits_tips": "let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }\r\n\r\nfunc! MyCtrlPMappings()\r\n    nnoremap &lt;buffer&gt; &lt;silent&gt; &lt;c-@&gt; :call &lt;sid&gt;DeleteBuffer()&lt;cr&gt;\r\nendfunc\r\n\r\nfunc! s:DeleteBuffer()\r\n    exec &quot;bd&quot; fnamemodify(getline('.')[2:], ':p')\r\n    exec &quot;norm \\&lt;F5&gt;&quot;\r\nendfunc",
+        "vimbits_title": [
+            "Delete a buffer in CtrlPBuf mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 396,
+        "vimbits_tag": [],
+        "vimbits_tips": "Use ctrl+[ instead of &lt;escape&gt; or some random key binding.",
+        "vimbits_title": [
+            "Better than escape\n"
+        ]
+    },
+    {
+        "vimbits_id": 397,
+        "vimbits_tag": [],
+        "vimbits_tips": "\ufeff\ufeff\ufeffimap &lt;C-h&gt; &lt;C-o&gt;h\r\nimap &lt;C-j&gt; &lt;C-o&gt;j\r\nimap &lt;C-k&gt; &lt;C-o&gt;k\r\nimap &lt;C-l&gt; &lt;C-o&gt;l",
+        "vimbits_title": [
+            "move cursor when insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 399,
+        "vimbits_tag": [
+            "normal",
+            "insert"
+        ],
+        "vimbits_tips": "inoremap &lt;C-f&gt; &lt;C-o&gt;",
+        "vimbits_title": [
+            "Enter a normal command when in insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 400,
+        "vimbits_tag": [
+            "window",
+            "navigation"
+        ],
+        "vimbits_tips": "map &lt;c-h&gt; &lt;c-w&gt;h\r\nmap &lt;c-j&gt; &lt;c-w&gt;j\r\nmap &lt;c-k&gt; &lt;c-w&gt;k\r\nmap &lt;c-l&gt; &lt;c-w&gt;l",
+        "vimbits_title": [
+            "Easy window navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 401,
+        "vimbits_tag": [
+            "tab",
+            "navigation"
+        ],
+        "vimbits_tips": "map &lt;s-l&gt; :tabnext&lt;cr&gt;\r\nmap &lt;s-h&gt; :tabprevious&lt;cr&gt;",
+        "vimbits_title": [
+            "Easy tab navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 402,
+        "vimbits_tag": [
+            "sudo",
+            "save"
+        ],
+        "vimbits_tips": "&quot; use :W to force saving a file\r\ncom! W :w !sudo tee %",
+        "vimbits_title": [
+            "Force saving files that require root permissions\n"
+        ]
+    },
+    {
+        "vimbits_id": 403,
+        "vimbits_tag": [
+            "search",
+            "center"
+        ],
+        "vimbits_tips": "&quot; center search\r\nnmap n nzz\r\nnmap N Nzz",
+        "vimbits_title": [
+            "Center search\n"
+        ]
+    },
+    {
+        "vimbits_id": 404,
+        "vimbits_tag": [
+            "navigation",
+            "tags"
+        ],
+        "vimbits_tips": "nnoremap &lt;Return&gt; &lt;C-]&gt;\r\nnnoremap &lt;leader&gt;b &lt;C-o&gt;",
+        "vimbits_title": [
+            "Better tag navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 408,
+        "vimbits_tag": [
+            "search",
+            "find",
+            "path",
+            "project",
+            "files"
+        ],
+        "vimbits_tips": "au! BufEnter * silent! let &amp;path = expand('%:p:h') . '/**'",
+        "vimbits_title": [
+            "Change current path to find files recursively\n"
+        ]
+    },
+    {
+        "vimbits_id": 412,
+        "vimbits_tag": [],
+        "vimbits_tips": "sddsfdfs",
+        "vimbits_title": [
+            "safdsdsf\n"
+        ]
+    },
+    {
+        "vimbits_id": 413,
+        "vimbits_tag": [
+            "splits",
+            "window",
+            "resize"
+        ],
+        "vimbits_tips": "&quot; equally resize splits on window resize\r\nau VimResized * wincmd=",
+        "vimbits_title": [
+            "Equally resize splits on window resize\n"
+        ]
+    },
+    {
+        "vimbits_id": 414,
+        "vimbits_tag": [
+            "coloration",
+            "markdown"
+        ],
+        "vimbits_tips": "autocmd FileType text set filetype=markdown",
+        "vimbits_title": [
+            "Color in text files\n"
+        ]
+    },
+    {
+        "vimbits_id": 415,
+        "vimbits_tag": [
+            "window",
+            "maximize"
+        ],
+        "vimbits_tips": "&quot; maximize vim window\r\ncom! MAX :let &amp;lines=500&lt;bar&gt;let &amp;columns=500\r\nmap &lt;leader&gt;m :MAX&lt;cr&gt;",
+        "vimbits_title": [
+            "Maximize vim window\n"
+        ]
+    },
+    {
+        "vimbits_id": 416,
+        "vimbits_tag": [
+            "movement",
+            "mapping",
+            "navigation"
+        ],
+        "vimbits_tips": "&quot; move the cursor in insert mode\r\nimap &lt;c-h&gt; &lt;c-o&gt;h\r\nimap &lt;c-j&gt; &lt;c-o&gt;j\r\nimap &lt;c-k&gt; &lt;c-o&gt;k\r\nimap &lt;c-l&gt; &lt;c-o&gt;l",
+        "vimbits_title": [
+            "Move the cursor in insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 417,
+        "vimbits_tag": [
+            "autocommand",
+            "tags"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;&lt;CR&gt; :autocmd BufWritePost * call system(&quot;ctags -R&quot;)&lt;CR&gt;",
+        "vimbits_title": [
+            "Activate automatic tags generation\n"
+        ]
+    },
+    {
+        "vimbits_id": 420,
+        "vimbits_tag": [
+            "gvim"
+        ],
+        "vimbits_tips": "set guioptions+=c\r\nset guioptions+=R\r\nset guioptions-=m\r\nset guioptions-=r\r\nset guioptions-=b\r\nset guioptions-=T\r\nset guioptions-=R\r\nset guioptions-=L\r\nset guioptions-=e",
+        "vimbits_title": [
+            "GVim options to make it look like Vim\n"
+        ]
+    },
+    {
+        "vimbits_id": 421,
+        "vimbits_tag": [
+            "cursor",
+            "mapping",
+            "join"
+        ],
+        "vimbits_tips": "&quot; join lines with cursor staying in place\r\nnnoremap J mzJ`z",
+        "vimbits_title": [
+            "Join lines with cursor staying in place\n"
+        ]
+    },
+    {
+        "vimbits_id": 422,
+        "vimbits_tag": [
+            "indent",
+            "normal",
+            "mode",
+            "mapping"
+        ],
+        "vimbits_tips": "&quot; easy indent/outdent\r\nnnoremap &lt; &lt;&lt;\r\nnnoremap &gt; &gt;&gt;",
+        "vimbits_title": [
+            "Easy indent/outdent in normal mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 423,
+        "vimbits_tag": [
+            "LaTeX"
+        ],
+        "vimbits_tips": "&quot;Compiles LaTeX File in background\r\nnmap &lt;leader&gt;cl :! runlatex % &gt; logfile 2&gt;&amp;1 &amp;&lt;CR&gt;&lt;CR&gt;\r\n&quot;Open up pdf associated with current LaTeX file\r\nnmap &lt;leader&gt;ol :! okular %:r.pdf &gt; /dev/null 2&gt;&amp;1 &amp;&lt;CR&gt;&lt;CR&gt;",
+        "vimbits_title": [
+            "LaTeX Compile and Show\n"
+        ]
+    },
+    {
+        "vimbits_id": 425,
+        "vimbits_tag": [
+            "buffer"
+        ],
+        "vimbits_tips": "nmap &lt;c-o&gt; :ls&lt;cr&gt;:e #",
+        "vimbits_title": [
+            "Fast open buffer\n"
+        ]
+    },
+    {
+        "vimbits_id": 426,
+        "vimbits_tag": [
+            "remapping",
+            "movement"
+        ],
+        "vimbits_tips": "function! ToggleHomeKey()\r\n  let l:col = col('.')            &quot; current pos\r\n                                  &quot; goto non whitespace start of line\r\n  execute 'normal! ^'\r\n  if col('.') == l:col            &quot; if current pos == non whitespace start of line\r\n    call cursor(line('.'), 1)     &quot; move to beginning\r\n  endif\r\nendfun\r\n\r\nfunction! ToggleEndKey()\r\n  let l:col = col('.')            &quot; current pos\r\n                                  &quot; goto non whitespace end of line\r\n  execute 'normal! g_'\r\n  if col('.') == l:col            &quot; if current pos == non whitespace EOL\r\n                                  &quot; move to whitespace EOL\r\n    execute 'normal! $'\r\n  endif\r\nendfun\r\n\r\nnnoremap &lt;silent&gt;H :call ToggleHomeKey()&lt;CR&gt;\r\nnnoremap &lt;silent&gt;L :call ToggleEndKey()&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle cursor at line beginnings/endings with whitespace\n"
+        ]
+    },
+    {
+        "vimbits_id": 427,
+        "vimbits_tag": [
+            "splits",
+            "buffer"
+        ],
+        "vimbits_tips": "map &lt;Leader&gt;sv &lt;c-w&gt;v&lt;c-w&gt;l\r\nmap &lt;Leader&gt;sh &lt;c-w&gt;s&lt;c-w&gt;j",
+        "vimbits_title": [
+            "quick split and switch to the new split\n"
+        ]
+    },
+    {
+        "vimbits_id": 428,
+        "vimbits_tag": [
+            "visual",
+            "search",
+            "Google"
+        ],
+        "vimbits_tips": "nnoremap gl :set operatorfunc=GoogleOperator&lt;cr&gt;g@\r\nvnoremap gl :&lt;c-u&gt;call GoogleOperator(visualmode())&lt;cr&gt;\r\n\r\nfunction! GoogleOperator(type)\r\n  let saved_register = @@\r\n  if a:type ==# 'v'\r\n    normal! `&lt;v`&gt;y\r\n  elseif a:type ==# 'char'\r\n    normal! `[v`]y\r\n  else\r\n    return\r\n  endif\r\n  silent execute &quot;! open &quot; . shellescape(&quot;https://www.google.com/search?q=&quot; . @@)\r\n  let @@ = saved_register\r\n  redraw!\r\nendfunction",
+        "vimbits_title": [
+            "Google the word under the cursor\n"
+        ]
+    },
+    {
+        "vimbits_id": 429,
+        "vimbits_tag": [
+            "normal",
+            "file",
+            "browser",
+            "fast"
+        ],
+        "vimbits_tips": "nmap ,, :e.&lt;CR&gt;",
+        "vimbits_title": [
+            "Fast File Browser\n"
+        ]
+    },
+    {
+        "vimbits_id": 431,
+        "vimbits_tag": [
+            "folds",
+            "diff",
+            "fillchars"
+        ],
+        "vimbits_tips": "set fillchars=vert:\u2503,diff:\u23bc,fold:\u23bc",
+        "vimbits_title": [
+            "Continuous delimiter line\n"
+        ]
+    },
+    {
+        "vimbits_id": 432,
+        "vimbits_tag": [
+            "buffer",
+            "navigation"
+        ],
+        "vimbits_tips": "nnoremap gb :buffers&lt;CR&gt;:sb&lt;Space&gt;",
+        "vimbits_title": [
+            "Quick buffer navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 433,
+        "vimbits_tag": [
+            "semicolon",
+            "append"
+        ],
+        "vimbits_tips": "inoremap &lt;leader&gt;; &lt;C-o&gt;m`&lt;C-o&gt;A;&lt;C-o&gt;``",
+        "vimbits_title": [
+            "Append a semicolon and come back\n"
+        ]
+    },
+    {
+        "vimbits_id": 434,
+        "vimbits_tag": [
+            "tags",
+            "ctags"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;] :tjump /&lt;c-r&gt;=expand('&lt;cword&gt;')&lt;cr&gt;&lt;cr&gt;\r\nnnoremap &lt;leader&gt;} :ptag /&lt;c-r&gt;=expand('&lt;cword&gt;')&lt;cr&gt;&lt;cr&gt;",
+        "vimbits_title": [
+            "&quot;Jump to definition&quot; and &quot;preview definition&quot; for JavaScript\n"
+        ]
+    },
+    {
+        "vimbits_id": 435,
+        "vimbits_tag": [
+            "edit",
+            "multiple",
+            "dot"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;o *Ncgn",
+        "vimbits_title": [
+            "Quick edit\n"
+        ]
+    },
+    {
+        "vimbits_id": 436,
+        "vimbits_tag": [
+            "substitute"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;r :'{,'}s/&lt;c-r&gt;=expand('&lt;cword&gt;')&lt;cr&gt;/",
+        "vimbits_title": [
+            "Quick substitution\n"
+        ]
+    },
+    {
+        "vimbits_id": 437,
+        "vimbits_tag": [
+            "substitute"
+        ],
+        "vimbits_tips": "nnoremap &lt;leader&gt;s *N\r\nxnoremap &lt;leader&gt;s &quot;*y&lt;Esc&gt;:let @/ = substitute(escape(@*, '\\/.*$^~[]'), &quot;\\n&quot;, '\\\\n', &quot;g&quot;) &lt;bar&gt; echo @/&lt;cr&gt;\r\n\r\nxnoremap &lt;leader&gt;r :s/&lt;c-r&gt;=expand(@/)&lt;cr&gt;/",
+        "vimbits_title": [
+            "Quick visual mode substitution\n"
+        ]
+    },
+    {
+        "vimbits_id": 438,
+        "vimbits_tag": [
+            "folds"
+        ],
+        "vimbits_tips": "nnoremap &lt;silent&gt; &lt;Space&gt; :exe 'silent! normal! za'.(foldlevel('.') ? '' : 'l')&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle folds with Space\n"
+        ]
+    },
+    {
+        "vimbits_id": 439,
+        "vimbits_tag": [],
+        "vimbits_tips": "nnoremap &lt;Leader&gt;! q:kWgea!&lt;CR&gt;",
+        "vimbits_title": [
+            "Repeat previous command with a bang\n"
+        ]
+    },
+    {
+        "vimbits_id": 442,
+        "vimbits_tag": [
+            "remapping",
+            "space",
+            "leader",
+            "mapping"
+        ],
+        "vimbits_tips": "let mapleader=&quot; &quot;",
+        "vimbits_title": [
+            "Map leader to space bar\n"
+        ]
+    },
+    {
+        "vimbits_id": 444,
+        "vimbits_tag": [
+            "space",
+            "leader"
+        ],
+        "vimbits_tips": "let mapleader=&quot; &quot;\r\nnoremap &lt;leader&gt;&lt;space&gt; :",
+        "vimbits_title": [
+            "Command-line mode with double space\n"
+        ]
+    },
+    {
+        "vimbits_id": 445,
+        "vimbits_tag": [
+            "remapping",
+            "escape",
+            "mapping"
+        ],
+        "vimbits_tips": "inoremap &lt;C-q&gt; &lt;Esc&gt;\r\nnoremap &lt;C-q&gt; &lt;Esc&gt;\r\nvnoremap &lt;C-q&gt; &lt;Esc&gt;\r\ncmap &lt;C-q&gt; &lt;C-c&gt;",
+        "vimbits_title": [
+            "C-q to escape from all modes\n"
+        ]
+    },
+    {
+        "vimbits_id": 447,
+        "vimbits_tag": [
+            "remapping",
+            "mapping",
+            "omni"
+        ],
+        "vimbits_tips": "function! OmniPopup(action)\r\n    if pumvisible()\r\n        if a:action == 'j'\r\n            return &quot;\\&lt;C-N&gt;&quot;\r\n        elseif a:action == 'k'\r\n            return &quot;\\&lt;C-P&gt;&quot;\r\n        endif\r\n    endif\r\n    return a:action\r\nendfunction\r\ninoremap &lt;silent&gt;&lt;C-j&gt; &lt;C-R&gt;=OmniPopup('j')&lt;CR&gt;\r\ninoremap &lt;silent&gt;&lt;C-k&gt; &lt;C-R&gt;=OmniPopup('k')&lt;CR&gt;",
+        "vimbits_title": [
+            "Move in omni pop-up with C-j/k\n"
+        ]
+    },
+    {
+        "vimbits_id": 448,
+        "vimbits_tag": [
+            "remapping",
+            "movement",
+            "cursor",
+            "mapping",
+            "scrolling"
+        ],
+        "vimbits_tips": "noremap &lt;C-j&gt; j&lt;C-e&gt;\r\nnoremap &lt;C-k&gt; k&lt;C-y&gt;",
+        "vimbits_title": [
+            "Scroll the screen with the cursor movements\n"
+        ]
+    },
+    {
+        "vimbits_id": 449,
+        "vimbits_tag": [
+            "remapping",
+            "movement",
+            "mapping"
+        ],
+        "vimbits_tips": "inoremap &lt;C-a&gt; &lt;Home&gt;\r\ninoremap &lt;C-e&gt; &lt;End&gt;",
+        "vimbits_title": [
+            "Go to the beginning / end of line in the insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 450,
+        "vimbits_tag": [
+            "remapping",
+            "edit",
+            "mapping"
+        ],
+        "vimbits_tips": "inoremap &lt;C-d&gt; &lt;C-o&gt;dw",
+        "vimbits_title": [
+            "Delete a word forward in the insert mode\n"
+        ]
+    },
+    {
+        "vimbits_id": 451,
+        "vimbits_tag": [
+            "buffer",
+            "quit"
+        ],
+        "vimbits_tips": "&quot; force quit\r\nmap &lt;silent&gt; &lt;leader&gt;k :qa!&lt;cr&gt;",
+        "vimbits_title": [
+            "Kill vim\n"
+        ]
+    },
+    {
+        "vimbits_id": 452,
+        "vimbits_tag": [
+            "tab",
+            "macvim",
+            "tabs",
+            "gui"
+        ],
+        "vimbits_tips": "&quot; open all buffers in tabs (gui)\r\nmap &lt;silent&gt; &lt;leader&gt;tb :tab :ball&lt;cr&gt;",
+        "vimbits_title": [
+            "Open all buffers in tabs\n"
+        ]
+    },
+    {
+        "vimbits_id": 453,
+        "vimbits_tag": [
+            "save",
+            "retab"
+        ],
+        "vimbits_tips": "&quot; retab and save\r\nmap &lt;leader&gt;rt :retab!&lt;bar&gt;:w&lt;cr&gt;",
+        "vimbits_title": [
+            "retab and save\n"
+        ]
+    },
+    {
+        "vimbits_id": 454,
+        "vimbits_tag": [
+            "movement",
+            "splits"
+        ],
+        "vimbits_tips": "&quot; move splits around\r\nnn &lt;leader&gt;sl &lt;c-w&gt;&lt;s-h&gt;\r\nnn &lt;leader&gt;sr &lt;c-w&gt;&lt;s-l&gt;\r\nnn &lt;leader&gt;sb &lt;c-w&gt;&lt;s-j&gt;\r\nnn &lt;leader&gt;st &lt;c-w&gt;&lt;s-k&gt;",
+        "vimbits_title": [
+            "Move splits around\n"
+        ]
+    },
+    {
+        "vimbits_id": 455,
+        "vimbits_tag": [
+            "buffer",
+            "tab"
+        ],
+        "vimbits_tips": "&quot; open existing buffer in a newtab\r\nmap &lt;leader&gt;te :ls&lt;cr&gt;:tabedit #",
+        "vimbits_title": [
+            "Open existing buffer in a new tab\n"
+        ]
+    },
+    {
+        "vimbits_id": 456,
+        "vimbits_tag": [
+            "file",
+            "autocomplete"
+        ],
+        "vimbits_tips": "&quot; nice bash-like filename auto-complete\r\nset wildmode=longest,list,full\r\nset wildmenu",
+        "vimbits_title": [
+            "Bash like file auto-complete\n"
+        ]
+    },
+    {
+        "vimbits_id": 457,
+        "vimbits_tag": [
+            "edit",
+            "view",
+            "browse"
+        ],
+        "vimbits_tips": "&quot; see file explorer in tree style\r\nlet g:netrw_liststyle=3",
+        "vimbits_title": [
+            "File explorer tree-style\n"
+        ]
+    },
+    {
+        "vimbits_id": 458,
+        "vimbits_tag": [
+            "ctags"
+        ],
+        "vimbits_tips": "noremap   &lt;silent&gt; &lt;C-g&gt; :TlistToggle&lt;CR&gt;",
+        "vimbits_title": [
+            "Toggle Ctags window\n"
+        ]
+    },
+    {
+        "vimbits_id": 462,
+        "vimbits_tag": [
+            "splits",
+            "tabs"
+        ],
+        "vimbits_tips": "nnoremap &lt;Tab&gt; gt\r\nnnoremap &lt;S-Tab&gt; gT\r\nnnoremap &lt;Space&gt; &lt;C-w&gt;w\r\nnnoremap &lt;S-Space&gt; &lt;C-w&gt;W",
+        "vimbits_title": [
+            "Tab/Split Navigation\n"
+        ]
+    },
+    {
+        "vimbits_id": 463,
+        "vimbits_tag": [
+            "remapping",
+            "arrow"
+        ],
+        "vimbits_tips": "nnoremap &lt;up&gt; gk\r\nnnoremap &lt;down&gt; gj",
+        "vimbits_title": [
+            "Arrow keys like other text editors\n"
+        ]
+    },
+    {
+        "vimbits_id": 464,
+        "vimbits_tag": [
+            "remapping",
+            "mapping"
+        ],
+        "vimbits_tips": "noremap &lt;CR&gt; :",
+        "vimbits_title": [
+            "Command-line mode with the enter key\n"
+        ]
+    },
+    {
+        "vimbits_id": 465,
+        "vimbits_tag": [],
+        "vimbits_tips": "inoremap &lt;Leader&gt;&lt;tab&gt; &lt;c-v&gt;&lt;tab&gt;",
+        "vimbits_title": [
+            "Tab insert with supertab\n"
+        ]
+    },
+    {
+        "vimbits_id": 466,
+        "vimbits_tag": [
+            "shift"
+        ],
+        "vimbits_tips": "vnoremap &lt;C-n&gt; &lt;esc&gt;`&lt;gv:m '&lt;-2&lt;cr&gt;gv                                                     \r\nvnoremap &lt;C-m&gt; &lt;esc&gt;`&gt;gv:m '&gt;+1&lt;cr&gt;gv\r\n&quot; Or a single line in normal mode\r\nnnoremap &lt;C-n&gt; mz:m+&lt;cr&gt;`z\r\nnnoremap &lt;C-m&gt; mz:m-2&lt;cr&gt;`z",
+        "vimbits_title": [
+            "Move current visual selection up or down\n"
+        ]
+    }
+]

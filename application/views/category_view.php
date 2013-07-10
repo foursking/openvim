@@ -13,7 +13,7 @@ Logged in as <a href="#" class="navbar-link">LoginIn</a>
 </p>
 <ul class="nav">
 <? foreach ($category as $row):?>
-<li><a href="#<?=$row->category_name?>"><?=$row->category_name?></a></li>
+<li><a href="#<?=$row->categoryName?>"><?=$row->categoryName?></a></li>
 <?endforeach;?>
 </ul>
 </div><!--/.nav-collapse -->
