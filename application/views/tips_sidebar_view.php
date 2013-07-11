@@ -9,10 +9,14 @@
           </div>
           <div class="block">
             <h4 class="title-divider"><span>Tags</span></h4>
-            <div class="tag-cloud"> <span><a href="#">culture</a> (97)</span> <span><a href="#">general</a> (77)</span> <span><a href="#">coding</a> (75)</span> <span><a href="#">design</a> (56)</span> <span><a href="#">weather</a> (65)</span> <span><a href="#">jobs</a> (70)</span> <span><a href="#">health</a> (54)</span> </div>
+            <div class="tag-cloud">
+            <?php foreach($top_tags as $key=>$value):?>
+            <span><a href="#"><?php echo $value['tagsName'] ;?></a> (<?php echo $value['tagsCount']?>)</span>
+            <?php endforeach;?>
+</div>
           </div>
           <div class="block">
-            <h4 class="title-divider"><span>Archive</span></h4>
+            <h4 class="title-divider"><span>Hot Tips</span></h4>
             <ul class="big-list tags">
               <li><a href="#">January 2013</a> (19)</li>
               <li><a href="#">December 2012</a> (0)</li>

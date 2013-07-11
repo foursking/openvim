@@ -15,18 +15,13 @@ class Tips extends CI_Controller
 
     public function index()
     {
+        $this->load->model('tips_model');
+        $data['tips_generalize'] = $this->tips_model->show_tips_generalize(5 , 0);
+        $data['top_tags'] = $this->tips_model->show_top_tags(7);
         $this->load->view('header_view');
-        $this->load->view("tips_generalize_view");
+        $this->load->view("tips_generalize_view" , $data);
         $this->load->view("tips_sidebar_view");
         $this->load->view('footer_view');
-    }
-
-    public function committips()
-    {
-        $this->load->model('tips_model');
-        $data['insertSql'] = $this->tips_model->append_tags_relationship();
-
-        pretty_print($data['insertSql']);
     }
 
 

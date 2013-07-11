@@ -1,4 +1,10 @@
 <?php
+/*=============================================================================
+#     FileName: tips_model.php
+#   CreateTime: 2013-07-11 19:10:28
+#       Author: yifeng@leju.com
+#   LastChange: 2013-07-11 19:10:28
+=============================================================================*/
 
 class Tips_model extends CI_Model {
 
@@ -42,12 +48,6 @@ class Tips_model extends CI_Model {
 
     public function append_tags_relationship()
     {
-
-        $array = array(
-            1=>array( 'tipsId'=>1, 'tagsId'=>3),
-            2=>array( 'tipsId'=>1, 'tagsId'=>100),
-        );
-
         $querySql = $this->db->query("SELECT * FROM `op_tags`");
 
         $tagsRelationship = array();
@@ -67,12 +67,8 @@ class Tips_model extends CI_Model {
             $vimbits_tips[$key]['tipsCtime']   = date("Y-m-d H:i:s");
             $vimbits_tips[$key]['tipsUtime']   = date("Y-m-d H:i:s");
         }
-        #pretty_print($vimbits_tips);
 
         $this->db->insert_batch('tips' , $vimbits_tips);
-
-
-
 //        $data = array();
 //
 //        $i = 0;
@@ -100,16 +96,111 @@ class Tips_model extends CI_Model {
 //
     }
 
-    public function show_tips_generalize()
-    {
-        $$querySql = "SELECT * FROM ``";
+    /**
+	 * 获取VimTips概括
+	 * @param int $num tips数量
+	 * @param int $offset 分页数
+	 * @return array
+	 */
 
+    public function show_tips_generalize($num , $offset)
+    {
+
+        $zodiac = array(
+            'Ram'      => 'Aries',
+            'Bull'     => 'Taurus',
+            'Twins'    => 'Gemini',
+            'Crab'     => 'Cancer',
+            'Lion'     => 'Leo',
+            'Virgin'   => 'Virgo',
+            'Balance'  => 'Libra',
+            'Scorpion' => 'Scorpio',
+            'Archer'   => 'Sagittarius',
+            'Goat'     => 'Capricorn',
+            'Bearer'   => 'Aquarius',
+            'Fishes'   => 'Pisces'
+        );
+
+
+        $querySql = $this->db->get('tips' , $num , $offset);
+        $Ram = $querySql->result_array();
+
+        $tipsId = '';
+
+        foreach ($Ram as $key=>$value)
+        {
+            $tipsId .= $value['tipsId'] . ',';
+        }
+
+        $tipsId = rtrim($tipsId , ',');
+        $querySql = $this->db->query("SELECT * FROM `op_tags_relationships` WHERE tipsId IN ({$tipsId})");
+
+        $Bull = $querySql->result_array();
+
+        foreach ($Bull as $key=>$value)
+        {
+            $tagsId[] = $value['tagsId'];
+        }
+
+        $tagsId = implode(',' , array_flip(array_flip($tagsId)));
+
+        $querySql = $this->db->query("SELECT * FROM `op_tags` WHERE tagsId IN ({$tagsId})");
+
+        $Twins = $querySql->result_array();
+
+        foreach ($Twins as $key=>$value)
+        {
+            $tagsName[$value['tagsId']] = $value['tagsName'];
+        }
+
+        foreach ($Ram as $key=>$value)
+        {
+            foreach ($Bull as $k=>$v)
+            {
+                if ($v['tipsId'] == $value['tipsId'])
+                {
+                    $Ram[$key]['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+        return $Ram;
     }
 
 
+    /**
+	 * 获取VimTips最热标签
+	 * @param int $num 最热标签数
+	 * @return array
+	 */
+    public function show_top_tags($num = 7)
+    {
+        $querySql = $this->db->query("SELECT tagsId, COUNT( tagsId ) AS tagsCount FROM  `op_tags_relationships` GROUP BY tagsId ORDER BY tagsCount DESC LIMIT 0 , $num");
+        $Ram = $querySql->result_array();
+        $tagsId = '';
+        foreach ($Ram as $key=>$value)
+        {
+            $tagsId .= $value['tagsId'] . ',';
+        }
+
+        $tagsId = rtrim($tagsId , ',');
+        $querySql = $this->db->query("SELECT * FROM `op_tags` WHERE tagsId IN ({$tagsId})");
+
+        $Bull = $querySql->result_array();
+
+        for ($i = 0; $i < count($Ram); $i++)
+        {
+            $Twins[$i] = array_merge($Ram[$i] , $Bull[$i]);
+        }
+        return $Twins;
+    }
 
 
 }
+
 
 
 

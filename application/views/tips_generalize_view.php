@@ -7,6 +7,7 @@
       <!--Blog Roll Content-->
       <div class="span9 blog-roll blog-list">
 
+        <?php foreach($tips_generalize as $key=>$value):?>
         <!-- tips post -->
         <div class="media row-fluid">
           <div class="span1 hidden-phone">
@@ -16,8 +17,14 @@
           </div>
           <div class="span11">
             <div class="media-body">
-              <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">event</a></div>
-              <h4 class="title media-heading"><a href="blog-post.html">a nec in sed hac ultrices cursus</a></h4>
+              <div class="tags">
+
+             <?php if(!empty($value['tags'])){ ?>
+                <?php foreach($value['tags'] as $k=>$v): ?>
+                    <a href="#" class="type"><?php echo $v?></a> &nbsp;&nbsp;
+                    <?php endforeach;};?>
+              </div>
+              <h4 class="title media-heading"><a href="blog-post.html"><?php echo $value['tipsTitle'];?></a></h4>
 
               <!-- Meta details mobile -->
               <ul class="inline meta muted visible-phone">
@@ -32,6 +39,7 @@
             </div>
           </div>
         </div>
+        <?php endforeach; ?>
 
 
 
