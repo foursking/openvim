@@ -2,7 +2,7 @@
 
 
 ##2013.07.13
-* 添加google-pretty-code
+* [google-code-prettify](http://code.google.com/p/google-code-prettify/) 页面代码高亮
 
 
 
@@ -11,4 +11,4 @@
 * MySQL QUERY
 
 ##2013.07.11
-* ```array_flip(array_flip(array) == array_unique(array)```
+* ```array_flip( array_flip( array ) ) == array_unique( array )```
