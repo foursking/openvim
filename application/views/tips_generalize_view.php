@@ -6,6 +6,10 @@
 
 .media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
 
+.media-body .title a{color:#333}
+.media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
+.blog-roll .media{padding-bottom:0px}
+
 
 </style>
 <div id="content">

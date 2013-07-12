@@ -1,4 +1,4 @@
-#hello openvim
+#Hello OpenVim
 
 
 ##2013.07.13

@@ -97,13 +97,13 @@ class Tips_model extends CI_Model {
     }
 
     /**
-     * 获取VimTips概括
-     * @param int $num tips数量
-     * @param int $offset 分页数
-     * @return array
-     */
+	 * 获取VimTips概括
+	 * @param int $num tips数量
+	 * @param int $offset 分页数
+	 * @return array
+	 */
 
-    public function show_tips_generalize($num , $offset , $tipsId = '')
+    public function show_tips_generalize($num , $offset)
     {
 
         $zodiac = array(
@@ -122,22 +122,10 @@ class Tips_model extends CI_Model {
         );
 
 
-        if (!empty($tipsId))
-            $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
-            ->from("op_tips as a")
-            ->where('a.tipsId' , 3)
-            ->get()
-            ->row_array();
-        else
-            $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
-            ->from("op_tips as a")
-            ->get()
-            ->row_array();
-
+        $querySql = $this->db->get('tips' , $num , $offset);
+        $Ram = $querySql->result_array();
 
         $tipsId = '';
-
-        pretty_print($Ram);
 
         foreach ($Ram as $key=>$value)
         {
@@ -181,7 +169,6 @@ class Tips_model extends CI_Model {
         }
         return $Ram;
     }
-
 
     /**
      * 获取VimTips最热标签
@@ -231,7 +218,7 @@ class Tips_model extends CI_Model {
 
         $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
             ->from("op_tips as a")
-            ->where('a.tipsId' , 3)
+            ->where('a.tipsId' , 128)
             ->get()
             ->row_array();
 

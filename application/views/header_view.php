@@ -126,20 +126,43 @@
           </li>
         </ul>
 
-        <!--everything within this div is collapsed on mobile-->
+    <!--everything within this div is collapsed on mobile-->
         <div class="nav-collapse collapse">
 
           <!--main navigation-->
           <ul class="nav" id="main-menu">
             <li class="home-link"><a href="index.html"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
-            <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item">Features +</a> </li>
+            <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a>
+
+            </li>
             <li><a href="pricing.html" class="menu-item">Pricing</a></li>
             <li><a href="customers.html" class="menu-item">Customers</a></li>
-            <li class="dropdown"> <a href="about.html" class="dropdown-toggle">About +</a> </li>
-            <li class="dropdown"> <a href="blog.html" class="dropdown-toggle">Blog +</a> </li>
-            <li class="dropdown"><a href="pages.html" class="dropdown-toggle">More +</a> </li>
+            <li class="dropdown"> <a href="about.html" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">tips +</a>
+              <!-- Dropdown Menu -->
+              <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
+                <li role="menuitem"><a href="about.html" tabindex="-1" class="menu-item">Sort Hot</a></li>
+                <li role="menuitem"><a href="team.html" tabindex="-1" class="menu-item">Sort Top</a></li>
+                <li role="menuitem"><a href="contact.html" tabindex="-1" class="menu-item">Sort Random</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">More +</a>
+
+
+              <!-- Dropdown Menu -->
+              <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="pages-drop">
+                <li role="menuitem"><a href="login.html" tabindex="-1" class="menu-item">Login</a></li>
+                <li role="menuitem"><a href="signup.html" tabindex="-1" class="menu-item">Sign Up</a></li>
+                <li role="menuitem"><a href="starter.html" tabindex="-1" class="menu-item">Starter Snippets</a></li>
+                <li role="menuitem"><a href="index-static.html" tabindex="-1" class="menu-item">Homepage Static Banner</a></li>
+                <li role="menuitem"><a href="fixed-header.html" tabindex="-1" class="menu-item">Fixed Header</a></li>
+                <li role="menuitem"><a href="colours.html" tabindex="-1" class="menu-item">Theme Colours</a></li>
+                <li role="menuitem"><a href="elements.html" tabindex="-1" class="menu-item">Theme Elements</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
+
         <!--/.nav-collapse -->
       </div>
     </div>

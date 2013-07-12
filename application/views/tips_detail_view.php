@@ -8,9 +8,8 @@
 margin: 0 0 1em;
 padding-bottom: .73em;
 background: transparent url("http://dev.openvim.com/public/img/bg_divider.png") repeat-x bottom;
-font-size: 1.85em;
+font-size: 1.8em;
 display: block;
-font-size: 2em;
 -webkit-margin-before: 0.67em;
 -webkit-margin-after: 0.67em;
 -webkit-margin-start: 0px;
