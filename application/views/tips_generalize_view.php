@@ -1,3 +1,13 @@
+<style>
+
+.tags{text-transform: lowercase;}
+.media-body .tags a{background:#eee;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
+.tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
+
+.media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
+
+
+</style>
 <div id="content">
   <div class="container">
     <div class="row-fluid">
@@ -5,7 +15,7 @@
     </div>
     <div class="row">
       <!--Blog Roll Content-->
-      <div class="span9 blog-roll blog-list">
+      <div class="span-tips-main blog-roll blog-list">
 
         <?php foreach($tips_generalize as $key=>$value):?>
         <!-- tips post -->
@@ -17,13 +27,7 @@
           </div>
           <div class="span11">
             <div class="media-body">
-              <div class="tags">
 
-             <?php if(!empty($value['tags'])){ ?>
-                <?php foreach($value['tags'] as $k=>$v): ?>
-                    <a href="#" class="type"><?php echo $v?></a> &nbsp;&nbsp;
-                    <?php endforeach;};?>
-              </div>
               <h4 class="title media-heading"><a href="blog-post.html"><?php echo $value['tipsTitle'];?></a></h4>
 
               <!-- Meta details mobile -->
@@ -32,10 +36,17 @@
                 <li><i class="icon-user"></i> <a href="#">Alex</a></li>
               </ul>
               <a href="blog-post.html" style="float:right;margin:-30px 0 0 5px;line-height:1;"> <img style="width:40px;height:40px"src="<?=base_url('public/img/blog/ape.jpg')?>" alt="Picture of frog by Ben Fredericson" /> </a>
-              <ul class="inline links">
-                <li><a href="blog-post.html" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-                <li><a href="blog-post.html#comments" class="btn btn-mini"><i class="icon-comment"></i> 50 Comments</a></li>
-              </ul>
+
+              <div class="tags">
+             <?php if(!empty($value['tags'])){ ?>
+                <?php foreach($value['tags'] as $k=>$v): ?>
+                    <a href="#" class="type"><?php echo $v?></a> &nbsp;&nbsp;
+                    <?php endforeach;};?>
+              </div>
+
+
+
+
             </div>
           </div>
         </div>

@@ -24,5 +24,16 @@
 
 <!--Custom scripts mainly used to trigger libraries -->
 <script src="<?=base_url('public/js/script.js')?>"></script>
+
+
+<script>
+	var base_url = 'http://dev.openvim.com/';
+	$(function(){
+		$('.tips-content pre').each(function(){
+			$(this).addClass('prettyprint linenums');
+		});
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

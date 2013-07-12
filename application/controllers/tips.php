@@ -24,6 +24,17 @@ class Tips extends CI_Controller
         $this->load->view('footer_view');
     }
 
+    public function post()
+    {
+        $this->load->model('tips_model');
+        $data['tips_detail'] = $this->tips_model->show_tips_detail(3);
+        $this->load->view('header_view');
+        $this->load->view('tips_detail_view' , $data);
+        $data['top_tags'] = $this->tips_model->show_top_tags(7);
+        $this->load->view("tips_sidebar_view");
+        $this->load->view('footer_view');
+    }
+
 
 }
 

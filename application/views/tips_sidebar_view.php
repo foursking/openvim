@@ -1,5 +1,5 @@
       <!--Sidebar-->
-      <div class="span3 sidebar sidebar-right">
+      <div class="span-tips-sidebar sidebar sidebar-right">
         <div class="inner">
           <div class="block">
             <div class="input-append">

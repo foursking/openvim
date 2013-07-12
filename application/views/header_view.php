@@ -26,10 +26,18 @@
 <!-- Your custom override -->
 <link href="<?=base_url('public/css/custom-style.css')?>" rel="stylesheet" />
 
+<!-- pretty code -->
+<link href="<?=base_url('public/google-code-prettify/prettify.css')?>" rel="stylesheet" />
+
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="js/html5.js"></script>
     <![endif]-->
+
+
+<script src="<?=base_url('public/google-code-prettify/prettify.js')?>"></script>
+
+
 
 <!-- Le fav and touch icons - @todo: fill with your icons or remove -->
 <link rel="shortcut icon" href="<?=base_url('public/img/icons/favicon.png')?>" />

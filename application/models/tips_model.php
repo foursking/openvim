@@ -69,41 +69,41 @@ class Tips_model extends CI_Model {
         }
 
         $this->db->insert_batch('tips' , $vimbits_tips);
-//        $data = array();
-//
-//        $i = 0;
-//        foreach ($vimbits_tags as $key=>$value)
-//        {
-//            if (empty($value))
-//            {
-//                continue;
-//            }
-//
-//            foreach ($value as $k=>$v)
-//            {
-//                foreach ($v as $sk=>$sv)
-//                 {
-//                    $data[$i]['tipsId'] = $key + 1;
-//                    $data[$i]['tagsId'] = $tagsRelationship[$sv] + 1;
-//                    $i +=1;
-//                 }
-//            }
-//
-//            $i +=1;
-//        }
-//
-//        #$this->db->insert_batch('tags_relationships' , $data);
-//
+        //        $data = array();
+        //
+        //        $i = 0;
+        //        foreach ($vimbits_tags as $key=>$value)
+        //        {
+        //            if (empty($value))
+        //            {
+        //                continue;
+        //            }
+        //
+        //            foreach ($value as $k=>$v)
+        //            {
+        //                foreach ($v as $sk=>$sv)
+        //                 {
+        //                    $data[$i]['tipsId'] = $key + 1;
+        //                    $data[$i]['tagsId'] = $tagsRelationship[$sv] + 1;
+        //                    $i +=1;
+        //                 }
+        //            }
+        //
+        //            $i +=1;
+        //        }
+        //
+        //        #$this->db->insert_batch('tags_relationships' , $data);
+        //
     }
 
     /**
-	 * 获取VimTips概括
-	 * @param int $num tips数量
-	 * @param int $offset 分页数
-	 * @return array
-	 */
+     * 获取VimTips概括
+     * @param int $num tips数量
+     * @param int $offset 分页数
+     * @return array
+     */
 
-    public function show_tips_generalize($num , $offset)
+    public function show_tips_generalize($num , $offset , $tipsId = '')
     {
 
         $zodiac = array(
@@ -122,10 +122,22 @@ class Tips_model extends CI_Model {
         );
 
 
-        $querySql = $this->db->get('tips' , $num , $offset);
-        $Ram = $querySql->result_array();
+        if (!empty($tipsId))
+            $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
+            ->from("op_tips as a")
+            ->where('a.tipsId' , 3)
+            ->get()
+            ->row_array();
+        else
+            $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
+            ->from("op_tips as a")
+            ->get()
+            ->row_array();
+
 
         $tipsId = '';
+
+        pretty_print($Ram);
 
         foreach ($Ram as $key=>$value)
         {
@@ -172,10 +184,10 @@ class Tips_model extends CI_Model {
 
 
     /**
-	 * 获取VimTips最热标签
-	 * @param int $num 最热标签数
-	 * @return array
-	 */
+     * 获取VimTips最热标签
+     * @param int $num 最热标签数
+     * @return array
+     */
     public function show_top_tags($num = 7)
     {
         $querySql = $this->db->query("SELECT tagsId, COUNT( tagsId ) AS tagsCount FROM  `op_tags_relationships` GROUP BY tagsId ORDER BY tagsCount DESC LIMIT 0 , $num");
@@ -197,6 +209,71 @@ class Tips_model extends CI_Model {
         }
         return $Twins;
     }
+
+
+    public function show_tips_detail($tipsId = '')
+    {
+        $zodiac = array(
+            'Ram'      => 'Aries',
+            'Bull'     => 'Taurus',
+            'Twins'    => 'Gemini',
+            'Crab'     => 'Cancer',
+            'Lion'     => 'Leo',
+            'Virgin'   => 'Virgo',
+            'Balance'  => 'Libra',
+            'Scorpion' => 'Scorpio',
+            'Archer'   => 'Sagittarius',
+            'Goat'     => 'Capricorn',
+            'Bearer'   => 'Aquarius',
+            'Fishes'   => 'Pisces'
+        );
+
+
+        $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
+            ->from("op_tips as a")
+            ->where('a.tipsId' , 3)
+            ->get()
+            ->row_array();
+
+        $tipsId = $Ram['tipsId'];
+
+        $querySql = $this->db->query("SELECT * FROM `op_tags_relationships` WHERE tipsId IN ({$tipsId})");
+
+        $Bull = $querySql->result_array();
+
+        foreach ($Bull as $key=>$value)
+        {
+            $tagsId[] = $value['tagsId'];
+        }
+
+        $tagsId = implode(',' , array_flip(array_flip($tagsId)));
+
+        $querySql = $this->db->query("SELECT * FROM `op_tags` WHERE tagsId IN ({$tagsId})");
+
+        $Twins = $querySql->result_array();
+
+        foreach ($Twins as $key=>$value)
+        {
+            $tagsName[$value['tagsId']] = $value['tagsName'];
+        }
+
+
+        foreach ($Bull as $k=>$v)
+        {
+            if ($v['tipsId'] == $Ram['tipsId'])
+            {
+                $Ram['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+        return $Ram;
+    }
+
+
 
 
 }
