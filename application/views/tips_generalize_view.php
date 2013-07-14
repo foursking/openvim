@@ -1,7 +1,7 @@
 <style>
 
-.tags{text-transform: lowercase;}
-.media-body .tags a{background:#eee;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
+.tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
+.media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
 .tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
 
 .media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
@@ -39,7 +39,7 @@
                 <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sun 20th Jan 2013</li>
                 <li><i class="icon-user"></i> <a href="#">Alex</a></li>
               </ul>
-              <a href="blog-post.html" style="float:right;margin:-30px 0 0 5px;line-height:1;"> <img style="width:40px;height:40px"src="<?=base_url('public/img/blog/ape.jpg')?>" alt="Picture of frog by Ben Fredericson" /> </a>
+              <a href="blog-post.html" style="float:right;margin:-30px 0 0 5px;line-height:1;"> <img style="width:40px;height:40px;margin-bottom:10px"src="<?=base_url('public/img/avar/vim-logo.png')?>" alt="" /> </a>
 
               <div class="tags">
              <?php if(!empty($value['tags'])){ ?>
@@ -47,7 +47,9 @@
                     <a href="#" class="type"><?php echo $v?></a> &nbsp;&nbsp;
                     <?php endforeach;};?>
               </div>
-
+                <div class="tips-content" style="clear:both;margin-top:5px">
+                <pre><?php echo $value['tipsContent'];?></pre>
+                </div>
 
 
 
@@ -59,7 +61,6 @@
 
 
 
-        <small>Blog photos by <a href="http://www.flickr.com/photos/xjrlokix/">Ben Fredericson</a></small>
         <div class="pagination pagination-centered">
           <button type="button" class="btn btn-block" data-loading-text="Loading...">Load More</button>
         </div>
