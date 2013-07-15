@@ -132,12 +132,9 @@
           <!--main navigation-->
           <ul class="nav" id="main-menu">
             <li class="home-link"><a href="index.html"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
-            <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a>
-
-            </li>
-            <li><a href="pricing.html" class="menu-item">Pricing</a></li>
-            <li><a href="customers.html" class="menu-item">Customers</a></li>
-            <li class="dropdown"> <a href="about.html" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">tips +</a>
+            <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a> </li>
+            <li><a href="pricing.html" class="menu-item">脚本（script）</a></li>
+            <li class="dropdown"> <a href="about.html" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">技巧（tips）</a>
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
                 <li role="menuitem"><a href="about.html" tabindex="-1" class="menu-item">Sort Hot</a></li>

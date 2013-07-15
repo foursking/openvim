@@ -50,9 +50,6 @@
                 <div class="tips-content" style="clear:both;margin-top:5px">
                 <pre><?php echo $value['tipsContent'];?></pre>
                 </div>
-
-
-
             </div>
           </div>
         </div>
