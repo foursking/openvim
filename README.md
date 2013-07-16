@@ -1,6 +1,10 @@
 #Hello OpenVim
 
 
+##2013.07.16
+* $this->uri->segment()
+* $this
+
 ##2013.07.13
 * [google-code-prettify](http://code.google.com/p/google-code-prettify/) 页面代码高亮
 
