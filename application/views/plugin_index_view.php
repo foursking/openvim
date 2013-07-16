@@ -9,9 +9,9 @@
         <div class="section-menu">
           <ul class="nav nav-list">
             <li class="nav-header">Vim Plugin Here</li>
-            <li class="active"><a href="###" class="first" style="padding:15px 0px 15px 30px">所有<i class="icon-angle-right"></i></a></li>
+            <li class="active"><a href="<?php echo site_url('plugin/index/0')?>" class="first" style="padding:15px 0px 15px 30px">所有<i class="icon-angle-right"></i></a></li>
             <?php foreach($plugin_type_category as $key=>$value):?>
-            <li><a href="###"  style="padding:15px 0px 15px 30px"><?php echo $value['typeName'];?><i class="icon-angle-right"></i></a></li>
+            <li><a href="<?php echo site_url("plugin/type/{$value['typeId']}")?>"  style="padding:15px 0px 15px 30px"><?php echo $value['typeName'];?><i class="icon-angle-right"></i></a></li>
             <?php endforeach;?>
           </ul>
         </div>
@@ -64,7 +64,15 @@ font-size:14px;
           </div>
         </div>
        <?php endforeach;?>
-
+<div class="pagination" style="float:right">
+  <ul>
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">»</a></li>
+  </ul>
+</div>
       </div>
 
   </div>

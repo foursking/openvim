@@ -30,28 +30,22 @@ class Plugin_model extends CI_Model
 
 
 
-    public function show_plugin_generalize($typeId = "")
+    public function show_plugin_generalize($typeId = 0 , $pre_page = 0 , $offset = 0)
     {
+
         $Ram = $this->db->select("a.pluginId , a.uid , a.pluginName , a.pluginSummary , a.pluginUrl , a.pluginDescription , a.pluginInstall , b.typeName")
                           ->from("{$this->_tables['plugin']} as a")
-                          ->join("{$this->_tables['type']} as b" , "a.pluginId = b.typeId")
-                          ->where("a.typeId" , $typeId)
-                          ->get()
-                          ->result_array();
+                          ->join("{$this->_tables['type']} as b" , "a.pluginId = b.typeId");
 
-        return $Ram;
+        if ($typeId != 0)
+            $Ram->where("a.pluginTypeId" , $typeId);
 
-    }
+        if ($pre_page)
+            $Ram->limit($pre_page , $offset);
 
-    public function show_plugin_generalize_all($typeId = "")
-    {
-        $Ram = $this->db->select("a.pluginId , a.uid , a.pluginName , a.pluginSummary , a.pluginUrl , a.pluginDescription , a.pluginInstall , b.typeName")
-                          ->from("{$this->_tables['plugin']} as a")
-                          ->join("{$this->_tables['type']} as b" , "a.pluginId = b.typeId")
-                          ->get()
-                          ->result_array();
 
-        return $Ram;
+        return $Ram->get()
+                   ->result_array();
 
     }
 
@@ -62,9 +56,20 @@ class Plugin_model extends CI_Model
                         ->from("{$this->_tables['type']}")
                         ->get()
                         ->result_array();
-
         return $Ram;
     }
+
+
+
+
+
+
+    public function count_plugin_all()
+    {
+        $Ram = $this->db->count_all($this->_tables['plugin']);
+        return $Ram;
+    }
+
 
 
 
