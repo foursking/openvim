@@ -40,8 +40,7 @@ class Plugin_model extends CI_Model
         if ($typeId != 0)
             $Ram->where("a.pluginTypeId" , $typeId);
 
-        if ($pre_page)
-            $Ram->limit($pre_page , $offset);
+        $Ram->limit($offset , $pre_page);
 
 
         return $Ram->get()
