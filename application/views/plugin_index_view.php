@@ -45,6 +45,12 @@ font-size:14px;
             height:70px;
             }
 
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #999;
+  cursor: default;
+}
+
         </style>
         <?php foreach($plugin_generalize as $key=>$value):?>
         <!-- The team -->
@@ -64,19 +70,7 @@ font-size:14px;
           </div>
         </div>
        <?php endforeach;?>
-<div class="pagination" style="float:right">
-  <ul>
-    <li><a href="#">«</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">»</a></li>
-  </ul>
-</div>
-
 <?php echo $this->pagination->create_links(); ?>
-
-
       </div>
 
   </div>

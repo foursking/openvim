@@ -24,12 +24,7 @@
         <?php foreach($tips_generalize as $key=>$value):?>
         <!-- tips post -->
         <div class="media row-fluid">
-          <div class="span1 hidden-phone">
-            <!-- Date desktop -->
-            <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">20</span> </div>
-            <!-- Meta details desktop -->
-          </div>
-          <div class="span11">
+          <div class="span12">
             <div class="media-body">
 
               <h4 class="title media-heading"><a href="blog-post.html"><?php echo $value['tipsTitle'];?></a></h4>
@@ -39,7 +34,7 @@
                 <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sun 20th Jan 2013</li>
                 <li><i class="icon-user"></i> <a href="#">Alex</a></li>
               </ul>
-              <a href="blog-post.html" style="float:right;margin:-30px 0 0 5px;line-height:1;"> <img style="width:40px;height:40px;margin-bottom:10px"src="<?=base_url('public/img/avar/vim-logo.png')?>" alt="" /> </a>
+              <!--<a href="blog-post.html" style="float:right;margin:-30px 0 0 5px;line-height:1;"> <img style="width:40px;height:40px;margin-bottom:10px"src="<?=base_url('public/img/avar/vim-logo.png')?>" alt="" /> </a> -->
 
               <div class="tags">
              <?php if(!empty($value['tags'])){ ?>
@@ -58,16 +53,6 @@
 
 
         <div class="pagination pagination-centered">
-<div class="pagination">
-  <ul>
-    <li><a href="#">Prev</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</div>
+            <?php echo $this->pagination->create_links(); ?>
         </div>
       </div>

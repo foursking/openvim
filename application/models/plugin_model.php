@@ -61,8 +61,6 @@ class Plugin_model extends CI_Model
 
 
 
-
-
     public function count_plugin_all()
     {
         $Ram = $this->db->count_all($this->_tables['plugin']);

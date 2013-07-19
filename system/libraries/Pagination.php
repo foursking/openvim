@@ -34,7 +34,7 @@ class CI_Pagination {
 	var $per_page			= 10; // Max number of items you want shown per page
 	var $num_links			=  2; // Number of "digit" links to show before/after the currently viewed page
 	var $cur_page			=  0; // The current page being viewed
-	var $use_page_numbers	= FALSE; // Use page number for segment instead of offset
+	var $use_page_numbers	=  FALSE; // Use page number for segment instead of offset
 	var $first_link			= '&lsaquo; First';
 	var $next_link			= '&gt;';
 	var $prev_link			= '&lt;';
@@ -162,7 +162,7 @@ class CI_Pagination {
 				$this->cur_page = (int) $this->cur_page;
 			}
 		}
-		
+
 		// Set current page to 1 if using page numbers instead of offset
 		if ($this->use_page_numbers AND $this->cur_page == 0)
 		{
@@ -199,7 +199,7 @@ class CI_Pagination {
 		}
 
 		$uri_page_number = $this->cur_page;
-		
+
 		if ( ! $this->use_page_numbers)
 		{
 			$this->cur_page = floor(($this->cur_page/$this->per_page) + 1);
@@ -321,6 +321,7 @@ class CI_Pagination {
 			{
 				$i = (($num_pages * $this->per_page) - $this->per_page);
 			}
+
 			$output .= $this->last_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->last_tag_close;
 		}
 
@@ -330,6 +331,7 @@ class CI_Pagination {
 
 		// Add the wrapper HTML if exists
 		$output = $this->full_tag_open.$output.$this->full_tag_close;
+
 
 		return $output;
 	}

@@ -8,6 +8,13 @@
 
 class Tips_model extends CI_Model {
 
+ 	private $_tables = array(
+        'tips' => 'tips',
+		'tags_relationships'   => 'tags_relationships',
+		'tags' => 'tags',
+	);
+
+
     function __construct()
     {
         parent::__construct();
@@ -15,86 +22,6 @@ class Tips_model extends CI_Model {
         $this->load->helper('url');
     }
 
-
-    public function append_tags()
-    {
-        $string = file_get_contents(base_url() . "/public/tmp/vimbits_json.json");
-        $vimbits_array = json_decode($string , true);
-        $vimbits_tags = array();
-        foreach ($vimbits_array as $key=>$value)
-        {
-            $vimbits_array[$key]['vimbits_tag'] = $vimbits_array[$key]['vimbits_tag'];
-            $vimbits_array[$key]['vimbits_title'] = addslashes($vimbits_array[$key]['vimbits_title'][0]);
-            $vimbits_array[$key]['vimbits_tips']  = addslashes($vimbits_array[$key]['vimbits_tips']);
-            $vimbits_tags = array_merge($vimbits_array[$key]['vimbits_tag'] , $vimbits_tags);
-        }
-
-
-        $tagsName = '';
-
-        $vimbits_tags = array_flip(array_flip($vimbits_tags));
-
-        foreach ($vimbits_tags as $$key=>$value)
-        {
-            $tagsName .= "('".$value."'),";
-        }
-
-        $tagsName = rtrim($tagsName , ',');
-
-        $insertSql = "INSERT INTO `op_tags`(tagsName) VALUES".$tagsName;
-
-        $this->db->query($insertSql);
-    }
-
-    public function append_tags_relationship()
-    {
-        $querySql = $this->db->query("SELECT * FROM `op_tags`");
-
-        $tagsRelationship = array();
-
-        foreach ($querySql->result_array() as $key=>$value)
-        {
-            $tagsRelationship[$key] = $value['tagsName'];
-        }
-
-        $string = file_get_contents(base_url() . "/public/tmp/vimbits_json.json");
-        $vimbits_array = json_decode($string , true);
-        $vimbits_tips= array();
-        foreach ($vimbits_array as $key=>$value)
-        {
-            $vimbits_tips[$key]['tipsTitle']   = $value['vimbits_title'][0];
-            $vimbits_tips[$key]['tipsContent'] = $value['vimbits_tips'];
-            $vimbits_tips[$key]['tipsCtime']   = date("Y-m-d H:i:s");
-            $vimbits_tips[$key]['tipsUtime']   = date("Y-m-d H:i:s");
-        }
-
-        $this->db->insert_batch('tips' , $vimbits_tips);
-        //        $data = array();
-        //
-        //        $i = 0;
-        //        foreach ($vimbits_tags as $key=>$value)
-        //        {
-        //            if (empty($value))
-        //            {
-        //                continue;
-        //            }
-        //
-        //            foreach ($value as $k=>$v)
-        //            {
-        //                foreach ($v as $sk=>$sv)
-        //                 {
-        //                    $data[$i]['tipsId'] = $key + 1;
-        //                    $data[$i]['tagsId'] = $tagsRelationship[$sv] + 1;
-        //                    $i +=1;
-        //                 }
-        //            }
-        //
-        //            $i +=1;
-        //        }
-        //
-        //        #$this->db->insert_batch('tags_relationships' , $data);
-        //
-    }
 
     /**
 	 * 获取VimTips概括
@@ -122,7 +49,9 @@ class Tips_model extends CI_Model {
         );
 
 
-        $querySql = $this->db->get('tips' , $num , $offset);
+        $querySql = $this->db->get('tips' , $offset, $num);
+
+
         $Ram = $querySql->result_array();
 
         $tipsId = '';
@@ -132,7 +61,9 @@ class Tips_model extends CI_Model {
             $tipsId .= $value['tipsId'] . ',';
         }
 
+
         $tipsId = rtrim($tipsId , ',');
+
         $querySql = $this->db->query("SELECT * FROM `op_tags_relationships` WHERE tipsId IN ({$tipsId})");
 
         $Bull = $querySql->result_array();
@@ -177,43 +108,37 @@ class Tips_model extends CI_Model {
      */
     public function show_top_tags($num = 7)
     {
-        $querySql = $this->db->query("SELECT tagsId, COUNT( tagsId ) AS tagsCount FROM  `op_tags_relationships` GROUP BY tagsId ORDER BY tagsCount DESC LIMIT 0 , $num");
-        $Ram = $querySql->result_array();
-        $tagsId = '';
-        foreach ($Ram as $key=>$value)
-        {
-            $tagsId .= $value['tagsId'] . ',';
-        }
 
-        $tagsId = rtrim($tagsId , ',');
-        $querySql = $this->db->query("SELECT * FROM `op_tags` WHERE tagsId IN ({$tagsId})");
 
-        $Bull = $querySql->result_array();
+        /**
+         *  SQL
+         *
+         *  SELECT a.tagsId, COUNT(a.tagsId) AS tagsCount,b.tagsName
+         *  FROM op_tags_relationships AS a join op_tags as b
+         *  On a.tagsId = b.tagsId
+         *  GROUP BY a.tagsId
+         *  ORDER BY tagsCount DESC
+         *  LIMIT 0 , $num
+         */
 
-        for ($i = 0; $i < count($Ram); $i++)
-        {
-            $Twins[$i] = array_merge($Ram[$i] , $Bull[$i]);
-        }
-        return $Twins;
+
+        $Ram = $this->db->select("a.tagsId,count(a.tagsId) as tagsCount,b.tagsName")
+                        ->from("{$this->_tables['tags_relationships']} as a")
+                        ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
+                        ->group_by("a.tagsId")
+                        ->order_by("tagsCount" , "desc")
+                        ->limit($num)
+                        ->get()
+                        ->result_array();
+
+        return $Ram;
+
     }
+
 
 
     public function show_tips_detail($tipsId = '')
     {
-        $zodiac = array(
-            'Ram'      => 'Aries',
-            'Bull'     => 'Taurus',
-            'Twins'    => 'Gemini',
-            'Crab'     => 'Cancer',
-            'Lion'     => 'Leo',
-            'Virgin'   => 'Virgo',
-            'Balance'  => 'Libra',
-            'Scorpion' => 'Scorpio',
-            'Archer'   => 'Sagittarius',
-            'Goat'     => 'Capricorn',
-            'Bearer'   => 'Aquarius',
-            'Fishes'   => 'Pisces'
-        );
 
 
         $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
@@ -260,7 +185,11 @@ class Tips_model extends CI_Model {
         return $Ram;
     }
 
-
+    public function count_tips_all()
+    {
+        $Ram = $this->db->count_all($this->_tables['tips']);
+        return $Ram;
+    }
 
 
 }
