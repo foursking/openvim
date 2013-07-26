@@ -11,7 +11,7 @@
 /**
  *
  **/
-class Plugin_model extends CI_Model
+class Plugin extends CI_Model
 {
 
  	private $_tables = array(

@@ -3,7 +3,7 @@
 /**
  *
  **/
-class Home_model extends CI_Model
+class Home extends CI_Model
 {
 
     function __construct()

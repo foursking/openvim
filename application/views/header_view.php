@@ -20,14 +20,14 @@
 <!-- Theme style -->
 <link href="<?=base_url('public/css/theme-style.css')?>" rel="stylesheet" />
 
-<!--Your custom colour override-->
-<link href="#" id="colour-scheme" rel="stylesheet" />
 
 <!-- Your custom override -->
 <link href="<?=base_url('public/css/custom-style.css')?>" rel="stylesheet" />
 
 <!-- pretty code -->
 <link href="<?=base_url('public/google-code-prettify/prettify.css')?>" rel="stylesheet" />
+
+<link href="<?=base_url('public/editor/css/editor.css')?>" rel="stylesheet" />
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>

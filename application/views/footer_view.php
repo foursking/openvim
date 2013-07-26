@@ -26,14 +26,38 @@
 <script src="<?=base_url('public/js/script.js')?>"></script>
 
 
+
+<script src="<?=base_url('public/editor/js/Markdown.Converter.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Editor.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Sanitizer.js')?>"></script>
+<script src="<?=base_url('public/editor/js/textarearesizer.js')?>"></script>
+
+
 <script>
 	var base_url = 'http://dev.openvim.com/';
 	$(function(){
 		$('.tips-content pre').each(function(){
-			$(this).addClass('prettyprint linenums');
+			$(this).addClass('prettyprint');
 		});
 		prettyPrint();
 	});
+
 </script>
+
+ <script type="text/javascript">
+            /* jQuery textarea resizer plugin usage */
+            $(document).ready(function() {
+                $('textarea.wmd-input:not(.processed)').TextAreaResizer();
+            });
+        </script>
+
+
+        <script type="text/javascript">
+            (function () {
+                var converter1 = Markdown.getSanitizingConverter();
+                var editor1 = new Markdown.Editor(converter1);
+                editor1.run();
+            })();
+        </script>
 </body>
 </html>

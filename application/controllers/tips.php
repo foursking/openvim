@@ -72,7 +72,6 @@ class Tips extends CI_Controller
         $data['tips_detail'] = $this->tips_model->show_tips_detail(3);
         $this->load->view('header_view');
         $this->load->view('tips_detail_view' , $data);
-        $data['top_tags'] = $this->tips_model->show_top_tags($this->top_tags_num);
         $this->load->view("tips_sidebar_view");
         $this->load->view('footer_view');
     }

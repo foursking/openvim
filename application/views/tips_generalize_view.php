@@ -1,6 +1,7 @@
 <style>
 
 .tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
+.media-body{padding:15px 10px;}
 .media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
 .tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
 
@@ -17,14 +18,36 @@
     <div class="row-fluid">
       <h2 class="title-divider"><span>Vim<span class="de-em">Tips</span></span> <small>Tips here</small></h2>
     </div>
+
+
+
     <div class="row">
+
+
+<style>
+ul.nav-tabs li.active{
+  margin-top: -3px;
+}
+</style>
       <!--Blog Roll Content-->
       <div class="span-tips-main blog-roll blog-list">
+<div>
+  <ul class="nav nav-tabs" id="quicksand-categories">
+        <li class="active"><a href="#" class="all">最新</a></li>
+        <li><a href="#" class="type-web">最热</a></li>
+  </ul>
+ <div class="input-append" style="float:right;margin-top:-60px;position:relative">
+    <button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button>
+    <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
+ </div>
 
+</div>
         <?php foreach($tips_generalize as $key=>$value):?>
         <!-- tips post -->
         <div class="media row-fluid">
+
           <div class="span12">
+
             <div class="media-body">
 
               <h4 class="title media-heading"><a href="blog-post.html"><?php echo $value['tipsTitle'];?></a></h4>

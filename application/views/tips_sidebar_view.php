@@ -1,10 +1,14 @@
       <!--Sidebar-->
+<style>
+
+.sidebar.sidebar-right .inner {
+  border-left: 0px solid #e6e6e6;
+}
+</style>
       <div class="span-tips-sidebar sidebar sidebar-right">
         <div class="inner">
           <div class="block">
             <div class="input-append">
-              <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
-              <button class="btn" type="button">Go!</button>
             </div>
           </div>
           <div class="block">
