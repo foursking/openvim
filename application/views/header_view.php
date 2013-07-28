@@ -51,34 +51,6 @@
 <div id="navigation" class="wrapper">
   <div class="navbar  navbar-static-top">
 
-    <!--Hidden Header Region-->
-    <div class="header-hidden">
-      <div class="header-hidden-inner container">
-        <div class="row-fluid">
-          <div class="span4">
-            <h3>About Us</h3>
-            <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal & web templates!</p>
-            <a href="about.html" class="btn btn-mini btn-primary">Find out more</a> </div>
-          <div class="span4">
-            <!--@todo: replace with company contact details-->
-            <h3>Contact Us</h3>
-            <address>
-            <p><abbr title="Phone"><i class="icon-phone"></i></abbr> 019223 8092344</p>
-            <p><abbr title="Email"><i class="icon-envelope"></i></abbr> info@themelize.me</p>
-            <p><abbr title="Address"><i class="icon-home"></i></abbr> Sunshine House, Sunville. SUN12 8LU.</p>
-            </address>
-          </div>
-          <div class="span4">
-            <!--Colour Switch for demo - @todo: remove in production-->
-            <div class="colour-switcher">
-              <h3>Theme Colours</h3>
-              <a href="#green" class="green active _tooltip" data-placement="bottom" data-original-title="Green (Default)">Green</a> <a href="#red" class="red _tooltip" data-placement="bottom" data-original-title="Red">Red</a> <a href="#blue" class="blue _tooltip" data-placement="bottom" data-original-title="Blue">Blue</a>
-              <p>Cookies are NOT enabled so colour selection is not persistent.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--Header & Branding region-->
     <div class="header">
@@ -94,7 +66,6 @@
 
           <!--header rightside-->
           <div class="span6">
-            <div id="header-hidden-link"> <a href="#" class="show-hide" title="Click me you'll get a surprise" data-target=".header-hidden"><i></i>Open</a> </div>
 
             <!--social media icons-->
             <div class="social-media pull-right">

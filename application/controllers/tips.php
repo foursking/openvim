@@ -76,5 +76,13 @@ class Tips extends CI_Controller
         $this->load->view('footer_view');
     }
 
+    public function signup()
+    {
+        $this->load->view('header_view');
+        $this->load->view('signup_view');
+    }
+
+
+
 
 }
