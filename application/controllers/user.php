@@ -13,24 +13,18 @@ class User extends CI_controller
         $this->load->helper('url');
     }
 
-    public function sign_in()
-    {
 
+   public function register()
+    {
+        $this->load->view('header_view');
+        $this->load->view('register_view');
     }
 
-    public function sign_up()
+    public function sendmail()
     {
-
-        if($this->input->post('submit'))
-        {
-            $this->load->model('user_model');
-            $data['return'] = $this->user_model->append_user();
-        }
-
-        $this->load->view('sign_up_view');
+        $this->load->model('email_model');
+        $this->email_model->send_user_email(1 , 'foursking' , 'lyf021408@163.com');
     }
-
-
 
 
 
