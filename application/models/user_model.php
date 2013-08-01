@@ -1,53 +1,48 @@
 <?php
+
 /**
  * 平台用户
- *
- *
  */
-class User_model extends Model
+class User_model extends CI_Model
 {
 
-    var $name;
-
-	var $email;
-
-	var $password;
-
-    var $is_sendemail;
+    private $_tables = array(
+        'user' => 'user',
+    );
 
 
 	function __construct()
     {
-        parent::Model();
+        parent::__construct();
+        $this->load->database();
     }
-
 
     /**
-	 * 添加新客户
+	 * 添加用户
+	 * @param array $data 插入数据
+	 * @return int userId
 	 */
-	function create()
-    {
-		$datetime = date('Y-m-d H:i:s');
-		if($this->check_name($this->name)||$this->check_email($this->email))
-		{
-			redirect('login/register/register');
-		}
 
-        $this->db->set('user_name', $this->name);
-		$this->db->set('user_email', $this->email);
-		$this->db->set('user_pwd', md5($this->password));
-		$this->db->set('register_at', $datetime);
-		$this->db->set('updated_at', $datetime);
-        $this->db->set('is_active','1');
-        return $this->db->insert('customer');
+	function append_user( $data )
+    {
+
+        $insert_data = array(
+            'userName'     => $data['register_username'],
+            'userEmail'    => $data['register_email'],
+            'userPassword' => md5($data['register_password']),
+            'userIsActive' => isset($data['userIsActive']) ? $data['userIsActive'] : 0,
+        );
+
+
+        $this->db->insert($this->_tables['user'] , $insert_data);
+
+        return $this->db->insert_id();
+
     }
 
-    // --------------------------------------------------------------------
 
     /**
 	 * 查询该用户名是否存在
-	 *
-	 *
 	 */
 	function check_name($name)
 	{
@@ -59,12 +54,9 @@ class User_model extends Model
         return false;
 	}
 
-	// --------------------------------------------------------------------
 
     /**
 	 * 查询该邮箱是否存在
-	 *
-	 *
 	 */
 	function check_email($email)
 	{
@@ -75,12 +67,9 @@ class User_model extends Model
         return false;
 	}
 
-   // --------------------------------------------------------------------
 
     /**
 	 * 查询该用户，返回用户信息
-	 *
-	 *
 	 */
 	function check_customer()
 	{
@@ -92,12 +81,9 @@ class User_model extends Model
         return array();
 	}
 
-	// --------------------------------------------------------------------
 
     /**
 	 * load by id
-	 *
-	 *
 	 */
     function load($id)
     {
@@ -129,12 +115,9 @@ class User_model extends Model
 
         return array();
     }
-    // --------------------------------------------------------------------
 
     /**
 	 * 更新客户信息
-	 *
-	 *
 	 */
 	function update($id)
     {
@@ -145,12 +128,9 @@ class User_model extends Model
         return $this->db->update('customer');
     }
 
-    // --------------------------------------------------------------------
 
     /**
 	 * 查询密码是否正确
-	 *
-	 *
 	 */
     function check_pwd($password)
 	{
@@ -163,12 +143,9 @@ class User_model extends Model
 	}
 
 
-	// --------------------------------------------------------------------
 
     /**
 	 * 更新密码
-	 *
-	 *
 	 */
 	function update_pwd($id,$pwd)
     {
@@ -184,12 +161,9 @@ class User_model extends Model
         $this->db->where('user_email', $email);
         return $this->db->update('customer');
     }
-	// --------------------------------------------------------------------
 
     /**
 	 * 更新最后登录时间
-	 *
-	 *
 	 */
     function update_last_login($customer_id)
 	{
@@ -199,6 +173,8 @@ class User_model extends Model
         $this->db->where('user_id', $customer_id);
         return $this->db->update('customer');
 	}
+
+
 	/*
 	 * 用户权限判断
 	 * @param $user_id

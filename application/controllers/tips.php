@@ -38,6 +38,7 @@ class Tips extends CI_Controller
         $this->load->helper('url');
         $this->load->helper('array_helper');
         $this->load->model('tips_model');
+        $this->load->library('session');
     }
 
     public function index()
@@ -69,20 +70,12 @@ class Tips extends CI_Controller
 
     public function post()
     {
-        $data['tips_detail'] = $this->tips_model->show_tips_detail(3);
+        $data['tips_detail'] = $this->tips_model->show_tips_detail($this->uri->segment(3));
         $this->load->view('header_view');
         $this->load->view('tips_detail_view' , $data);
         $this->load->view("tips_sidebar_view");
         $this->load->view('footer_view');
     }
-
-    public function signup()
-    {
-        $this->load->view('header_view');
-        $this->load->view('signup_view');
-    }
-
-
 
 
 }

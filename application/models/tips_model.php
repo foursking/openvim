@@ -143,7 +143,7 @@ class Tips_model extends CI_Model {
 
         $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
             ->from("op_tips as a")
-            ->where('a.tipsId' , 128)
+            ->where('a.tipsId' , $tipsId)
             ->get()
             ->row_array();
 

@@ -52,8 +52,7 @@
                 <div class="media-body" style="padding:30px 0 0 50px">
                     <div class="wmd-panel">
                         <div id="wmd-button-bar"></div>
-                        <textarea class="wmd-input" id="wmd-input" holder="为此问题提供一个答案"  autocomplete="off" spellcheck="false" name="text" style="width:630px;height: 193px;">
-                        </textarea>
+                        <textarea class="wmd-input" id="wmd-input" holder="为此问题提供一个答案"  autocomplete="off" spellcheck="false" name="text" style="width:630px;height: 193px;"></textarea>
                     </div>
                     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
                 </div>

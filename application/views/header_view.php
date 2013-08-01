@@ -47,54 +47,27 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Rambla|Calligraffitti' rel='stylesheet' type='text/css' />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
-<body class="page page-blog">
-<div id="navigation" class="wrapper">
-  <div class="navbar  navbar-static-top">
+<body class="page page-blog" style="padding-top:60px;">
+<div id="navigation" class="wrapper navbar-fixed-top" >
+  <div class="navbar">
 
 
-    <!--Header & Branding region-->
-    <div class="header">
-      <div class="header-inner container">
-        <div class="row-fluid">
-          <div class="span6">
-            <!--branding/logo-->
-            <a class="brand" href="index.html" title="Home">
-            <h1><span>Open</span>Vim<span></span></h1>
-            </a>
-            <div class="slogan">find thing here</div>
-          </div>
 
-          <!--header rightside-->
-          <div class="span6">
-
-            <!--social media icons-->
-            <div class="social-media pull-right">
-              <!--@todo: replace with company social media details-->
-              <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-facebook"></i></a> <a href="#"><i class="icon-linkedin"></i></a> <a href="#"><i class="icon-google-plus"></i></a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
+    <div class="container" style="width:99%">
       <div class="navbar-inner">
-
         <!--mobile collapse menu button-->
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 
         <!--user menu-->
         <ul class="nav user-menu pull-right">
-          <li><a href="signup.html" class="btn btn-primary signup">Sign Up</a></li>
-          <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
-            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="login.html" class="form-inline" id="login-form-drop" role="menuitem" />
-                <div class="input-append">
-                  <input type="text" class="input-small email" placeholder="Email" />
-                  <input type="password" class="input-small password" placeholder="Password" />
-                  <input type="button" class="btn btn-primary login" value="Login" />
-                </div>
-              </form>
-              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
-          </li>
+        <?php if(!$this->session->userdata('is_login')){?>
+          <li><a href="signup.html" class="btn btn-primary signup">注册</a></li>
+          <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">登陆</a>
+        <?php }else{?>
+          <li><a href="signup.html" class="btn btn-primary signup">用户名</a></li>
+          <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">头像</a>
+          <?php }?>
+
         </ul>
 
     <!--everything within this div is collapsed on mobile-->
@@ -119,17 +92,13 @@
 
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="pages-drop">
-                <li role="menuitem"><a href="login.html" tabindex="-1" class="menu-item">Login</a></li>
-                <li role="menuitem"><a href="signup.html" tabindex="-1" class="menu-item">Sign Up</a></li>
-                <li role="menuitem"><a href="starter.html" tabindex="-1" class="menu-item">Starter Snippets</a></li>
-                <li role="menuitem"><a href="index-static.html" tabindex="-1" class="menu-item">Homepage Static Banner</a></li>
-                <li role="menuitem"><a href="fixed-header.html" tabindex="-1" class="menu-item">Fixed Header</a></li>
-                <li role="menuitem"><a href="colours.html" tabindex="-1" class="menu-item">Theme Colours</a></li>
                 <li role="menuitem"><a href="elements.html" tabindex="-1" class="menu-item">Theme Elements</a></li>
               </ul>
             </li>
           </ul>
         </div>
+
+
 
         <!--/.nav-collapse -->
       </div>

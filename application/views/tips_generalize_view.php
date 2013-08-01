@@ -1,12 +1,11 @@
 <style>
 
+#content{width:978px;margin-left:auto;margin-right:auto}
 .tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
 .media-body{padding:15px 10px;}
 .media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
 .tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
-
 .media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
-
 .media-body .title a{color:#333}
 .media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
 .blog-roll .media{padding-bottom:0px}
@@ -50,7 +49,7 @@ ul.nav-tabs li.active{
 
             <div class="media-body">
 
-              <h4 class="title media-heading"><a href="blog-post.html"><?php echo $value['tipsTitle'];?></a></h4>
+              <h4 class="title media-heading"><a href="<?php echo site_url("tips/post/{$value['tipsId']}")?>"><?php echo $value['tipsTitle'];?></a></h4>
 
               <!-- Meta details mobile -->
               <ul class="inline meta muted visible-phone">
