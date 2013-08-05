@@ -2,10 +2,10 @@
 -- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- 主机: localhost
--- 生成日期: 2013 年 07 月 19 日 18:36
--- 服务器版本: 5.5.31-0ubuntu0.12.04.1
--- PHP 版本: 5.3.10-1ubuntu3.6
+-- Host: localhost
+-- Generation Time: Aug 05, 2013 at 01:14 PM
+-- Server version: 5.5.31-0ubuntu0.12.04.1
+-- PHP Version: 5.3.10-1ubuntu3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- 数据库: `openvim`
+-- Database: `openvim`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_category`
+-- Table structure for table `op_category`
 --
 
 CREATE TABLE IF NOT EXISTS `op_category` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `op_category` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- 转存表中的数据 `op_category`
+-- Dumping data for table `op_category`
 --
 
 INSERT INTO `op_category` (`id`, `categoryName`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `op_category` (`id`, `categoryName`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_plugin`
+-- Table structure for table `op_plugin`
 --
 
 CREATE TABLE IF NOT EXISTS `op_plugin` (
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `op_plugin` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='插件表' AUTO_INCREMENT=6 ;
 
 --
--- 转存表中的数据 `op_plugin`
+-- Dumping data for table `op_plugin`
 --
 
 INSERT INTO `op_plugin` (`pluginId`, `uid`, `pluginTypeId`, `pluginName`, `pluginSummary`, `pluginUrl`, `pluginDescription`, `pluginInstall`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `op_plugin` (`pluginId`, `uid`, `pluginTypeId`, `pluginName`, `plugi
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_tags`
+-- Table structure for table `op_tags`
 --
 
 CREATE TABLE IF NOT EXISTS `op_tags` (
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `op_tags` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=208 ;
 
 --
--- 转存表中的数据 `op_tags`
+-- Dumping data for table `op_tags`
 --
 
 INSERT INTO `op_tags` (`tagsId`, `tagsName`) VALUES
@@ -300,7 +300,7 @@ INSERT INTO `op_tags` (`tagsId`, `tagsName`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_tags_relationships`
+-- Table structure for table `op_tags_relationships`
 --
 
 CREATE TABLE IF NOT EXISTS `op_tags_relationships` (
@@ -309,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `op_tags_relationships` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 转存表中的数据 `op_tags_relationships`
+-- Dumping data for table `op_tags_relationships`
 --
 
 INSERT INTO `op_tags_relationships` (`tipsId`, `tagsId`) VALUES
@@ -890,7 +890,7 @@ INSERT INTO `op_tags_relationships` (`tipsId`, `tagsId`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_tips`
+-- Table structure for table `op_tips`
 --
 
 CREATE TABLE IF NOT EXISTS `op_tips` (
@@ -904,7 +904,7 @@ CREATE TABLE IF NOT EXISTS `op_tips` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=333 ;
 
 --
--- 转存表中的数据 `op_tips`
+-- Dumping data for table `op_tips`
 --
 
 INSERT INTO `op_tips` (`tipsId`, `tipsUid`, `tipsTitle`, `tipsContent`, `tipsCtime`, `tipsUtime`) VALUES
@@ -1245,7 +1245,7 @@ INSERT INTO `op_tips` (`tipsId`, `tipsUid`, `tipsTitle`, `tipsContent`, `tipsCti
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_type`
+-- Table structure for table `op_type`
 --
 
 CREATE TABLE IF NOT EXISTS `op_type` (
@@ -1256,7 +1256,7 @@ CREATE TABLE IF NOT EXISTS `op_type` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
--- 转存表中的数据 `op_type`
+-- Dumping data for table `op_type`
 --
 
 INSERT INTO `op_type` (`typeId`, `typeName`, `typeEName`) VALUES
@@ -1271,7 +1271,7 @@ INSERT INTO `op_type` (`typeId`, `typeName`, `typeEName`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_type_relationships`
+-- Table structure for table `op_type_relationships`
 --
 
 CREATE TABLE IF NOT EXISTS `op_type_relationships` (
@@ -1281,25 +1281,55 @@ CREATE TABLE IF NOT EXISTS `op_type_relationships` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `op_user`
+-- Table structure for table `op_url`
+--
+
+CREATE TABLE IF NOT EXISTS `op_url` (
+  `urlUid` int(11) NOT NULL COMMENT 'uid',
+  `urlAction` enum('1','2','3') NOT NULL DEFAULT '1' COMMENT '1注册2找回密码3用户关联',
+  `urlStatus` enum('1','2') NOT NULL DEFAULT '1' COMMENT '1有效2失效',
+  `urlString` varchar(200) NOT NULL COMMENT 'URL串',
+  `urlEmail` varchar(32) NOT NULL COMMENT 'URL发送邮箱',
+  PRIMARY KEY (`urlUid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `op_url`
+--
+
+INSERT INTO `op_url` (`urlUid`, `urlAction`, `urlStatus`, `urlString`, `urlEmail`) VALUES
+(13, '1', '1', '70B7C860-63C4-9CF6-3CB1-A164FD64AA07', '476743104@qq.com'),
+(12, '1', '1', '36B2AF2D-5822-E27B-DCD0-2FDF7E7F1535', '110@qq.com'),
+(14, '1', '1', '12CA2AAE-B451-5C59-6D2D-F4C8CF4545F3', '476743104@qq.com'),
+(15, '1', '1', '68A8D1B9-CCE7-78A3-2DDF-62D25DDC6AF1', '476743104@qq.com'),
+(16, '1', '1', '3985EB1B-3799-5792-9BD6-34CFCA8EF9C5', '476743104@qq.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `op_user`
 --
 
 CREATE TABLE IF NOT EXISTS `op_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `op_username` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `op_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `op_password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `userEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `userPassword` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `userIsActive` int(11) NOT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
--- 转存表中的数据 `op_user`
+-- Dumping data for table `op_user`
 --
 
-INSERT INTO `op_user` (`id`, `op_username`, `op_email`, `op_password`) VALUES
-(1, 'jack', '', ''),
-(2, 'mary', '', ''),
-(3, 'foursking', '476743104@qq.com', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `op_user` (`userId`, `userName`, `userEmail`, `userPassword`, `userIsActive`) VALUES
+(16, 'fourskings', '476743104@qq.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(15, 'fourskings', '476743104@qq.com', '52c69e3a57331081823331c4e69d3f2e', 0),
+(14, 'foursking', '476743104@qq.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(13, 'foursking', '476743104@qq.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(11, 'foursk', '123@qq.com', '202cb962ac59075b964b07152d234b70', 0),
+(12, '110', '110@qq.com', 'caf1a3dfb505ffed0d024130f58c5cfa', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
