@@ -68,6 +68,9 @@ class Tips_model extends CI_Model {
 
         $Bull = $querySql->result_array();
 
+        if (empty($Bull))
+            return $Ram;
+
         foreach ($Bull as $key=>$value)
         {
             $tagsId[] = $value['tagsId'];
@@ -152,6 +155,9 @@ class Tips_model extends CI_Model {
         $querySql = $this->db->query("SELECT * FROM `op_tags_relationships` WHERE tipsId IN ({$tipsId})");
 
         $Bull = $querySql->result_array();
+
+        if (empty($Bull))
+            return $Ram;
 
         foreach ($Bull as $key=>$value)
         {

@@ -6,12 +6,10 @@
 #   LastChange: 2013-07-15 15:40:08
 =============================================================================*/
 
-
-
 /**
  *
  **/
-class Plugin extends CI_Model
+class Plugin_model extends CI_Model
 {
 
  	private $_tables = array(
@@ -24,8 +22,7 @@ class Plugin extends CI_Model
     {
         parent::__construct();
         $this->load->database();
-        $this->load->helper('url');
-        $this->load->helper('array');
+        $this->load->helper(array('url' , 'array'));
     }
 
 
@@ -66,12 +63,6 @@ class Plugin extends CI_Model
         $Ram = $this->db->count_all($this->_tables['plugin']);
         return $Ram;
     }
-
-
-
-
-
-
 }
 
 

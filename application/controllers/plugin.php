@@ -43,6 +43,7 @@ class Plugin extends CI_controller
         $this->load->helper('op');
         $this->load->model('plugin_model');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
 
     public function index()

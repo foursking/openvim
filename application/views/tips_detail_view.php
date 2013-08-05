@@ -3,6 +3,16 @@
         <div class="row-fluid">
 
             <style>
+#content{width:978px;margin-left:auto;margin-right:auto}
+.tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
+.media-body{padding:15px 10px;}
+.media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
+.tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
+.media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
+.media-body .title a{color:#333}
+.media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
+.blog-roll .media{padding-bottom:0px}
+
 
 .tips-top-title{
     margin: 0 0 1em;
@@ -75,17 +85,17 @@ height: 32px;
           <h3>Comments</h3>
           <ul class="media-list">
           <li class="media row-fluid"> <a class="span1" href="#"><img src="<?php echo base_url("public/img/team/jobs.jpg")?>" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
-              <div class="span11 media-body">
+              <div class="span11" style="padding:5px">
                 <ul class="inline meta muted">
-                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Tue 1st Jan 2013</li>
-                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Tom</a></li>
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop"></span>10天前</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Jobs</a></li>
                 </ul>
-                <h5 class="media-heading">Urna natoque in phasellus rhoncus aliquet penatibus</h5>
-                <p>Urna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibus</p>
+                <p>Hi I'm jobs 这里是第一条评论</p>
 
-                <table class="post-parter"><tbody>
-                <tr><td>
-                 <a class="span1" href="#"> <img src="<?php echo base_url('public/img/team/jobs.jpg')?>" alt="Picture of Dave" class="avatar-32 media-object img-polaroid" /> </a>
+           <!--     <table class="post-parter"><tbody>
+                        <tr>
+                            <td>
+                                <a href="#" style="width:40px"><img src="<?php echo base_url('public/img/team/jobs.jpg')?>" alt="Picture of Dave" class="avatar-32 media-object img-polaroid" /></a>
                 </td>
                 <td>
                 <h4>111</h4>
@@ -94,31 +104,22 @@ height: 32px;
 
 
                 </tbody></table>
+                -->
 
 
               </div>
             </li>
-            <li class="media row-fluid"> <a class="span1" href="#"> <img src="<?php echo base_url('pulic/img/team/adele.jpg')?>" alt="Picture of Dave" class="media-object img-polaroid" /> </a>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="<?php echo base_url('public/img/team/adele.jpg')?>" alt="Picture of Dave" class="media-object img-polaroid" /> </a>
               <div class="span11 media-body">
                 <ul class="inline meta muted">
-                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Fri 28th Dec 2012</li>
-                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Erin</a></li>
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop"></span>2天前</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">abale</a></li>
                 </ul>
-                <h5 class="media-heading">Porta risus porttitor facilisis sit dapibus</h5>
-                <p>Porta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibus</p>
+                <p>Hi I'm abale 这里是第二条评论</p>
               </div>
             </li>
           </ul>
       </div>
-
-
-
-
-
-
-
-
-
 
                 <div class="media-body" style="padding:30px 0 0 50px">
                   <?php if(!$this->session->userdata('is_login')){?>
@@ -137,3 +138,4 @@ height: 32px;
                     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
                 <?php }?>
                 </div>
+        </div>
