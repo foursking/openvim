@@ -46,6 +46,8 @@ class Url_model extends CI_Model
     {
         return op_uuid();
     }
+
+
  //记录action url
     private function create_url($email_type = 0)
     {

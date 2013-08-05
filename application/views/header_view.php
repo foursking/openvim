@@ -87,7 +87,7 @@
               </ul>
             </li>
 
-            <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">More +</a>
+            <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a>
 
 
               <!-- Dropdown Menu -->
