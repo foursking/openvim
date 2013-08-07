@@ -37,6 +37,7 @@
 
 <script src="<?=base_url('public/google-code-prettify/prettify.js')?>"></script>
 
+<script src="<?=base_url('public/js/jquery.js')?>"></script>
 
 
 <!-- Le fav and touch icons - @todo: fill with your icons or remove -->

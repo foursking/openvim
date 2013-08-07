@@ -87,3 +87,17 @@ box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.5);
               </form>
 	  </div>
 </div>
+<script>
+$(document).ready(function(){
+
+    var expReg = [];
+    expReg.email = "/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/";
+
+    $("form").submit(function(){
+        alert('here');
+        return false;
+    })
+
+
+})
+</script>
