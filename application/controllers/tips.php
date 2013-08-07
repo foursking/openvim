@@ -39,6 +39,7 @@ class Tips extends CI_Controller
         $this->load->helper('array_helper');
         $this->load->model('tips_model');
         $this->load->library('session');
+        $this->load->library('form_validation');
     }
 
     public function index()
@@ -71,11 +72,46 @@ class Tips extends CI_Controller
     public function post()
     {
         $data['tips_detail'] = $this->tips_model->show_tips_detail($this->uri->segment(3));
-        $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $data['top_tags'] = $this->tips_model->show_top_tags($this->top_tags_num);
+
+        $Ram['tips_id'] = $this->uri->segment(3);
+
+        $data['tips_comments'] = $this->tips_model->show_comments($Ram);
+
+
+
         $this->load->view('header_view');
         $this->load->view('tips_detail_view' , $data);
         $this->load->view("tips_detail_sidebar_view");
         $this->load->view('footer_view');
+    }
+
+    public function comments()
+    {
+        if (!$this->session->userdata('user_id'))
+         {
+            redirect('/');
+         }
+
+
+        $Ram['user_id'] = $this->session->userdata('user_id');
+        $Ram['user_name'] = $this->session->userdata('user_name');
+        $Ram['tips_id'] = $this->input->post('tips_id');
+        pretty_print($this->input->post('content'));
+        $Ram['content'] = html_escape($this->input->post('content'));
+
+        $Ram['comment_id'] = $this->tips_model->append_comments($Ram);
+
+        if ($Ram['comment_id'])
+         {
+             $this->tips_model->append_comments_relationship($Ram);
+         }
+
+
+        pretty_print($Ram);
+
+
+
     }
 
 

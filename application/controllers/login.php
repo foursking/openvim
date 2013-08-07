@@ -32,7 +32,8 @@ class Login extends CI_controller
 
              $this->session->set_userdata($session_data);
 
-             pretty_print($session_data);
+        $this->redirect('/');
+
          }
     }
 
@@ -42,8 +43,6 @@ class Login extends CI_controller
         $this->session->sess_destroy();
         redirect('/');
     }
-
-
 
 
 }

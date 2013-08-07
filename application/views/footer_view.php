@@ -33,16 +33,6 @@
 <script src="<?=base_url('public/editor/js/textarearesizer.js')?>"></script>
 
 
-<script>
-	var base_url = 'http://dev.openvim.com/';
-	$(function(){
-		$('.tips-content pre').each(function(){
-			$(this).addClass('prettyprint');
-		});
-		prettyPrint();
-	});
-
-</script>
 
  <script type="text/javascript">
             /* jQuery textarea resizer plugin usage */
@@ -59,5 +49,40 @@
                 editor1.run();
             })();
         </script>
+
+<script text="text/javascript">
+
+$(function(){
+
+    var markdownToHtml = new Markdown.Converter();
+    $('.media-list pre').each(function(){
+        var html = markdownToHtml.makeHtml($(this).html());
+        $(this).html(html);
+    })
+
+})
+
+
+
+
+</script>
+
+
+<script>
+	var base_url = 'http://dev.openvim.com/';
+	$(function(){
+		$('.tips-content pre').each(function(){
+			$(this).addClass('prettyprint');
+		});
+        $('.media-list pre pre').each(function(){
+            $(this).addClass('prettyprint');
+        });
+		prettyPrint();
+	});
+
+</script>
+
+
+
 </body>
 </html>

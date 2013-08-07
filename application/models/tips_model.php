@@ -10,8 +10,10 @@ class Tips_model extends CI_Model {
 
  	private $_tables = array(
         'tips' => 'tips',
-		'tags_relationships'   => 'tags_relationships',
 		'tags' => 'tags',
+		'comment' => 'comment',
+		'tags_relationships'   => 'tags_relationships',
+		'comments_relationships'   => 'comments_relationships',
 	);
 
 
@@ -196,6 +198,87 @@ class Tips_model extends CI_Model {
         $Ram = $this->db->count_all($this->_tables['tips']);
         return $Ram;
     }
+
+
+    /**
+     * 添加评论
+     * @ param array $data
+     * @ return int
+     */
+
+    public function append_comments($data)
+    {
+        $append_data = array(
+            'userId' => $data['user_id'],
+            'tipsId'=> $data['tips_id'],
+            'content' =>$data['content'],
+            'commCtime' => date("Y-m-d H:i:s"),
+            'commUtime' => date("Y-m-d H:i:s"),
+            'username' => $data['user_name'],
+        );
+
+        $this->db->insert($this->_tables['comment'] , $append_data);
+
+        return $this->db->insert_id();
+
+    }
+
+
+    public function append_comments_relationship($data)
+    {
+        $append_data = array(
+            'tipsId' => $data['tips_id'],
+            'userId' => $data['user_id'],
+            'commId' => $data['comment_id'],
+        );
+
+        $this->db->insert($this->_tables['comments_relationships'] , $append_data);
+
+    }
+
+
+
+
+    public function show_comments( $data )
+    {
+        $Ram = $this->db->select("commId")
+                        ->from("{$this->_tables['comments_relationships']}")
+                        ->where('tipsId' , $data['tips_id'])
+                        ->get()
+                        ->result_array();
+
+        if (empty($Ram))
+         {
+             return false;
+         }
+
+
+        foreach ($Ram as $key=>$value)
+         {
+             $Bull[] = $value['commId'];
+         }
+
+
+        $Ram = $this->db->select("commId , userId , username , tipsId , content , commCtime , commUtime")
+                         ->from("{$this->_tables['comment']}")
+                         ->where_in('commId' , $Bull)
+                         ->get()
+                         ->result_array();
+
+        return $Ram;
+
+
+
+    }
+
+
+
+
+     function array_one()
+    {
+        // code...
+    }
+
 
 
 }

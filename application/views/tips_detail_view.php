@@ -82,7 +82,7 @@ height: 32px;
 
     <!--Comments-->
         <div class="comments" id="comments">
-          <h3>Comments</h3>
+          <h3>N个回复</h3>
           <ul class="media-list">
           <li class="media row-fluid"> <a class="span1" href="#"><img src="<?php echo base_url("public/img/team/jobs.jpg")?>" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
               <div class="span11" style="padding:5px">
@@ -91,7 +91,6 @@ height: 32px;
                   <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Jobs</a></li>
                 </ul>
                 <p>Hi I'm jobs 这里是第一条评论</p>
-
            <!--     <table class="post-parter"><tbody>
                         <tr>
                             <td>
@@ -105,19 +104,28 @@ height: 32px;
 
                 </tbody></table>
                 -->
-
-
               </div>
             </li>
+
+<style>
+
+.tips-comments{border:0px;background:white;padding:15px}
+.tips-comments h1,.tips-comments h2,.tips-comments h3{line-height:1px}
+.tips-comments code { padding: 2px 4px; color: #d14; background-color: #f7f7f9;border:1px solid #e1e1e8;white-space:nowrap;}
+</style>
+
+
+        <?php foreach($tips_comments as $key=>$value):?>
             <li class="media row-fluid"> <a class="span1" href="#"> <img src="<?php echo base_url('public/img/team/adele.jpg')?>" alt="Picture of Dave" class="media-object img-polaroid" /> </a>
-              <div class="span11 media-body">
+              <div class="span11" style="padding:5px">
                 <ul class="inline meta muted">
                   <li><i class="icon-calendar"></i> <span class="visible-desktop"></span>2天前</li>
-                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">abale</a></li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#"><?php echo $value['username']?></a></li>
                 </ul>
-                <p>Hi I'm abale 这里是第二条评论</p>
+                <pre class="tips-comments"><?php echo $value['content']?></pre>
               </div>
             </li>
+       <?php endforeach;?>
           </ul>
       </div>
 
@@ -126,16 +134,22 @@ height: 32px;
                     <div class="wmd-panel">
                         <h2>撰写评论</h2>
                         <div style="border:1px solid #eee;padding:30px;text-align:center;background:rgba(255,255,255,0.75);">请先 <a href="#">登录</a> 后撰写评论</div>
-
                     </div>
 
-
                  <?php }else{?>
+<?php echo form_open('tips/comments' , array('id'=>'register-welcome-form'))?>
                     <div class="wmd-panel">
                         <div id="wmd-button-bar"></div>
-                        <textarea class="wmd-input" id="wmd-input" holder="为此问题提供一个答案"  autocomplete="off" spellcheck="false" name="text" style="width:630px;height: 193px;"></textarea>
+                        <textarea class="wmd-input" id="wmd-input" autocomplete="off" spellcheck="false" name="content" style="width:630px;height: 193px;"></textarea>
                     </div>
                     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
                 <?php }?>
+                 <div>
+			      <button class="btn btn-primary" type="submit">提交</button>
+                </div>
+
+                <input type="hidden" name="tips_id" value="<?php echo $tips_detail['tipsId'];?>" />
+
+                </form>
                 </div>
         </div>

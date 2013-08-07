@@ -61,8 +61,8 @@
         <!--user menu-->
         <ul class="nav user-menu pull-right">
         <?php if(!$this->session->userdata('is_login')){?>
-          <li><a href="signup.html" class="btn btn-primary signup">注册</a></li>
-          <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">登陆</a>
+        <li><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
+          <li> <a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a>
         <?php }else{?>
           <li><a href="signup.html" class="btn btn-primary signup">用户名</a></li>
           <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">头像</a>
