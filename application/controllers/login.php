@@ -32,7 +32,7 @@ class Login extends CI_controller
 
              $this->session->set_userdata($session_data);
 
-        $this->redirect('/');
+        $this->redirect('tips');
 
          }
     }

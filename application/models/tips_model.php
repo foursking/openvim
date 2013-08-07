@@ -217,12 +217,27 @@ class Tips_model extends CI_Model {
             'username' => $data['user_name'],
         );
 
+       /**
+         *  SQL
+         *
+         *  INSERT INTO `op_comments` (`userId` , `username` , `tipsId` , `content` , `commCtime` , `commUtime`)
+         *  VALUES(userId, username , tipsId , content , commCtime , commUtime)
+         *
+         */
+
         $this->db->insert($this->_tables['comment'] , $append_data);
 
         return $this->db->insert_id();
 
     }
 
+
+
+    /**
+	 * 添加Tips 评论
+	 * @param array $data
+	 * @return array
+	 */
 
     public function append_comments_relationship($data)
     {
@@ -232,15 +247,41 @@ class Tips_model extends CI_Model {
             'commId' => $data['comment_id'],
         );
 
+        /**
+         *  SQL
+         *
+         *  INSERT INTO `op_comments_relationships` (`tipsId` , `userId` , `commId`)
+         *  VALUES(tipsId , userId , commId)
+         *
+         */
+
         $this->db->insert($this->_tables['comments_relationships'] , $append_data);
+
+        return $this->db->insert_id();
 
     }
 
 
+    /**
+	 * 显示Tips 评论
+	 * @param array $data
+	 * @return array
+	 */
 
 
     public function show_comments( $data )
     {
+
+
+        /**
+         *  SQL
+         *
+         *  SELECT  `commId`
+         *  FROM `op_comments_relationships`
+         *  WHERE `tipsId` = tipsId
+         *
+         */
+
         $Ram = $this->db->select("commId")
                         ->from("{$this->_tables['comments_relationships']}")
                         ->where('tipsId' , $data['tips_id'])
@@ -259,6 +300,8 @@ class Tips_model extends CI_Model {
          }
 
 
+
+        //SQL
         $Ram = $this->db->select("commId , userId , username , tipsId , content , commCtime , commUtime")
                          ->from("{$this->_tables['comment']}")
                          ->where_in('commId' , $Bull)
@@ -274,10 +317,6 @@ class Tips_model extends CI_Model {
 
 
 
-     function array_one()
-    {
-        // code...
-    }
 
 
 
