@@ -1,7 +1,6 @@
 <!-- FOOTER -->
 
 <!--Scripts -->
-<script src="<?=base_url('public/js/jquery.js')?>"></script>
 
 <!-- @todo: remove unused Javascript for better performance -->
 <script src="<?=base_url('public/js/bootstrap-transition.js')?>"></script>

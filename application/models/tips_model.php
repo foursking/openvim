@@ -26,7 +26,7 @@ class Tips_model extends CI_Model {
 	 * @return array
 	 */
 
-    public function show_tips_generalize($num , $offset)
+    public function show_tips_generalize($num , $offset , $sort='newest')
     {
 
         $zodiac = array(
@@ -45,7 +45,14 @@ class Tips_model extends CI_Model {
         );
 
 
-        $querySql = $this->db->get('tips' , $offset, $num);
+        if ($sort == 'newest')
+         {
+            $querySql = $this->db->order_by('tipsUtime' , 'desc')->get('tips' , $offset, $num);
+         }
+        else if($sort == 'vote')
+        {
+            $querySql = $this->db->order_by('tipsCommNum' , "desc")->get('tips' , $offset, $num);
+        }
 
 
         $Ram = $querySql->result_array();
@@ -252,6 +259,17 @@ class Tips_model extends CI_Model {
         $this->db->insert($this->_tables['comments_relationships'] , $append_data);
 
         return $this->db->insert_id();
+
+    }
+
+    public function renew_tips_comments_num( $data )
+    {
+
+        $this->db->set('tipsCommNum' , 'tipsCommNum+1' , false)
+                 ->where('tipsId' , $data['tips_id'])
+                 ->update($this->_tables['tips']);
+
+        return $this->db->affected_rows();
 
     }
 

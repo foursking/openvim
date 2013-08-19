@@ -49,6 +49,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
 <body class="page page-blog" style="padding-top:60px;">
+
+
 <div id="navigation" class="wrapper navbar-fixed-top" >
   <div class="navbar">
 

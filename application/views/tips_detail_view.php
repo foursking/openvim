@@ -17,15 +17,20 @@
 .tips-top-title{
     margin: 0 0 1em;
     padding-bottom: .73em;
-    background: transparent url("http://dev.openvim.com/public/img/bg_divider.png") repeat-x bottom;
-    font-size: 1.8em;
     display: block;
     -webkit-margin-before: 0.67em;
     -webkit-margin-after: 0.67em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     font-weight: bold;
+    border-bottom: 1px solid #DDD;
+    -webkit-box-shadow: 0 1px 0 #f3f3f3;
+    -moz-box-shadow: 0 1px 0 #f3f3f3;
+    box-shadow: 0 1px 0 #f3f3f3;
+font-size: 1.85em;
  }
+
+.bread{color:#999; margin:0 0 1em; }
 
 .post-parter {
 float: right;
@@ -46,7 +51,9 @@ width: 32px;
 height: 32px;
 }
 
+
             </style>
+<!--<div class="bread"><a href="">技巧</a> » 详情 </div> -->
             <h2 class="tips-top-title"><span class="de-em"><?php echo $tips_detail['tipsTitle'];?></span></h2>
         </div>
         <div class="row">
@@ -82,7 +89,8 @@ height: 32px;
 
     <!--Comments-->
         <div class="comments" id="comments">
-          <h3>N个回复</h3>
+        <h2>评论列表</h2>
+         <div style="padding:16px">
           <ul class="media-list">
           <li class="media row-fluid"> <a class="span1" href="#"><img src="<?php echo base_url("public/img/team/jobs.jpg")?>" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
               <div class="span11" style="padding:5px">
@@ -128,6 +136,7 @@ height: 32px;
        <?php endforeach;?>
           </ul>
       </div>
+        </div>
 
                 <div class="media-body" style="padding:30px 0 0 50px">
                   <?php if(!$this->session->userdata('is_login')){?>
@@ -143,9 +152,9 @@ height: 32px;
                         <textarea class="wmd-input" id="wmd-input" autocomplete="off" spellcheck="false" name="content" style="width:630px;height: 193px;"></textarea>
                     </div>
                     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+			      <button class="btn btn-primary" type="submit">提交</button>
                 <?php }?>
                  <div>
-			      <button class="btn btn-primary" type="submit">提交</button>
                 </div>
 
                 <input type="hidden" name="tips_id" value="<?php echo $tips_detail['tipsId'];?>" />

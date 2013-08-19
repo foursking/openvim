@@ -47,6 +47,9 @@ class Tips extends CI_Controller
         $this->load->library('pagination');
         //当前页
         $current_page = intval($this->uri->segment(3));
+
+        $sort_type = $this->uri->segment(2);
+
         //页面地址
         $this->pagination_config['base_url']    = site_url('tips/index');
         //每页条数
@@ -63,6 +66,7 @@ class Tips extends CI_Controller
 
         $data['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page);
         $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $data['sort_type'] = 'newest';
         $this->load->view('header_view');
         $this->load->view("tips_generalize_view" , $data);
         $this->load->view("tips_sidebar_view");
@@ -105,12 +109,44 @@ class Tips extends CI_Controller
         if ($Ram['comment_id'])
          {
              $this->tips_model->append_comments_relationship($Ram);
+             $this->tips_model->renew_tips_comments_num($Ram);
          }
 
 
         pretty_print($Ram);
 
+    }
 
+    public function vote()
+    {
+
+        $this->load->library('pagination');
+        //当前页
+        $current_page = intval($this->uri->segment(3));
+
+        $sort_type = $this->uri->segment(2);
+
+        //页面地址
+        $this->pagination_config['base_url']    = site_url('tips/vote');
+        //每页条数
+        $this->pagination_config['per_page']    = $this->per_page;
+        //参数
+        $this->pagination_config['uri_segment'] = $this->uri_segment_3;
+        //分页数量
+        $this->pagination_config['num_links']   = $this->num_links;
+        //总数
+        $this->pagination_config['total_rows']  = $this->tips_model->count_tips_all();
+        //分页初始化
+        $this->pagination->initialize($this->pagination_config);
+
+
+        $data['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page , $sort_type);
+        $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $data['sort_type'] = $sort_type;
+        $this->load->view('header_view');
+        $this->load->view("tips_generalize_view" , $data);
+        $this->load->view("tips_sidebar_view");
+        $this->load->view('footer_view');
 
     }
 

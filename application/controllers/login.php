@@ -20,20 +20,35 @@ class Login extends CI_controller
 
     public function index()
     {
-        if (true)  //如果用户登陆正确
+
+        $Ram['login_email'] = $this->input->post('login_email');
+        $Ram['login_password'] = $this->input->post('login_password');
+
+        $Bull = $this->user_model->check_user_password($Ram);
+
+
+
+        if (count($Bull))  //如果用户登陆正确
          {
              $session_data = array(
-                   'user_name'  => 'foursking',
-                   'user_email' => 'lyf021408@163.com',
-                   'user_id'  => '11',
+                   'user_name'  => $Bull[0]['userName'],
+                   'user_email' => $Bull[0]['userEmail'],
+                   'user_id'  => $Bull[0]['userId'],
                    'is_login'  => TRUE,
                    'user_last_login' => date("Y-m-d H:i:s"),
              );
 
              $this->session->set_userdata($session_data);
 
-        $this->redirect('tips');
+             $return = 'yes';
+             die($return);
 
+
+         }
+        else
+        {
+            $return = 'no';
+            die($return);
          }
     }
 
@@ -46,6 +61,7 @@ class Login extends CI_controller
 
 
 }
+
 
 
 

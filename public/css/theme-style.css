@@ -2,7 +2,7 @@
  *
  * Custom theme code styles
  * Written by Themelize.me (http://themelize.me)
- * 
+ *
  *******************************************************/
 .clearfix {
   *zoom: 1;
@@ -33,9 +33,14 @@
 }
 body,
 html {
-  font-family: "Open Sans", Arial, serif;
-  background: #ffffff;
+font-family: "Open Sans", Arial, serif;
+width: 100%;
+height: 100%;
 }
+
+
+
+
 h1 {
   font-size: 31.5px;
 }
@@ -2134,7 +2139,7 @@ a:hover .icon-inverse-80 {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     *background-color: rgba(62, 62, 62, 0.8);
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  
+
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
@@ -2296,10 +2301,10 @@ a:hover .icon-inverse-80 {
   }
 }
 @media (min-width: 980px) {
-  
+
 }
 @media (min-width: 1200px) {
-  
+
 }
 @media (max-width: 979px) {
   #navigation {

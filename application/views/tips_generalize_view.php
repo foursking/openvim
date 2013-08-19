@@ -10,17 +10,24 @@
 .media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
 .blog-roll .media{padding-bottom:0px}
 
+.tag-detail{ margin-bottom: 30px; padding: 20px 0; border: 1px solid #DDD; border-width: 1px 0; min-height: 105px; font-size: 13px;}
+.alert{}
+
 
 </style>
 <div id="content">
   <div class="container">
-    <div class="row-fluid">
-      <h2 class="title-divider"><span>Vim<span class="de-em">Tips</span></span> <small>Tips here</small></h2>
-    </div>
 
 
 
     <div class="row">
+
+
+<div class="alert alert-info">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Warning!</strong> Best check yo self, you're not looking too good.
+</div>
+
 
 
 <style>
@@ -31,9 +38,9 @@ ul.nav-tabs li.active{
       <!--Blog Roll Content-->
       <div class="span-tips-main blog-roll blog-list">
 <div>
-  <ul class="nav nav-tabs" id="quicksand-categories">
-        <li class="active"><a href="#" class="all">最新</a></li>
-        <li><a href="#" class="type-web">最热</a></li>
+  <ul class="nav nav-tabs">
+  <li <?php if($sort_type == 'newest') echo 'class="active"';?>><a href="<?php echo site_url('tips/index')?>" class="all">最新</a></li>
+  <li <?php if($sort_type == 'vote') echo 'class="active"';?>><a href="<?php echo site_url('tips/vote')?>" class="type-web">最热</a></li>
   </ul>
  <div class="input-append" style="float:right;margin-top:-60px;position:relative">
     <button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button>
