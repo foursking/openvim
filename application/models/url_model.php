@@ -9,6 +9,7 @@ class Url_model extends CI_Model
 
     private $_tables = array(
         'url' => 'url',
+        'user' => 'user',
     );
 
 
@@ -171,18 +172,58 @@ class Url_model extends CI_Model
     	return $this->db->update('book_user');
     }
 
+  public function get_url_by_urlAction($urlUid = '' , $urlAction = 1)
+    {
+        $this->db->select('urlUid , urlUsername , urlAction , urlString , urlEmail , urlCtime')
+                 ->from($this->_tables['url'])
+                 ->where('urlUid' , $urlUid)
+                 ->where('urlAction' , $urlAction)
+                 ->where('urlStatus' , 1)          //有效的url
+                 ->order_by('urlCtime' , 'desc')
+                 ->get()
+                 ->row_array();
+    }
+
+
 
 
    // http://dev.openvim.com/user/useractive/userid/uuid/1
-
-
-    public function split_useractive_code($useractive_code)
+    public function split_useractive_code( $data )
     {
-        strrpos($useractive_code , '-');
-        $Ram['user_uuid'] = substr($useractive_code , 0 , strrpos($useractive_code , '-'));
-        $Ram['user_id'] = substr($useractive_code , strrpos($useractive_code , '-') + 1 , strlen($useractive_code));
+        strrpos($data, '-');
+        $Ram['user_uuid'] = substr($data, 0 , strrpos($data, '-'));
+        $Ram['user_id'] = substr($data, strrpos($data, '-') + 1 , strlen($data));
 
         return $Ram;
+    }
+
+
+    public function user_email_active( $data )
+    {
+        $Ram = $this->db->select("urlUid , urlAction , urlString , urlStatus , urlEmail")
+                        ->from($this->_tables['url'])
+                        ->where('urlUid' , $data['user_id'])
+                        ->where('urlAction' , 1)
+                        ->where('urlStatus' , 1)
+                        ->where('urlString' , $data['user_uuid'])
+                        ->get()
+                        ->row_array();
+
+
+        if (count($Ram) > 0)
+         {
+             $Bull = $this->db->set('userIsActive' , 1)
+                              ->where('userId' , $data['user_id'])
+                              ->update($this->_tables['user']);
+
+             return $this->db->affected_rows();
+         }
+        else
+        {
+            return false;
+
+        }
+
     }
 
 

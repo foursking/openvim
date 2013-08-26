@@ -87,7 +87,7 @@ box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.5);
              <div class="form-actions">
                 <span>
                 </span>
-			      <button class="btn btn-primary" type="submit">Sign Up</button>
+			      <button class="btn btn-primary" type="submit">注 册</button>
                 </div>
               </form>
 		      <div class="form-extra">

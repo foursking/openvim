@@ -17,12 +17,7 @@
 </style>
 <div id="content">
   <div class="container">
-
-
-
     <div class="row">
-
-
 <div class="alert alert-info">
   <a class="close" data-dismiss="alert">×</a>
   <strong>Warning!</strong> Best check yo self, you're not looking too good.

@@ -28,8 +28,10 @@ body
 
 .wmd-preview
 {
+    width:630px;
     margin-top:20px;
-    padding:5px;
+    margin-bottom:20px;
+    padding:6px;
     background: #f3f3f3;
     border: 2px dotted #ccc;
 }

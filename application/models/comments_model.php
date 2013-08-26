@@ -3,8 +3,6 @@
 class Comments_model extends CI_Model {
 
  	private $_tables = array(
-        'tips' => 'tips',
-		'tags' => 'tags',
 		'comment' => 'comment',
 		'tags_relationships'   => 'tags_relationships',
 		'comments_relationships'   => 'comments_relationships',
@@ -17,7 +15,6 @@ class Comments_model extends CI_Model {
         $this->load->database();
         $this->load->helper('url');
     }
-
 
 
     /**
@@ -81,13 +78,15 @@ class Comments_model extends CI_Model {
 
     }
 
-    public function append_tips_comments_num( $data )
+    public function renew_tips_comments_num( $data )
     {
-        $append_data = array(
-            'tipsId' => $data['tips_id'],
-            'tipsCommNum' =>
 
-        );
+        $this->db->set('tipsCommNum' , 'tipsCommNum+1' , false)
+                 ->where('tipsId' , $data['tips_id'])
+                 ->update($this->_tables['tips']);
+
+        return $this->db->affected_rows();
+
     }
 
 
@@ -142,6 +141,7 @@ class Comments_model extends CI_Model {
 
 
     }
+
 
 
 

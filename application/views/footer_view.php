@@ -73,6 +73,11 @@ $(function(){
 		$('.tips-content pre').each(function(){
 			$(this).addClass('prettyprint');
 		});
+
+		$('.tips-media-list pre').each(function(){
+			$(this).addClass('prettyprint');
+		});
+
         $('.media-list pre pre').each(function(){
             $(this).addClass('prettyprint');
         });

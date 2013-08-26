@@ -35,6 +35,7 @@ class Login extends CI_controller
                    'user_email' => $Bull[0]['userEmail'],
                    'user_id'  => $Bull[0]['userId'],
                    'is_login'  => TRUE,
+                   'is_active' => $Bull[0]['userIsActive'],
                    'user_last_login' => date("Y-m-d H:i:s"),
              );
 

@@ -9,10 +9,7 @@ class User extends CI_controller
     function __construct()
     {
         parent::__construct();
-        $this->load->helper('array_helper');
-        $this->load->helper('url');
-        $this->load->helper('form');
-        $this->load->helper('op');
+        $this->load->helper(array('array','url','form','op'));
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model('user_model');
@@ -72,14 +69,7 @@ class User extends CI_controller
     {
         $Ram = $this->uri->segment(3);
         $Ram = $this->url_model->split_useractive_code($Ram);
-
-        pretty_print($Ram);
-
-
-
-        //redirect('/');
-
-
+        $Ram = $this->url_model->user_email_active($Ram);
     }
 
    public function postsuccess()
@@ -93,6 +83,7 @@ class User extends CI_controller
     {
         $this->load->view('header_view');
         $this->load->view('login_view');
+        $this->load->view('footer_view');
     }
 
 

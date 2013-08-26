@@ -47,7 +47,7 @@ class User_model extends CI_Model
     function check_user_password( $data )
     {
 
-        $Ram = $this->db->select("userId , userName , userEmail")
+        $Ram = $this->db->select("userId , userName , userEmail , userIsActive")
             ->from("{$this->_tables['user']}")
             ->where('userEmail' , $data['login_email'])
             ->where('userPassword' , md5($data['login_password']))

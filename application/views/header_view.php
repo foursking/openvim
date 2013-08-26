@@ -55,6 +55,27 @@
   <div class="navbar">
 
 
+<style>
+
+#navigation .navbar .nav li > a{
+
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+-o-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;
+padding: 10px;
+margin: 0;
+font-size: 12px;
+font-weight: bold;
+text-transform: uppercase;
+}
+</style>
 
     <div class="container" style="width:99%">
       <div class="navbar-inner">
@@ -62,13 +83,15 @@
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 
         <!--user menu-->
-        <ul class="nav user-menu pull-right">
+        <ul class="nav pull-right" style="margin-right:10px;">
         <?php if(!$this->session->userdata('is_login')){?>
         <li><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
-          <li> <a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a>
+          <li> <a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a></li>
         <?php }else{?>
-          <li><a href="signup.html" class="btn btn-primary signup">用户名</a></li>
-          <li class="dropdown"> <a href="login.html" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">头像</a>
+          <li class="dropdown">
+ <a href="login.html" class="dropdown-toggle login">
+<img width="26" height="26" src="http://dev.openvim.com/public/img/team/jobs.jpg" alt="Picture of Tom" class="media-object img-polaroid">
+</a></li>
           <?php }?>
 
         </ul>
@@ -80,14 +103,8 @@
           <ul class="nav" id="main-menu">
             <li class="home-link"><a href="index.html"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
             <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a> </li>
-            <li><a href="pricing.html" class="menu-item">脚本（script）</a></li>
-            <li class="dropdown"> <a href="about.html" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">技巧（tips）</a>
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                <li role="menuitem"><a href="about.html" tabindex="-1" class="menu-item">Sort Hot</a></li>
-                <li role="menuitem"><a href="team.html" tabindex="-1" class="menu-item">Sort Top</a></li>
-                <li role="menuitem"><a href="contact.html" tabindex="-1" class="menu-item">Sort Random</a></li>
-              </ul>
+            <li><a href="<?php echo site_url('plugin/index');?>" class="menu-item">脚本（script）</a></li>
+            <li class="dropdown"> <a href="<?php echo site_url('tips/index')?>" class="dropdown-toggle">技巧（tips）</a>
             </li>
 
             <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a>

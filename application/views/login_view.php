@@ -99,7 +99,7 @@
             <div class="form-actions">
                 <span>
                 </span>
-                <button class="btn btn-primary" id="login-submit" type="submit">登陆</button>
+                <button class="btn btn-primary" data-loading-text="登陆中..." id="login-submit" type="submit" autocomplete="off">登陆</button>
             </div>
         </form>
     </div>
@@ -143,6 +143,8 @@
 
                 }else{
 
+                $(this).button('loading');
+
                 $.ajax({
                     url :"<?php echo site_url('login/index');?>" ,
                     type : "post",
@@ -153,7 +155,7 @@
                         if(data == 'yes')
                         window.location.href = "<?php echo site_url('tips/index');?>";
                         else
-                        window.location.href = "http://www.baidu.com";
+                        window.location.href = "<?php echo site_url('user/login');?>";
 
 
                     }
