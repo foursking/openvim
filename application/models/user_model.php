@@ -60,6 +60,17 @@ class User_model extends CI_Model
     }
 
 
+    public function get_userName_by_userId( $user_id )
+    {
+       return $this->db->select("userId , userName , userEmail , userIsActive")
+                   ->from("{$this->_tables['user']}")
+                   ->where('userId' , $user_id)
+                   ->get()
+                   ->row_array();
+
+    }
+
+
 
 
 }

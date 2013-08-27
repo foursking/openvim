@@ -10,11 +10,8 @@ class User extends CI_controller
     {
         parent::__construct();
         $this->load->helper(array('array','url','form','op'));
-        $this->load->library('form_validation');
-        $this->load->library('session');
-        $this->load->model('user_model');
-        $this->load->model('email_model');
-        $this->load->model('url_model');
+        $this->load->library(array('form_validation','session'));
+        $this->load->model(array('user_model','email_model','url_model'));
 
 
 
@@ -68,14 +65,46 @@ class User extends CI_controller
     public function useractive()
     {
         $Ram = $this->uri->segment(3);
-        $Ram = $this->url_model->split_useractive_code($Ram);
-        $Ram = $this->url_model->user_email_active($Ram);
+        $user_info = $this->url_model->split_useractive_code($Ram);
+        $active_flag = $this->url_model->user_email_active($user_info);
+
+        $user_name = $this->user_model->get_userName_by_userId($user_info['user_id']);
+
+        if($active_flag)
+        {
+            $site_url        = site_url('tips/index');
+            $afresh_login    = site_url('user/login');
+            $data['title']   = '激活成功';
+            $data['message'] = '欢迎您 '.$user_name.' , 您的帐号已经激活';
+            $data['action']  = "<a href='$site_url'>《 回到首页</a> 或者 <a href = '$afresh_login'>重新登陆 》</a>";
+
+        }
+        else
+        {
+            $data['title'] = '激活失败';
+            $data['message'] = '欢迎您 '.$user_name.' , 您的帐号激活码失效，我们已经重新发送了一封邮件，请查收!';
+            $data['action'] = "<a href='$site_url'>《 回到首页</a> 或者 <a href='$afresh_login'>登陆邮箱 》</a>";
+
+        }
+
+            $this->load->view('header_view');
+            $this->load->view('active_success_view' , $data);
+
     }
+
+
+
 
    public function postsuccess()
     {
         $this->load->view('header_view');
         $this->load->view('register_success_view');
+    }
+
+    public function activesuccess()
+    {
+        $this->load->view('header_view');
+        $this->load->view('active_success_view');
     }
 
 

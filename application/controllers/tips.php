@@ -81,8 +81,8 @@ class Tips extends CI_Controller
         $Ram['tips_id'] = $this->uri->segment(3);
         $data['tips_comments'] = $this->comments_model->show_comments($Ram);
         $this->load->view('header_view');
-        $this->load->view('tips_detail_view' , $data);
-        $this->load->view("tips_detail_sidebar_view" , $data);
+        $this->load->view('tips_append_view' , $data);
+       // $this->load->view("tips_detail_sidebar_view" , $data);
         $this->load->view('footer_view');
     }
 
@@ -170,6 +170,13 @@ class Tips extends CI_Controller
         $this->load->view('header_view');
         $this->load->view("tips_generalize_view" , $data);
         $this->load->view("tips_sidebar_view");
+        $this->load->view('footer_view');
+    }
+
+
+    public function append()
+    {
+        $this->load->view('header_view');
         $this->load->view('footer_view');
     }
 

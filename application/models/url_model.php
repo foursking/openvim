@@ -115,62 +115,10 @@ class Url_model extends CI_Model
 
 
 
-    //根据book_user_id查看url信息
-    /*
-     * bookuser
-     */
-    function load_urlbybookuser($bookuser)
-    {
-   		 if (!$bookuser)
-        {
-            return array();
-        }
-
-        $query = $this->db->get_where('url',array('openvim_bookuser' => $bookuser));
-		if ($row = $query->row_array())
-        {
-            	return $row;
-       	}
-    }
-    //check_url是否有效
- private  function check_url($url_uuid)
-    {
-    	$query = $this->db->get_where('url',array('url_uuid' => $url_uuid,'url_status' => '1'));
-		if ($row = $query->row_array())
-        {
-            return true;
-        }
-        return false;
-    }
 
 
 
-    //修改一条url的状态   是链接失效
-   private function update_url($url_uuid)
-    {
-		if(!$url_uuid)
-		{
-			return false;
-		}
-		//使url失效
-    	$this->db->set('url_status', '2');
-        $this->db->where('url_uuid', $url_uuid);
-        return $this->db->update('url');
 
-    }
-
-
-    //修改user_isactive的状态为2
-    private function update_Userisacitve($bookuser)
-    {
-    	if(!$bookuser)
-    	{
-    		return false;
-    	}
-    	$this->db->set('user_isactive','2');
-    	$this->db->where('book_user_id',$bookuser);
-    	return $this->db->update('book_user');
-    }
 
   public function get_url_by_urlAction($urlUid = '' , $urlAction = 1)
     {
