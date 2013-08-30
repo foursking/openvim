@@ -165,7 +165,7 @@ class Tips extends CI_Controller
         //分页初始化
         $this->pagination->initialize($this->pagination_config);
 
-        $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $data['top_tags']  = $this->tips_model->show_top_tags($this->top_tags_num);
         $data['sort_type'] = 'newest';
         $this->load->view('header_view');
         $this->load->view("tips_generalize_view" , $data);
@@ -178,6 +178,26 @@ class Tips extends CI_Controller
     {
         $this->load->view('header_view');
         $this->load->view('footer_view');
+    }
+
+    public function show_tag()
+    {
+        $data = array();
+        $press = $this->input->post('press');
+
+        $Ram = $this->tips_model->get_tag_by_press($press);
+
+        $data['tag'] = $Ram;
+
+        $data['flag'] = empty($Ram) ? true : false;
+        $data['press'] = $press;
+
+        die(json_encode($data));
+
+
+
+
+
     }
 
 

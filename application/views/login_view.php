@@ -152,10 +152,6 @@
                     data : {login_email:$login_email.val(),login_password:$login_password.val()},
                     success:function(data){
 
-                        if(data == 'yes')
-                        window.location.href = "<?php echo site_url('tips/index');?>";
-                        else
-                        window.location.href = "<?php echo site_url('user/login');?>";
 
 
                     }

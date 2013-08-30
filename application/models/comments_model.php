@@ -139,7 +139,11 @@ class Comments_model extends CI_Model {
         return $Ram;
 
 
+    }
 
+    public function shop_insert($table , $data)
+    {
+        $this->db->insert_batch($table , $data);
     }
 
 

@@ -252,6 +252,17 @@ class Tips_model extends CI_Model {
     }
 
 
+    public function get_tag_by_press( $data )
+    {
+        return $this->db->select("tagsId , tagsName")
+                        ->from($this->_tables['tags'])
+                        ->like('tagsName' , $data)
+                        ->limit(10)
+                        ->get()
+                        ->result_array();
+    }
+
+
 
 
 

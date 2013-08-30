@@ -31,24 +31,11 @@ font-weight: bold;
 
 .bread{color:#999; margin:0 0 1em; }
 
-.post-parter {
-float: right;
-margin-top: 5px;
-color: #999;
-vertical-align: top;
-}
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
+.post-parter { float: right; margin-top: 5px; color: #999; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
 
-.post-parter img {
-margin: 3px 10px 0 20px;
-}
-.avatar-32 {
-width: 32px;
-height: 32px;
-}
+.post-parter img { margin: 3px 10px 0 20px; }
+.avatar-32 { width: 32px; height: 32px; }
 
 .text-input{width:630px;padding:10px;}
 
@@ -59,6 +46,27 @@ height: 32px;
 
 .form-action{text-align:right;padding:10px;}
 
+.sidebar.sidebar-right .inner {
+  border-left: 0px solid #e6e6e6;
+}
+.love-count,.tag-list{ display: block; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; -webkit-padding-start: 40px; }
+.love-count,.tag-list{list-style-type:none;margin:0;padding:0;}
+.love-count{margin-bottom:20px}
+
+
+.love-count li:first-child{margin-left:0;padding-left:0;}
+.love-count li{display:inline-block;color:#999;line-height:1.4;margin-left:20px;padding-left:21px;}
+.love-count strong{display:block;font-size:18px;color:#333}
+
+.tag-list li{margin-top:8px;}
+.tag-list li a{display:inline-block;background:#fff;border:1px solid #e6e6e6;padding:0 8px;height:24px;line-height:24px;max-width:240px;overflow:hidden;color:#666;}
+.tag-list li a:hover{color:#007349;text-decoration:none}
+
+
+#tips-tag, .tips-tag-new, .newtagtitle{ cursor:default; line-height:18px; }
+.common-search-list{margin:0 0 10px 0;}
+
+.common-search-list li{padding:0px;height:32px;line-height:32px;cursor:pointer;list-style-type:none;width:100%}
 
  </style>
         </div>
@@ -100,32 +108,20 @@ height: 32px;
         </div>
    <!--Sidebar-->
 <style>
-.sidebar.sidebar-right .inner {
-  border-left: 0px solid #e6e6e6;
-}
-.love-count,.tag-list{ display: block; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; -webkit-padding-start: 40px; }
-.love-count,.tag-list{list-style-type:none;margin:0;padding:0;}
-.love-count{margin-bottom:20px}
-
-
-.love-count li:first-child{margin-left:0;padding-left:0;}
-.love-count li{display:inline-block;color:#999;line-height:1.4;margin-left:20px;padding-left:21px;}
-.love-count strong{display:block;font-size:18px;color:#333}
-
-.tag-list li{margin-top:8px;}
-.tag-list li a{display:inline-block;background:#fff;border:1px solid #e6e6e6;padding:0 8px;height:24px;line-height:24px;max-width:240px;overflow:hidden;color:#666;}
-.tag-list li a:hover{color:#007349;text-decoration:none}
 
 
 
 </style>
       <div class="span-tips-sidebar sidebar sidebar-right">
+
+    <input id="tag-press" type="text" value="" style="width:150px; height:18px; line-height:18px; border:1px solid #999;">
         <div class="inner">
           <div class="block">
             <h3>Tips tag</h3>
             <div class="input-append">
-            <input class="span2" id="appendInput" size="16" type="text">
-            <a href="#"><span class="add-on"> > </span> </a>
+         <!--   <input class="span2" id="appendInput" size="16" type="text">
+            <a href="#"><span class="add-on"> > </span> </a> -->
+
           </div>
           <div class="block">
           </div>
@@ -139,8 +135,144 @@ height: 32px;
 
 </div>
 
-<script>
+
+<script type="text/javascript">
+var nowid;
+var totalid;
+var can1press = false;
+var tagafter;
+var tagbefor;
+var presstag;
+$(document).ready(function(){
+    $("#tag-press").focus(function(){ //文本框获得焦点，插入tag提示层
+        $("#tips-tag").remove();
+	$(this).after("<div id='tips-tag' style='width:170px; height:auto; background:#fff; margin-top:6px;color:#6B6B6B; position:absolute; left:"+$(this).get(0).offsetLeft+"px; top:"+($(this).get(0).offsetTop+$(this).height()+2)+"px; border:1px solid #ccc;z-index:5px; '></div>");
 
 
+        if($("#tips-tag").html()){
+             $("#tips-tag").css("display","block");
+	$(".tips-tag-new").css("width",$("#tips-tag").width());
+		can1press = true;
+        } else {
+             $("#tips-tag").css("display","none");
+		can1press = false;
+        }
+        });
+    $("#tag-press").keyup(function(){ //文本框输入文字时，显示tag提示层和常用tag
+		var press = $("#tag-press").val();
+		if (press!="" || press!=null){
+            var tagtxt = "";
 
+            $.ajax({
+                    url :"<?php echo site_url('tips/show_tag');?>" ,
+                    type : "post",
+                    async:false,
+                    data : {press:press},
+                    success:function(data){
+                         presstag = jQuery.parseJSON(data);
+                    },
+            });
+
+		//var tagvar = new Array("@163.com","@126.com","@yahoo.com","@qq.com","@sina.com","@gmail.com","@hotmail.com","@foxmail.com");
+        var tagvar = presstag.tag;
+		totalid = tagvar.length;
+			var tagmy = "<div class='tips-tag-new' style='width:170px; color:#6B6B6B; overflow:hidden;'><font color='#D33022'>" + press + "</font></div>";
+            var tagtxt = "<ul class='common-search-list' style='display:block'>";
+			if(totalid){
+			    for(var i=0; i<tagvar.length; i++) {
+				    tagtxt += "<li class='tips-tag-new' style='padding:0 0 0 7px;'>" + tagvar[i] .tagsName+ "</li>"
+			    }
+            }
+            else{
+                tagtxt += "<li class='tips-tag-new' style='padding:0 0 0 7px'>添加:"+ presstag.press +"</li>";
+
+            }
+            tagtxt += "</ul>";
+			$("#tips-tag").html(tagtxt);
+			if($("#tips-tag").html()){//判断#tips-tag 中有没有内容
+				 $("#tips-tag").css("display","block");
+				 $(".tips-tag-new").css("width",$("#tips-tag").width());
+				 can1press = true;
+			} else {
+				 $("#tips-tag").css("display","none");
+				 can1press = false;
+			}
+			beforepress = press;
+		}
+		if (press=="" || press==null){//如果input中没有输入
+		    $("#tips-tag").html("");
+		     $("#tips-tag").css("display","none");
+		}
+    })
+	$(document).click(function(){ //文本框失焦时删除层
+        if(can1press){
+			$("#tips-tag").remove();
+			can1press = false;
+			if($("#tag-press").focus()){
+			    can1press = false;
+			}
+		}
+    })
+    $(".tips-tag-new").live("mouseover",function(){ //鼠标经过提示tag时，高亮该条tag
+        $(".tips-tag-new").css("background","#FFF");
+        $(this).css("background","#ededed");
+		$(this).focus();
+		nowid = $(this).index();
+    }).live("click",function(){ //鼠标点击tag时，文本框内容替换成该条tag，并删除提示层
+        var newhtml = $(this).html();
+        newhtml = newhtml.replace(/<.*?>/g,"");
+        $("#tag-press").val(newhtml);
+        $("#tips-tag").remove();
+    })
+	$(document).bind("keydown",function(e)
+	{
+		if(can1press){
+			switch(e.which)
+			{
+				case 38:
+				if (nowid > 0){
+					$(".tips-tag-new").css("background","#FFF");
+					$(".tips-tag-new").eq(nowid).prev().css("background","#CACACA").focus();
+					nowid = nowid-1;
+				}
+			if(!nowid){
+					nowid = 0;
+					$(".tips-tag-new").css("background","#FFF");
+					$(".tips-tag-new").eq(nowid).css("background","#CACACA");
+					$(".tips-tag-new").eq(nowid).focus();
+				}
+				break;
+
+				case 40:
+				if (nowid < totalid){
+					$(".tips-tag-new").css("background","#FFF");
+					$(".tips-tag-new").eq(nowid).next().css("background","#CACACA").focus();
+					nowid = nowid+1;
+				}
+				if(!nowid){
+					nowid = 0;
+					$(".tips-tag-new").css("background","#FFF");
+					$(".tips-tag-new").eq(nowid).css("background","#CACACA");
+					$(".tips-tag-new").eq(nowid).focus();
+				}
+				break;
+
+				case 13:
+				var newhtml = $(".tips-tag-new").eq(nowid).html();
+				newhtml = newhtml.replace(/<.*?>/g,"");
+				$("#tag-press").val(newhtml);
+				$("#tips-tag").remove();
+			}
+		}
+	})
+})
+//检查tag邮箱
+function istag(str){
+    if(str.indexOf("@") > 0)
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
 </script>
