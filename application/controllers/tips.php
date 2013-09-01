@@ -178,6 +178,26 @@ class Tips extends CI_Controller
     {
         $this->load->view('header_view');
         $this->load->view('footer_view');
+
+        if (!$this->input->post())
+        {
+            return false;
+        }
+
+        $tips_id = $this->tips_model->append_tips($this->input->post());
+
+        if($tips_id)
+        {
+            //添加激活邮件url
+            $Ram = $this->input->post();
+            $Ram['tipsId'] = $user_id;
+            $user_uuid = $this->tips_model->append_tips($Ram);
+
+        }
+
+
+
+
     }
 
     public function show_tag()

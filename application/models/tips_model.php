@@ -263,10 +263,21 @@ class Tips_model extends CI_Model {
     }
 
 
+    public function append_tips( $data )
+    {
+          $insert_data = array(
+            'tipsUid'     => 1,
+            'tipsTitle'    => $data['tips_title'],
+            'tipsContent' => $data['tips_content'],
+            'tipsCtime' => date(),
+            'tipsUtime' => date(),
+        );
 
 
+        $this->db->insert($this->_tables['user'] , $insert_data);
 
-
+        return $this->db->insert_id();
+    }
 
 
 }
