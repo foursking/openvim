@@ -38,7 +38,7 @@ ul.nav-tabs li.active{
   <li <?php if($sort_type == 'vote') echo 'class="active"';?>><a href="<?php echo site_url('tips/vote')?>" class="type-web">最热</a></li>
   </ul>
  <div class="input-append" style="float:right;margin-top:-60px;position:relative">
-    <button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button>
+ <a href="<?php echo site_url("tips/append")?>"><button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button></a>
     <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
  </div>
 

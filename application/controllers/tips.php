@@ -81,8 +81,9 @@ class Tips extends CI_Controller
         $Ram['tips_id'] = $this->uri->segment(3);
         $data['tips_comments'] = $this->comments_model->show_comments($Ram);
         $this->load->view('header_view');
-        $this->load->view('tips_append_view' , $data);
-       // $this->load->view("tips_detail_sidebar_view" , $data);
+       // $this->load->view('tips_append_view' , $data);
+        $this->load->view('tips_detail_view' , $data);
+        $this->load->view("tips_detail_sidebar_view" , $data);
         $this->load->view('footer_view');
     }
 
@@ -177,6 +178,7 @@ class Tips extends CI_Controller
     public function append()
     {
         $this->load->view('header_view');
+        $this->load->view('tips_append_view');
         $this->load->view('footer_view');
 
         if (!$this->input->post())
@@ -188,11 +190,11 @@ class Tips extends CI_Controller
 
         if($tips_id)
         {
-            //添加激活邮件url
             $Ram = $this->input->post();
-            $Ram['tipsId'] = $user_id;
-            $user_uuid = $this->tips_model->append_tips($Ram);
-
+            //添加 返回的tipsId
+            $Ram['tipsId'] = $tips_id;
+            $result = $this->tips_model->append_tags_relationship($Ram);
+            redirect("tips/post/{$tips_id}");
         }
 
 

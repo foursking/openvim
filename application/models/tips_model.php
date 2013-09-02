@@ -269,12 +269,28 @@ class Tips_model extends CI_Model {
             'tipsUid'     => 1,
             'tipsTitle'    => $data['tips_title'],
             'tipsContent' => $data['tips_content'],
-            'tipsCtime' => date(),
-            'tipsUtime' => date(),
+            'tipsCtime' => date("Y-m-d H:i:s" , time()),
+            'tipsUtime' => date("Y-m-d H:i:s" , time()),
         );
 
 
-        $this->db->insert($this->_tables['user'] , $insert_data);
+        $this->db->insert($this->_tables['tips'] , $insert_data);
+
+        return $this->db->insert_id();
+    }
+
+
+    public function append_tags_relationship( $data )
+    {
+        $insert_data = array();
+
+        foreach ($data['tags'] as $key=>$value)
+        {
+            $insert_data[$key]['tipsId'] = $data['tipsId'];
+            $insert_data[$key]['tagsId'] = $value;
+        }
+
+        $this->db->insert_batch($this->_tables['tags_relationships'] , $insert_data);
 
         return $this->db->insert_id();
     }

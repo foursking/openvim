@@ -78,22 +78,10 @@ height: 32px;
 
     <!--Comments-->
         <div class="comments" id="comments">
-        <h2>评论列表</h2>
+<?php if(is_array($tips_comments)){?> <h2>评论列表</h2> <?php }?>
          <div style="padding:16px">
           <ul class="media-list">
-          <li class="media row-fluid"> <a class="span1" href="#"><img src="<?php echo base_url("public/img/team/jobs.jpg")?>" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
-              <div class="span11" style="padding:5px">
-                <ul class="inline meta muted" style="background:#f5f8fd">
-                  <li><i class="icon-calendar"></i> <span class="visible-desktop"></span>10天前</li>
-                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Jobs</a></li>
-                </ul>
-                <p>Hi I'm jobs 这里是第一条评论</p>
-              </div>
-            </li>
-
-
-
-        <?php foreach($tips_comments as $key=>$value):?>
+        <?php if(is_array($tips_comments)){foreach($tips_comments as $key=>$value):?>
             <li class="media row-fluid"> <a class="span1" href="#"> <img src="<?php echo base_url('public/img/team/adele.jpg')?>" alt="Picture of Dave" class="media-object img-polaroid" /> </a>
               <div class="span11" style="padding:5px">
                 <ul class="inline meta muted" style="background:#f5f8fd">
@@ -103,7 +91,8 @@ height: 32px;
                 <pre class="tips-comments"><?php echo $value['content']?></pre>
               </div>
             </li>
-       <?php endforeach;?>
+       <?php endforeach;}?>
+
           </ul>
       </div>
         </div>

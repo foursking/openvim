@@ -141,7 +141,7 @@ background: transparent url(<?php echo base_url("public/img/action.png")?>) no-r
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
+    <h3 id="myModalLabel">添加tag</h3>
   </div>
   <div class="modal-body">
     <p>One fine body…</p>
@@ -221,7 +221,7 @@ $(document).ready(function(){
                 }
             }
             else{
-                tagtxt += "<a href='#myModal' data-toggle='modal'><li class='tips-tag-new' style='padding:0 0 0 7px'>添加:"+ presstag.press +"</li></a>";
+                tagtxt += "<a href='#myModal' data-toggle='modal'><li class='tips-tag-new' style='padding:0 0 0 7px'>暂无:"+ presstag.press +"</li></a>";
                 canappendtag = false;
             }
             tagtxt += "</ul>";
@@ -340,7 +340,7 @@ $('.i-cancel').live('click', function(e) {
     }
 });
 
-$(document).bind("click keydown keyup",function(e){
+$($(document).bind("click keydown keyup",function(e){
 
   if($(".show-pop-tag li").length < 1 || $("input[name=tips_title]").val() == '' || $("textarea[name=tips_content]").val() == ""){
         $("button[type=submit]").addClass("disabled").attr("disabled",true);
@@ -349,7 +349,7 @@ $(document).bind("click keydown keyup",function(e){
     }
 
 
-});
+}));
 
 
 

@@ -83,7 +83,7 @@ text-transform: uppercase;
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 
         <!--user menu-->
-        <ul class="nav pull-right" style="margin:10px 10px 0 0;">
+        <ul class="nav pull-right" style="margin:0 10px 0 0;">
         <?php if(!$this->session->userdata('is_login')){?>
         <li><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
           <li> <a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a></li>
