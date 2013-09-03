@@ -3,49 +3,6 @@
         <div class="row-fluid">
 
             <style>
-#content{width:978px;margin-left:auto;margin-right:auto}
-.tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
-.media-body{padding:15px 10px;}
-.media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
-.tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
-.media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
-.media-body .title a{color:#333}
-.media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
-.blog-roll .media{padding-bottom:0px}
-
-
-.tips-top-title{ margin: 0 0 1em; padding-bottom: .73em; display: block; -webkit-margin-before: 0.67em; -webkit-margin-after: 0.67em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-weight: bold; border-bottom: 1px solid #DDD; -webkit-box-shadow: 0 1px 0 #f3f3f3; -moz-box-shadow: 0 1px 0 #f3f3f3; box-shadow: 0 1px 0 #f3f3f3; font-size: 1.85em; }
-
-.tips-media-list{margin-left:0;list-style:none;}
-
-.bread{color:#999; margin:0 0 1em; }
-
-.post-parter {
-float: right;
-margin-top: 5px;
-color: #999;
-vertical-align: top;
-}
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
-
-.post-parter img {
-margin: 3px 10px 0 20px;
-}
-.avatar-32 {
-width: 32px;
-height: 32px;
-}
-
-
-.tips-comments{border:0px;background:white;padding:15px}
-.tips-comments h1,.tips-comments h2,.tips-comments h3{line-height:1px}
-.tips-comments code { padding: 2px 4px; color: #d14; background-color: #f7f7f9;border:1px solid #e1e1e8;white-space:nowrap;}
-
-.form-action{text-align:right;padding:10px;}
-
 
  </style>
 <!--<div class="bread"><a href="">技巧</a> » 详情 </div> -->
@@ -62,11 +19,11 @@ height: 32px;
           <ul class="tips-media-list">
  <li class="media row-fluid"> <a class="span1" href="#"><img src="<?php echo base_url("public/img/team/jobs.jpg")?>" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
               <div class="span11" style="padding:5px">
-                <ul class="inline meta muted" style="background:#f5f8fd">
+                <ul class="inline meta muted" style="background:#f5f8fd;margin-bottom:10px;">
                   <li><i class="icon-calendar"></i> <span class="visible-desktop"></span>10天前</li>
                   <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Jobs</a></li>
                 </ul>
-                <pre class="tips-comments"><?php echo $tips_detail['tipsContent'];?></pre>
+                <pre><?php echo $tips_detail['tipsContent'];?></pre>
               </div>
             </li>
 </ul>
@@ -105,7 +62,7 @@ height: 32px;
                     </div>
 
                  <?php }else{?>
-<?php echo form_open('tips/comments' , array('id'=>'register-welcome-form'))?>
+<?php echo form_open('tips/comments')?>
                     <div class="wmd-panel">
                         <div id="wmd-button-bar"></div>
                         <textarea class="wmd-input" id="wmd-input" autocomplete="off" spellcheck="false" name="content" style="width:630px;height: 200px;"></textarea>
@@ -127,3 +84,40 @@ height: 32px;
                 </form>
                 </div>
         </div>
+<script src="<?=base_url('public/editor/js/Markdown.Converter.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Editor.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Sanitizer.js')?>"></script>
+<script src="<?=base_url('public/editor/js/textarearesizer.js')?>"></script>
+
+ <script type="text/javascript">
+            /* jQuery textarea resizer plugin usage */
+            $(document).ready(function() {
+                $('textarea.wmd-input:not(.processed)').TextAreaResizer();
+            });
+  </script>
+
+
+        <script type="text/javascript">
+            (function () {
+                var converter1 = Markdown.getSanitizingConverter();
+                var editor1 = new Markdown.Editor(converter1);
+                editor1.run();
+            })();
+        </script>
+
+<script text="text/javascript">
+
+$(function(){
+
+    var markdownToHtml = new Markdown.Converter();
+    $('.media-list pre').each(function(){
+        var html = markdownToHtml.makeHtml($(this).html());
+        $(this).html(html);
+    })
+
+})
+
+
+
+
+</script>

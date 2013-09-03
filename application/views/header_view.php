@@ -57,24 +57,7 @@
 
 <style>
 
-#navigation .navbar .nav li > a{
 
--webkit-border-radius: 0;
--moz-border-radius: 0;
-border-radius: 0;
--webkit-box-shadow: none;
--moz-box-shadow: none;
-box-shadow: none;
--webkit-transition: all 0.4s ease-out;
--moz-transition: all 0.4s ease-out;
--o-transition: all 0.4s ease-out;
-transition: all 0.4s ease-out;
-padding: 10px;
-margin: 0;
-font-size: 12px;
-font-weight: bold;
-text-transform: uppercase;
-}
 </style>
 
     <div class="container" style="width:99%">
@@ -85,14 +68,17 @@ text-transform: uppercase;
         <!--user menu-->
         <ul class="nav pull-right" style="margin:0 10px 0 0;">
         <?php if(!$this->session->userdata('is_login')){?>
-        <li><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
-          <li> <a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a></li>
+        <li style="margin-top:10px;"><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
+        <li style="margin-top:10px;"><a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a></li>
         <?php }else{?>
           <li class="dropdown">
- <a href="login.html" class="dropdown-toggle login">
-<img width="26" height="26" src="http://dev.openvim.com/public/img/team/jobs.jpg" alt="Picture of Tom" class="media-object img-polaroid">
-</a></li>
-          <?php }?>
+ <a href="#" class="dropdown-toggle login" data-toggle="dropdown"> <img width="26" height="26" src="http://dev.openvim.com/public/img/team/jobs.jpg" alt="Picture of Tom" class="media-object img-polaroid"> </a>
+ <ul class="dropdown-menu pull-left">
+      <li><a class="menu-item" href="#">个人主页</a></li>
+      <li><a class="menu-item" href="<?php echo site_url("login/loginout")?>">注销</a></li>
+ </ul>
+</li>
+       <?php }?>
 
         </ul>
 

@@ -22,7 +22,7 @@
 <script src="<?=base_url('public/js/jquery.flexslider-min.js')?>"></script>
 
 <!--Custom scripts mainly used to trigger libraries -->
-<script src="<?=base_url('public/js/script.js')?>"></script>
+<!--<script src="<?=base_url('public/js/script.js')?>"></script> -->
 
 
 
@@ -33,38 +33,9 @@
 
 
 
- <script type="text/javascript">
-            /* jQuery textarea resizer plugin usage */
-            $(document).ready(function() {
-                $('textarea.wmd-input:not(.processed)').TextAreaResizer();
-            });
-        </script>
-
-
-        <script type="text/javascript">
-            (function () {
-                var converter1 = Markdown.getSanitizingConverter();
-                var editor1 = new Markdown.Editor(converter1);
-                editor1.run();
-            })();
-        </script>
-
-<script text="text/javascript">
-
-$(function(){
-
-    var markdownToHtml = new Markdown.Converter();
-    $('.media-list pre').each(function(){
-        var html = markdownToHtml.makeHtml($(this).html());
-        $(this).html(html);
-    })
-
-})
 
 
 
-
-</script>
 
 
 <script>

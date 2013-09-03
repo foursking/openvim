@@ -1,17 +1,5 @@
 <style>
 
-#content{width:978px;margin-left:auto;margin-right:auto}
-.tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
-.media-body{padding:15px 10px;}
-.media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
-.tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
-.media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
-.media-body .title a{color:#333}
-.media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
-.blog-roll .media{padding-bottom:0px}
-
-.tag-detail{ margin-bottom: 30px; padding: 20px 0; border: 1px solid #DDD; border-width: 1px 0; min-height: 105px; font-size: 13px;}
-.alert{}
 
 
 </style>
@@ -37,6 +25,7 @@ ul.nav-tabs li.active{
   <li <?php if($sort_type == 'newest') echo 'class="active"';?>><a href="<?php echo site_url('tips/index')?>" class="all">最新</a></li>
   <li <?php if($sort_type == 'vote') echo 'class="active"';?>><a href="<?php echo site_url('tips/vote')?>" class="type-web">最热</a></li>
   </ul>
+
  <div class="input-append" style="float:right;margin-top:-60px;position:relative">
  <a href="<?php echo site_url("tips/append")?>"><button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button></a>
     <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
@@ -63,7 +52,7 @@ ul.nav-tabs li.active{
               <div class="tags">
              <?php if(!empty($value['tags'])){ ?>
                 <?php foreach($value['tags'] as $k=>$v): ?>
-                    <a href="#" class="type"><?php echo $v?></a> &nbsp;&nbsp;
+                    <a href="<?php echo site_url("tips/tag") . '/' .$v?>" class="type"><?php echo $v?></a> &nbsp;&nbsp;
                     <?php endforeach;};?>
               </div>
                 <div class="tips-content" style="clear:both;margin-top:5px">

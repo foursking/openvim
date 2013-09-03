@@ -2,102 +2,6 @@
     <div class="container">
         <div class="row-fluid">
 
-            <style>
-h2{
-
-display: block;
-font-size: 1.5em;
--webkit-margin-before: 0.83em;
--webkit-margin-after: 0.83em;
--webkit-margin-start: 0px;
--webkit-margin-end: 0px;
-font-weight: bold;
-}
-
-#content{width:978px;margin-left:auto;margin-right:auto}
-.tags{text-transform: lowercase; margin-bottom:8px;margin-top:8px}
-.media-body{padding:15px 10px;}
-.media-body .tags a{background:##44857b;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#000;}
-.tags a:link,.tags a:visited,.tags a:hover{padding:2px 8px;background:#F2F2F2;color:#336699;font-size:11px;text-decoration:none;}
-.media-body .tags a:hover{background:#faa732;padding:2px 8px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#f5f5f5;}
-.media-body .title a{color:#333}
-.media-body .title a:hover, .media-body .title a:visited{color:#55a79a;text-decoration:none}
-.blog-roll .media{padding-bottom:0px}
-
-
-.tips-top-title{ margin: 0 0 1em; padding-bottom: .73em; display: block; -webkit-margin-before: 0.67em; -webkit-margin-after: 0.67em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-weight: bold; border-bottom: 1px solid #DDD; -webkit-box-shadow: 0 1px 0 #f3f3f3; -moz-box-shadow: 0 1px 0 #f3f3f3; box-shadow: 0 1px 0 #f3f3f3; font-size: 1.85em; }
-
-.tips-media-list{margin-left:0;list-style:none;}
-
-.bread{color:#999; margin:0 0 1em; }
-
-.post-parter { float: right; margin-top: 5px; color: #999; vertical-align: top; }
-table { border-collapse: collapse; border-spacing: 0; }
-
-.post-parter img { margin: 3px 10px 0 20px; }
-.avatar-32 { width: 32px; height: 32px; }
-
-.text-input{width:630px;padding:10px;}
-
-
-.tips-comments{border:0px;background:white;padding:15px}
-.tips-comments h1,.tips-comments h2,.tips-comments h3{line-height:1px}
-.tips-comments code { padding: 2px 4px; color: #d14; background-color: #f7f7f9;border:1px solid #e1e1e8;white-space:nowrap;}
-
-.form-action{text-align:right;padding:10px;}
-
-.sidebar.sidebar-right .inner {
-  border-left: 0px solid #e6e6e6;
-}
-.love-count,.tag-list{ display: block; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; -webkit-padding-start: 40px; }
-.love-count,.tag-list{list-style-type:none;margin:0;padding:0;}
-.love-count{margin-bottom:20px}
-
-
-.love-count li:first-child{margin-left:0;padding-left:0;}
-.love-count li{display:inline-block;color:#999;line-height:1.4;margin-left:20px;padding-left:21px;}
-.love-count strong{display:block;font-size:18px;color:#333}
-
-.tag-list li{margin-top:8px;}
-.tag-list li a{display:inline-block;background:#fff;border:1px solid #e6e6e6;padding:0 8px;height:24px;line-height:24px;max-width:240px;overflow:hidden;color:#666;}
-.tag-list li a:hover{color:#007349;text-decoration:none}
-
-
-#tips-tag, .tips-tag-new, .newtagtitle{ cursor:default; line-height:18px; }
-#tips-tag .common-search-list{margin:0}
-
-#tips-tag .common-search-list li{font-size:14px;padding:0px;height:32px;line-height:32px;cursor:pointer;list-style-type:none;width:90%}
-
-a.tag{display: inline-block;
-background: #FFF;
-border: 1px solid #e6e6e6;
-padding: 0 8px;
-height: 24px;
-line-height: 24px;
-max-width: 160px;
-overflow: hidden;
-color: #666;
-}
-a.tag:hover{
-border-color: #BBB;
-color: #999;
-text-decoration: none;
-}
-.i-cancel {
-display: inline-block;
-width: 16px;
-height: 16px;
-text-align: left;
-text-indent: -9999px;
-background: transparent url(<?php echo base_url("public/img/action.png")?>) no-repeat 0 -16px;
-}
-
-.i-cancel:hover{background-position:0 -32px;}
-.show-pop-tag{margin:0;padding:0;list-style-type:none}
-.show-pop-tag li{margin:8px 0 8px 0;}
-
-.required:before { content: '* '; color: #e20000; }
- </style>
         </div>
 
     <form action="http://dev.openvim.com/tips/append" method="post" accept-charset="utf-8">
@@ -171,6 +75,44 @@ background: transparent url(<?php echo base_url("public/img/action.png")?>) no-r
 <div id="content-below" class="wrapper">
 
 </div>
+
+<script src="<?=base_url('public/editor/js/Markdown.Converter.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Editor.js')?>"></script>
+<script src="<?=base_url('public/editor/js/Markdown.Sanitizer.js')?>"></script>
+<script src="<?=base_url('public/editor/js/textarearesizer.js')?>"></script>
+
+ <script type="text/javascript">
+            /* jQuery textarea resizer plugin usage */
+            $(document).ready(function() {
+                $('textarea.wmd-input:not(.processed)').TextAreaResizer();
+            });
+  </script>
+
+
+        <script type="text/javascript">
+            (function () {
+                var converter1 = Markdown.getSanitizingConverter();
+                var editor1 = new Markdown.Editor(converter1);
+                editor1.run();
+            })();
+        </script>
+
+<script text="text/javascript">
+
+$(function(){
+
+    var markdownToHtml = new Markdown.Converter();
+    $('.media-list pre').each(function(){
+        var html = markdownToHtml.makeHtml($(this).html());
+        $(this).html(html);
+    })
+
+})
+
+
+
+
+</script>
 
 
 <script type="text/javascript">

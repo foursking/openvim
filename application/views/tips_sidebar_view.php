@@ -1,10 +1,4 @@
       <!--Sidebar-->
-<style>
-
-.sidebar.sidebar-right .inner {
-  border-left: 0px solid #e6e6e6;
-}
-</style>
       <div class="span-tips-sidebar sidebar sidebar-right">
         <div class="inner">
           <div class="block">
@@ -15,7 +9,7 @@
             <h4 class="title-divider"><span>Tags</span></h4>
             <div class="tag-cloud">
             <?php foreach($top_tags as $key=>$value):?>
-            <span><a href="#"><?php echo $value['tagsName'] ;?></a> (<?php echo $value['tagsCount']?>)</span>
+            <span><a href="<?php echo site_url("tips/tag") . '/' . $value['tagsName']?>"><?php echo $value['tagsName'] ;?></a> (<?php echo $value['tagsCount']?>)</span>
             <?php endforeach;?>
 </div>
           </div>
