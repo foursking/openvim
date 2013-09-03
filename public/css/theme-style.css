@@ -41,45 +41,19 @@ height: 100%;
 
 
 
-h1 {
-  font-size: 31.5px;
-}
-h2 {
-  font-size: 27.3px;
-}
-h3 {
-  font-size: 24.5px;
-}
-h4 {
-  font-size: 17.5px;
-}
-h5 {
-  font-size: 14px;
-}
-h6 {
-  font-size: 11.9px;
-}
-h1 small {
-  font-size: 21.7px;
-}
-h2 small {
-  font-size: 14.700000000000001px;
-}
-h3 small {
-  font-size: 14px;
-}
-h4 small {
-  font-size: 14px;
-}
-.page-title {
-  margin: 0;
-}
-.page-title small {
-  color: rgba(51, 51, 51, 0.5);
-}
-a:focus {
-  outline: none;
-}
+h1 { font-size: 31.5px; }
+h2 { font-size: 27.3px; }
+h3 { font-size: 24.5px; }
+h4 { font-size: 17.5px; }
+h5 { font-size: 14px; }
+h6 { font-size: 11.9px; }
+h1 small { font-size: 21.7px; }
+h2 small { font-size: 14.700000000000001px; }
+h3 small { font-size: 14px; }
+h4 small { font-size: 14px; }
+.page-title { margin: 0; }
+.page-title small { color: rgba(51, 51, 51, 0.5); }
+a:focus { outline: none; }
 .colour-switcher a {
   text-indent: -10000px;
   display: inline-block;
@@ -112,44 +86,7 @@ a:focus {
 .colour-switcher.page a.active {
   border: 3px solid rgba(36, 36, 36, 0.6);
 }
-#header-hidden-link {
-  position: absolute;
-  right: 0;
-  top: -10px;
-}
-#header-hidden-link a.show-hide,
-#header-hidden-link a.top-link {
-  font-size: 0;
-  line-height: 1;
-  background: #55a79a;
-  padding: 0 10px;
-  -webkit-border-radius: 0 0 3px 3px;
-  -moz-border-radius: 0 0 3px 3px;
-  border-radius: 0 0 3px 3px;
-  height: 20px;
-  display: block;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-}
-#header-hidden-link a.show-hide i,
-#header-hidden-link a.top-link i {
-  font-size: 16px;
-  line-height: 1;
-}
-#header-hidden-link a.show-hide:hover,
-#header-hidden-link a.top-link:hover {
-  text-decoration: none;
-  color: #ffffff;
-}
-#header-hidden-link a.show-hide > i:before {
-  content: "\f078";
-  font-family: 'FontAwesome';
-  font-size: 16px;
-  font-style: normal;
-}
-#header-hidden-link a.show-hide.open > i:before {
-  content: "\f077";
-}
+
 .show-hide-open {
   height: auto !important;
   min-height: 40px;
@@ -273,6 +210,8 @@ a:focus {
   text-shadow: none;
   font-size: 14.5px;
 }
+
+
 #navigation .navbar .nav li > .btn {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -364,161 +303,7 @@ a:focus {
 #navigation .navbar .nav li > .btn.btn-navbar.active {
   background-color: #33635c \9;
 }
-#navigation .navbar .nav li > .btn.btn-warning {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #faa732;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
-  border-color: #f89406 #f89406 #ad6704;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #f89406;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-#navigation .navbar .nav li > .btn.btn-warning:hover,
-#navigation .navbar .nav li > .btn.btn-warning:active,
-#navigation .navbar .nav li > .btn.btn-warning.active,
-#navigation .navbar .nav li > .btn.btn-warning.disabled,
-#navigation .navbar .nav li > .btn.btn-warning[disabled] {
-  color: #ffffff;
-  background-color: #f89406;
-  *background-color: #df8505;
-}
-#navigation .navbar .nav li > .btn.btn-warning:active,
-#navigation .navbar .nav li > .btn.btn-warning.active {
-  background-color: #c67605 \9;
-}
-#navigation .navbar .nav li > .btn.btn-danger {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #da4f49;
-  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
-  border-color: #bd362f #bd362f #802420;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #bd362f;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-#navigation .navbar .nav li > .btn.btn-danger:hover,
-#navigation .navbar .nav li > .btn.btn-danger:active,
-#navigation .navbar .nav li > .btn.btn-danger.active,
-#navigation .navbar .nav li > .btn.btn-danger.disabled,
-#navigation .navbar .nav li > .btn.btn-danger[disabled] {
-  color: #ffffff;
-  background-color: #bd362f;
-  *background-color: #a9302a;
-}
-#navigation .navbar .nav li > .btn.btn-danger:active,
-#navigation .navbar .nav li > .btn.btn-danger.active {
-  background-color: #942a25 \9;
-}
-#navigation .navbar .nav li > .btn.btn-success {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #318b20;
-  background-image: -moz-linear-gradient(top, #1b7b00, #51a351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1b7b00), to(#51a351));
-  background-image: -webkit-linear-gradient(top, #1b7b00, #51a351);
-  background-image: -o-linear-gradient(top, #1b7b00, #51a351);
-  background-image: linear-gradient(to bottom, #1b7b00, #51a351);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1b7b00', endColorstr='#ff51a351', GradientType=0);
-  border-color: #51a351 #51a351 #387038;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #51a351;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-#navigation .navbar .nav li > .btn.btn-success:hover,
-#navigation .navbar .nav li > .btn.btn-success:active,
-#navigation .navbar .nav li > .btn.btn-success.active,
-#navigation .navbar .nav li > .btn.btn-success.disabled,
-#navigation .navbar .nav li > .btn.btn-success[disabled] {
-  color: #ffffff;
-  background-color: #51a351;
-  *background-color: #499249;
-}
-#navigation .navbar .nav li > .btn.btn-success:active,
-#navigation .navbar .nav li > .btn.btn-success.active {
-  background-color: #408140 \9;
-}
-#navigation .navbar .nav li > .btn.btn-info {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #49afcd;
-  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
-  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
-  border-color: #2f96b4 #2f96b4 #1f6377;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #2f96b4;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-#navigation .navbar .nav li > .btn.btn-info:hover,
-#navigation .navbar .nav li > .btn.btn-info:active,
-#navigation .navbar .nav li > .btn.btn-info.active,
-#navigation .navbar .nav li > .btn.btn-info.disabled,
-#navigation .navbar .nav li > .btn.btn-info[disabled] {
-  color: #ffffff;
-  background-color: #2f96b4;
-  *background-color: #2a85a0;
-}
-#navigation .navbar .nav li > .btn.btn-info:active,
-#navigation .navbar .nav li > .btn.btn-info.active {
-  background-color: #24748c \9;
-}
-#navigation .navbar .nav li > .btn.btn-inverse {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #161616;
-  background-image: -moz-linear-gradient(top, #242424, #000000);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#242424), to(#000000));
-  background-image: -webkit-linear-gradient(top, #242424, #000000);
-  background-image: -o-linear-gradient(top, #242424, #000000);
-  background-image: linear-gradient(to bottom, #242424, #000000);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff242424', endColorstr='#ff000000', GradientType=0);
-  border-color: #000000 #000000 #000000;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #000000;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-#navigation .navbar .nav li > .btn.btn-inverse:hover,
-#navigation .navbar .nav li > .btn.btn-inverse:active,
-#navigation .navbar .nav li > .btn.btn-inverse.active,
-#navigation .navbar .nav li > .btn.btn-inverse.disabled,
-#navigation .navbar .nav li > .btn.btn-inverse[disabled] {
-  color: #ffffff;
-  background-color: #000000;
-  *background-color: #000000;
-}
-#navigation .navbar .nav li > .btn.btn-inverse:active,
-#navigation .navbar .nav li > .btn.btn-inverse.active {
-  background-color: #000000 \9;
-}
 #navigation .navbar .nav.user-menu {
   padding: 12px 6px;
 }
@@ -700,119 +485,9 @@ a:focus {
 #navigation span.dropdown-menu form {
   margin: 0;
 }
-#navigation div.dropdown-menu form select,
-#navigation span.dropdown-menu form select,
-#navigation div.dropdown-menu form textarea,
-#navigation span.dropdown-menu form textarea,
-#navigation div.dropdown-menu form input[type="text"],
-#navigation span.dropdown-menu form input[type="text"],
-#navigation div.dropdown-menu form input[type="password"],
-#navigation span.dropdown-menu form input[type="password"],
-#navigation div.dropdown-menu form input[type="datetime"],
-#navigation span.dropdown-menu form input[type="datetime"],
-#navigation div.dropdown-menu form input[type="datetime-local"],
-#navigation span.dropdown-menu form input[type="datetime-local"],
-#navigation div.dropdown-menu form input[type="date"],
-#navigation span.dropdown-menu form input[type="date"],
-#navigation div.dropdown-menu form input[type="month"],
-#navigation span.dropdown-menu form input[type="month"],
-#navigation div.dropdown-menu form input[type="time"],
-#navigation span.dropdown-menu form input[type="time"],
-#navigation div.dropdown-menu form input[type="week"],
-#navigation span.dropdown-menu form input[type="week"],
-#navigation div.dropdown-menu form input[type="number"],
-#navigation span.dropdown-menu form input[type="number"],
-#navigation div.dropdown-menu form input[type="email"],
-#navigation span.dropdown-menu form input[type="email"],
-#navigation div.dropdown-menu form input[type="url"],
-#navigation span.dropdown-menu form input[type="url"],
-#navigation div.dropdown-menu form input[type="search"],
-#navigation span.dropdown-menu form input[type="search"],
-#navigation div.dropdown-menu form input[type="tel"],
-#navigation span.dropdown-menu form input[type="tel"],
-#navigation div.dropdown-menu form input[type="color"],
-#navigation span.dropdown-menu form input[type="color"],
-#navigation div.dropdown-menu form .uneditable-input,
-#navigation span.dropdown-menu form .uneditable-input {
-  margin-bottom: 2px;
-}
-#navigation div.dropdown-menu form select.email,
-#navigation span.dropdown-menu form select.email,
-#navigation div.dropdown-menu form textarea.email,
-#navigation span.dropdown-menu form textarea.email,
-#navigation div.dropdown-menu form input[type="text"].email,
-#navigation span.dropdown-menu form input[type="text"].email,
-#navigation div.dropdown-menu form input[type="password"].email,
-#navigation span.dropdown-menu form input[type="password"].email,
-#navigation div.dropdown-menu form input[type="datetime"].email,
-#navigation span.dropdown-menu form input[type="datetime"].email,
-#navigation div.dropdown-menu form input[type="datetime-local"].email,
-#navigation span.dropdown-menu form input[type="datetime-local"].email,
-#navigation div.dropdown-menu form input[type="date"].email,
-#navigation span.dropdown-menu form input[type="date"].email,
-#navigation div.dropdown-menu form input[type="month"].email,
-#navigation span.dropdown-menu form input[type="month"].email,
-#navigation div.dropdown-menu form input[type="time"].email,
-#navigation span.dropdown-menu form input[type="time"].email,
-#navigation div.dropdown-menu form input[type="week"].email,
-#navigation span.dropdown-menu form input[type="week"].email,
-#navigation div.dropdown-menu form input[type="number"].email,
-#navigation span.dropdown-menu form input[type="number"].email,
-#navigation div.dropdown-menu form input[type="email"].email,
-#navigation span.dropdown-menu form input[type="email"].email,
-#navigation div.dropdown-menu form input[type="url"].email,
-#navigation span.dropdown-menu form input[type="url"].email,
-#navigation div.dropdown-menu form input[type="search"].email,
-#navigation span.dropdown-menu form input[type="search"].email,
-#navigation div.dropdown-menu form input[type="tel"].email,
-#navigation span.dropdown-menu form input[type="tel"].email,
-#navigation div.dropdown-menu form input[type="color"].email,
-#navigation span.dropdown-menu form input[type="color"].email,
-#navigation div.dropdown-menu form .uneditable-input.email,
-#navigation span.dropdown-menu form .uneditable-input.email {
-  -webkit-border-radius: 2px 0 0 2px;
-  -moz-border-radius: 2px 0 0 2px;
-  border-radius: 2px 0 0 2px;
-  border-right: none;
-}
-#navigation div.dropdown-menu form select.password,
-#navigation span.dropdown-menu form select.password,
-#navigation div.dropdown-menu form textarea.password,
-#navigation span.dropdown-menu form textarea.password,
-#navigation div.dropdown-menu form input[type="text"].password,
-#navigation span.dropdown-menu form input[type="text"].password,
-#navigation div.dropdown-menu form input[type="password"].password,
-#navigation span.dropdown-menu form input[type="password"].password,
-#navigation div.dropdown-menu form input[type="datetime"].password,
-#navigation span.dropdown-menu form input[type="datetime"].password,
-#navigation div.dropdown-menu form input[type="datetime-local"].password,
-#navigation span.dropdown-menu form input[type="datetime-local"].password,
-#navigation div.dropdown-menu form input[type="date"].password,
-#navigation span.dropdown-menu form input[type="date"].password,
-#navigation div.dropdown-menu form input[type="month"].password,
-#navigation span.dropdown-menu form input[type="month"].password,
-#navigation div.dropdown-menu form input[type="time"].password,
-#navigation span.dropdown-menu form input[type="time"].password,
-#navigation div.dropdown-menu form input[type="week"].password,
-#navigation span.dropdown-menu form input[type="week"].password,
-#navigation div.dropdown-menu form input[type="number"].password,
-#navigation span.dropdown-menu form input[type="number"].password,
-#navigation div.dropdown-menu form input[type="email"].password,
-#navigation span.dropdown-menu form input[type="email"].password,
-#navigation div.dropdown-menu form input[type="url"].password,
-#navigation span.dropdown-menu form input[type="url"].password,
-#navigation div.dropdown-menu form input[type="search"].password,
-#navigation span.dropdown-menu form input[type="search"].password,
-#navigation div.dropdown-menu form input[type="tel"].password,
-#navigation span.dropdown-menu form input[type="tel"].password,
-#navigation div.dropdown-menu form input[type="color"].password,
-#navigation span.dropdown-menu form input[type="color"].password,
-#navigation div.dropdown-menu form .uneditable-input.password,
-#navigation span.dropdown-menu form .uneditable-input.password {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
+
+
+
 #navigation div.dropdown-menu form .btn,
 #navigation span.dropdown-menu form .btn {
   margin: 0;
@@ -1248,109 +923,10 @@ ul.inline > li:first-child {
 .pricing-stack .well.active .btn {
   margin-top: 40px;
 }
-/* --------------------------------------------------
- * Features
- *-------------------------------------------------- */
-.tabbable > ul.nav-tabs li a,
-ul.nav-tabs li a {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.tabbable > ul.nav-tabs li.active a,
-ul.nav-tabs li.active a,
-.tabbable > ul.nav-tabs li.active a:hover,
-ul.nav-tabs li.active a:hover {
-  color: #55a79a;
-  border-top: 4px solid #55a79a;
-}
-.feature-tabs ul.nav-tabs {
-  margin-right: 0;
-}
-.feature-tabs ul.nav-tabs li a {
-  color: rgba(36, 36, 36, 0.8);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  font-weight: bold;
-  font-size: 18px;
-  border-left: 4px solid transparent;
-  position: relative;
-}
-.feature-tabs ul.nav-tabs li a i {
-  font-size: 22px;
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  color: #e6e6e6;
-}
-.feature-tabs ul.nav-tabs li a small {
-  display: block;
-  font-weight: normal;
-}
-.feature-tabs ul.nav-tabs li a:hover i {
-  color: #55a79a;
-}
-.feature-tabs ul.nav-tabs li.active a,
-.feature-tabs ul.nav-tabs li.active a:hover {
-  border-top-width: 1px;
-  border-top-color: #e6e6e6;
-  border-left: 4px solid #55a79a;
-}
-.feature-tabs ul.nav-tabs li.active a i,
-.feature-tabs ul.nav-tabs li.active a:hover i {
-  color: #55a79a;
-}
-/* --------------------------------------------------
- * Customers
- *-------------------------------------------------- */
-.page-customers .tabbable > ul.nav-tabs li a,
-.page-customers ul.nav-tabs li a {
-  padding: 10px 30px;
-}
-.customers li a .inner-wrapper {
-  height: 240px;
-  padding: 1em;
-  border: 1px solid #d9d9d9;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  display: block;
-  position: relative;
-  background-color: #f7f7f7;
-  background-image: -moz-linear-gradient(top, #ffffff, #ebebeb);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
-  background-image: -webkit-linear-gradient(top, #ffffff, #ebebeb);
-  background-image: -o-linear-gradient(top, #ffffff, #ebebeb);
-  background-image: linear-gradient(to bottom, #ffffff, #ebebeb);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffebebeb', GradientType=0);
-}
-.customers li a span {
-  display: block;
-}
-.customers li a .img-wrapper {
-  text-align: center;
-  height: 100px;
-  display: block;
-}
-.customers li a .img-wrapper img {
-  max-height: 80px;
-  margin: 1em auto;
-}
-.customers li a .title {
-  text-transform: none;
-  font-weight: bold;
-}
-.customers li a .description {
-  color: rgba(36, 36, 36, 0.8);
-}
-.customers li a:hover {
-  text-decoration: none;
-}
-.customers li a:hover .inner-wrapper {
-  border-color: #a6a6a6;
-}
+
+
+
+
 /* --------------------------------------------------
  * About
  *-------------------------------------------------- */
@@ -1584,9 +1160,7 @@ ul.nav-tabs li.active a:hover {
 .blog-post .comments .media-body .meta {
   margin: 0;
 }
-/* --------------------------------------------------
- * Contact
- *-------------------------------------------------- */
+
 /* --------------------------------------------------
  * Misc Pages
  *-------------------------------------------------- */
@@ -2366,28 +1940,7 @@ a:hover .icon-inverse-80 {
   #navigation span.dropdown-menu {
     max-width: 300px;
   }
-  #navigation div.dropdown-menu .input-prepend input,
-  #navigation span.dropdown-menu .input-prepend input,
-  #navigation div.dropdown-menu .input-append input,
-  #navigation span.dropdown-menu .input-append input,
-  #navigation div.dropdown-menu .input-prepend input[class*="span"],
-  #navigation span.dropdown-menu .input-prepend input[class*="span"],
-  #navigation div.dropdown-menu .input-append input[class*="span"],
-  #navigation span.dropdown-menu .input-append input[class*="span"],
-  #navigation div.dropdown-menu form input[type="text"].email,
-  #navigation span.dropdown-menu form input[type="text"].email {
-    display: block;
-    border: 1px solid #e6e6e6;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-  }
-  #navigation div.dropdown-menu form .btn.login,
-  #navigation span.dropdown-menu form .btn.login {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
+
   #content,
   #content-below,
   #footer {
@@ -2414,14 +1967,7 @@ a:hover .icon-inverse-80 {
   h3 small {
     display: block;
   }
-  .blog-list.blog-list-short .media-object,
-  .blog-post.blog-list-short .media-object {
-    display: none;
-  }
-  .blog-list .comments .media-object,
-  .blog-post .comments .media-object {
-    display: none;
-  }
+
   .tab-content,
   .pill-content {
     overflow: visible;
