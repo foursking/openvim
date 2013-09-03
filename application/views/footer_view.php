@@ -22,14 +22,9 @@
 <script src="<?=base_url('public/js/jquery.flexslider-min.js')?>"></script>
 
 <!--Custom scripts mainly used to trigger libraries -->
-<!--<script src="<?=base_url('public/js/script.js')?>"></script> -->
+<script src="<?=base_url('public/js/script.js')?>"></script>
 
 
-
-<script src="<?=base_url('public/editor/js/Markdown.Converter.js')?>"></script>
-<script src="<?=base_url('public/editor/js/Markdown.Editor.js')?>"></script>
-<script src="<?=base_url('public/editor/js/Markdown.Sanitizer.js')?>"></script>
-<script src="<?=base_url('public/editor/js/textarearesizer.js')?>"></script>
 
 
 
