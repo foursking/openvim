@@ -2,13 +2,13 @@
 
 class Tips_model extends CI_Model {
 
- 	private $_tables = array(
+    private $_tables = array(
         'tips' => 'tips',
-		'tags' => 'tags',
-		'comment' => 'comment',
-		'tags_relationships'   => 'tags_relationships',
-		'comments_relationships'   => 'comments_relationships',
-	);
+        'tags' => 'tags',
+        'comment' => 'comment',
+        'tags_relationships'   => 'tags_relationships',
+        'comments_relationships'   => 'comments_relationships',
+    );
 
 
     function __construct()
@@ -20,11 +20,11 @@ class Tips_model extends CI_Model {
 
 
     /**
-	 * 获取VimTips概括
-	 * @param int $num tips数量
-	 * @param int $offset 分页数
-	 * @return array
-	 */
+     * 获取VimTips概括
+     * @param int $num tips数量
+     * @param int $offset 分页数
+     * @return array
+     */
 
     public function show_tips_generalize($num , $offset , $sort='newest')
     {
@@ -46,9 +46,9 @@ class Tips_model extends CI_Model {
 
 
         if ($sort == 'newest')
-         {
+        {
             $querySql = $this->db->order_by('tipsUtime' , 'desc')->get('tips' , $offset, $num);
-         }
+        }
         else if($sort == 'vote')
         {
             $querySql = $this->db->order_by('tipsCommNum' , "desc")->get('tips' , $offset, $num);
@@ -129,13 +129,13 @@ class Tips_model extends CI_Model {
 
 
         $Ram = $this->db->select("a.tagsId,count(a.tagsId) as tagsCount,b.tagsName")
-                        ->from("{$this->_tables['tags_relationships']} as a")
-                        ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
-                        ->group_by("a.tagsId")
-                        ->order_by("tagsCount" , "desc")
-                        ->limit($num)
-                        ->get()
-                        ->result_array();
+            ->from("{$this->_tables['tags_relationships']} as a")
+            ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
+            ->group_by("a.tagsId")
+            ->order_by("tagsCount" , "desc")
+            ->limit($num)
+            ->get()
+            ->result_array();
 
         return $Ram;
 
@@ -199,18 +199,34 @@ class Tips_model extends CI_Model {
         return  $this->db->count_all($this->_tables['tips']);
     }
 
+    public function count_tips_by_tagsName($tags_name)
+    {
+        //通过tags_name 获取 tagsId
+        $tags_id = $this->get_tagsId($tags_name);
+
+        return $this->db->from($this->_tables['tags_relationships'])
+                        ->where("tagsId" , $tags_id['tagsId'])
+                        ->count_all_results();
+
+    }
+
+
+
 
 
 
     public function show_tips_generalize_by_tagsName($num , $offset , $tags_name)
     {
-        $tagsId = $this->get_tagsId($tags_name);
+        //通过tags_name 获取 tagsId
+        $tags_id = $this->get_tagsId($tags_name);
 
+        //分页获取 tipsId
         $tipsId = $this->db->select("tipsId")
-                           ->from($this->_tables['tags_relationships'])
-                           ->where("tagsId" , $tagsId['tagsId'])
-                           ->get()
-                           ->result_array();
+            ->from($this->_tables['tags_relationships'])
+            ->where("tagsId" , $tags_id['tagsId'])
+            ->limit($offset , $num)
+            ->get()
+            ->result_array();
 
         if (empty($tipsId))
             return false;
@@ -231,12 +247,57 @@ class Tips_model extends CI_Model {
                         ->result_array();
 
 
+
+        $Bull = $this->db->select("tipsId , tagsId")
+                         ->from("{$this->_tables['tags_relationships']}")
+                         ->where_in('tipsId' , $_tipsId)
+                         ->get()
+                         ->result_array();
+
+
+        if (empty($Bull))
+            return $Ram;
+
+        $_tagsId = array();
+
+        foreach ($Bull as $key=>$value)
+        {
+            $_tagsId[] = $value['tagsId'];
+        }
+
+        $_tagsId = array_flip(array_flip($_tagsId));
+
+
+
+
+        $Twins = $this->db->select("tagsId , tagsName")
+                      ->from("{$this->_tables['tags']}")
+                      ->where_in("tagsId" , $_tagsId)
+                      ->get()
+                      ->result_array();
+
+
+        foreach ($Twins as $key=>$value)
+        {
+            $tagsName[$value['tagsId']] = $value['tagsName'];
+        }
+
+        foreach ($Ram as $key=>$value)
+        {
+            foreach ($Bull as $k=>$v)
+            {
+                if ($v['tipsId'] == $value['tipsId'])
+                {
+                    $Ram[$key]['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+
         return $Ram;
-
-
-
-
-
 
     }
 
@@ -245,27 +306,27 @@ class Tips_model extends CI_Model {
     public function get_tagsId( $data )
     {
         return $this->db->select("tagsId")
-                        ->from($this->_tables['tags'])
-                        ->where("tagsName" , $data)
-                        ->get()
-                        ->row_array();
+            ->from($this->_tables['tags'])
+            ->where("tagsName" , $data)
+            ->get()
+            ->row_array();
     }
 
 
     public function get_tag_by_press( $data )
     {
         return $this->db->select("tagsId , tagsName")
-                        ->from($this->_tables['tags'])
-                        ->like('tagsName' , $data)
-                        ->limit(10)
-                        ->get()
-                        ->result_array();
+            ->from($this->_tables['tags'])
+            ->like('tagsName' , $data)
+            ->limit(10)
+            ->get()
+            ->result_array();
     }
 
 
     public function append_tips( $data )
     {
-          $insert_data = array(
+        $insert_data = array(
             'tipsUid'     => 1,
             'tipsTitle'    => $data['tips_title'],
             'tipsContent' => $data['tips_content'],

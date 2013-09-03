@@ -154,15 +154,10 @@ class Tips extends CI_Controller
         //分页数量
         $this->pagination_config['num_links']   = $this->num_links;
         //总数
-        $this->pagination_config['total_rows']  = $this->tips_model->count_tips_all();
-        //分页初始化
-        $this->pagination->initialize($this->pagination_config);
-
+        $this->pagination_config['total_rows']  = $this->tips_model->count_tips_by_tagsName($tags_name);
 
         $data['tips_generalize'] = $this->tips_model->show_tips_generalize_by_tagsName($current_page, $this->per_page , $tags_name);
 
-        //总数
-        $this->pagination_config['total_rows']  = count($data['tips_generalize']);
         //分页初始化
         $this->pagination->initialize($this->pagination_config);
 

@@ -40,24 +40,21 @@ class Login extends CI_controller
              );
 
              $this->session->set_userdata($session_data);
-
-             $return = 'yes';
-             die($return);
-
+             $return['login_flag']= true;
 
          }
         else
         {
-            $return = 'no';
-            die($return);
-         }
+            $return['login_flag'] = false;
+        }
+            die(json_encode($return));
     }
 
 
     public function loginout()
     {
         $this->session->sess_destroy();
-        redirect('/');
+        redirect('tips/index');
     }
 
 
