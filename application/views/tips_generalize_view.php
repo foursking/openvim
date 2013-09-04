@@ -29,6 +29,7 @@ ul.nav-tabs li.active{
  <div class="input-append" style="float:right;margin-top:-60px;position:relative">
  <a href="<?php echo site_url("tips/append")?>"><button class="btn" type="button" style="margin-right:10px">+ 添加Tips</button></a>
     <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
+    <a href="#"><span class="add-on"> > </span> </a>
  </div>
 
 </div>
