@@ -8,12 +8,12 @@
  *
  * @package       CodeIgniter
  * @subpackage    Core
- * @hacked-by     octaaugusto	  
+ * @hacked-by     octaaugusto
 */
 
 
 class MY_Output extends CI_Output {
-    	
+
 	public function _display($output = '')
 	{
 		parent::_display($output);
