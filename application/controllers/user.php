@@ -20,8 +20,22 @@ class User extends CI_controller
 
    public function register()
     {
+        define('WB_AKEY' , 1513079542);
+        define('WB_SKEY' , 'e18589bc7961d5acc88ee3e3bd38e19b');
+
+    	$options = array(
+			'client_id' => WB_AKEY,
+			'client_secret' =>WB_SKEY,
+		//	'access_token' => NULL,
+		//	'refresh_token' => NULL
+		);
+
+        $this->load->library('weibo_oauth' , $options);
+        $data['weibo_login_url'] = $this->weibo_oauth->getAuthorizeURL("http://wb.foursk.com");
+
+
         $this->load->view('header_view');
-        $this->load->view('register_view');
+        $this->load->view('register_view' , $data);
 
         if (!$this->input->post())
         {
@@ -114,6 +128,7 @@ class User extends CI_controller
         $this->load->view('login_view');
         $this->load->view('footer_view');
     }
+
 
 
 }

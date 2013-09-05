@@ -3,6 +3,7 @@
     <div class="container">
         <div class="well-form">
             <h1 class="slug">登陆</h3>
+         <form action="#" method="post" accept-charset="utf-8" id="register-welcome-form" >
             <?php echo form_open('login/index' , array('id'=>'register-welcome-form'))?>
             <div class="control-group" style="position:relative">
                 <input type="text" name="login_email" placeholder="登陆邮箱"  class="text-34" style="height:30px" required="" />

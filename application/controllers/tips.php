@@ -11,38 +11,13 @@ class Tips extends CI_Controller
     private $uri_segment_4 = 4;
     private $num_links     = 4;
 
-    private $pagination_config = array(
-        'prev_link'       => '上一页',
-        'next_link'       => '下一页',
-        'first_link'      => '首页',
-        'last_link'       => '尾页',
-        'full_tag_open'   => '<div class = "pagination"><ul>',
-        'full_tag_close'  => '</div></ul>',
-        'first_tag_open'  => '<li>',
-        'first_tag_close' => '</li>',
-        'last_tag_open'   => '<li>',
-        'last_tag_close'  => '</li>',
-        'prev_tag_open'   => '<li>',
-        'prev_tag_close'  => '</li>',
-        'next_tag_open'   => '<li>',
-        'next_tag_close'  => '</li>',
-        'num_tag_open'    => '<li>',
-        'num_tag_close'   => '</li>',
-        'cur_tag_open'    => '<li class = "active"><a>',
-        'cur_tag_close'   => '</a></li>'
-    );
-
-
     function __construct()
     {
         parent::__construct();
-        $this->load->helper('url');
-        $this->load->helper('array_helper');
+        $this->load->helper(array('array','url'));
         $this->load->model('tips_model');
         $this->load->model('comments_model');
-        $this->load->library('session');
-        $this->load->library('form_validation');
-        $this->load->library('pagination');
+        $this->load->library(array('session','pagination','form_validation'));
     }
 
     public function index()
@@ -81,7 +56,6 @@ class Tips extends CI_Controller
         $Ram['tips_id'] = $this->uri->segment(3);
         $data['tips_comments'] = $this->comments_model->show_comments($Ram);
         $this->load->view('header_view');
-       // $this->load->view('tips_append_view' , $data);
         $this->load->view('tips_detail_view' , $data);
         $this->load->view("tips_detail_sidebar_view" , $data);
         $this->load->view('footer_view');

@@ -23,7 +23,6 @@ class email_model extends CI_Model
 	var $web_url = "http://dev.openvim.com";
     var $hello_time = '';
 
-
 	//操作url
 	var $action_url ;
 
@@ -40,17 +39,8 @@ class email_model extends CI_Model
     {
         parent::__construct();
 
-        //配置smtp服务器
-        $config_email = array(
-		'protocol'	=>	'smtp',
-		'smtp_host'	=>  'smtp.163.com',
-		'smtp_port'	=>	25,
-		'smtp_user'	=>	'openvim@163.com',
-		'smtp_pass'	=>	'openvim@163'
-		);
-
-		$this->load->library('email',$config_email);
-        $this->load->helper('op_helper');
+		$this->load->library('email');
+        $this->load->helper('op');
     }
 
 

@@ -115,11 +115,9 @@ $(document).ready(function(){
     var $login_email = $("input[name='login_email']");
     var $login_password = $("input[name='login_password']");
     var $login_submit = $("#btn-primary");
+    var $site_url = "http://dev.openvim.com/";
 
-
-
-
-    $("button[type=submit]").bind("click", function(){
+    $("#login-submit").bind("click", function(e){
         //验证邮箱地址
         if($login_email.val().length < 1){
             //验证邮箱不能为空
@@ -134,25 +132,23 @@ $(document).ready(function(){
             $login_password.next().html('密码不能为空');
 
         }else{
-
             $(this).button('loading');
-
             $.ajax({
-                url :"<?php echo site_url('login/index');?>" ,
+                url : $site_url + 'login/index',
                 type : "post",
                 async:false,
                 data : {login_email:$login_email.val(),login_password:$login_password.val()},
                 success:function(data){
                     var jsonObj = eval('('+ data +')');
-                    if(jsonObj.login_flag == true)
-                location.href = "<?php echo site_url('tips/index')?>"
-                    else
-                location.href = "<?php echo site_url('login/index')?>"
+                    if(jsonObj.login_flag == true){
+                       location.href = $site_url + "tips/index";
+                    }else{
+                       location.href = $site_url + "user/login";
+                    }
                 }
             });
         }
-
-        return false;
+        e.preventDefault();
     });
 
 

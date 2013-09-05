@@ -24,7 +24,7 @@
 		      <div class="form-extra">
                 <h3 class="slug">推荐使用第三方登陆</h3>
 			    <button class="btn btn-info"><i class="glyphicons-twitter"></i> Login with Twitter</button>
-			    <button class="btn btn-danger"><i class="glyphicons-google_plus"></i> Login with Google</button>
+                <a href="<?php echo $weibo_login_url;?>"><button class="btn btn-danger"><i class="glyphicons-google_plus"></i> Login with Google</button></a>
 			  </div>
 		               </div>
 	  </div>
