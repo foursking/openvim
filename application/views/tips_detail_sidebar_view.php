@@ -9,9 +9,10 @@
 </ul>
 -->
 <ul class="tag-list show-pop-tag">
-<?php foreach($tips_detail['tags'] as $key=>$value):?>
+<?php if(is_array($tips_detail['tags']) && count($tips_detail['tags'])){
+foreach($tips_detail['tags'] as $key=>$value):?>
 <li><a href="<?php echo site_url("tips/tag") . '/' . $value?>"><?php echo $value;?></a></li>
-<?php endforeach;?>
+<?php endforeach;};?>
 </ul>
 
 
@@ -25,6 +26,4 @@
       </div>
     </div>
   </div>
-</div>
-<div id="content-below" class="wrapper">
 </div>

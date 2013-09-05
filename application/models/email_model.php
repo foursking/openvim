@@ -1,11 +1,6 @@
 <?php
 header("content-type:text/html;charset=utf-8");
-/**
- * 邮件模型
- *	1.设置邮件信息,2 发送邮件
- *	sendemail($name,1);
- *	url记录添加
- */
+
 class email_model extends CI_Model
 {
 

@@ -518,12 +518,39 @@ a:focus {
   background: #e6e6e6;
 }
 #footer {
-  background: #333333;
+
   min-height: 200px;
-  padding: 20px 0;
-  color: rgba(255, 255, 255, 0.6);
-  border-top: 2px solid #55a79a;
+  margin-top:40px;
+  padding: 40px 0;
+  color: #999;
+  border-top: 1px solid #EEE;
+  line-height:1.6;
 }
+
+#footer .site-link{
+    margin-left:40px;
+    float:left;
+    width:18%
+
+}
+
+#footer .site-link dt{
+    margin-bottom:20px;
+    font-size:14px;
+    font-weight:bold;
+    color:#555;
+}
+
+#footer .site-link dd{
+    margin:5px 0;
+    font-size:13px;
+
+
+}
+
+
+
+
 #footer h3 {
   font-size: 1.2em;
   color: rgba(255, 255, 255, 0.8);

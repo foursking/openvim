@@ -54,17 +54,21 @@ class User_model extends CI_Model
             ->get()
             ->result_array();
 
-
         return $Ram;
 
     }
 
+    /**
+     * 通过用户ID获取用户名
+     * @param  int  $data 用户ID
+     * @return array userId
+     */
 
-    public function get_userName_by_userId( $user_id )
+    public function get_userName_by_userId( $data )
     {
        return $this->db->select("userId , userName , userEmail , userIsActive")
                    ->from("{$this->_tables['user']}")
-                   ->where('userId' , $user_id)
+                   ->where('userId' , $data )
                    ->get()
                    ->row_array();
 

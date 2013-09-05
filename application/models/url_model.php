@@ -43,10 +43,6 @@ class Url_model extends CI_Model
     }
 
 
-    private function get_uuid()
-    {
-        return op_uuid();
-    }
 
 
  //记录action url
@@ -175,6 +171,10 @@ class Url_model extends CI_Model
     }
 
 
+    private function get_uuid()
+    {
+        return op_uuid();
+    }
 
 
 

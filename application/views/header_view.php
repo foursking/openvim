@@ -90,17 +90,8 @@
             <li class="home-link"><a href="index.html"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
             <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a> </li>
             <li><a href="<?php echo site_url('plugin/index');?>" class="menu-item">脚本（script）</a></li>
-            <li class="dropdown"> <a href="<?php echo site_url('tips/index')?>" class="dropdown-toggle">技巧（tips）</a>
-            </li>
-
-            <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a>
-
-
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="pages-drop">
-                <li role="menuitem"><a href="elements.html" tabindex="-1" class="menu-item">Theme Elements</a></li>
-              </ul>
-            </li>
+            <li class="dropdown"> <a href="<?php echo site_url('tips/index')?>" class="dropdown-toggle">技巧（tips）</a> </li>
+            <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a> </li>
           </ul>
         </div>
 

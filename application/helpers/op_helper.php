@@ -1,9 +1,6 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-
-
 if (! function_exists('pretty_print'))
 {
     function pretty_print($object , $title = '' , $isMarkup = false)
@@ -48,7 +45,6 @@ if (! function_exists('hello_time'))
     }
 
 }
-
 
 if (! function_exists('op_uuid'))
 {
