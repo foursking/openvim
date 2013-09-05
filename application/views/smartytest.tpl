@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>{$title}</title>
+</head>
+<body>
+<span>{$ttt}</span>
+    {$body}
+</body>
+</html>

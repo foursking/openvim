@@ -129,6 +129,15 @@ class User extends CI_controller
         $this->load->view('footer_view');
     }
 
+    public function test()
+    {
+        $this->load->library('parser');
+        $data['title'] = 1;
+        $data['body'] = 2;
+        $data['ttt'] = 2;
+        $this->parser->parse('smartytest');
+    }
+
 
 
 }
