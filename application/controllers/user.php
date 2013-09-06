@@ -10,7 +10,7 @@ class User extends CI_controller
     {
         parent::__construct();
         $this->load->helper(array('array','url','form','op'));
-        $this->load->library(array('form_validation','session'));
+        $this->load->library(array('form_validation'));
         $this->load->model(array('user_model','email_model','url_model'));
 
 
@@ -18,24 +18,14 @@ class User extends CI_controller
     }
 
 
-   public function register()
+    public function register()
     {
-        define('WB_AKEY' , 1513079542);
-        define('WB_SKEY' , 'e18589bc7961d5acc88ee3e3bd38e19b');
 
-    	$options = array(
-			'client_id' => WB_AKEY,
-			'client_secret' =>WB_SKEY,
-		//	'access_token' => NULL,
-		//	'refresh_token' => NULL
-		);
+        $template['sys_session'] = $this->session->all_userdata();
+        $template['oauth_url']['oauth2_weibo_url'] = $this->_oauth2_bind('weibo');
 
-        $this->load->library('weibo_oauth' , $options);
-        $data['weibo_login_url'] = $this->weibo_oauth->getAuthorizeURL("http://wb.foursk.com");
-
-
-        $this->load->view('header_view');
-        $this->load->view('register_view' , $data);
+        $this->parser->parse('header_view' , $template);
+        $this->parser->parse("register_view" , $template);
 
         if (!$this->input->post())
         {
@@ -46,14 +36,14 @@ class User extends CI_controller
         $user_id = $this->user_model->append_user($this->input->post());
 
         //判断添加用户成功
-        if ($user_id)
-         {
-             //添加激活邮件url
+        if ( !empty($user_id))
+        {
+            //添加激活邮件url
             $Ram = $this->input->post();
             $Ram['urlUid'] = $user_id;
             $user_uuid = $this->url_model->append_url($Ram);
 
-         }
+        }
 
         //发送邮件
 
@@ -101,15 +91,15 @@ class User extends CI_controller
 
         }
 
-            $this->load->view('header_view');
-            $this->load->view('active_success_view' , $data);
+        $this->load->view('header_view');
+        $this->load->view('active_success_view' , $data);
 
     }
 
 
 
 
-   public function postsuccess()
+    public function postsuccess()
     {
         $this->load->view('header_view');
         $this->load->view('register_success_view');
@@ -129,15 +119,86 @@ class User extends CI_controller
         $this->load->view('footer_view');
     }
 
-    public function test()
+
+    public function test($provider = 'weibo')
     {
-        $this->load->library('parser');
-        $data['title'] = 1;
-        $data['body'] = 2;
-        $data['ttt'] = 2;
-        $this->parser->parse('smartytest');
+
+        $allowed_providers = $this->config->item('oauth2');
+        if ( ! $provider OR ! isset($allowed_providers[$provider]))
+        {
+            $this->session->set_flashdata('info', '暂不支持'.$provider.'方式登录.');
+            redirect();
+            return;
+        }
+
+        $provider = $this->oauth2->provider($provider, $allowed_providers[$provider]);
+
+        $args = $this->input->get();
+        if ($args AND !isset($args['code']))
+        {
+            $this->session->set_flashdata('info', '授权失败了,可能由于应用设置问题或者用户拒绝授权.<br />具体原因:<br />'.json_encode($args));
+            redirect();
+            return;
+        }
+        $code = $this->input->get('code', TRUE);
+        if ( ! $code)
+        {
+            $provider->authorize();
+            return;
+        }
+        else
+        {
+            try
+            {
+                $token = $provider->access($code);
+                $sns_user = $provider->get_user_info($token);
+                if (is_array($sns_user))
+                {
+                    $this->session->set_flashdata('info', '登录成功');
+                    $this->session->set_userdata('user', $sns_user);
+                    $this->session->set_userdata('is_login', TRUE);
+                }
+                else
+                {
+                    $this->session->set_flashdata('info', '获取用户信息失败');
+                }
+            }
+            catch (OAuth2_Exception $e)
+            {
+                $this->session->set_flashdata('info', '操作失败<pre>'.$e.'</pre>');
+            }
+        }
+        redirect();
+
     }
 
+    public function _oauth2_bind($provider = 'weibo')
+    {
+
+        $allowed_providers = $this->config->item('oauth2');
+        if ( ! $provider OR ! isset($allowed_providers[$provider]))
+        {
+            $this->session->set_flashdata('info', '暂不支持'.$provider.'方式登录.');
+            redirect();
+            return;
+        }
+
+        $provider = $this->oauth2->provider($provider, $allowed_providers[$provider]);
+
+        $args = $this->input->get();
+        if ($args AND !isset($args['code']))
+        {
+            $this->session->set_flashdata('info', '授权失败了,可能由于应用设置问题或者用户拒绝授权.<br />具体原因:<br />'.json_encode($args));
+            redirect();
+            return;
+        }
+        $code = $this->input->get('code', TRUE);
+        if ( ! $code)
+        {
+          return  $provider->authorizeURL();
+        }
+
+    }
 
 
 }

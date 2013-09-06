@@ -40,7 +40,6 @@ class Comments_model extends CI_Model {
          *  VALUES(userId, username , tipsId , content , commCtime , commUtime)
          */
         $this->db->insert($this->_tables['comment'] , $append_data);
-
         return $this->db->insert_id();
 
     }
@@ -62,9 +61,7 @@ class Comments_model extends CI_Model {
         );
 
         /**
-         *  SQL
-         *  INSERT INTO `op_comments_relationships` (`tipsId` , `userId` , `commId`)
-         *  VALUES(tipsId , userId , commId)
+         *  SQL INSERT INTO `op_comments_relationships` (`tipsId` , `userId` , `commId`) VALUES(tipsId , userId , commId)
          */
         $this->db->insert($this->_tables['comments_relationships'] , $append_data);
 
@@ -81,10 +78,7 @@ class Comments_model extends CI_Model {
     {
 
         /**
-         *  SQL
-         *  UPDATE `op_tips`
-         *  SET `tipsCommNum` = `tipsCommNum`+1
-         *  WHERE `tipsId` = $tipsId
+         *  SQL UPDATE `op_tips`  SET `tipsCommNum` = `tipsCommNum`+1  WHERE `tipsId` = $tipsId
          */
         $this->db->set('tipsCommNum' , 'tipsCommNum+1' , false)
                  ->where('tipsId' , $data['tips_id'])
@@ -108,22 +102,22 @@ class Comments_model extends CI_Model {
          *  FROM `op_comments_relationships`
          *  WHERE `tipsId` = tipsId
          */
-        $Ram = $this->db->select("commId")
-                        ->from("{$this->_tables['comments_relationships']}")
-                        ->where('tipsId' , $data['tips_id'])
-                        ->get()
-                        ->result_array();
+        $queryResult = $this->db->select("commId")
+                            ->from("{$this->_tables['comments_relationships']}")
+                            ->where('tipsId' , $data['tips_id'])
+                            ->get()
+                            ->result_array();
 
 
-        if (!is_array($Ram) OR count($Ram) < 1)
+        if ( !is_array($Ram) OR count($Ram) < 1)
          {
              return false;
          }
 
 
-        foreach ($Ram as $key=>$value)
+        foreach ($queryResult as $key=>$value)
          {
-             $Bull[] = $value['commId'];
+             $commId = $value['commId'];
          }
 
         /**
@@ -132,13 +126,12 @@ class Comments_model extends CI_Model {
          *  FROM `op_comments_relationships`
          *  WHERE commId IN ($comId)
          */
-        $Ram = $this->db->select("commId , userId , username , tipsId , content , commCtime , commUtime")
+        return  $this->db->select("commId , userId , username , tipsId , content , commCtime , commUtime")
                          ->from("{$this->_tables['comment']}")
-                         ->where_in('commId' , $Bull)
+                         ->where_in('commId' , $commId)
                          ->get()
                          ->result_array();
 
-        return $Ram;
 
 
     }

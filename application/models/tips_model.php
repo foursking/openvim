@@ -128,16 +128,15 @@ class Tips_model extends CI_Model {
          */
 
 
-        $Ram = $this->db->select("a.tagsId,count(a.tagsId) as tagsCount,b.tagsName")
-            ->from("{$this->_tables['tags_relationships']} as a")
-            ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
-            ->group_by("a.tagsId")
-            ->order_by("tagsCount" , "desc")
-            ->limit($num)
-            ->get()
-            ->result_array();
+        return  $this->db->select("a.tagsId,count(a.tagsId) as tagsCount,b.tagsName")
+                         ->from("{$this->_tables['tags_relationships']} as a")
+                         ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
+                         ->group_by("a.tagsId")
+                         ->order_by("tagsCount" , "desc")
+                         ->limit($num)
+                         ->get()
+                         ->result_array();
 
-        return $Ram;
 
     }
 
@@ -202,7 +201,7 @@ class Tips_model extends CI_Model {
     public function count_tips_by_tagsName($tags_name)
     {
         //通过tags_name 获取 tagsId
-        $tags_id = $this->get_tagsId($tags_name);
+        $tags_id = $this->_get_tagsId($tags_name);
 
         return $this->db->from($this->_tables['tags_relationships'])
                         ->where("tagsId" , $tags_id['tagsId'])
@@ -212,13 +211,10 @@ class Tips_model extends CI_Model {
 
 
 
-
-
-
-    public function show_tips_generalize_by_tagsName($num , $offset , $tags_name)
+    public function show_tips_generalize_by_tagsName($num = '' , $offset = '' , $tags_name = '')
     {
         //通过tags_name 获取 tagsId
-        $tags_id = $this->get_tagsId($tags_name);
+        $tags_id = $this->_get_tagsId($tags_name);
 
         //分页获取 tipsId
         $tipsId = $this->db->select("tipsId")
@@ -303,14 +299,6 @@ class Tips_model extends CI_Model {
 
 
 
-    public function get_tagsId( $data )
-    {
-        return $this->db->select("tagsId")
-            ->from($this->_tables['tags'])
-            ->where("tagsName" , $data)
-            ->get()
-            ->row_array();
-    }
 
 
     public function get_tag_by_press( $data )
@@ -355,6 +343,16 @@ class Tips_model extends CI_Model {
 
         return $this->db->insert_id();
     }
+
+    private function _get_tagsId( $data )
+    {
+        return $this->db->select("tagsId")
+            ->from($this->_tables['tags'])
+            ->where("tagsName" , $data)
+            ->get()
+            ->row_array();
+    }
+
 
 
 }

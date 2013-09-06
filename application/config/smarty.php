@@ -36,7 +36,12 @@ $config['cache_directory']      = APPPATH."cache/smarty/cached/";
 $config['config_directory']     = APPPATH."third_party/Smarty/configs/";
 
 // Default extension of templates if one isn't supplied
-$config['template_ext']         = 'tpl';
+$config['template_ext']         = 'htm';
+
+
+$config['left_delimiter'] = '{* ';
+
+$config['right_delimiter'] = ' *}';
 
 // Error reporting level to use while processing templates
 $config['template_error_reporting'] = E_ALL & ~E_NOTICE;

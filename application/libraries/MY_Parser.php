@@ -26,12 +26,14 @@ class MY_Parser extends CI_Parser {
     // The name of the theme in use
     protected $_theme_name = '';
 
+    protected $sys_public_constant = array();
+
     public function __construct()
     {
         // Codeigniter instance and other required libraries/files
         $this->CI =& get_instance();
         $this->CI->load->library('smarty');
-        $this->CI->load->helper('parser');
+        $this->CI->load->helper(array('parser','url'));
 
         // Detect if we have a current module
         $this->_module = $this->current_module();
@@ -181,6 +183,20 @@ class MY_Parser extends CI_Parser {
                 $this->CI->smarty->assign($key, $val);
             }
         }
+
+        $sys_public_constant = $this->set_public_constant();
+
+
+         if ( ! empty($sys_public_constant))
+        {
+            foreach ($sys_public_constant AS $key => $val)
+            {
+                $this->CI->smarty->assign($key, $val);
+            }
+        }
+
+
+
 
         // Load our template into our string for judgement
         $template_string = $this->CI->smarty->fetch($template);
@@ -395,6 +411,17 @@ class MY_Parser extends CI_Parser {
     public function parse_string($template, $data = array(), $return = FALSE, $is_include = false)
     {
         return $this->string_parse($template, $data, $return, $is_include);
+    }
+
+    private function set_public_constant($config = array())
+    {
+        $template_public_constant['sys_site_url'] = site_url();
+        $template_public_constant['sys_base_url'] = base_url();
+
+
+        return $template_public_constant;
+
+
     }
 
 }

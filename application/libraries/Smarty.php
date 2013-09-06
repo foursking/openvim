@@ -36,9 +36,13 @@ class CI_Smarty extends Smarty {
         $this->setCompileDir(config_item('compile_directory'));
         $this->setCacheDir(config_item('cache_directory'));
         $this->setConfigDir(config_item('config_directory'));
+        $this->setConfigDir(config_item('config_directory'));
 
         // Default template extension
         $this->template_ext = config_item('template_ext');
+
+        $this->left_delimiter = config_item('left_delimiter');
+        $this->right_delimiter = config_item('right_delimiter');
 
         // How long to cache templates for
         $this->cache_lifetime = config_item('cache_lifetime');

@@ -11,23 +11,23 @@
 <meta name="author" content="Foursk" />
 
 <!-- Bootstrap CSS -->
-<link href="<?=base_url('public/css/bootstrap.css')?>" rel="stylesheet" />
-<link href="<?=base_url('public/css/responsive.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/css/bootstrap.css" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/css/responsive.css" rel="stylesheet" />
 
 <!-- Flexslider -->
-<link href="<?=base_url('public/css/flexslider.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/css/flexslider.css" rel="stylesheet" />
 
 <!-- Theme style -->
-<link href="<?=base_url('public/css/theme-style.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/css/theme-style.css" rel="stylesheet" />
 
 
 <!-- Your custom override -->
-<link href="<?=base_url('public/css/custom-style.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/css/custom-style.css" rel="stylesheet" />
 
 <!-- pretty code -->
-<link href="<?=base_url('public/google-code-prettify/prettify.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/google-code-prettify/prettify.css" rel="stylesheet" />
 
-<link href="<?=base_url('public/editor/css/editor.css')?>" rel="stylesheet" />
+<link href="{* $sys_base_url *}public/editor/css/editor.css" rel="stylesheet" />
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -35,16 +35,16 @@
     <![endif]-->
 
 
-<script src="<?=base_url('public/google-code-prettify/prettify.js')?>"></script>
+<script src="{* $sys_base_url *}public/google-code-prettify/prettify.js"></script>
 
-<script src="<?=base_url('public/js/jquery.js')?>"></script>
+<script src="{* $sys_base_url *}public/js/jquery.js"></script>
 
 
 <!-- Le fav and touch icons - @todo: fill with your icons or remove -->
-<link rel="shortcut icon" href="<?=base_url('public/img/icons/favicon.png')?>" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=base_url('public/img/icons/114x114.png')?>" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=base_url('public/img/icons/72x72.png')?>" />
-<link rel="apple-touch-icon-precomposed" href="<?=base_url('public/img/icons/default.png')?>" />
+<link rel="shortcut icon" href="{* $sys_base_url *}public/img/icons/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{* $sys_base_url *}public/img/icons/114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{* $sys_base_url *}public/img/icons/72x72.png" />
+<link rel="apple-touch-icon-precomposed" href="{* $sys_base_url *}public/img/icons/default.png" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Rambla|Calligraffitti' rel='stylesheet' type='text/css' />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
@@ -67,18 +67,18 @@
 
         <!--user menu-->
         <ul class="nav pull-right" style="margin:0 10px 0 0;">
-        <?php if(!$this->session->userdata('is_login')){?>
-        <li style="margin-top:10px;"><a href="<?php echo site_url('user/register')?>" class="btn btn-primary signup">注册</a></li>
-        <li style="margin-top:10px;"><a href="<?php echo site_url('user/login')?>" class="btn btn-primary login" id="login-drop">登陆</a></li>
-        <?php }else{?>
+        {* if $sys_session.is_login eq 1 *}
+        <li style="margin-top:10px;"><a href="{* $sys_site_url *}user/register" class="btn btn-primary signup">注册</a></li>
+        <li style="margin-top:10px;"><a href="{* $sys_site_url *}user/login" class="btn btn-primary login" id="login-drop">登陆</a></li>
+        {* else *}
           <li class="dropdown">
  <a href="#" class="dropdown-toggle login" data-toggle="dropdown"> <img width="26" height="26" src="http://dev.openvim.com/public/img/team/jobs.jpg" alt="Picture of Tom" class="media-object img-polaroid"> </a>
  <ul class="dropdown-menu pull-left">
       <li><a class="menu-item" href="#">个人主页</a></li>
-      <li><a class="menu-item" href="<?php echo site_url("login/loginout")?>">注销</a></li>
+      <li><a class="menu-item" href="{* $sys_site_url *}login/loginout">注销</a></li>
  </ul>
 </li>
-       <?php }?>
+       {* /if *}
 
         </ul>
 
@@ -89,8 +89,8 @@
           <ul class="nav" id="main-menu">
             <li class="home-link"><a href="index.html"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
             <li class="dropdown"><a href="features.html" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a> </li>
-            <li><a href="<?php echo site_url('plugin/index');?>" class="menu-item">脚本（script）</a></li>
-            <li class="dropdown"> <a href="<?php echo site_url('tips/index')?>" class="dropdown-toggle">技巧（tips）</a> </li>
+            <li><a href="{* $sys_site_url *}plugin/index" class="menu-item">脚本（script）</a></li>
+            <li class="dropdown"> <a href="{* $sys_site_url *}tips/index" class="dropdown-toggle">技巧（tips）</a> </li>
             <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a> </li>
           </ul>
         </div>

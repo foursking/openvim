@@ -43,18 +43,19 @@ class User_model extends CI_Model
 
     /**
      * 查询该用户，返回用户信息
+     * @param array $data 用户信息
+     * @return
      */
     function check_user_password( $data )
     {
 
-        $Ram = $this->db->select("userId , userName , userEmail , userIsActive")
-            ->from("{$this->_tables['user']}")
-            ->where('userEmail' , $data['login_email'])
-            ->where('userPassword' , md5($data['login_password']))
-            ->get()
-            ->result_array();
+        return $this->db->select("userId , userName , userEmail , userIsActive")
+                        ->from("{$this->_tables['user']}")
+                        ->where('userEmail' , $data['login_email'])
+                        ->where('userPassword' , md5($data['login_password']))
+                        ->get()
+                        ->result_array();
 
-        return $Ram;
 
     }
 
