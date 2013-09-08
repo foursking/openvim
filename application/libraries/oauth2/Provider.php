@@ -116,7 +116,8 @@ abstract class OAuth2_Provider
 		isset($options['scope']) and $this->scope = $options['scope'];
 
 		//$this->redirect_uri = site_url(get_instance()->uri->uri_string());
-		$this->redirect_uri = "http://wb.foursk.com";
+		$this->redirect_uri = "http://dev.foursk.com/oauth/bind";
+        //$this->redirect_uri = site_url();
 	}
 
 	/**
@@ -194,7 +195,7 @@ abstract class OAuth2_Provider
 	*/
 	public function access($code, $options = array())
 	{
-      	//check we csrf first
+        //check we csrf first
         if (isset($_GET[$this->state_key]) AND $_GET[$this->state_key] != get_instance()->session->userdata('state'))
         {
         	throw new OAuth2_Exception(array('code' => '403', 'message' => 'The state does not match. Maybe you are a victim of CSRF.'));

@@ -3,7 +3,7 @@
 /**
  *
  **/
-class Login extends CI_controller
+class Login extends MY_Controller
 {
 
     function __construct()
@@ -24,28 +24,28 @@ class Login extends CI_controller
         $Ram['login_email'] = $this->input->post('login_email');
         $Ram['login_password'] = $this->input->post('login_password');
 
-        $Bull = $this->user_model->check_user_password($Ram);
+        $user_info = $this->user_model->check_user_password($Ram);
 
 
 
-        if (count($Bull))  //如果用户登陆正确
+        if (count($user_info))  //如果用户登陆正确
          {
              $session_data = array(
-                   'user_name'  => $Bull[0]['userName'],
-                   'user_email' => $Bull[0]['userEmail'],
-                   'user_id'  => $Bull[0]['userId'],
-                   'is_login'  => 1,
-                   'is_active' => $Bull[0]['userIsActive'],
+                   'user_name'  => $user_info[0]['userName'],
+                   'user_email' => $user_info[0]['userEmail'],
+                   'user_id'  => $user_info[0]['userId'],
+                   'is_login'  => TRUE,
+                   'is_active' => $user_info[0]['userIsActive'],
                    'user_last_login' => date("Y-m-d H:i:s"),
              );
 
              $this->session->set_userdata($session_data);
-             $return['login_flag']= true;
+             $return['login_flag']= TRUE;
 
          }
         else
         {
-            $return['login_flag'] = false;
+            $return['login_flag'] = FALSE;
         }
             die(json_encode($return));
     }

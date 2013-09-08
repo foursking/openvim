@@ -12,7 +12,6 @@ class Comments_model extends CI_Model {
     function __construct()
     {
         parent::__construct();
-        $this->load->database();
         $this->load->helper('url');
     }
 
@@ -109,7 +108,7 @@ class Comments_model extends CI_Model {
                             ->result_array();
 
 
-        if ( !is_array($Ram) OR count($Ram) < 1)
+        if ( !is_array($queryResult) OR count($queryResult) < 1)
          {
              return false;
          }

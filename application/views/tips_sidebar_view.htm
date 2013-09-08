@@ -1,0 +1,24 @@
+      <!--Sidebar-->
+      <div class="span-tips-sidebar sidebar sidebar-right">
+        <div class="inner">
+          <div class="block">
+            <div class="input-append">
+            </div>
+          </div>
+          <div class="block">
+            <h4 class="title-divider"><span>Tags</span></h4>
+            <div class="tag-cloud">
+                {* foreach $top_tags as $key => $value *}
+                <span><a href="{* $sys_site_url *}tips/tag{* $value.tagsName *}">{* $value.tagsName *}</a> ({* $value.tagsCount *})</span>
+                {* /foreach *}
+</div>
+          </div>
+
+          <div class="block"> <a href="#" class="btn btn-warning"><i class="icon-rss"></i> Subscribe via RSS feed</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--.container-->
+</div>
+<!--#content-->

@@ -26,7 +26,7 @@ class email_model extends CI_Model
 	//操作url
 	var $action_url ;
 
-    var $email_list = array(
+    var $email_server_list = array(
         'qq'      => 'http://mail.qq.com/',
         'hotmail' => 'http://mail.hotmail.com/',
         'sina'    => 'http://mail.sina.com.cn/',
@@ -52,7 +52,7 @@ class email_model extends CI_Model
     {
 
         // 收件人 收件人地址
-        if(!is_numeric($send_email_config['email_type']) || !$send_email_config['email_receiver'] || !$send_email_config['email_receiver_address'])
+        if( !is_numeric($send_email_config['email_type']) OR empty($send_email_config['email_receiver']) OR empty($send_email_config['email_receiver_address']))
 		{
             return false;
         }
@@ -187,12 +187,12 @@ class email_model extends CI_Model
 
 
 
-    private function get_email_server($email , $email_list)
+    private function get_email_server($register_email_address = '')
     {
 
-        $Ram = explode('@' , $email);
-        $Ram = substr($Ram[1] , 0 , strpos($Ram[1] , '.'));
-        return $Ram = empty($this->email_list[$Ram]) ? 'http://dev.openvim.com' : $this->email_list[$Ram];
+        $Ram = explode('@' , $register_email_address);
+        $email_server_name = substr($Ram[1] , 0 , strpos($Ram[1] , '.'));
+        return $register_email_address_server = empty($this->email_server_list[$email_server_name]) ? 'http://dev.openvim.com' : $this->email_server_list[$email_server_name];
     }
 
 

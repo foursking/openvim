@@ -3,7 +3,7 @@
 /**
  *
  **/
-class User extends CI_controller
+class User extends MY_Controller
 {
 
     function __construct()
@@ -42,7 +42,6 @@ class User extends CI_controller
             $Ram = $this->input->post();
             $Ram['urlUid'] = $user_id;
             $user_uuid = $this->url_model->append_url($Ram);
-
         }
 
         //发送邮件
@@ -57,10 +56,11 @@ class User extends CI_controller
 
         $this->email_model->send_user_email($send_email_config);
 
+        //设置一次性闪存数据
+        $this->session->set_flashdata('flash_is_postsuccess', TRUE);
 
-        redirect('/user/postsuccess');
-
-
+        //重定向到user/postsuccess页面
+        redirect('user/postsuccess');
     }
 
 
@@ -81,18 +81,17 @@ class User extends CI_controller
             $data['title']   = '激活成功';
             $data['message'] = '欢迎您 '.$user_name.' , 您的帐号已经激活';
             $data['action']  = "<a href='$site_url'>《 回到首页</a> 或者 <a href = '$afresh_login'>重新登陆 》</a>";
-
         }
         else
         {
             $data['title'] = '激活失败';
             $data['message'] = '欢迎您 '.$user_name.' , 您的帐号激活码失效，我们已经重新发送了一封邮件，请查收!';
             $data['action'] = "<a href='$site_url'>《 回到首页</a> 或者 <a href='$afresh_login'>登陆邮箱 》</a>";
-
         }
 
         $this->load->view('header_view');
         $this->load->view('active_success_view' , $data);
+
 
     }
 
@@ -101,8 +100,16 @@ class User extends CI_controller
 
     public function postsuccess()
     {
-        $this->load->view('header_view');
-        $this->load->view('register_success_view');
+
+        if(TRUE === $this->session->flashdata('flash_is_postsuccess'))
+        {
+            $this->load->view('header_view');
+            $this->load->view('register_success_view');
+        }
+        else
+        {
+            redirect('tips/index');
+        }
     }
 
     public function activesuccess()
@@ -114,9 +121,9 @@ class User extends CI_controller
 
     public function login()
     {
-        $this->load->view('header_view');
-        $this->load->view('login_view');
-        $this->load->view('footer_view');
+        $this->parser->parse('header_view');
+        $this->parser->parse('login_view');
+        $this->parser->parse('footer_view');
     }
 
 

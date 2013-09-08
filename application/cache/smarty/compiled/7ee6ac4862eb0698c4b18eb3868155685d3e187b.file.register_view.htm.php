@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-09-06 17:59:18
+<?php /* Smarty version Smarty-3.1.14, created on 2013-09-08 13:51:40
          compiled from "application/views/register_view.htm" */ ?>
 <?php /*%%SmartyHeaderCode:171002009352297003a5a693-70468912%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ee6ac4862eb0698c4b18eb3868155685d3e187b' => 
     array (
       0 => 'application/views/register_view.htm',
-      1 => 1378461382,
+      1 => 1378619490,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'oauth_url' => 0,
-    'sys_site_url' => 0,
-    'sys_base_url' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -51,10 +49,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <h3 class="slug">推荐使用第三方登陆</h3>
                 <a href="<?php echo $_smarty_tpl->tpl_vars['oauth_url']->value['oauth2_weibo_url'];?>
 "><button class="btn btn-danger"><i class="glyphicons-google_plus"></i>新浪微博登陆</button></a>
-                <?php echo $_smarty_tpl->tpl_vars['sys_site_url']->value;?>
-
-                <?php echo $_smarty_tpl->tpl_vars['sys_base_url']->value;?>
-
 			  </div>
 		               </div>
 	  </div>

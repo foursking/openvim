@@ -57,6 +57,8 @@ $autoload['libraries'] = array(
                     'parser',
                     'oauth2',
                     'session',
+                    'pagination',
+                    'form_validation',
 );
 
 

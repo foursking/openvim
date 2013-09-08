@@ -33,6 +33,7 @@ class MY_Parser extends CI_Parser {
         // Codeigniter instance and other required libraries/files
         $this->CI =& get_instance();
         $this->CI->load->library('smarty');
+        $this->CI->load->library('session');
         $this->CI->load->helper(array('parser','url'));
 
         // Detect if we have a current module
@@ -417,6 +418,8 @@ class MY_Parser extends CI_Parser {
     {
         $template_public_constant['sys_site_url'] = site_url();
         $template_public_constant['sys_base_url'] = base_url();
+        $template_public_constant['sys_session'] = $this->CI->session->all_userdata();
+
 
 
         return $template_public_constant;

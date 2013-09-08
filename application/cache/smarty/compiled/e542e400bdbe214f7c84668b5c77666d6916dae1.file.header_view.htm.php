@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-09-06 18:06:43
+<?php /* Smarty version Smarty-3.1.14, created on 2013-09-08 09:21:18
          compiled from "application/views/header_view.htm" */ ?>
 <?php /*%%SmartyHeaderCode:6047351375229a933b5c3b6-39578576%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e542e400bdbe214f7c84668b5c77666d6916dae1' => 
     array (
       0 => 'application/views/header_view.htm',
-      1 => 1378461769,
+      1 => 1378560804,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5229a933c2f165_58185113',
   'variables' => 
   array (
     'sys_base_url' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'sys_site_url' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5229a933c2f165_58185113',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5229a933c2f165_58185113')) {function content_5229a933c2f165_58185113($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -107,7 +107,7 @@ public/img/icons/default.png" />
 
         <!--user menu-->
         <ul class="nav pull-right" style="margin:0 10px 0 0;">
-        <?php if ($_smarty_tpl->tpl_vars['sys_session']->value['is_login']==1){?>
+        <?php if ($_smarty_tpl->tpl_vars['sys_session']->value['is_login']!=true){?>
         <li style="margin-top:10px;"><a href="<?php echo $_smarty_tpl->tpl_vars['sys_site_url']->value;?>
 user/register" class="btn btn-primary signup">注册</a></li>
         <li style="margin-top:10px;"><a href="<?php echo $_smarty_tpl->tpl_vars['sys_site_url']->value;?>
@@ -122,10 +122,7 @@ login/loginout">注销</a></li>
  </ul>
 </li>
        <?php }?>
-
         </ul>
-
-    <!--everything within this div is collapsed on mobile-->
         <div class="nav-collapse collapse">
 
           <!--main navigation-->
@@ -139,9 +136,6 @@ tips/index" class="dropdown-toggle">技巧（tips）</a> </li>
             <li class="dropdown"><a href="pages.html" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">话题（topic）</a> </li>
           </ul>
         </div>
-
-
-
         <!--/.nav-collapse -->
       </div>
     </div>

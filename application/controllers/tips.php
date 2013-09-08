@@ -3,7 +3,7 @@
 /**
  *
  **/
-class Tips extends CI_Controller
+class Tips extends MY_controller
 {
     private $per_page      = 8;
     private $top_tags_num  = 7;
@@ -15,9 +15,7 @@ class Tips extends CI_Controller
     {
         parent::__construct();
         $this->load->helper(array('array','url'));
-        $this->load->model('tips_model');
-        $this->load->model('comments_model');
-        $this->load->library(array('session','pagination','form_validation'));
+        $this->load->model(array('tips_model','comments_model'));
     }
 
     public function index()
@@ -39,45 +37,52 @@ class Tips extends CI_Controller
         //分页初始化
         $this->pagination->initialize($this->pagination_config);
 
+        $template['pagination_link'] = $this->pagination->create_links();
 
-        $data['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page);
-        $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
-        $data['sort_type'] = 'newest';
-        $this->load->view('header_view');
-        $this->load->view("tips_generalize_view" , $data);
-        $this->load->view("tips_sidebar_view");
-        $this->load->view('footer_view');
+        $template['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page);
+        $template['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $template['sort_type'] = 'newest';
+
+        $this->parser->parse('header_view');
+        $this->parser->parse("tips_generalize_view" , $template);
+        $this->parser->parse("tips_sidebar_view" , $template);
+        $this->parser->parse('footer_view');
     }
 
     public function post()
     {
-        $data['tips_detail'] = $this->tips_model->show_tips_detail($this->uri->segment(3));
-        $data['top_tags'] = $this->tips_model->show_top_tags($this->top_tags_num);
+        $template['tips_detail'] = $this->tips_model->show_tips_detail($this->uri->segment(3));
+        $template['top_tags'] = $this->tips_model->show_top_tags($this->top_tags_num);
         $Ram['tips_id'] = $this->uri->segment(3);
-        $data['tips_comments'] = $this->comments_model->show_comments($Ram);
-        $this->load->view('header_view');
-        $this->load->view('tips_detail_view' , $data);
-        $this->load->view("tips_detail_sidebar_view" , $data);
-        $this->load->view('footer_view');
+        $template['tips_comments'] = $this->comments_model->show_comments($Ram);
+
+
+        $this->parser->parse('header_view');
+        $this->parser->parse('tips_detail_view' , $template);
+        $this->parser->parse('tips_detail_sidebar_view' , $template);
+        $this->parser->parse('footer_view');
     }
 
     public function comments()
     {
+        $comment_info = array();
+
         if (!$this->session->userdata('user_id'))
          {
             redirect('/');
          }
 
-        $Ram['user_id'] = $this->session->userdata('user_id');
-        $Ram['user_name'] = $this->session->userdata('user_name');
-        $Ram['tips_id'] = $this->input->post('tips_id');
-        $Ram['content'] = html_escape($this->input->post('content'));
-        $Ram['comment_id'] = $this->comments_model->append_comments($Ram);
+        $comment_info['user_id'] = $this->session->userdata('user_id');
+        $comment_info['user_name'] = $this->session->userdata('user_name');
+        $comment_info['tips_id'] = $this->input->post('tips_id');
+        $comment_info['content'] = html_escape($this->input->post('content'));
+        $comment_info['comment_id'] = $this->comments_model->append_comments($comment_info);
 
-        if ($Ram['comment_id'])
+
+        if ($comment_info['comment_id'])
          {
-             $this->comments_model->append_comments_relationship($Ram);
-             $this->comments_model->renew_tips_comments_num($Ram);
+             $this->comments_model->append_comments_relationship($comment_info);
+             $this->comments_model->renew_tips_comments_num($comment_info);
          }
 
     }
@@ -85,7 +90,6 @@ class Tips extends CI_Controller
     public function vote()
     {
 
-        $this->load->library('pagination');
         //当前页
         $current_page = intval($this->uri->segment(3));
         //排序类型
@@ -104,13 +108,14 @@ class Tips extends CI_Controller
         $this->pagination->initialize($this->pagination_config);
 
 
-        $data['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page , $sort_type);
-        $data['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
-        $data['sort_type'] = $sort_type;
-        $this->load->view('header_view');
-        $this->load->view("tips_generalize_view" , $data);
-        $this->load->view("tips_sidebar_view");
-        $this->load->view('footer_view');
+        $template['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page , $sort_type);
+        $template['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $template['sort_type'] = $sort_type;
+
+        $this->parser->parse('header_view');
+        $this->parser->parse("tips_generalize_view" , $template);
+        $this->parser->parse("tips_sidebar_view");
+        $this->parser->parse('footer_view');
     }
 
     public function tag()
@@ -135,20 +140,20 @@ class Tips extends CI_Controller
         //分页初始化
         $this->pagination->initialize($this->pagination_config);
 
-        $data['top_tags']  = $this->tips_model->show_top_tags($this->top_tags_num);
-        $data['sort_type'] = 'newest';
-        $this->load->view('header_view');
-        $this->load->view("tips_generalize_view" , $data);
-        $this->load->view("tips_sidebar_view");
-        $this->load->view('footer_view');
+        $template['top_tags']  = $this->tips_model->show_top_tags($this->top_tags_num);
+        $template['sort_type'] = 'newest';
+        $this->parser->parse('header_view');
+        $this->parser->parse("tips_generalize_view" , $template);
+        $this->parser->parse("tips_sidebar_view");
+        $this->parser->parse('footer_view');
     }
 
 
     public function append()
     {
-        $this->load->view('header_view');
-        $this->load->view('tips_append_view');
-        $this->load->view('footer_view');
+        $this->parser->parse('header_view');
+        $this->parser->parse('tips_append_view');
+        $this->parser->parse('footer_view');
 
         if (!$this->input->post())
         {
@@ -174,13 +179,14 @@ class Tips extends CI_Controller
     public function show_tag()
     {
         $data = array();
+
         $press = $this->input->post('press');
 
-        $Ram = $this->tips_model->get_tag_by_press($press);
+        $tag_from_press = $this->tips_model->get_tag_by_press($press);
 
-        $data['tag'] = $Ram;
+        $data['tag'] = $tag_from_press;
 
-        $data['flag'] = empty($Ram) ? true : false;
+        $data['flag'] = empty($tag_from_press) ? true : false;
         $data['press'] = $press;
 
         die(json_encode($data));
