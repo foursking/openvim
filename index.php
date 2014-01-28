@@ -58,6 +58,8 @@ if (defined('ENVIRONMENT'))
  */
 	$system_path = 'system';
 
+
+
 /*
  *---------------------------------------------------------------
  * APPLICATION FOLDER NAME
@@ -190,6 +192,7 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
+
 
 /*
  * --------------------------------------------------------------------

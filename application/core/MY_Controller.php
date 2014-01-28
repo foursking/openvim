@@ -17,7 +17,7 @@ class MY_Controller extends CI_Controller {
     );
 
     private $access_control_list_unlogin = array(
-        'tips'=>array('append'),
+        //'tips'=>array('append'),
     );
 
     function __construct()

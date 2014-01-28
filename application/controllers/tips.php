@@ -3,6 +3,7 @@
 /**
  *
  **/
+
 class Tips extends MY_controller
 {
     private $per_page      = 8;
@@ -149,8 +150,9 @@ class Tips extends MY_controller
     }
 
 
-    public function append()
+    public function appends()
     {
+
         $this->parser->parse('header_view');
         $this->parser->parse('tips_append_view');
         $this->parser->parse('footer_view');
