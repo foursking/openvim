@@ -195,11 +195,14 @@ abstract class OAuth2_Provider
 	*/
 	public function access($code, $options = array())
 	{
+
         //check we csrf first
         if (isset($_GET[$this->state_key]) AND $_GET[$this->state_key] != get_instance()->session->userdata('state'))
         {
+			echo get_instance()->session->userdata('state');
         	throw new OAuth2_Exception(array('code' => '403', 'message' => 'The state does not match. Maybe you are a victim of CSRF.'));
         }
+
 		$params = array(
 			$this->client_id_key 	=> $this->client_id,
 			$this->client_secret_key => $this->client_secret,

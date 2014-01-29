@@ -3,7 +3,7 @@
 /**
  *
  **/
-class User extends MY_Controller
+class U extends MY_Controller
 {
 
     function __construct()
@@ -12,23 +12,17 @@ class User extends MY_Controller
         $this->load->helper(array('array','url','form','op'));
         $this->load->library(array('form_validation'));
         $this->load->model(array('user_model','email_model','url_model'));
-
-
-
     }
 
 
     public function register()
     {
-
         $template['sys_session'] = $this->session->all_userdata();
         $template['oauth_url']['oauth2_weibo_url'] = $this->_oauth2_bind('weibo');
-
         $this->parser->parse('header_view' , $template);
         $this->parser->parse("register_view" , $template);
 
-        if (!$this->input->post())
-        {
+        if (!$this->input->post()) {
             return false;
         }
 
@@ -36,8 +30,7 @@ class User extends MY_Controller
         $user_id = $this->user_model->append_user($this->input->post());
 
         //判断添加用户成功
-        if ( !empty($user_id))
-        {
+        if ( !empty($user_id)) {
             //添加激活邮件url
             $Ram = $this->input->post();
             $Ram['urlUid'] = $user_id;
@@ -101,13 +94,10 @@ class User extends MY_Controller
     public function postsuccess()
     {
 
-        if(TRUE === $this->session->flashdata('flash_is_postsuccess'))
-        {
+        if(TRUE === $this->session->flashdata('flash_is_postsuccess')) {
             $this->load->view('header_view');
             $this->load->view('register_success_view');
-        }
-        else
-        {
+        } else {
             redirect('tips/index');
         }
     }
@@ -131,8 +121,7 @@ class User extends MY_Controller
     {
 
         $allowed_providers = $this->config->item('oauth2');
-        if ( ! $provider OR ! isset($allowed_providers[$provider]))
-        {
+        if ( ! $provider OR ! isset($allowed_providers[$provider])) {
             $this->session->set_flashdata('info', '暂不支持'.$provider.'方式登录.');
             redirect();
             return;
@@ -141,37 +130,29 @@ class User extends MY_Controller
         $provider = $this->oauth2->provider($provider, $allowed_providers[$provider]);
 
         $args = $this->input->get();
-        if ($args AND !isset($args['code']))
-        {
+        if ($args AND !isset($args['code'])) {
             $this->session->set_flashdata('info', '授权失败了,可能由于应用设置问题或者用户拒绝授权.<br />具体原因:<br />'.json_encode($args));
             redirect();
             return;
         }
         $code = $this->input->get('code', TRUE);
-        if ( ! $code)
-        {
+        if ( ! $code) {
             $provider->authorize();
             return;
         }
         else
         {
-            try
-            {
+            try {
                 $token = $provider->access($code);
                 $sns_user = $provider->get_user_info($token);
-                if (is_array($sns_user))
-                {
+                if (is_array($sns_user)) {
                     $this->session->set_flashdata('info', '登录成功');
                     $this->session->set_userdata('user', $sns_user);
                     $this->session->set_userdata('is_login', TRUE);
-                }
-                else
-                {
+                } else {
                     $this->session->set_flashdata('info', '获取用户信息失败');
                 }
-            }
-            catch (OAuth2_Exception $e)
-            {
+            } catch (OAuth2_Exception $e) {
                 $this->session->set_flashdata('info', '操作失败<pre>'.$e.'</pre>');
             }
         }
@@ -183,8 +164,7 @@ class User extends MY_Controller
     {
 
         $allowed_providers = $this->config->item('oauth2');
-        if ( ! $provider OR ! isset($allowed_providers[$provider]))
-        {
+        if ( ! $provider OR ! isset($allowed_providers[$provider])) {
             $this->session->set_flashdata('info', '暂不支持'.$provider.'方式登录.');
             redirect();
             return;
@@ -193,15 +173,13 @@ class User extends MY_Controller
         $provider = $this->oauth2->provider($provider, $allowed_providers[$provider]);
 
         $args = $this->input->get();
-        if ($args AND !isset($args['code']))
-        {
+        if ($args AND !isset($args['code'])) {
             $this->session->set_flashdata('info', '授权失败了,可能由于应用设置问题或者用户拒绝授权.<br />具体原因:<br />'.json_encode($args));
             redirect();
             return;
         }
         $code = $this->input->get('code', TRUE);
-        if ( ! $code)
-        {
+        if ( ! $code) {
           return  $provider->authorizeURL();
         }
 

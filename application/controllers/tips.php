@@ -6,11 +6,11 @@
 
 class Tips extends MY_controller
 {
-    private $per_page      = 8;
-    private $top_tags_num  = 7;
-    private $uri_segment_3 = 3;
-    private $uri_segment_4 = 4;
-    private $num_links     = 4;
+    CONST PER_PAGE      = 8;
+    CONST TOP_TAGS_NUM  = 7;
+    CONST URI_SEGMENT_3 = 3;
+    CONST URI_SEGMENT_4 = 4;
+    CONST NUM_LINKS     = 4;
 
     function __construct()
     {
@@ -21,21 +21,15 @@ class Tips extends MY_controller
 
     public function index()
     {
-        //当前页
+        //current page
         $current_page = intval($this->uri->segment(3));
-        //排序类型
+        //sort type
         $sort_type = $this->uri->segment(2);
-        //页面地址
         $this->pagination_config['base_url']    = site_url('tips/index');
-        //每页条数
-        $this->pagination_config['per_page']    = $this->per_page;
-        //参数
-        $this->pagination_config['uri_segment'] = $this->uri_segment_3;
-        //分页数量
-        $this->pagination_config['num_links']   = $this->num_links;
-        //总数
+        $this->pagination_config['per_page']    = self::PER_PAGE;
+        $this->pagination_config['uri_segment'] = self::URI_SEGMENT_3;
+        $this->pagination_config['num_links']   = self::NUM_LINKS;
         $this->pagination_config['total_rows']  = $this->tips_model->count_tips_all();
-        //分页初始化
         $this->pagination->initialize($this->pagination_config);
 
         $template['pagination_link'] = $this->pagination->create_links();
@@ -91,21 +85,15 @@ class Tips extends MY_controller
     public function vote()
     {
 
-        //当前页
+        //current page
         $current_page = intval($this->uri->segment(3));
-        //排序类型
+        //sort type
         $sort_type = $this->uri->segment(2);
-        //页面地址
         $this->pagination_config['base_url']    = site_url('tips/vote');
-        //每页条数
-        $this->pagination_config['per_page']    = $this->per_page;
-        //参数
-        $this->pagination_config['uri_segment'] = $this->uri_segment_3;
-        //分页数量
-        $this->pagination_config['num_links']   = $this->num_links;
-        //总数
+        $this->pagination_config['per_page']    = self::PER_PAGE;
+        $this->pagination_config['uri_segment'] = self::URI_SEGMENT_3;
+        $this->pagination_config['num_links']   = self::NUM_LINKS;
         $this->pagination_config['total_rows']  = $this->tips_model->count_tips_all();
-        //分页初始化
         $this->pagination->initialize($this->pagination_config);
 
 
@@ -121,19 +109,12 @@ class Tips extends MY_controller
 
     public function tag()
     {
-        //当前页
         $current_page = intval($this->uri->segment(4));
-        //标签名
         $tags_name = $this->uri->segment(3);
-        //页面地址
         $this->pagination_config['base_url']    = site_url("tips/tag/".$tags_name);
-        //每页条数
-        $this->pagination_config['per_page']    = $this->per_page;
-        //参数
-        $this->pagination_config['uri_segment'] = $this->uri_segment_4;
-        //分页数量
-        $this->pagination_config['num_links']   = $this->num_links;
-        //总数
+        $this->pagination_config['per_page']    = self::PER_PAGE;
+        $this->pagination_config['uri_segment'] = self::URI_SEGMENT_4;
+        $this->pagination_config['num_links']   = self::NUM_LINKS;
         $this->pagination_config['total_rows']  = $this->tips_model->count_tips_by_tagsName($tags_name);
 
         $data['tips_generalize'] = $this->tips_model->show_tips_generalize_by_tagsName($current_page, $this->per_page , $tags_name);
