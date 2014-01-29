@@ -108,14 +108,12 @@ class Comments_model extends CI_Model {
                             ->result_array();
 
 
-        if ( !is_array($queryResult) OR count($queryResult) < 1)
-         {
+        if ( !is_array($queryResult) OR count($queryResult) < 1) {
              return false;
          }
 
 
-        foreach ($queryResult as $key=>$value)
-         {
+        foreach ($queryResult as $key=>$value) {
              $commId = $value['commId'];
          }
 

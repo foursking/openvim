@@ -44,12 +44,10 @@ class Tips_model extends CI_Model {
         );
 
 
-        if ($sort == 'newest')
-        {
+        if ($sort == 'newest') {
             $querySql = $this->db->order_by('tipsUtime' , 'desc')->get('tips' , $offset, $num);
         }
-        else if($sort == 'vote')
-        {
+        else if($sort == 'vote') {
             $querySql = $this->db->order_by('tipsCommNum' , "desc")->get('tips' , $offset, $num);
         }
 
@@ -58,8 +56,7 @@ class Tips_model extends CI_Model {
 
         $tipsId = '';
 
-        foreach ($Ram as $key=>$value)
-        {
+        foreach ($Ram as $key=>$value) {
             $tipsId .= $value['tipsId'] . ',';
         }
 
@@ -70,11 +67,9 @@ class Tips_model extends CI_Model {
 
         $Bull = $querySql->result_array();
 
-        if (empty($Bull))
-            return $Ram;
+        if (empty($Bull)) return $Ram;
 
-        foreach ($Bull as $key=>$value)
-        {
+        foreach ($Bull as $key=>$value) {
             $tagsId[] = $value['tagsId'];
         }
 
@@ -84,21 +79,15 @@ class Tips_model extends CI_Model {
 
         $Twins = $querySql->result_array();
 
-        foreach ($Twins as $key=>$value)
-        {
+        foreach ($Twins as $key=>$value) {
             $tagsName[$value['tagsId']] = $value['tagsName'];
         }
 
-        foreach ($Ram as $key=>$value)
-        {
-            foreach ($Bull as $k=>$v)
-            {
-                if ($v['tipsId'] == $value['tipsId'])
-                {
+        foreach ($Ram as $key=>$value) {
+            foreach ($Bull as $k=>$v) {
+                if ($v['tipsId'] == $value['tipsId']) {
                     $Ram[$key]['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
-                }
-                else
-                {
+                } else {
                     continue;
                 }
             }
@@ -157,11 +146,9 @@ class Tips_model extends CI_Model {
 
         $Bull = $querySql->result_array();
 
-        if (empty($Bull))
-            return $Ram;
+        if (empty($Bull)) return $Ram;
 
-        foreach ($Bull as $key=>$value)
-        {
+        foreach ($Bull as $key=>$value) {
             $tagsId[] = $value['tagsId'];
         }
 
@@ -171,20 +158,15 @@ class Tips_model extends CI_Model {
 
         $Twins = $querySql->result_array();
 
-        foreach ($Twins as $key=>$value)
-        {
+        foreach ($Twins as $key=>$value) {
             $tagsName[$value['tagsId']] = $value['tagsName'];
         }
 
 
-        foreach ($Bull as $k=>$v)
-        {
-            if ($v['tipsId'] == $Ram['tipsId'])
-            {
+        foreach ($Bull as $k=>$v) {
+            if ($v['tipsId'] == $Ram['tipsId']) {
                 $Ram['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
-            }
-            else
-            {
+            } else {
                 continue;
             }
         }
@@ -250,13 +232,11 @@ class Tips_model extends CI_Model {
                          ->result_array();
 
 
-        if (empty($Bull))
-            return $Ram;
+        if (empty($Bull)) return $Ram;
 
         $_tagsId = array();
 
-        foreach ($Bull as $key=>$value)
-        {
+        foreach ($Bull as $key=>$value) {
             $_tagsId[] = $value['tagsId'];
         }
 
@@ -272,21 +252,15 @@ class Tips_model extends CI_Model {
                       ->result_array();
 
 
-        foreach ($Twins as $key=>$value)
-        {
+        foreach ($Twins as $key=>$value) {
             $tagsName[$value['tagsId']] = $value['tagsName'];
         }
 
-        foreach ($Ram as $key=>$value)
-        {
-            foreach ($Bull as $k=>$v)
-            {
-                if ($v['tipsId'] == $value['tipsId'])
-                {
+        foreach ($Ram as $key=>$value) {
+            foreach ($Bull as $k=>$v) {
+                if ($v['tipsId'] == $value['tipsId']) {
                     $Ram[$key]['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
-                }
-                else
-                {
+                } else {
                     continue;
                 }
             }
@@ -332,8 +306,7 @@ class Tips_model extends CI_Model {
     {
         $insert_data = array();
 
-        foreach ($data['tags'] as $key=>$value)
-        {
+        foreach ($data['tags'] as $key=>$value) {
             $insert_data[$key]['tipsId'] = $data['tipsId'];
             $insert_data[$key]['tagsId'] = $value;
         }

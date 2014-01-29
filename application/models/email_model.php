@@ -90,18 +90,15 @@ class email_model extends CI_Model
 	 */
     function email_config($email_type = 0)
     {
-    	if(!is_numeric($email_type))
-        {
-            return false;
-        }
-        switch(intval($email_type))
-        {
+    	if(!is_numeric($email_type)) return false;
+
+        switch(intval($email_type)) {
         	case 1:
         		$this->email_subject = "openvim新用户注册";
         		$this->action_url	 = site_url('user/useractive/') . '/' . $this->user_uuid . '-' .$this->user_id;
         		$this->email_message =
                                        "
-                                       {$this->get_hello_time()},{$this->email_receiver},恭喜您成为openvim新用户
+                                       {$this->_get_hello_time()},{$this->email_receiver},恭喜您成为openvim新用户
 
                                        ----------------------------------------------------------------------
                                        详情点击
@@ -124,7 +121,7 @@ class email_model extends CI_Model
         		$this->action_url	 = site_url('getpwd')."?action=getpwd&isactive=1&urlkey={$this->url_uuid}";
         		$this->email_message =
                                        "
-                                       {$this->get_hello_time()},{$this->email_receiver}
+                                       {$this->_get_hello_time()},{$this->email_receiver}
 
                                        您好像忘记密码了~~
 
@@ -156,7 +153,7 @@ class email_model extends CI_Model
 
         		$this->email_message =
                                        "
-                                       {$this->get_hello_time()},{$this->email_receiver}
+                                       {$this->_get_hello_time()},{$this->email_receiver}
 
                                        这是一份来自openvim[{$_user['user_name']}]的邀请信
 
@@ -196,7 +193,7 @@ class email_model extends CI_Model
     }
 
 
-    private function get_hello_time()
+    private function _get_hello_time()
     {
         return hello_time();
     }

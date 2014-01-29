@@ -33,7 +33,6 @@ class MY_Controller extends CI_Controller {
     private function _validate_auth()
     {
 
-
         if(TRUE === $this->CI->session->userdata('is_login'))
         {
 
