@@ -62,8 +62,7 @@ class Tips extends MY_controller
     {
         $comment_info = array();
 
-        if (!$this->session->userdata('user_id'))
-         {
+        if (!$this->session->userdata('user_id')) {
             redirect('/');
          }
 
@@ -74,8 +73,7 @@ class Tips extends MY_controller
         $comment_info['comment_id'] = $this->comments_model->append_comments($comment_info);
 
 
-        if ($comment_info['comment_id'])
-         {
+        if ($comment_info['comment_id']) {
              $this->comments_model->append_comments_relationship($comment_info);
              $this->comments_model->renew_tips_comments_num($comment_info);
          }

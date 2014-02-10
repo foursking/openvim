@@ -185,6 +185,15 @@ class U extends MY_Controller
 
     }
 
+	public function signup() {
+	
+        $template['user'] = $this->session->userdata('user');
+        $this->parser->parse("header_view" , $template);
+        $this->parser->parse("signup_view" , $template);
+        $this->parser->parse("footer_view" , $template);
+	}
+
+
 
 }
 

@@ -11,7 +11,7 @@
  /**
   * Oauth2 SocialAuth for CodeIgniter
   * 修改自 https://github.com/philsturgeon/codeigniter-oauth2
-  * 
+  *
   * @author     chekun <234267695@qq.com>
   */
 
@@ -50,25 +50,25 @@ class OAuth2_Token_Access extends OAuth2_Token
 		{
 			throw new Exception('Required option not passed: access_token'.PHP_EOL.print_r($options, true));
 		}
-		
+
 		// if ( ! isset($options['expires_in']) and ! isset($options['expires']))
 		// {
 		// 	throw new Exception('We do not know when this access_token will expire');
 		// }
 
 		$this->access_token = $options[$options['access_token_key']];
-		
+
         isset($options[$options['uid_key']]) and $this->uid = $options[$options['uid_key']];
-                
+
 		//Mailru uses x_mailru_vid instead of uid
 		isset($options['x_mailru_vid']) and $this->uid = $options['x_mailru_vid'];
-		
+
 		// We need to know when the token expires, add num. seconds to current time
 		isset($options['expires_in']) and $this->expires = time() + ((int) $options['expires_in']);
-		
+
 		// Facebook is just being a spec ignoring jerk
 		isset($options['expires']) and $this->expires = time() + ((int) $options['expires']);
-		
+
 		// Grab a refresh token so we can update access tokens when they expires
 		isset($options['refresh_token']) and $this->refresh_token = $options['refresh_token'];
 	}

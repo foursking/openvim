@@ -1,9 +1,3 @@
-/********************************************************
- *
- * Custom Javascript code for Enkel Bootstrap theme
- * Written by Themelize.me (http://themelize.me)
- *
- *******************************************************/
 $(document).ready(function() {
     var defaultColour = 'green';
 

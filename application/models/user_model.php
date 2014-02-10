@@ -8,6 +8,7 @@ class User_model extends CI_Model
 
     private $_tables = array(
         'user' => 'user',
+		'thirdparty'=>'thirdparty',
     );
 
 
@@ -73,6 +74,21 @@ class User_model extends CI_Model
                    ->row_array();
 
     }
+
+	public function check_user_thirdparty_record($uid , $via) {
+
+		return $this->db->select('id')
+					->from("{$this->_tables['thirdparty']}")
+					->where('uid' , $userInfo['uid'])
+					->where('via' , $via)
+					->get()
+					->row_array();
+
+		
+
+
+	}
+
 
 
 

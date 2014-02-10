@@ -49,7 +49,8 @@ class OAuth2_Provider_Weibo extends OAuth2_Provider
 			'name' => $user->name,
 			'location' => $user->location,
 			'description' => $user->description,
-			'image' => $user->profile_image_url,
+			'avatar' => $user->profile_image_url,
+			'avatar_large' => $user->avatar_large,
 			'access_token' => $token->access_token,
 			'expire_at' => $token->expires,
 			'refresh_token' => $token->refresh_token

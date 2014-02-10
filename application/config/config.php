@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://dev.openvim.com/';
+$config['base_url']	= 'http://dev.foursk.com/';
 
 /*
 |--------------------------------------------------------------------------
