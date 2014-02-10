@@ -5,28 +5,31 @@
 			<form action="http://dev.openvim.com/u/register" method="post" accept-charset="utf-8"id =  "register-welcome-form" >
 				<div class="control-group">
 					<input type="text" name="login_email" placeholder="Email地址" class="text-34" style="height:30px" required="" />
+					<span class="text-error"></span>
 				</div>
 				<div class="control-group">
 					<input type="password" name="login_password" placeholder="登陆密码" class="text-34" style="height:30px" required="" />
+                <span class="text-error"></span>
 				</div>
 				<div class="control-group">
 					<div class="controls">
 						<input type="text" name="register_username" placeholder="常用名" class="text-34" style="height:30px" required=""  value="{* $user.name *}" />
+                <span class="text-error"></span>
 					</div>
 				</div>
 				<div class="form-actions">
 					<span>
 					</span>
-					<button class="btn btn-primary" type="submit">注 册</button>
+					<button id="login-submit" class="btn btn-primary" type="submit">注 册</button>
 				</div>
 			</form>
 			<style>
 #current_avatar {
-padding: 5px;
-background-color: #fff;
-box-shadow: 0 1px 3px rgba(34,25,25,.4);
--moz-box-shadow: 0 1px 3px rgba(34,25,25,.4);
--webkit-box-shadow: 0 1px 3px rgba(34,25,25,.4);
+	padding: 5px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(34,25,25,.4);
+	-moz-box-shadow: 0 1px 3px rgba(34,25,25,.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,.4);
 }
 			</style>
 			<div class="form-extra">
