@@ -18,52 +18,78 @@ ul.nav-tabs li.active{
       <!--Blog Roll Content-->
 
       <div class="span-tips-main blog-roll blog-list">
-<div>
-  <ul class="nav nav-tabs">
-      <li{* if $sort_type eq 'newest' *} class="active" {* /if *}><a href="{* $sys_site_url *}index" class="all">最新</a></li>
-      <li{* if $sort_type eq 'vote' *}   class="active" {* /if *}><a href="{* $sys_site_url *}vote" class="type-web">最热</a></li>
-  </ul>
+<!-- <div> -->
+<!--   <ul class="nav nav-tabs"> -->
+<!--       <li{* if $sort_type eq 'newest' *} class="active" {* /if *}><a href="{* $sys_site_url *}index" class="all">最新</a></li> -->
+<!--       <li{* if $sort_type eq 'vote' *}   class="active" {* /if *}><a href="{* $sys_site_url *}vote" class="type-web">最热</a></li> -->
+<!--   </ul> -->
 
- <div class="input-append" style="float:right;margin-top:-60px;position:relative">
-     <a href="{* $sys_site_url *}tips/append"><button class="btn" type="button" style="margin-right:10px"> + 添加Tips</button></a>
-    <input class="span2" id="appendedInputButton" type="text" placeholder="Search" />
-    <a href="#"><span class="add-on"> > </span> </a>
- </div>
+<!--  <div class="input-append" style="float:right;margin-top:-60px;position:relative"> -->
+<!--      <a href="{* $sys_site_url *}tips/append"><button class="btn" type="button" style="margin-right:10px"> + 添加Tips</button></a> -->
+<!--     <input class="span2" id="appendedInputButton" type="text" placeholder="Search" /> -->
+<!--     <a href="#"><span class="add-on"> > </span> </a> -->
+<!--  </div> -->
 
 </div>
+        <!-- {* foreach $tips_generalize as $key=>$value *} -->
+        <!-- <1!-- tips post --1> -->
+        <!-- <div class="media row-fluid"> -->
+
+        <!--   <div class="span12"> -->
+
+        <!--     <div class="media-body"> -->
+
+        <!--         <h4 class="title media-heading"><a href="{* $sys_site_url *}post/{* $value.tipsId *}">{* $value.tipsTitle *}</a></h4> -->
+
+        <!--       <1!-- Meta details mobile --1> -->
+        <!--       <ul class="inline meta muted visible-phone"> -->
+        <!--         <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sun 20th Jan 2013</li> -->
+        <!--         <li><i class="icon-user"></i> <a href="#">Alex</a></li> -->
+        <!--       </ul> -->
+        <!--       <div class="tags"> -->
+
+<!-- {* if $value.tags|@count neq 0 *} -->
+<!-- {* foreach $value.tags as $k=>$v *} -->
+<!-- <a href="{* $sys_site_url *}tag/{* $v *}" class="type">{* $v *}</a> &nbsp;&nbsp; -->
+<!-- {* /foreach *} -->
+<!-- {* /if *} -->
+        <!--       </div> -->
+        <!--         <div class="tips-content" style="clear:both;margin-top:5px"> -->
+        <!--         <pre>{* $value.tipsContent *}</pre> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!--   </div> -->
+        <!-- </div> -->
+        <!-- {* /foreach *} -->
 
 
-        {* foreach $tips_generalize as $key=>$value *}
-        <!-- tips post -->
-        <div class="media row-fluid">
 
-          <div class="span12">
 
-            <div class="media-body">
-
-                <h4 class="title media-heading"><a href="{* $sys_site_url *}post/{* $value.tipsId *}">{* $value.tipsTitle *}</a></h4>
-
-              <!-- Meta details mobile -->
-              <ul class="inline meta muted visible-phone">
-                <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sun 20th Jan 2013</li>
-                <li><i class="icon-user"></i> <a href="#">Alex</a></li>
-              </ul>
-              <div class="tags">
-
-{* if $value.tags|@count neq 0 *}
-{* foreach $value.tags as $k=>$v *}
-<a href="{* $sys_site_url *}tag/{* $v *}" class="type">{* $v *}</a> &nbsp;&nbsp;
-{* /foreach *}
-{* /if *}
-              </div>
-                <div class="tips-content" style="clear:both;margin-top:5px">
-                <pre>{* $value.tipsContent *}</pre>
-                </div>
-            </div>
-          </div>
-        </div>
-        {* /foreach *}
-
+<div class="box">
+<div class="topic topic-cell">
+  <div class="pull-left avatar">
+    <a href="/parkman"><img alt="Cd33f2b1bd3c14cf5e9a39e844639e4d" class="uface" src="http://ruby-china.org/avatar/cd33f2b1bd3c14cf5e9a39e844639e4d.png?s=96&amp;d=404" style="width:48px;height:48px;"></a>
+  </div>
+  <div class="right_info">
+    <div class="pull-right replies">
+        <a class="count state_false" href="/topics/17171#reply1">1</a>
+    </div>
+    <div class="infos">
+      <div class="title">
+        <a href="/topics/17171" title="Ruby on Rails open source Project">Ruby on Rails open source Project</a>
+        
+      </div>
+      <div class="info">
+        <a class="node" href="/topics/node47">开源项目</a>
+        •
+        <a data-name="parkman" href="/parkman">parkman</a>
+        <em>
+          •
+            最后由 <a data-name="ywjno" href="/ywjno">ywjno</a> 于<abbr class="timeago" title="2014-02-11T16:24:56+08:00">11分钟前</abbr>回复
+        </em>
+      </div>
+    </div>
+</div>
 
 
         <div class="pagination pagination-centered">

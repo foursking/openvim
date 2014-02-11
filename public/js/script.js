@@ -97,53 +97,53 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    var $input = $("input");
-    for(var i=0;i < $input.length ; i++){
-        $input[i].oninvalid = function(e){
-            e.target.setCustomValidity('表单不能为空');
-        }
-    }
+//     var $input = $("input");
+//     for(var i=0;i < $input.length ; i++){
+//         $input[i].oninvalid = function(e){
+//             e.target.setCustomValidity('表单不能为空');
+//         }
+//     }
 
-    var $login_email = $("input[name='login_email']");
-    var $login_password = $("input[name='login_password']");
-    var $login_submit = $("#btn-primary");
-    var $site_url = "http://dev.openvim.com/";
+//     var $login_email = $("input[name='login_email']");
+//     var $login_password = $("input[name='login_password']");
+//     var $login_submit = $("#btn-primary");
+//     var $site_url = "http://dev.openvim.com/";
 
-    $("#login-submit").bind("click", function(e){
-        //验证邮箱地址
-        if($login_email.val().length < 1){
-            //验证邮箱不能为空
-            $login_email.next().html('邮箱不能为空');
+//     $("#login-submit").bind("click", function(e){
+//         //验证邮箱地址
+//         if($login_email.val().length < 1){
+//             //验证邮箱不能为空
+//             $login_email.next().html('邮箱不能为空');
 
-        }else if(!$login_email.val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
-            //验证是否符合邮箱
-            $login_email.next().html('邮箱格式不正确');
+//         }else if(!$login_email.val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
+//             //验证是否符合邮箱
+//             $login_email.next().html('邮箱格式不正确');
 
-        }else if($login_password.val().length < 1){
-            //验证密码不能为空
-            $login_password.next().html('密码不能为空');
+//         }else if($login_password.val().length < 1){
+//             //验证密码不能为空
+//             $login_password.next().html('密码不能为空');
 
-        }else{
-            $(this).button('loading');
-            $.ajax({
-                url : $site_url + 'login/index',
-                type : "post",
-                async:false,
-                data : {login_email:$login_email.val(),login_password:$login_password.val()},
-                success:function(data){
-                    var jsonObj = eval('('+ data +')');
-                    if(jsonObj.login_flag == true){
-                       location.href = $site_url + "tips/index";
-                    }else{
-                       location.href = $site_url + "user/login";
-                    }
-                }
-            });
-        }
-        e.preventDefault();
-    });
+//         }else{
+//             $(this).button('loading');
+//             $.ajax({
+//                 url : $site_url + 'login/index',
+//                 type : "post",
+//                 async:false,
+//                 data : {login_email:$login_email.val(),login_password:$login_password.val()},
+//                 success:function(data){
+//                     var jsonObj = eval('('+ data +')');
+//                     if(jsonObj.login_flag == true){
+//                        location.href = $site_url + "tips/index";
+//                     }else{
+//                        location.href = $site_url + "user/login";
+//                     }
+//                 }
+//             });
+//         }
+//         e.preventDefault();
+//     });
 
 
 

@@ -23,7 +23,7 @@ class User_model extends CI_Model
      * @return int userId
      */
 
-    function append_user( $data )
+    public function appendUser( $data )
     {
 
         $insert_data = array(
@@ -46,7 +46,7 @@ class User_model extends CI_Model
      * @param array $data 用户信息
      * @return
      */
-    function check_user_password( $data )
+    public function checkUserPassword( $data )
     {
 
         return $this->db->select("userId , userName , userEmail , userIsActive")
@@ -65,7 +65,7 @@ class User_model extends CI_Model
      * @return array userId
      */
 
-    public function get_userName_by_userId( $data )
+    public function getUserNameByUserId( $data )
     {
        return $this->db->select("userId , userName , userEmail , userIsActive")
                    ->from("{$this->_tables['user']}")
@@ -75,7 +75,7 @@ class User_model extends CI_Model
 
     }
 
-	public function check_user_thirdparty_record($uid , $via) {
+	public function checkUserThirdpartyRecord($uid , $via) {
 
 		return $this->db->select('id')
 					->from("{$this->_tables['thirdparty']}")

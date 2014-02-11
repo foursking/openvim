@@ -15,6 +15,7 @@ class U extends MY_Controller
     }
 
 
+	
     public function register()
     {
         $template['sys_session'] = $this->session->all_userdata();
@@ -26,8 +27,11 @@ class U extends MY_Controller
             return false;
         }
 
+
+		print_r($this->input->post());
+
         //添加用户
-        $user_id = $this->user_model->append_user($this->input->post());
+        $user_id = $this->user_model->appendUser($this->input->post());
 
         //判断添加用户成功
         if ( !empty($user_id)) {
@@ -65,7 +69,7 @@ class U extends MY_Controller
         $user_info = $this->url_model->split_useractive_code($Ram);
         $active_flag = $this->url_model->user_email_active($user_info);
 
-        $user_name = $this->user_model->get_userName_by_userId($user_info['user_id']);
+        $user_name = $this->user_model->getUserNameByUserId($user_info['user_id']);
 
         if($active_flag)
         {
@@ -188,6 +192,7 @@ class U extends MY_Controller
 	public function signup() {
 	
         $template['user'] = $this->session->userdata('user');
+		pretty_print($template['user']);
         $this->parser->parse("header_view" , $template);
         $this->parser->parse("signup_view" , $template);
         $this->parser->parse("footer_view" , $template);

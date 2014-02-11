@@ -1095,6 +1095,14 @@ background: transparent url("../img/action.png") no-repeat 0 -16px;
 .tag-list li a:hover{color:#007349;text-decoration:none}
 
 
+.topic-cell {
+background: #fff;
+border-bottom: 1px solid #ddd;
+padding: 10px 0;
+margin: 0 -10px;
+vertical-align: top;
+}
+
 /* --------------------------------------------------
  * Register
  *-------------------------------------------------- */
