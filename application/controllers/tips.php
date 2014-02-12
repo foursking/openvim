@@ -19,6 +19,29 @@ class Tips extends MY_controller
         $this->load->model(array('tips_model','comments_model'));
     }
 
+
+	public function c() {
+
+		//current page
+        $current_page = intval($this->uri->segment(3));
+        //sort type
+        $sort_type = $this->uri->segment(2);
+        $this->pagination_config['base_url']    = site_url('tips/index');
+        $this->pagination_config['per_page']    = self::PER_PAGE;
+        $this->pagination_config['uri_segment'] = self::URI_SEGMENT_3;
+        $this->pagination_config['num_links']   = self::NUM_LINKS;
+        $this->pagination_config['total_rows']  = $this->tips_model->count_tips_all();
+        $this->pagination->initialize($this->pagination_config);
+
+        $template['pagination_link'] = $this->pagination->create_links();
+
+        $template['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, self::PER_PAGE);
+        $template['top_tags']        = $this->tips_model->show_top_tags(self::TOP_TAGS_NUM);
+        $template['sort_type'] = 'newest';
+        //$this->parser->parse("home_view" , $template);
+        $this->parser->parse("flist" , $template);
+	}
+
     public function index()
     {
         //current page
@@ -34,14 +57,14 @@ class Tips extends MY_controller
 
         $template['pagination_link'] = $this->pagination->create_links();
 
-        $template['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, $this->per_page);
-        $template['top_tags']        = $this->tips_model->show_top_tags($this->top_tags_num);
+        $template['tips_generalize'] = $this->tips_model->show_tips_generalize($current_page, self::PER_PAGE);
+        $template['top_tags']        = $this->tips_model->show_top_tags(self::TOP_TAGS_NUM);
         $template['sort_type'] = 'newest';
 
         $this->parser->parse('header_view');
         $this->parser->parse("tips_generalize_view" , $template);
-        $this->parser->parse("tips_sidebar_view" , $template);
-        $this->parser->parse('footer_view');
+        //$this->parser->parse("tips_sidebar_view" , $template);
+        //$this->parser->parse('footer_view');
     }
 
     public function post()

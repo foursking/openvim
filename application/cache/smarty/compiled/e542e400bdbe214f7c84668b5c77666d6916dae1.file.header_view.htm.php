@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-01-20 17:39:04
+<?php /* Smarty version Smarty-3.1.14, created on 2014-02-12 10:17:32
          compiled from "application/views/header_view.htm" */ ?>
 <?php /*%%SmartyHeaderCode:135165878252dceeb8c276d1-99814563%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e542e400bdbe214f7c84668b5c77666d6916dae1' => 
     array (
       0 => 'application/views/header_view.htm',
-      1 => 1390203462,
+      1 => 1392171451,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52dceeb8c4b200_24331485',
   'variables' => 
   array (
     'sys_base_url' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'sys_site_url' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52dceeb8c4b200_24331485',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_52dceeb8c4b200_24331485')) {function content_52dceeb8c4b200_24331485($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -40,8 +40,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <!-- Bootstrap CSS -->
 <link href="<?php echo $_smarty_tpl->tpl_vars['sys_base_url']->value;?>
 public/css/bootstrap.css" rel="stylesheet" />
-<link href="<?php echo $_smarty_tpl->tpl_vars['sys_base_url']->value;?>
-public/css/responsive.css" rel="stylesheet" />
+<!-- <link href="<?php echo $_smarty_tpl->tpl_vars['sys_base_url']->value;?>
+public/css/responsive.css" rel="stylesheet" /> -->
 
 <!-- Flexslider -->
 <link href="<?php echo $_smarty_tpl->tpl_vars['sys_base_url']->value;?>
