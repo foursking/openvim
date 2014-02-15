@@ -20,7 +20,7 @@
 			<div class='col-xs-12 col-sm-6 col-md-8'>
 				<div class='box'>
 					<div class='cell'>
-						<a href="#" class="startbbs">sitename</a> <span class="chevron">&nbsp;›&nbsp;</span> register
+						<a href="#" class="startbbs">sitename</a> <span class="chevron">&nbsp;›&nbsp;</span> 完善资料 
 					</div>
 					<div class='inner'>
 						<form accept-charset="UTF-8" action="#" class="form-horizontal" id="new_user" method="post" novalidate="novalidate">
@@ -28,25 +28,23 @@
 								<input name="utf8" type="hidden" value="" />
 								<input name="authenticity_token" type="hidden" value="" />
 							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="user_nickname">常用名</label>
-								<div class="col-sm-5">
-									<input autofocus="autofocus" class="form-control" id="user_nickname" name="username" size="50" type="text" value="" /><span class="help-inline red"></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="user_email">邮箱</label>
+							<div class="form-group" style="margin-top:10px">
+								<label class="col-sm-3 control-label" for="user_email">E妹儿</label>
 								<div class="col-sm-5">
 									<input class="form-control" id="user_email" name="email" size="50" type="email" value="" />
 									<span class="help-inline red"></span>
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="user_password">密码</label>
+							<div class="form-group" style="margin-top:20px">
+								<label class="col-sm-3 control-label" for="user_nickname">常用名</label>
 								<div class="col-sm-5">
-									<input class="form-control" id="user_password" name="password" size="50" type="password" value="" />
-									<span class="help-inline red"></span>
+									<input autofocus="autofocus" class="form-control" id="user_nickname" name="username" size="50" type="text" value="{* $user.name *}" /><span class="help-inline red"></span>
 								</div>
+							</div>
+
+							<div style="position: absolute; margin-top: -110px; margin-left: 430px; float: right; ">
+<style> #current_avatar { padding: 5px; background-color: #fff; box-shadow: 0 1px 3px rgba(34,25,25,.4); -moz-box-shadow: 0 1px 3px rgba(34,25,25,.4); -webkit-box-shadow: 0 1px 3px rgba(34,25,25,.4); width:100px; height:100px; } </style>
+							<img id="current_avatar" src="{* $user.avatar_large *}"/>
 							</div>
 
 							<div class='form-group'>

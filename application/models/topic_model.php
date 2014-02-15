@@ -1,14 +1,9 @@
 <?php
 
-class Tips_model extends CI_Model {
+class Topic_model extends CI_Model {
 
     private $_tables = array(
-        'tips' => 'tips',
-        'tags' => 'tags',
-        'comment' => 'comment',
-        'tags_relationships'   => 'tags_relationships',
-        'comments_relationships'   => 'comments_relationships',
-        'categories'   => 'categories',
+        'topics'   => 'topics',
     );
 
 
@@ -18,6 +13,27 @@ class Tips_model extends CI_Model {
     }
 
 
+	public function listNodeTopic($num, $offset, $nodeId = 1) {
+
+		$rawTopicList = $this->db->select("id , nid , uid, title , content")
+		    ->from("{$this->_tables['topics']}")
+            ->where('nid' , $nodeId)
+			->limit($offset , $num)
+			->get()
+			->result_array();
+		return $rawTopicList;
+	}
+
+
+    public function countNodeTopic($nodeId) {
+		return  $this->db->from("{$this->_tables['topics']}")
+						->where("nid" , $nodeId)
+						->count_all_results();
+    }
+
+
+
+
     /**
      * 获取VimTips概括
      * @param int $num tips数量
@@ -25,106 +41,17 @@ class Tips_model extends CI_Model {
      * @return array
      */
 
-    public function showTipsGeneralize($num , $offset , $sort='newest')
-    {
+    public function showTipsGeneralize($num , $offset , $sort='newest') {
 
-        $zodiac = array(
-            'Ram'      => 'Aries',
-            'Bull'     => 'Taurus',
-            'Twins'    => 'Gemini',
-            'Crab'     => 'Cancer',
-            'Lion'     => 'Leo',
-            'Virgin'   => 'Virgo',
-            'Balance'  => 'Libra',
-            'Scorpion' => 'Scorpio',
-            'Archer'   => 'Sagittarius',
-            'Goat'     => 'Capricorn',
-            'Bearer'   => 'Aquarius',
-            'Fishes'   => 'Pisces'
-        );
+	}
 
 
-        if ($sort == 'newest') {
-            $querySql = $this->db->order_by('tipsUtime' , 'desc')->get('tips' , $offset, $num);
-        }
-        else if($sort == 'vote') {
-            $querySql = $this->db->order_by('tipsCommNum' , "desc")->get('tips' , $offset, $num);
-        }
-
-
-        $Ram = $querySql->result_array();
-
-        $tipsId = '';
-
-        foreach ($Ram as $key=>$value) {
-            $tipsId .= $value['tipsId'] . ',';
-        }
-
-
-        $tipsId = rtrim($tipsId , ',');
-
-        $querySql = $this->db->query("SELECT * FROM `op_tags_relationships` WHERE tipsId IN ({$tipsId})");
-
-        $Bull = $querySql->result_array();
-
-        if (empty($Bull)) return $Ram;
-
-        foreach ($Bull as $key=>$value) {
-            $tagsId[] = $value['tagsId'];
-        }
-
-        $tagsId = implode(',' , array_flip(array_flip($tagsId)));
-
-        $querySql = $this->db->query("SELECT * FROM `op_tags` WHERE tagsId IN ({$tagsId})");
-
-        $Twins = $querySql->result_array();
-
-        foreach ($Twins as $key=>$value) {
-            $tagsName[$value['tagsId']] = $value['tagsName'];
-        }
-
-        foreach ($Ram as $key=>$value) {
-            foreach ($Bull as $k=>$v) {
-                if ($v['tipsId'] == $value['tipsId']) {
-                    $Ram[$key]['tags'][$v['tagsId']] = $tagsName[$v['tagsId']];
-                } else {
-                    continue;
-                }
-            }
-        }
-        return $Ram;
-    }
-
-    /**
+           /**
      * 获取VimTips最热标签
      * @param int $num 最热标签数
      * @return array
      */
-    public function showTopTags($num = 7)
-    {
-
-
-        /**
-         *  SQL
-         *
-         *  SELECT a.tagsId, COUNT(a.tagsId) AS tagsCount,b.tagsName
-         *  FROM op_tags_relationships AS a join op_tags as b
-         *  On a.tagsId = b.tagsId
-         *  GROUP BY a.tagsId
-         *  ORDER BY tagsCount DESC
-         *  LIMIT 0 , $num
-         */
-
-
-        return  $this->db->select("a.tagsId,count(a.tagsId) as tagsCount,b.tagsName")
-                         ->from("{$this->_tables['tags_relationships']} as a")
-                         ->join("{$this->_tables['tags']} as b" , "a.tagsId = b.tagsId")
-                         ->group_by("a.tagsId")
-                         ->order_by("tagsCount" , "desc")
-                         ->limit($num)
-                         ->get()
-                         ->result_array();
-
+    public function showTopTags($num = 7) {
 
     }
 
@@ -132,7 +59,6 @@ class Tips_model extends CI_Model {
 
     public function showTipsDetail($tipsId = '')
     {
-
 
         $Ram = $this->db->select("a.tipsId , a.tipsUid , a.tipsTitle , a.tipsContent , a.tipsCtime , a.tipsUtime")
             ->from("op_tips as a")
@@ -174,9 +100,8 @@ class Tips_model extends CI_Model {
         return $Ram;
     }
 
-    public function countTipsAll()
-    {
-        return  $this->db->count_all($this->_tables['tips']);
+    public function countTipsAll() {
+        return  $this->db->count_all_results();
     }
 
     public function countTipsByTagsName($tags_name)
@@ -333,7 +258,7 @@ class Tips_model extends CI_Model {
 	 *
      */
 
-	public function listNode() {
+	public function listNode($num , $offset ) {
 		$rawNodeList = $this->db->select("cid , pid , cname , content")
 			->from('categories')
 			->get()
@@ -352,8 +277,6 @@ class Tips_model extends CI_Model {
 	}
 
 }
-
-
 
 
 ?>

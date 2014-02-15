@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-02-11 16:05:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-02-13 11:01:48
          compiled from "application/views/signup_view.htm" */ ?>
 <?php /*%%SmartyHeaderCode:152820728052f493ba5d2729-62440333%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a38e1c068f75dec83a687da5102e2544a21a06f6' => 
     array (
       0 => 'application/views/signup_view.htm',
-      1 => 1392105898,
+      1 => 1392106436,
       2 => 'file',
     ),
   ),
@@ -48,10 +48,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</span>
 					<button id="login-submit" class="btn btn-primary" type="submit">注 册</button>
 				</div>
-				<input type="hidden" name="" value="" />
-				<input type="hidden" name="" value="" />
-				<input type="hidden" name="" value="" />
-				<input type="hidden" name="" value="" />
+				<input type="hidden" name="via" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['via'];?>
+" />
+				<input type="hidden" name="uid" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['uid'];?>
+" />
+				<input type="hidden" name="avatar" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['avatar'];?>
+" />
 			</form>
 			<style>
 #current_avatar {

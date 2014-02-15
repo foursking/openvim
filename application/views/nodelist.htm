@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta content='True' name='HandheldFriendly'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<title>title</title>
+<meta name="keywords" content="title" />
+<meta name="description" content="content" />
+{* include 'header-meta.htm' *}
+</head>
+<body id="startbbs">
+<div id="wrap">
+	<div class="container" id="page-main">
+		<div class="row">
+			<div class='col-xs-12 col-sm-6 col-md-8'>
+				<div class='box'>
+					<div class='box-header'>
+						<div class='pull-right'>
+							topic number
+							<div class='badge badge-info'>
+								&nbsp;
+								2014
+								&nbsp;
+							</div>
+						</div>
+						<a href="/" class="startbbs">site_name</a> <span class="chevron">&nbsp;›&nbsp;</span> tips 
+					</div>
+					<div class='cell'> this is the place for discription of block</div>
+				</div>
+
+				<div class='box'>
+					<div class='box-header'>
+						node/section
+					</div>
+        {* foreach $nodeList as $node *}
+					<div class='admin cell topic'>
+						<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+							<tr>
+								<td class='avatar' valign='top'>
+									<a href="#" class="profile_link" title="">
+										{* $node['info']['cname'] *}
+									</a>
+								</td>
+								<td style='padding-left: 12px' valign='top'>
+        {* foreach $node['children'] as $nodeChildren *}
+					<a>{* $nodeChildren['cname'] *}</a> &nbsp;&nbsp;
+        {* /foreach  *}
+								</td>
+							</tr>
+						</table>
+					</div>
+					{* /foreach *}
+					<div class='cell topic'>
+					</div>
+
+					<div class='inner'>
+						<ul class='pager'>
+							<li>
+							<!--<span class='gray'></span>-->
+							</li>
+							<li class='next'>
+							<!--<a href="/go/noticeboard?p=2">下一页 →</a>-->
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+			<div class='col-xs-12 col-sm-6 col-md-4' id='Rightbar'>
+
+			</div>
+</div></div></div>
+

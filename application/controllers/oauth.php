@@ -38,9 +38,8 @@ class Oauth extends MY_Controller
 					redirect('u/signup');
 					if (TRUE) {
 						$template = array();
-
-				      $this->parser->parse('header_view' , $template);
-			          $this->parser->parse("register_view" , $template);
+				      //$this->parser->parse('header_view' , $template);
+			          $this->parser->parse("register" , $template);
 					} else {
 					
 					}
